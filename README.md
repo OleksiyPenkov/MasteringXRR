@@ -7,6 +7,9 @@ Every step is something you do in that program.
 
 **Read it online:** https://oleksiypenkov.github.io/MasteringXRR/
 
+**Download the PDF:** [Mastering-XRR-Fitting.pdf](https://github.com/OleksiyPenkov/MasteringXRR/releases/latest/download/Mastering-XRR-Fitting.pdf)
+(the latest release; earlier editions are on the [Releases](https://github.com/OleksiyPenkov/MasteringXRR/releases) page)
+
 The book is written for X-Ray Calc 3.9.4. Its fitting method is the laboratory procedure described in
 Penkov, Peng & Fu, *Teaching an LLM agent to fit XRR curves with X-Ray Calc 3*,
 [arXiv:2609.28926](https://arxiv.org/abs/2609.28926); the procedure and its data are deposited at
