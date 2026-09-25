@@ -207,6 +207,7 @@ sub { bottom: -.22em; }
 }
 .home-title { font-weight: 600; color: var(--accent); }
 .home-footer { text-align: center; padding: 22px 32px; font-size: 12px; color: #999; border-top: 1px solid #eee; }
+.home-footer a { color: inherit; }
 
 /* ---- Responsive ---- */
 @media (max-width: 720px) {

@@ -65,6 +65,15 @@ def check_page_size(doc: fitz.Document) -> None:
           f"{len(bad)} wrong: {', '.join(bad[:4])}" if bad else f"{doc.page_count} pages")
 
 
+def check_metadata(doc: fitz.Document) -> None:
+    """A reader's PDF viewer shows the title field, and a library indexes it."""
+    meta = doc.metadata or {}
+    check(meta.get("title") == BOOK_TITLE and bool(meta.get("author")), "the title and author fields are set",
+          _ascii_safe(f"title '{meta.get('title')}', author '{meta.get('author')}'"))
+    cover = doc[0].get_text()
+    check("CC BY 4.0" in cover, "the cover states the licence")
+
+
 def _chapter_starts(toc: list) -> list[tuple[int, str]]:
     """Level-1 entries after Cover and Contents, as (0-based page, label)."""
     return [(t[2] - 1, t[1]) for t in toc[2:] if t[0] == 1]
@@ -368,6 +377,7 @@ def main() -> int:
     toc = doc.get_toc()
     front_pages = _front_pages(toc)
     check_page_size(doc)
+    check_metadata(doc)
     check_outline(doc, manifest)
     check_contents_pages(doc, toc)
     check_headers(doc, _chapter_starts(toc))

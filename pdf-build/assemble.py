@@ -40,8 +40,10 @@ AUTHOR = "Oleksiy V. Penkov"
 # Two lines, broken by hand: the balanced break of _two_lines splits "Reflectivity
 # Curves".
 BOOK_SUB_LINES = ("Fitting X-Ray Reflectivity Curves", "with X-Ray Calc 3")
-# The copyright notice, as the web home page carries it (author, 2026-09-25).
-COVER_TAG = f"© 2026 {AUTHOR}"
+# The copyright notice and the licence, as the web home page carries them (author, 2026-09-25).
+# Two lines: on one, the licence runs into the third Bragg peak of the hero.
+COVER_TAG = (f"© 2026 {AUTHOR}", "CC BY 4.0")
+BOOK_SUBJECT = " ".join(BOOK_SUB_LINES)
 
 # The cover is a companion to the Vacuum book's: the same skeleton (near-black
 # type block, one accent band, a monochrome hero cropped on its edges), with
@@ -127,7 +129,7 @@ def cover_html() -> str:
   <div class="band"><span class="who">{escape(AUTHOR)}</span></div>
   {HERO_MATH.read_text(encoding="utf-8")}
   {hero}
-  <div class="mark">{escape(COVER_TAG)}</div>
+  <div class="mark">{"<br>".join(escape(t) for t in COVER_TAG)}</div>
 </div></body></html>"""
 
 
@@ -438,6 +440,8 @@ def main() -> None:
     print(f"Cross-references: all {len(expected)} distinct target(s) in the text resolved to a page.")
 
     doc.set_toc(toc_marks)
+    doc.set_metadata({"title": BOOK_TITLE, "author": AUTHOR, "subject": BOOK_SUBJECT,
+                      "keywords": "X-ray reflectivity; XRR; fitting; X-Ray Calc; multilayers; CC BY 4.0"})
     doc.save(str(DIST_FINAL), deflate=True, garbage=3)
     doc.close()
     print(f"\nFinal: {DIST_FINAL}  ({page_count(DIST_FINAL)} pages, {len(entries)} sections)")
