@@ -1,0 +1,281 @@
+[
+  {
+    "slug": "introduction",
+    "title": "Introduction",
+    "number": "",
+    "label": "",
+    "order": 0,
+    "part": "front",
+    "partHeading": "Front Matter"
+  },
+  {
+    "slug": "ch1-what-xrr-fitting-is",
+    "title": "What XRR Fitting Is, and What It Can Tell You",
+    "number": "1",
+    "label": "Chapter 1",
+    "order": 10,
+    "part": "1",
+    "partHeading": "Part 1: Getting Started"
+  },
+  {
+    "slug": "ch2-meet-x-ray-calc-3",
+    "title": "Meet X-Ray Calc 3",
+    "number": "2",
+    "label": "Chapter 2",
+    "order": 20,
+    "part": "1",
+    "partHeading": "Part 1: Getting Started"
+  },
+  {
+    "slug": "ch3-your-first-fit",
+    "title": "Your First Fit, the Short Way",
+    "number": "3",
+    "label": "Chapter 3",
+    "order": 30,
+    "part": "1",
+    "partHeading": "Part 1: Getting Started"
+  },
+  {
+    "slug": "ch4-x-rays-meet-a-surface",
+    "title": "X-Rays Meet a Surface",
+    "number": "4",
+    "label": "Chapter 4",
+    "order": 40,
+    "part": "2",
+    "partHeading": "Part 2: The Physics You Need, and No More"
+  },
+  {
+    "slug": "ch5-one-film-kiessig-fringes",
+    "title": "One Film: Kiessig Fringes",
+    "number": "5",
+    "label": "Chapter 5",
+    "order": 50,
+    "part": "2",
+    "partHeading": "Part 2: The Physics You Need, and No More"
+  },
+  {
+    "slug": "ch6-many-films-bragg-peaks",
+    "title": "Many Films: Bragg Peaks",
+    "number": "6",
+    "label": "Chapter 6",
+    "order": 60,
+    "part": "2",
+    "partHeading": "Part 2: The Physics You Need, and No More"
+  },
+  {
+    "slug": "ch7-roughness-interlayers-dirty-surface",
+    "title": "Roughness, Interlayers, and a Dirty Surface",
+    "number": "7",
+    "label": "Chapter 7",
+    "order": 70,
+    "part": "2",
+    "partHeading": "Part 2: The Physics You Need, and No More"
+  },
+  {
+    "slug": "ch8-how-x-ray-calc-computes-a-curve",
+    "title": "How X-Ray Calc Computes a Curve",
+    "number": "8",
+    "label": "Chapter 8",
+    "order": 80,
+    "part": "2",
+    "partHeading": "Part 2: The Physics You Need, and No More"
+  },
+  {
+    "slug": "ch9-how-x-ray-calc-finds-a-fit",
+    "title": "How X-Ray Calc Finds a Fit",
+    "number": "9",
+    "label": "Chapter 9",
+    "order": 90,
+    "part": "2",
+    "partHeading": "Part 2: The Physics You Need, and No More"
+  },
+  {
+    "slug": "ch10-is-this-curve-worth-fitting",
+    "title": "Is This Curve Worth Fitting?",
+    "number": "10",
+    "label": "Chapter 10",
+    "order": 100,
+    "part": "3",
+    "partHeading": "Part 3: The Fitting Workflow, Step by Step"
+  },
+  {
+    "slug": "ch11-reading-the-curve",
+    "title": "Reading the Curve Before You Fit",
+    "number": "11",
+    "label": "Chapter 11",
+    "order": 110,
+    "part": "3",
+    "partHeading": "Part 3: The Fitting Workflow, Step by Step"
+  },
+  {
+    "slug": "ch12-building-the-starting-model",
+    "title": "Building the Starting Model",
+    "number": "12",
+    "label": "Chapter 12",
+    "order": 120,
+    "part": "3",
+    "partHeading": "Part 3: The Fitting Workflow, Step by Step"
+  },
+  {
+    "slug": "ch13-the-sensitivity-check",
+    "title": "The Sensitivity Check: What Each Parameter Changes",
+    "number": "13",
+    "label": "Chapter 13",
+    "order": 130,
+    "part": "3",
+    "partHeading": "Part 3: The Fitting Workflow, Step by Step"
+  },
+  {
+    "slug": "ch14-preparing-the-data",
+    "title": "Preparing the Data: Scale, Smoothing, and Fitting Range",
+    "number": "14",
+    "label": "Chapter 14",
+    "order": 140,
+    "part": "3",
+    "partHeading": "Part 3: The Fitting Workflow, Step by Step"
+  },
+  {
+    "slug": "ch15-choosing-what-to-fit",
+    "title": "Choosing What to Fit: Free Parameters and Limits",
+    "number": "15",
+    "label": "Chapter 15",
+    "order": 150,
+    "part": "3",
+    "partHeading": "Part 3: The Fitting Workflow, Step by Step"
+  },
+  {
+    "slug": "ch16-fit-settings",
+    "title": "Fit Settings: Resolution, Swarm Size, and Seeds",
+    "number": "16",
+    "label": "Chapter 16",
+    "order": 160,
+    "part": "3",
+    "partHeading": "Part 3: The Fitting Workflow, Step by Step"
+  },
+  {
+    "slug": "ch17-periodic-or-polynomial",
+    "title": "Periodic or Polynomial? A Stack That Drifts",
+    "number": "17",
+    "label": "Chapter 17",
+    "order": 170,
+    "part": "3",
+    "partHeading": "Part 3: The Fitting Workflow, Step by Step"
+  },
+  {
+    "slug": "ch18-judging-a-fit",
+    "title": "Judging a Fit",
+    "number": "18",
+    "label": "Chapter 18",
+    "order": 180,
+    "part": "3",
+    "partHeading": "Part 3: The Fitting Workflow, Step by Step"
+  },
+  {
+    "slug": "ch19-when-the-fit-will-not-converge",
+    "title": "When the Fit Will Not Converge",
+    "number": "19",
+    "label": "Chapter 19",
+    "order": 190,
+    "part": "3",
+    "partHeading": "Part 3: The Fitting Workflow, Step by Step"
+  },
+  {
+    "slug": "ch20-density-a-free-parameter",
+    "title": "Density: A Free Parameter, Not a Result",
+    "number": "20",
+    "label": "Chapter 20",
+    "order": 200,
+    "part": "4",
+    "partHeading": "Part 4: Special Cases and Reporting"
+  },
+  {
+    "slug": "ch21-single-films",
+    "title": "Single Films",
+    "number": "21",
+    "label": "Chapter 21",
+    "order": 210,
+    "part": "4",
+    "partHeading": "Part 4: Special Cases and Reporting"
+  },
+  {
+    "slug": "ch22-graded-multilayers-and-supermirrors",
+    "title": "Graded Multilayers and Supermirrors",
+    "number": "22",
+    "label": "Chapter 22",
+    "order": 220,
+    "part": "4",
+    "partHeading": "Part 4: Special Cases and Reporting"
+  },
+  {
+    "slug": "ch23-reporting-a-fit",
+    "title": "Reporting a Fit Others Can Trust",
+    "number": "23",
+    "label": "Chapter 23",
+    "order": 230,
+    "part": "4",
+    "partHeading": "Part 4: Special Cases and Reporting"
+  },
+  {
+    "slug": "ch24-ten-ways-a-fit-can-mislead-you",
+    "title": "Ten Ways a Fit Can Mislead You",
+    "number": "24",
+    "label": "Chapter 24",
+    "order": 240,
+    "part": "5",
+    "partHeading": "Part 5: The Part of Tens"
+  },
+  {
+    "slug": "ch25-ten-checks-before-you-trust-a-number",
+    "title": "Ten Checks Before You Trust a Number",
+    "number": "25",
+    "label": "Chapter 25",
+    "order": 250,
+    "part": "5",
+    "partHeading": "Part 5: The Part of Tens"
+  },
+  {
+    "slug": "ch26-ten-things-x-ray-calc-does-not-fit",
+    "title": "Ten Things X-Ray Calc Does Not Fit for You",
+    "number": "26",
+    "label": "Chapter 26",
+    "order": 260,
+    "part": "5",
+    "partHeading": "Part 5: The Part of Tens"
+  },
+  {
+    "slug": "appendix-a-notation",
+    "title": "Notation and Units",
+    "number": "A",
+    "label": "Appendix A",
+    "order": 270,
+    "part": "back",
+    "partHeading": "Appendices"
+  },
+  {
+    "slug": "appendix-b-menus",
+    "title": "Menus, Buttons and Keys",
+    "number": "B",
+    "label": "Appendix B",
+    "order": 280,
+    "part": "back",
+    "partHeading": "Appendices"
+  },
+  {
+    "slug": "appendix-c-optical-constants",
+    "title": "Where Optical Constants Come From",
+    "number": "C",
+    "label": "Appendix C",
+    "order": 290,
+    "part": "back",
+    "partHeading": "Appendices"
+  },
+  {
+    "slug": "appendix-d-glossary",
+    "title": "Glossary",
+    "number": "D",
+    "label": "Appendix D",
+    "order": 300,
+    "part": "back",
+    "partHeading": "Appendices"
+  }
+]

@@ -1,0 +1,43 @@
+TEN CHECKS BEFORE YOU TRUST A NUMBER
+From "Mastering XRR Fitting", Chapter 25. Ask these of every fitted number
+(a thickness, a period, a sigma, a density) before you use it.
+
+[ ]  1. Does the curve carry this number?
+        A feature of the curve must move when the number changes.
+        Look: Data > Assess XRR quality ...; the sensitivity map.   Ch 10, 13
+
+[ ]  2. Were the data and the settings set for this curve?
+        2theta or theta; Normalize (Auto); no smoothing; the range from
+        theta_max; R min; Delta-theta from a scan of this curve.     Ch 14, 16
+
+[ ]  3. Is the scale inside its window?
+        Look: Chart Info bar, scale box. "at bound" = no: check the end
+        of the range, then the model.                               Ch 14
+
+[ ]  4. Does the fit pass its checks?
+        Look: Result > Fit report ... Orders, edge, eight bands, chi2
+        last. A fail is reported with its cause.                    Ch 18
+
+[ ]  5. Is the model complete?
+        No sigma far larger than its neighbors, no density on a limit
+        standing in for a missing layer. Both modes fitted; the mode
+        chosen on the drift.                                     Ch 17, 19
+
+[ ]  6. Is the number clear of its limits?
+        Look: Fitting Limits dialog, yellow cells. Widen and fit again
+        until no run ends near a limit.                             Ch 15
+
+[ ]  7. Do five runs agree on it?
+        Spread over five runs smaller than the precision you claim,
+        or report "undetermined". Report the best run, never a mean. Ch 16, 18
+
+[ ]  8. Does the curve fix this number, or only a sum?
+        Sums of layers that trade thickness; sigma as fitted; per-period
+        values of a profile; a film's thickness only.        Ch 18, 21, 22
+
+[ ]  9. Is it a density?
+        Then it is a "free parameter, not a result".                Ch 20
+
+[ ] 10. Is it written down with its settings?
+        Result > Export fit results... right after the fit; the Fit
+        report text; the project saved; the 22 report items.        Ch 23

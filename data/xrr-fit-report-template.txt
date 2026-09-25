@@ -1,0 +1,60 @@
+XRR FIT REPORT
+Template from "Mastering XRR Fitting", Chapter 23. Fill every slot. Write "none" or
+"not done" where it applies; never leave a slot empty. Lengths in angstrom (A),
+densities in g/cm3, angles in degrees and labeled 2theta or theta.
+
+Program: X-Ray Calc ______ (version and build from the status bar)
+Date of the fit: __________        Who fitted: __________
+
+THE MEASUREMENT
+ 1. Measurement: sample name, measurement file, instrument.
+    The limits table used (its name and date) and the substrate.
+ 2. theta_max and I_max of the plateau; the background level.
+    From an .xrdml file: the peak count rate and the counting time.
+    The highest visible order divided by I_max.
+    If there are more floored points than visible orders: say that
+    R min is a floor you chose, not one you measured.
+ 3. The sensitivity map: one line per variant, the feature it moves.
+
+THE MODEL AND THE DATA
+ 4. The starting model: every layer with H, sigma, rho; N of each stack.
+ 5. The scale: how the curve was normalized (Data > Normalize ...);
+    whether the scale was solved in chi2, its window, and the solved
+    factor at the end (Chart Info bar: "solved x..."); clamped or not.
+ 6. Smoothing: none, or how many passes and why.
+ 7. R min, and how it was chosen.
+ 8. The fitting range (2theta), and the reason for its upper end.
+
+THE SETTINGS
+ 9. Delta-theta, and the chi2 scan that chose it; the fringe contrast
+    beside it as a check.
+10. The chi2 settings: PW chi2 on or off; the theta weighting (TW chi2).
+11. Population, iterations, Shake, SeedR; the number of runs.
+    (A GUI run starts from a random seed and can't be repeated exactly.)
+
+THE FIT
+12. The mode: Periodic and Polynomial, both fitted, with both chi2 and
+    their spreads; the period drift and its spread; which one is
+    reported and why; the polynomial order and its coefficients.
+13. The limits as first set and as finally used; every limit widened,
+    and the value that forced it.
+14. The saved project of every run (file names).
+15. chi2 of the starting model and of the reported fit.
+16. The fitted structure (the run with the lowest chi2, never a mean):
+    the period; each layer's H and sigma with the spread over the runs;
+    each density as "free parameter, not a result"; every parameter
+    whose spread exceeds your precision limit as undetermined, without
+    a number; layers reported as a sum where the split is undetermined;
+    for a Polynomial fit, the value in every period.
+17. Every value on a limit or within 5 % of one, and what was done:
+    the limit widened and the fit repeated, or, for a density at its
+    bulk ceiling, the reason it was not.
+
+THE CHECKS AND THE VERDICT (Result > Fit report ... > Copy as text)
+18. The order table: each visible order, calculated / measured.
+19. The edge check (three points) and the fringe check.
+20. The residual by band: the mean in each band.
+21. The verdict, criterion by criterion, with the curves each limit
+    was calibrated on. A fail is a result: report it.
+22. The saved project name of the reported fit, and the exported fit
+    results (Result > Export fit results...).
