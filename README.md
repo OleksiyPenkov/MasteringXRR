@@ -1,5 +1,7 @@
 # Mastering XRR Fitting
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22959661.svg)](https://doi.org/10.5281/zenodo.22959661)
+
 A free book on fitting an X-ray reflectivity (XRR) curve, from reading the raw curve to reporting
 the fit. It is written for a graduate student or engineer who has an XRR curve and has never fitted
 one, and it is built around one program, [X-Ray Calc 3](https://github.com/OleksiyPenkov/X-RayCalc3).
@@ -14,6 +16,14 @@ The book is written for X-Ray Calc 3.9.4. Its fitting method is the laboratory p
 Penkov, Peng & Fu, *Teaching an LLM agent to fit XRR curves with X-Ray Calc 3*,
 [arXiv:2609.28926](https://arxiv.org/abs/2609.28926); the procedure and its data are deposited at
 [doi:10.5281/zenodo.22851595](https://doi.org/10.5281/zenodo.22851595).
+
+## How to cite
+
+> Penkov, O. (2026). *Mastering XRR Fitting: Fitting X-Ray Reflectivity Curves with X-Ray Calc 3*.
+> https://doi.org/10.5281/zenodo.22959661
+
+This DOI always resolves to the latest edition. To cite one edition (for a page or figure number),
+use that version's DOI from the [Zenodo record](https://doi.org/10.5281/zenodo.22959661).
 
 ## What is in this repository
 
