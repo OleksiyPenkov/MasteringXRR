@@ -4,7 +4,9 @@ title: "Mastering XRR Fitting: Fitting X-Ray Reflectivity Curves with X-Ray Calc
 authors:
   - family-names: Penkov
     given-names: Oleksiy
-version: 1.0.2
+    affiliation: "ZJU-UIUC Institute, International Campus, Zhejiang University"
+    orcid: "https://orcid.org/0000-0003-3675-5301"
+version: 1.0.3
 date-released: 2026-09-25
 doi: 10.5281/zenodo.22959661
 url: "https://oleksiypenkov.github.io/MasteringXRR/"
@@ -21,6 +23,8 @@ preferred-citation:
   authors:
     - family-names: Penkov
       given-names: Oleksiy
+      affiliation: "ZJU-UIUC Institute, International Campus, Zhejiang University"
+      orcid: "https://orcid.org/0000-0003-3675-5301"
   year: 2026
   doi: 10.5281/zenodo.22959661
   url: "https://oleksiypenkov.github.io/MasteringXRR/"

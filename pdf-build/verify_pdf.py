@@ -74,14 +74,29 @@ def check_metadata(doc: fitz.Document) -> None:
     check("CC BY 4.0" in cover, "the cover states the licence")
 
 
+# The outline's opening entries, each one front-matter page (Contents may run on).
+FRONT = ["Cover", "Title Page", "Contents"]
+
+
+def check_title_page(doc: fitz.Document) -> None:
+    """The page a library or an assessor reads first: who, where, which edition, how to cite."""
+    text = " ".join(doc[1].get_text().split()) if doc.page_count > 1 else ""
+    wanted = {"the title": BOOK_TITLE.upper(), "the affiliation": "Zhejiang University",
+              "the ORCID": "0000-0003-3675-5301", "the DOI": "10.5281/zenodo.", "the edition": "Edition ",
+              "the licence": "CC BY 4.0", "a citation": "Cite as:"}
+    missing = [k for k, v in wanted.items() if v not in text]
+    check(not missing, "the title page names author, affiliation, edition, DOI and licence",
+          f"missing {', '.join(missing)}" if missing else "")
+
+
 def _chapter_starts(toc: list) -> list[tuple[int, str]]:
-    """Level-1 entries after Cover and Contents, as (0-based page, label)."""
-    return [(t[2] - 1, t[1]) for t in toc[2:] if t[0] == 1]
+    """Level-1 entries after the front matter, as (0-based page, label)."""
+    return [(t[2] - 1, t[1]) for t in toc[len(FRONT):] if t[0] == 1]
 
 
 def _front_pages(toc: list) -> int:
-    """Pages before the body (Cover + Contents)."""
-    return toc[2][2] - 1 if len(toc) > 2 else 0
+    """Pages before the body (Cover + Title Page + Contents)."""
+    return toc[len(FRONT)][2] - 1 if len(toc) > len(FRONT) else 0
 
 
 def check_outline(doc: fitz.Document, manifest: list[dict]) -> None:
@@ -89,9 +104,9 @@ def check_outline(doc: fitz.Document, manifest: list[dict]) -> None:
     level1 = _chapter_starts(toc)
     check(len(level1) == len(manifest), "outline has one level-1 entry per rendered section",
           f"{len(level1)} entries for {len(manifest)} sections")
-    opening = [t[1] for t in toc[:2]]
-    check(opening == ["Cover", "Contents"] and toc[0][2] == 1,
-          "outline opens with Cover and Contents", f"{opening}")
+    opening = [t[1] for t in toc[:len(FRONT)]]
+    check(opening == FRONT and [t[2] for t in toc[:2]] == [1, 2],
+          "outline opens with Cover, Title Page and Contents", f"{opening}")
 
 
 HEADER_BAND_MM = 12.0
@@ -149,10 +164,11 @@ CONTENTS_TOP_MM = 12.0   # @page margin is 14mm; slack for ascenders and roundin
 
 def check_contents_pages(doc: fitz.Document, toc: list) -> None:
     """Margin and running head on every Contents sheet, and every row linked."""
-    if len(toc) < 3:
+    n = len(FRONT)
+    if len(toc) <= n:
         check(False, "outline reaches the first body section", f"only {len(toc)} entries")
         return
-    first, end = toc[1][2] - 1, toc[2][2] - 1
+    first, end = toc[n - 1][2] - 1, toc[n][2] - 1
     thin, headless = [], []
     for i in range(first, end):
         page = doc[i]
@@ -169,8 +185,8 @@ def check_contents_pages(doc: fitz.Document, toc: list) -> None:
           "; ".join(headless) if headless else f"{max(0, end - first - 1)} continuation page(s)")
     goto = [l for i in range(first, end) for l in doc[i].get_links() if l.get("kind") == fitz.LINK_GOTO]
     astray = [l["page"] + 1 for l in goto if not end <= l["page"] < doc.page_count]
-    check(len(goto) >= len(toc) - 2, "every contents row links to its target",
-          f"{len(goto)} links for {len(toc) - 2} rows")
+    check(len(goto) >= len(toc) - n, "every contents row links to its target",
+          f"{len(goto)} links for {len(toc) - n} rows")
     check(not astray, "contents links land in the body", f"{len(astray)} astray: {astray[:5]}")
 
 
@@ -378,6 +394,7 @@ def main() -> int:
     front_pages = _front_pages(toc)
     check_page_size(doc)
     check_metadata(doc)
+    check_title_page(doc)
     check_outline(doc, manifest)
     check_contents_pages(doc, toc)
     check_headers(doc, _chapter_starts(toc))

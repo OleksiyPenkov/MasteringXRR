@@ -3,11 +3,11 @@
 Ported from the Vacuum book's assembler, without its two-volume split and cover
 art. Pipeline:
   1. Read out/manifest.json and the per-section PDFs from render-sections.mjs.
-  2. Count pages per section: body pages are numbered 1..N; cover and contents
-     are unnumbered.
+  2. Count pages per section: body pages are numbered 1..N; cover, title page
+     and contents are unnumbered.
   3. Merge the body, then locate every Contents heading in it.
-  4. Render the cover and the Contents (grouped by Part, with real page
-     numbers) via render-html.mjs, and merge cover + contents + body.
+  4. Render the cover, the title page and the Contents (grouped by Part, with
+     real page numbers) via render-html.mjs, and merge them with the body.
   5. Stamp running heads and "n / N" page numbers; link the Contents rows.
   6. Rewrite the body's localhost cross-references into page jumps.
   7. Add the PDF outline (bookmarks).
@@ -15,6 +15,7 @@ art. Pipeline:
 Run from the repo root after render-sections.mjs:  python pdf-build/assemble.py
 """
 import json
+import re
 import subprocess
 import sys
 from html import escape
@@ -44,6 +45,11 @@ BOOK_SUB_LINES = ("Fitting X-Ray Reflectivity Curves", "with X-Ray Calc 3")
 # Two lines: on one, the licence runs into the third Bragg peak of the hero.
 COVER_TAG = (f"© 2026 {AUTHOR}", "CC BY 4.0")
 BOOK_SUBJECT = " ".join(BOOK_SUB_LINES)
+# The title page. The affiliation is worded, and broken, as on the title page of
+# the author's Tribology of Graphene (Elsevier, 2020) (author, 2026-09-25).
+AFFILIATION_LINES = ("ZJU-UIUC Institute, International Campus,", "Zhejiang University")
+ORCID = "0000-0003-3675-5301"
+CITATION_CFF = HERE.parent / "CITATION.cff"
 
 # The cover is a companion to the Vacuum book's: the same skeleton (near-black
 # type block, one accent band, a monochrome hero cropped on its edges), with
@@ -130,6 +136,64 @@ def cover_html() -> str:
   {HERO_MATH.read_text(encoding="utf-8")}
   {hero}
   <div class="mark">{"<br>".join(escape(t) for t in COVER_TAG)}</div>
+</div></body></html>"""
+
+
+def citation_meta(text: str) -> dict:
+    """version, doi, url and year from CITATION.cff's top-level keys.
+
+    CITATION.cff is the one place the edition and the DOI are recorded; a
+    release bumps it, and the title page follows. Only unindented keys are read,
+    so preferred-citation's copies never win."""
+    meta = {}
+    for key in ("version", "doi", "url", "date-released"):
+        m = re.search(rf'^{key}:[ \t]*"?([^"\n]+?)"?[ \t]*$', text, re.M)
+        if not m:
+            raise SystemExit(f"CITATION.cff has no top-level {key!r}")
+        meta[key] = m.group(1)
+    meta["year"] = meta.pop("date-released")[:4]
+    return meta
+
+
+def title_page_html(meta: dict) -> str:
+    doi_url = f"https://doi.org/{meta['doi']}"
+    web = meta["url"]
+    initials = " ".join(f"{n[0]}." for n in AUTHOR.split()[:-1])
+    cite = (f"{AUTHOR.split()[-1]}, {initials} ({meta['year']}). {BOOK_TITLE}: {BOOK_SUBJECT} "
+            f"(Edition {meta['version']}). Zenodo.")
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+  @page{{size:148mm 210mm;margin:0;}}
+  html,body{{margin:0;padding:0;}}
+  /* Exactly one page, like the cover: its page count shifts every page number. */
+  .page{{position:relative;width:148mm;height:210mm;overflow:hidden;background:#fff;color:#14181d;
+         font-family:'Cambria','Constantia',Georgia,serif;}}
+  .top{{position:absolute;top:34mm;left:18mm;right:18mm;}}
+  h1{{margin:0;font-family:'Bodoni MT','Perpetua','Baskerville Old Face',Georgia,serif;
+      font-weight:400;font-size:30pt;line-height:1.05;letter-spacing:.12em;text-transform:uppercase;}}
+  .sub{{margin:5mm 0 0;font-weight:700;font-size:13pt;line-height:1.28;}}
+  .rule{{margin:9mm 0 8mm;width:28mm;height:1.2mm;background:{COVER_ACCENT};}}
+  .who{{font-size:14pt;}}
+  .aff{{margin-top:2.5mm;font-size:10.5pt;line-height:1.35;color:#3d4d5c;}}
+  .imprint{{position:absolute;left:18mm;right:18mm;bottom:16mm;font-size:8.5pt;line-height:1.45;color:#3d4d5c;}}
+  .imprint p{{margin:0 0 2.2mm;}}
+  .imprint a{{color:inherit;text-decoration:none;}}
+</style></head><body><div class="page">
+  <div class="top">
+    <h1>{_two_lines(BOOK_TITLE)}</h1>
+    <div class="sub">{"<br>".join(escape(t) for t in BOOK_SUB_LINES)}</div>
+    <div class="rule"></div>
+    <div class="who">{escape(AUTHOR)}</div>
+    <div class="aff">{"<br>".join(escape(t) for t in AFFILIATION_LINES)}</div>
+  </div>
+  <div class="imprint">
+    <p>Edition {escape(meta["version"])}, {escape(meta["year"])}<br>
+       DOI: <a href="{doi_url}">{escape(meta["doi"])}</a><br>
+       Web edition: <a href="{escape(web)}">{escape(web)}</a></p>
+    <p>© {escape(meta["year"])} {escape(AUTHOR)}. ORCID: <a href="https://orcid.org/{ORCID}">{ORCID}</a><br>
+       Text, figures and data are licensed under
+       <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; code under MIT.</p>
+    <p>Cite as: {escape(cite)} <a href="{doi_url}">{escape(doi_url)}</a></p>
+  </div>
 </div></body></html>"""
 
 
@@ -307,6 +371,12 @@ def main() -> None:
     cover_pages = page_count(OUT / "cover.pdf")
     if cover_pages != 1:
         raise SystemExit(f"cover.pdf rendered {cover_pages} pages, expected 1")
+    meta = citation_meta(CITATION_CFF.read_text(encoding="utf-8"))
+    (OUT / "title.html").write_text(title_page_html(meta), encoding="utf-8")
+    node_render(OUT / "title.html", OUT / "title.pdf")
+    if page_count(OUT / "title.pdf") != 1:
+        raise SystemExit(f"title.pdf rendered {page_count(OUT / 'title.pdf')} pages, expected 1")
+    toc_first = cover_pages + 1           # 0-based index of the first Contents page
 
     # Body first: a Contents row's page number is only knowable by finding its
     # heading in the merged body. Body numbers are body-relative, so the
@@ -334,10 +404,10 @@ def main() -> None:
 
     (OUT / "toc.html").write_text(toc_html(entries, subs), encoding="utf-8")
     node_render(OUT / "toc.html", OUT / "toc.pdf")
-    front_pages = cover_pages + page_count(OUT / "toc.pdf")
+    front_pages = toc_first + page_count(OUT / "toc.pdf")
 
     writer = PdfWriter()
-    for part in ("cover.pdf", "toc.pdf", "_body.pdf"):
+    for part in ("cover.pdf", "title.pdf", "toc.pdf", "_body.pdf"):
         for p in PdfReader(str(OUT / part)).pages:
             writer.add_page(p)
     merged = OUT / "_merged.pdf"
@@ -345,7 +415,7 @@ def main() -> None:
         writer.write(fh)
 
     doc = fitz.open(str(merged))
-    toc_marks = [[1, "Cover", 1], [1, "Contents", cover_pages + 1]]
+    toc_marks = [[1, "Cover", 1], [1, "Title Page", cover_pages + 1], [1, "Contents", toc_first + 1]]
     for e in entries:
         toc_marks.append([1, section_label(e), toc_mark_page(front_pages, e["start_page"])])
         for _hid, text, page in subs.get(e["slug"], []):
@@ -378,7 +448,7 @@ def main() -> None:
             for p in range(pg, end + 1):
                 section_for[p] = text
 
-    for i in range(cover_pages + 1, front_pages):
+    for i in range(toc_first + 1, front_pages):
         page = doc[i]
         stamp_text(page, (12 * mm, 8 * mm), "Contents (continued)", 8, grey_rgb)
         page.draw_line(fitz.Point(12 * mm, 10 * mm), fitz.Point(136 * mm, 10 * mm), color=accent_rgb, width=0.3)
@@ -393,7 +463,7 @@ def main() -> None:
         if not 0 <= target < doc.page_count:
             raise SystemExit(f"contents link for {search_text!r} would point at page {target + 1} "
                              f"of {doc.page_count}; page arithmetic is wrong")
-        for i in range(cover_pages, front_pages):
+        for i in range(toc_first, front_pages):
             hits = doc[i].search_for(search_text)
             if hits:
                 row = hits[0]

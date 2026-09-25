@@ -1,7 +1,7 @@
 import fitz
 
 from assemble import (
-    _two_lines, contents_targets, cover_html, fit_running_head, link_target_page, resolve_subsections, section_label, toc_html,
+    _two_lines, citation_meta, contents_targets, cover_html, title_page_html, fit_running_head, link_target_page, resolve_subsections, section_label, toc_html,
     toc_mark_page,
 )
 from headings import contents_subsections, section_headings
@@ -114,3 +114,17 @@ def test_cover_inlines_the_hero_with_its_colors_filled():
     html = cover_html()
     assert '<svg class="hero"' in html
     assert "{accent}" not in html and "{tint}" not in html and "{data}" not in html
+
+
+def test_citation_meta_reads_the_top_level_keys_only():
+    cff = ('version: 1.0.2\ndate-released: 2026-09-25\ndoi: 10.5281/zenodo.1\nurl: "https://x.org/b/"\n'
+           'preferred-citation:\n  doi: 10.9999/wrong\n  url: "https://wrong/"\n')
+    assert citation_meta(cff) == {"version": "1.0.2", "doi": "10.5281/zenodo.1", "url": "https://x.org/b/",
+                                  "year": "2026"}
+
+
+def test_title_page_carries_affiliation_orcid_edition_and_citation():
+    html = title_page_html({"version": "1.0.2", "doi": "10.5281/zenodo.1", "url": "https://x.org/b/", "year": "2026"})
+    for s in ("Zhejiang University", "0000-0003-3675-5301", "Edition 1.0.2", "https://doi.org/10.5281/zenodo.1",
+              "CC BY 4.0", "Penkov, O. V. (2026)."):
+        assert s in html
