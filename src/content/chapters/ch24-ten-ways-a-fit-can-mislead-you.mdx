@@ -1,0 +1,64 @@
+---
+title: 'Ten Ways a Fit Can Mislead You'
+part: '5'
+number: '24'
+order: 240
+inThisChapter:
+  - Ten ways a fit can look right and be wrong
+  - How each one shows in X-Ray Calc
+  - Where this book deals with each
+---
+
+{/* Chapter 24. Section outline approved 2026-09-25 (OUTLINE.md): choice 1 (b), a stand-in layer as item 6; choice 2 (a). */}
+
+A fit can reach a low χ² and still report a wrong structure. The ten traps of this chapter each happened in this book's own examples. They are listed in the order of the work, from loading the curve to reporting the result.
+
+## 1. 2θ read as θ
+
+A text file's first column is read in the unit the **2θ** box shows at the moment of loading. A file in 2θ loaded with the box unticked puts every point at twice its angle. The model that matches it has about half the period. X-Ray Calc gives no warning. Check one feature you know, such as the first order or the edge, before anything else (<a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#2θ-or-θ-the-mistake-a-text-file-lets-you-make`}>Chapter 10: 2θ or θ: the mistake a text file lets you make</a>).
+
+## 2. A plateau measured too low
+
+A misaligned specimen, or one shorter than the beam's footprint, loses part of the plateau. **Normalize (Auto)** then sets the whole curve too high, and the fit moves the densities and σ values to follow it. CoC4's first order stands at 0.574 of its plateau, where the fitted structure can make at most 0.473. So its plateau is probably low (<a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-plateau-and-the-background`}>Chapter 11: The plateau and the background</a>). Smoothing the data moves the densities too. **Data > Smooth** raises the minima of the curve. A heavy layer's density rises with them. Leave it off (<a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#why-smoothing-stays-off`}>Chapter 14: Why smoothing stays off</a>).
+
+## 3. Orders numbered wrong
+
+A weak or missing order shifts the numbering of every order after it. The period then comes out far off. For CoC4, numbering every order one too high gives 61.80 Å instead of 54.70 Å. Skipping the 2nd order gives 46.22 Å. Both show in the straight line of the orders: 2δ̄ turns negative, or the edge lands four times too far out (<a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#numbering-the-orders`}>Chapter 11: Numbering the orders</a>).
+
+## 4. A period taken from the design
+
+The design says what the deposition was meant to make. The curve says what it made. CoC4 was designed with a period of 54 Å, and its orders give 54.70 Å. Scale the design's layers so that they add up to the measured period. Start the fit from there (<a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#the-periodic-stack`}>Chapter 12: The periodic stack</a>).
+
+## 5. A Δθ copied from another project
+
+Δθ describes one measurement, and it is chosen for that curve (§8.2). The author's projects used values from 0.009 to 0.026°. For CoC4 a scan of one run per value chose 0.014°: χ² 1.2779 at 0.012° and 1.2334 at 0.014°. Scan it for every curve, and don't carry it to the next one (<a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#choosing-δθ-by-a-scan`}>Chapter 16: Choosing Δθ by a scan</a>).
+
+## 6. A layer that stands in for a missing one
+
+When the model lacks a layer, another parameter does its work. A σ grows, or a density moves, until the curve matches. The runs still agree. The cobalt film of Chapter 21, fitted as one layer, ended with σ = 13.8 Å, and 7 Å thicker than with the layers on top. With only a carbon layer on top, that layer climbed to 2.40 g/cm³, the ceiling for sputtered carbon, in place of a denser layer. Without CoC4's contamination layer, the C layers took over: their σ grew from 4.35 to 5.78 Å (<a href={`${import.meta.env.BASE_URL}/ch21-single-films#a-metal-film-and-the-layers-on-top`}>Chapter 21: A metal film and the layers on top</a>; <a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#the-model-is-too-simple`}>Chapter 19: The model is too simple</a>). A σ far larger than its neighbors, or a density on its limit, is the sign. Add the layer the model lacks. Then fit again.
+
+## 7. A clamped scale
+
+**Solve scale in χ²** lets the fit move the scale within the **Window**. When the best factor lies outside it, the fit uses the edge of the window. The Chart Info bar then reads "solved x… at bound". The scale error then goes into the densities. In one laboratory's tests on calculated curves, a 15 % error in the anchor cost 0.67 g/cm³ in the density of Co. The default window of 0.2 held the scale at its bound in up to 54 of 240 fits (<a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#letting-the-fit-solve-the-scale`}>Chapter 14: Letting the fit solve the scale</a>).
+
+## 8. A value decided by its limit
+
+A parameter that ends on its **Min** or **Max** was set by the limit. The curve didn't set it. Widen the limit and fit again (<a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#the-near-bound-rule`}>Chapter 15: The near-bound rule</a>). A σ on its limit of 0, like CoC4's contamination layer, can't be widened. Report it at 0 (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#near-a-limit`}>Chapter 18: Near a limit</a>).
+
+When a value moves with every widening, the curve doesn't fix it at all. The top layers of the W/BN mirror still ended on their limits after four rounds (<a href={`${import.meta.env.BASE_URL}/ch22-graded-multilayers-and-supermirrors#the-wbn-mirror`}>Chapter 22: The W/BN mirror</a>). Report such a value as undetermined.
+
+## 9. A σ that picks its interface by chance
+
+The curve often fixes the two σ values of a period only as a pair. A fit can put the larger σ in either layer, at almost the same χ². For CoC4 the five engine runs of the one-period fit all ended in one valley, at χ² 0.975. A GUI run of the same fit ended in the other, at 1.063, with the larger σ in Co. Report σ as fitted. Don't say which interface is rougher unless every run agrees (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#which-interface-is-rougher`}>Chapter 18: Which interface is rougher?</a>).
+
+## 10. One run
+
+A fit starts from a random swarm, and one run shows one outcome. The spread over runs is what tells a fixed parameter from an undetermined one. In the procedure's tests, three runs understated the spread about 2.5 times. From five runs on, it stayed the same. Some runs also get lost: 4 of the 50 Polynomial runs of the W/BN mirror ended at more than twice the best χ². Five Irregular runs of the Sb/B4C supermirror ended anywhere from χ² 5.2 to 7.1. Run every fit five times, and report the best run with the spread (<a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#several-runs-and-their-spread`}>Chapter 16: Several runs, and their spread</a>).
+
+## Sources
+
+- **Fitting procedure** (Penkov, Peng & Fu 2026): §1.5–1.6, a plateau lowered by misalignment and the first order against it; §2, the period from the curve; §4.3, a clamped scale; §5.3, a density near its limit after smoothing; §7, limits and their widening; §8.2, Δθ a setting of one fit, kept to that curve; §8.4, five runs and the spread over them; §10.13, a parameter that stands in for a missing layer; §10.14, σ without a claim about the rougher interface.
+- **The procedure's amendment rulings** (2026-09-20), #5: a parameter on a bound was decided by the bound and not by the data.
+- **This book's examples**, each from the chapter linked in its item: the CoC5 curve read as θ (Chapter 10); CoC4's plateau ratio (Chapter 11), its numberings (Table 11-2), its design and measured period (Chapter 12), its Δθ scan (Chapter 16), its fits without the contamination layer (Chapter 19) and its σ valleys (Chapters 18 and 19); the preset's scale tests (Chapter 14); the cobalt film (Chapter 21); the W/BN and Sb/B4C fits (Chapter 22). The author's Δθ range is the audit of the author's projects in the methods paper (§4).
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#2θ-or-θ-the-mistake-a-text-file-lets-you-make`}>Chapter 10</a>; <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#numbering-the-orders`}>Chapter 11</a>; <a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#the-periodic-stack`}>Chapter 12</a>; <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#letting-the-fit-solve-the-scale`}>Chapter 14</a>; <a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#the-near-bound-rule`}>Chapter 15</a>; <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#choosing-δθ-by-a-scan`}>Chapter 16</a>; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#which-interface-is-rougher`}>Chapter 18</a>; <a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#the-model-is-too-simple`}>Chapter 19</a>; <a href={`${import.meta.env.BASE_URL}/ch21-single-films#a-metal-film-and-the-layers-on-top`}>Chapter 21</a>; <a href={`${import.meta.env.BASE_URL}/ch22-graded-multilayers-and-supermirrors#the-wbn-mirror`}>Chapter 22</a>; <a href={`${import.meta.env.BASE_URL}/ch23-reporting-a-fit#writing-the-numbers`}>Chapter 23: Writing the numbers</a>; <a href={`${import.meta.env.BASE_URL}/ch25-ten-checks-before-you-trust-a-number#1-does-the-curve-carry-this-number`}>Chapter 25: Ten Checks Before You Trust a Number</a>; <a href={`${import.meta.env.BASE_URL}/ch26-ten-things-x-ray-calc-does-not-fit#1-the-wavelength`}>Chapter 26: Ten Things X-Ray Calc Does Not Fit for You</a>.

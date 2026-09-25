@@ -1,0 +1,42 @@
+Model "fit-20260917-134614-8258" against "P2-04/xrr.dat"
+Measured curve x 0.9390, the solved scale of the last calculation.   Period 54.94 Å,   λ 1.5419 Å,   4317 points
+
+Bragg orders
+n	2θ meas (°)	2θ calc (°)	I meas	R calc	calc / meas	Visible
+1	1.6975	1.6975	0.4534	0.45231	0.998	yes
+2	3.2695	3.2725	0.010713	0.01049	0.979	yes
+3	4.8775	4.8715	0.0030995	0.0030196	0.974	yes
+4	6.4825	6.4765	0.00041681	0.00047759	1.146	yes
+5	8.1025	8.0905	8.0506E-5	6.3228E-5	0.785	yes
+6	9.7135	9.7075	1.2985E-5	1.3858E-5	1.067	yes
+7	11.3365	11.3215	6.4925E-6	1.6302E-6	0.251	yes
+8	12.9595	12.7735	5.1939E-6	1.383E-6	0.266	yes
+
+Critical edge
+2θ (°)	I meas	R calc	calc / meas
+0.5455	0.6147	0.61818	1.006
+0.6715	0.11252	0.11241	0.999
+0.8005	0.032938	0.032568	0.989
+
+Fringes between orders 1 and 2
+Quantity	Value
+Between, 2θ (°)	1.6975 - 3.2695
+Pairs (maximum and next minimum)	42
+Mean contrast, measured	2.173
+Mean contrast, calculated	1.752
+
+Residual by band: log10(R calc / I meas)
+2θ from (°)	2θ to (°)	n	Mean	RMS
+0.4165	2.0350	540	-0.003	0.047
+2.0350	3.6535	539	-0.016	0.088
+3.6535	5.2720	540	-0.010	0.213
+5.2720	6.8905	539	-0.048	0.270
+6.8905	8.5090	540	-0.050	0.188
+8.5090	10.1275	540	-0.001	0.113
+10.1275	11.7460	539	0.002	0.094
+11.7460	13.3645	540	0.014	0.068
+
+Parameters within 5 % of a bound
+Stack	Layer	Parameter	Value	Min	Max	Near
+Top	C	σ	0.00329254	0	15	min
+

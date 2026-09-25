@@ -1,0 +1,102 @@
+---
+title: Introduction
+part: front
+number: ''
+order: 0
+---
+import Tip from '../../components/textbook/Tip.astro';
+import Remember from '../../components/textbook/Remember.astro';
+import Warning from '../../components/textbook/Warning.astro';
+import GoingDeeper from '../../components/textbook/GoingDeeper.astro';
+import InXRayCalc from '../../components/textbook/InXRayCalc.astro';
+
+## About This Book
+
+This book shows you how to fit an X-ray reflectivity (XRR) curve. You start with a curve measured on your sample. At the end you have the thickness, roughness and density of each layer. You also have a report that another person can check.
+
+All the work is done in one program, X-Ray Calc 3. Every step in the book is something you do in its window: a menu command, a dialog or a field you fill in. The book explains the physics you need for the next step in the program, and no more.
+
+The steps come from a written fitting procedure of 13 steps (Penkov, Peng and Fu, 2026). It records how the author fits a curve in X-Ray Calc, with the reason for each step. It agrees with the author's practice in 51 saved projects. Seven of its choices were tested against curves calculated from a known structure. Three failed and were replaced: the choices for the scale, for smoothing and for the end of the fitting range. The book teaches the tested version. <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#four-settings-in-this-order`}>Chapter 14: Four settings, in this order</a> explains the three replacements.
+
+The book has five Parts:
+
+- **Part 1, Getting Started**, says what fitting can tell you, introduces the program and takes you through a first quick fit.
+- **Part 2, The Physics You Need, and No More**, explains how X-rays reflect from thin films. It also explains how X-Ray Calc calculates a curve and how it searches for a fit.
+- **Part 3, The Fitting Workflow, Step by Step**, is the procedure itself, in the order you do it.
+- **Part 4, Special Cases and Reporting**, covers density, single films, graded multilayers and the final report.
+- **Part 5, The Part of Tens**, gives short lists to check a fit against.
+
+### Conventions used in this book
+
+- **Menu commands are in bold**, with > between the levels. **Data > Normalize (Auto)** means: open the **Data** menu and choose **Normalize (Auto)**. Buttons, dialogs and fields are also in bold, spelled as the program shows them.
+- **Every length is in ångströms (Å)**, including roughness and wavelength. Density is in g/cm³, and angles are in degrees. These are the program's own units, so the numbers in the book match the numbers on your screen.
+- **Every angle is labeled.** The program's chart shows the angle 2θ. The physics uses θ, the angle between the beam and the surface. So the book writes 2θ = 1.2° or θ = 0.6°, never a bare 0.6°. <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#2θ-or-θ-the-angle-on-your-screen`}>Chapter 2: 2θ or θ: the angle on your screen</a> shows where the program sets the angle it displays.
+- **Numbers from the author's laboratory are marked as such.** Each one is an example from one instrument. Your instrument needs its own value.
+
+Each chapter works on its own. When a chapter needs an earlier one, it names it in one sentence with a link.
+
+The book has a web edition and a PDF edition with the same text.
+
+## Foolish Assumptions
+
+The book assumes a few things about you:
+
+- You have a measured XRR curve, or you'll have one soon.
+- You know what a thin film is.
+- You have never fitted an XRR curve.
+- You haven't taken a course in X-ray optics. Part 2 gives you the physics you need.
+- You have a PC with 64-bit Windows 10 or later.
+
+You don't need to program. You also don't need to know how the fitting algorithm works inside. <a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#the-swarm`}>Chapter 9: How X-Ray Calc Finds a Fit</a> explains the part of it you need.
+
+## Icons Used in This Book
+
+Some paragraphs carry an icon. Each icon means one thing.
+
+<Tip>A shortcut, or a faster way to do a step in X-Ray Calc.</Tip>
+
+<Remember>A rule you'll need again in later chapters.</Remember>
+
+<Warning>A mistake that gives you a wrong number and no error message. The fit finishes and the result looks normal.</Warning>
+
+<GoingDeeper>The physics, the math or the reason behind a step. You can skip it and still do the fit. In the web edition this box stays closed until you open it.</GoingDeeper>
+
+<InXRayCalc>The exact menu command, dialog and field for a step described in the text.</InXRayCalc>
+
+## Beyond the Book
+
+X-Ray Calc has its own manual. It describes every dialog, including features this book doesn't use.
+
+<InXRayCalc>**Help > User Manual** opens the program's manual. The shortcut is F1.</InXRayCalc>
+
+The X-Ray Calc wiki covers the same ground for new users: getting started, manual fitting and working with measured data. It is at [github.com/OleksiyPenkov/X-RayCalc3/wiki](https://github.com/OleksiyPenkov/X-RayCalc3/wiki).
+
+X-Ray Calc installs with demonstration projects in its Examples folder. <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#opening-a-demo-project`}>Chapter 2: Opening a demo project</a> opens one of them. The worked examples in this book use measured curves. They come with the book as X-Ray Calc projects (`.xrcx` files). {/* OUTLINE open question 4: which curves, and how they are distributed. */}
+
+The web edition has figures that you can change. In <a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#the-variants-and-what-they-move`}>Chapter 13: The Sensitivity Check</a>, for example, a slider changes one parameter of a model, and you see which feature of the curve moves. The PDF shows the same figures as fixed panels.
+
+<a href={`${import.meta.env.BASE_URL}/ch25-ten-checks-before-you-trust-a-number#1-does-the-curve-carry-this-number`}>Chapter 25: Ten Checks Before You Trust a Number</a> is a one-page checklist. Print it and keep it next to the computer you fit on.
+
+If you publish a result from X-Ray Calc, cite the two papers that describe the program: Penkov et al. (2020) and Penkov et al. (2024). The full references are in the Sources section.
+
+## Where to Go from Here
+
+- **XRR is new to you:** start with <a href={`${import.meta.env.BASE_URL}/ch1-what-xrr-fitting-is#what-an-xrr-measurement-records`}>Chapter 1: What XRR Fitting Is, and What It Can Tell You</a>. Then read <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#getting-x-ray-calc`}>Chapter 2: Meet X-Ray Calc 3</a> and <a href={`${import.meta.env.BASE_URL}/ch3-your-first-fit#the-example`}>Chapter 3: Your First Fit, the Short Way</a>.
+- **You have used X-Ray Calc to calculate curves:** start with <a href={`${import.meta.env.BASE_URL}/ch3-your-first-fit#the-example`}>Chapter 3: Your First Fit, the Short Way</a>. It shows a whole fit and names the chapter that explains each step.
+- **You know the physics of X-ray reflection:** skip Part 2 and start with <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#two-ways-in-an-xrdml-file-or-a-text-file`}>Chapter 10: Is This Curve Worth Fitting?</a> Every chapter in Part 3 names the section of Part 2 it relies on.
+- **You have a fit and you're not sure it is right:** read <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#χ-is-one-check-among-several`}>Chapter 18: Judging a Fit</a>, and then work through the checklist in <a href={`${import.meta.env.BASE_URL}/ch25-ten-checks-before-you-trust-a-number#1-does-the-curve-carry-this-number`}>Chapter 25: Ten Checks Before You Trust a Number</a>.
+
+For the whole workflow on one page, see <a href={`${import.meta.env.BASE_URL}/ch1-what-xrr-fitting-is#the-whole-workflow-on-one-page`}>Chapter 1: The whole workflow on one page</a>.
+
+## Sources
+
+- **The fitting procedure:** Penkov, O., Peng, J. & Fu, H. (2026). *An XRR fitting procedure for a laboratory LLM agent.* Zenodo, [doi:10.5281/zenodo.22851595](https://doi.org/10.5281/zenodo.22851595). It gives the 13 steps. The book returns each step to the X-Ray Calc action it came from.
+- **How the procedure was recorded and tested:** the methods paper on the procedure, Penkov, O. V., Peng, J. & Fu, H. (2026). *Teaching an LLM agent to fit XRR curves with X-Ray Calc 3.* arXiv preprint, [arXiv:2609.28926](https://arxiv.org/abs/2609.28926), §3–4. §4 describes the recording while the author fitted in X-Ray Calc, and the audit against 51 of the author's projects. Table 1 lists the nine conditioning decisions. Seven of them were tested against curves calculated from a known structure. Three were revised: the scale (now solved inside the fit), smoothing (now off) and the end of the fitting range (now at least the first seven predicted orders).
+- **X-Ray Calc Help:** *Installation* → *System Requirements* (Windows 10 or later); *Quick Start* → *Exploring the Demo Projects* (the Examples folder); *Introduction* (the reference to cite).
+- **The X-Ray Calc 3 installer script** (`XRayCalc3Setup.iss`): it installs only on 64-bit Windows. The Help says only that 64-bit is recommended, and the book follows the installer.
+- **The X-Ray Calc 3 source**, main window: the **Help > User Manual** command, its F1 shortcut, and the **Data > Normalize (Auto)** command used as the example of a menu path.
+- **The papers that describe the program:**
+  - Penkov, O. V., Kopylets, I. A., Khadem, M. & Qin, T. (2020). X-Ray Calc: a software for the simulation of X-ray reflectivity. *SoftwareX* 12, 100528. [doi:10.1016/j.softx.2020.100528](https://doi.org/10.1016/j.softx.2020.100528)
+  - Penkov, O. V., Li, M., Mikki, S., Devizenko, A. & Kopylets, I. (2024). X-Ray Calc 3: improved software for simulation and inverse problem solving for X-ray reflectivity. *J. Appl. Cryst.* 57, 555–566. [doi:10.1107/S1600576724001031](https://doi.org/10.1107/S1600576724001031)
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/ch1-what-xrr-fitting-is#what-an-xrr-measurement-records`}>Chapter 1</a>; <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#getting-x-ray-calc`}>Chapter 2</a>; <a href={`${import.meta.env.BASE_URL}/ch3-your-first-fit#the-example`}>Chapter 3</a>; <a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#the-swarm`}>Chapter 9</a>; <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#two-ways-in-an-xrdml-file-or-a-text-file`}>Chapter 10</a>; <a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#the-variants-and-what-they-move`}>Chapter 13</a>; <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#four-settings-in-this-order`}>Chapter 14: Four settings, in this order</a>; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#χ-is-one-check-among-several`}>Chapter 18: Judging a Fit</a>; <a href={`${import.meta.env.BASE_URL}/ch25-ten-checks-before-you-trust-a-number#1-does-the-curve-carry-this-number`}>Chapter 25: Ten Checks Before You Trust a Number</a>; <a href={`${import.meta.env.BASE_URL}/appendix-b-menus#the-menus`}>Appendix B: Menus, Buttons and Keys</a>.

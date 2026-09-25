@@ -1,0 +1,65 @@
+Figure 16-1: the scan (first seed)
+  Δθ 0.009°  χ² 1.4509  σ(C) 2.53  σ(Co) 4.22  C smaller
+  Δθ 0.010°  χ² 1.3801  σ(C) 2.53  σ(Co) 4.22  C smaller
+  Δθ 0.011°  χ² 1.3220  σ(C) 2.53  σ(Co) 4.23  C smaller
+  Δθ 0.012°  χ² 1.2779  σ(C) 2.53  σ(Co) 4.22  C smaller
+  Δθ 0.013°  χ² 1.2479  σ(C) 2.53  σ(Co) 4.22  C smaller
+  Δθ 0.014°  χ² 1.2334  σ(C) 2.52  σ(Co) 4.21  C smaller
+  Δθ 0.015°  χ² 1.2337  σ(C) 2.53  σ(Co) 4.23  C smaller
+  Δθ 0.016°  χ² 1.2320  σ(C) 4.33  σ(Co) 2.59  C larger
+  Δθ 0.017°  χ² 1.2507  σ(C) 4.36  σ(Co) 2.59  C larger
+  Δθ 0.018°  χ² 1.2851  σ(C) 4.33  σ(Co) 2.60  C larger
+  Δθ 0.019°  χ² 1.3342  σ(C) 4.30  σ(Co) 2.60  C larger
+  Δθ 0.020°  χ² 1.3979  σ(C) 4.38  σ(Co) 2.61  C larger
+  lowest χ² in the window: Δθ 0.014° (1.2334)
+  lowest χ² of the whole scan: Δθ 0.016° (1.2320)
+
+Figure 16-2 and the fringe check (mean contrast between orders 1 and 2)
+  Δθ 0.009°: measured 2.17, model 1.94, fringes 42, θ [0.84875, 1.63475]
+  Δθ 0.010°: measured 2.17, model 1.87, fringes 42, θ [0.84875, 1.63475]
+  Δθ 0.011°: measured 2.17, model 1.80, fringes 42, θ [0.84875, 1.63475]
+  Δθ 0.012°: measured 2.17, model 1.72, fringes 42, θ [0.84875, 1.63475]
+  Δθ 0.013°: measured 2.17, model 1.66, fringes 42, θ [0.84875, 1.63475]
+  Δθ 0.014°: measured 2.17, model 1.60, fringes 42, θ [0.84875, 1.63475]
+  Δθ 0.015°: measured 2.17, model 1.54, fringes 42, θ [0.84875, 1.63475]
+  Δθ 0.016°: measured 2.17, model 1.59, fringes 42, θ [0.84875, 1.63475]
+  Δθ 0.017°: measured 2.17, model 1.53, fringes 42, θ [0.84875, 1.63475]
+  Δθ 0.018°: measured 2.17, model 1.47, fringes 42, θ [0.84875, 1.63475]
+  Δθ 0.019°: measured 2.17, model 1.42, fringes 42, θ [0.84875, 1.63475]
+  Δθ 0.020°: measured 2.17, model 1.38, fringes 42, θ [0.84875, 1.63475]
+  best run at 0.012: seed 20260921, χ² 1.2779, scale 0.853557, contrast 1.723
+  best run at 0.014: seed 20260921, χ² 1.2334, scale 0.833384, contrast 1.600
+
+Table 16-2: population × iterations, five runs each, Δθ = 0.012°
+  500 × 200: 3 of 5 in 'C smaller'; χ² [1.318, 1.3182, 1.2783, 1.2787, 1.2787]; best 1.2783; σ(C) 3.23 ± 0.97; σ(Co) 3.56 ± 0.89; ρ(Co) 7.347 ± 0.000; top H 11.57 ± 0.11; time 1.0 s on None
+     other valley: χ² [1.318, 1.3182]
+  2000 × 200: 4 of 5 in 'C smaller'; χ² [1.2785, 1.2795, 1.2784, 1.3176, 1.278]; best 1.2780; σ(C) 2.88 ± 0.79; σ(Co) 3.89 ± 0.73; ρ(Co) 7.342 ± 0.012; top H 11.60 ± 0.03; time 1.8 s on None
+     other valley: χ² [1.3176]
+  5000 × 200: 5 of 5 in 'C smaller'; χ² [1.2779, 1.2779, 1.278, 1.2783, 1.2779]; best 1.2779; σ(C) 2.53 ± 0.00; σ(Co) 4.22 ± 0.01; ρ(Co) 7.352 ± 0.006; top H 11.62 ± 0.03; time 3.4 s on None
+  500 × 2000: 5 of 5 in 'C smaller'; χ² [1.2766, 1.2777, 1.278, 1.2785, 1.2786]; best 1.2766; σ(C) 2.53 ± 0.00; σ(Co) 4.22 ± 0.00; ρ(Co) 7.348 ± 0.000; top H 11.63 ± 0.01; time 7.6 s on None
+  5000 × 100: 5 of 5 in 'C smaller'; χ² [1.2785, 1.2779, 1.2784, 1.2785, 1.2786]; best 1.2779; σ(C) 2.53 ± 0.00; σ(Co) 4.22 ± 0.01; ρ(Co) 7.347 ± 0.001; top H 11.62 ± 0.03; time 1.8 s on None
+
+Table 16-3 and the window: the five runs at each Δθ
+  Δθ 0.012: χ² 1.2780 ± 0.0002; best 1.2779; 5 of 5 in 'C smaller'
+  Δθ 0.013: χ² 1.2484 ± 0.0003; best 1.2479; 5 of 5 in 'C smaller'
+  Δθ 0.014: χ² 1.2374 ± 0.0042; best 1.2334; 3 of 5 in 'C smaller'
+  Δθ 0.015: χ² 1.2308 ± 0.0025; best 1.2288; 2 of 5 in 'C smaller'
+
+  Δθ 0.014 runs:
+    seed 20260921: χ² 1.2334  C H 31.35 σ 2.52 ρ 2.023 | Co H 23.35 σ 4.21 ρ 7.303 | top H 11.64 σ 0.000 ρ 0.768 | scale 0.833384
+    seed 20260922: χ² 1.2422  C H 31.30 σ 4.31 ρ 1.960 | Co H 23.40 σ 2.59 ρ 7.325 | top H 11.63 σ 0.109 ρ 0.805 | scale 0.84378
+    seed 20260923: χ² 1.2339  C H 31.36 σ 2.53 ρ 2.003 | Co H 23.34 σ 4.24 ρ 7.345 | top H 11.68 σ 0.058 ρ 0.769 | scale 0.844283
+    seed 20260924: χ² 1.2415  C H 31.30 σ 4.31 ρ 1.962 | Co H 23.40 σ 2.59 ρ 7.348 | top H 11.66 σ 0.464 ρ 0.807 | scale 0.848085
+    seed 20260925: χ² 1.2359  C H 31.36 σ 2.54 ρ 1.982 | Co H 23.34 σ 4.27 ρ 7.381 | top H 11.75 σ 0.107 ρ 0.734 | scale 0.854241
+  best run: seed 20260921, χ² 1.2334
+    C thickness: best 31.35, sd 0.03, range 31.30–31.36
+    C sigma: best 2.52, sd 0.97, range 2.52–4.31
+    C density: best 2.023, sd 0.027, range 1.960–2.023
+    Co thickness: best 23.35, sd 0.03, range 23.34–23.40
+    Co sigma: best 4.21, sd 0.90, range 2.59–4.27
+    Co density: best 7.303, sd 0.029, range 7.303–7.381
+    top thickness: best 11.64, sd 0.05, range 11.63–11.75
+    top sigma: best 0.00, sd 0.18, range 0.00–0.46
+    top density: best 0.768, sd 0.030, range 0.734–0.807
+    χ²: best 1.2334, sd 0.0042
+    period C + Co: [54.7, 54.7, 54.7, 54.7, 54.7]

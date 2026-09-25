@@ -1,0 +1,37 @@
+{
+ "substrate": {
+  "material": "SiO2",
+  "sigma": 3.8,
+  "density": 2.5
+ },
+ "stacks": [
+  {
+   "N": 20,
+   "layers": [
+    {
+     "material": "C",
+     "thickness": 31.4,
+     "sigma": 4.0,
+     "density": 2.0
+    },
+    {
+     "material": "Co",
+     "thickness": 23.3,
+     "sigma": 4.0,
+     "density": 8.0
+    }
+   ]
+  },
+  {
+   "N": 1,
+   "layers": [
+    {
+     "material": "C",
+     "thickness": 15.0,
+     "sigma": 3.0,
+     "density": 0.9
+    }
+   ]
+  }
+ ]
+}

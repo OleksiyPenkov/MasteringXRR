@@ -1,0 +1,30 @@
+Normalize (Auto): data divided by 1.1877 (R_model at θ_max = 0.841935); one count 1.6425e-06 → 1.3829e-06; start model solved ratio (window 0.7) 0.80803
+
+smoothing, one pass of Data > Smooth (MovAvg 5):
+  order 1: peak 4.829e-01 → 4.795e-01 (0.99×)
+  order 2: peak 1.141e-02 → 1.121e-02 (0.98×)
+  order 3: peak 3.301e-03 → 3.214e-03 (0.97×)
+  order 4: peak 4.439e-04 → 4.294e-04 (0.97×)
+  order 5: peak 8.574e-05 → 6.707e-05 (0.78×)
+  order 6: peak 1.383e-05 → 1.129e-05 (0.82×)
+  order 7: peak 6.914e-06 → 3.688e-06 (0.53×)
+  order 8: peak 5.532e-06 → 2.305e-06 (0.42×)
+  fringes 2θ 1.9–3.0°, raw: max/min of the whole band 169.59; 70 local maxima, 69 local minima
+  fringes 2θ 1.9–3.0°, one pass: max/min of the whole band 139.04; 14 local maxima, 14 local minima
+
+range CoC4: 2θ 0.4165–13.366° (order 8 at 12.9595°, spacing 8→9 1.625°), measured end 14.796°
+range CoC5: seed D = 50.34 Å, 2δ̄ = 2.530e-05; order 7 predicted at 12.322°, 8 at 14.087°; end 13.205°, measured end 13.998°, old end 8.4°
+
+wrote fig-14-3-fit-settings.png (608, 118)
+
+Table 14-2 (mean ± sample sd over five seeds; best = lowest χ²):
+  held        ratio 1.000 ± 0.000  ρC 1.764 ± 0.030  ρCo 7.834 ± 0.003  HC 31.217 ± 0.052  HCo 23.483 ± 0.052  χ² 1.458 ± 0.009  clamped 0
+      best seed 20260925: χ² 1.4477, ratio 1, C {'thickness': 31.2774, 'sigma': 2.59686, 'density': 1.79273}, Co {'thickness': 23.4228, 'sigma': 4.31348, 'density': 7.83043}, top {'thickness': 11.8991, 'sigma': 1.00009, 'density': 0.655527}
+      σ pairs (C, Co): [(4.49, 2.66), (2.6, 4.31), (4.51, 2.65), (4.49, 2.66), (2.6, 4.31)]
+  solved 0.2  ratio 0.852 ± 0.001  ρC 2.003 ± 0.004  ρCo 7.346 ± 0.010  HC 31.364 ± 0.011  HCo 23.337 ± 0.011  χ² 1.284 ± 0.001  clamped 0
+      best seed 20260923: χ² 1.2832, ratio 0.851416, C {'thickness': 31.357, 'sigma': 2.52897, 'density': 1.99999}, Co {'thickness': 23.3432, 'sigma': 4.21279, 'density': 7.34786}, top {'thickness': 11.6772, 'sigma': 1.00041, 'density': 0.765337}
+      σ pairs (C, Co): [(2.53, 4.22), (2.53, 4.22), (2.53, 4.21), (2.51, 4.16), (2.53, 4.22)]
+  solved 0.7  ratio 0.853 ± 0.003  ρC 1.990 ± 0.017  ρCo 7.351 ± 0.007  HC 31.335 ± 0.032  HCo 23.365 ± 0.032  χ² 1.291 ± 0.015  clamped 0
+      best seed 20260923: χ² 1.2832, ratio 0.851416, C {'thickness': 31.357, 'sigma': 2.52897, 'density': 1.99999}, Co {'thickness': 23.3432, 'sigma': 4.21279, 'density': 7.34786}, top {'thickness': 11.6772, 'sigma': 1.00041, 'density': 0.765337}
+      σ pairs (C, Co): [(2.53, 4.22), (4.29, 2.58), (2.53, 4.21), (2.54, 4.23), (2.53, 4.22)]
+  window 0.2 allows 0.8333–1.2; 0.7 allows 0.5882–1.7

@@ -1,0 +1,12 @@
+---
+import { renderInline } from '../../lib/inline-markdown';
+interface Props { headers: string[]; rows: string[][]; keepHeaderCase?: boolean; }
+// keepHeaderCase opts one table out of the house uppercase heading style. Use it
+// only where uppercasing would change a *symbol* rather than just a unit label —
+// e.g. a header carrying λ or v̄, which would become Λ and V̄.
+const { headers, rows, keepHeaderCase = false } = Astro.props;
+---
+<table class:list={['data-table', keepHeaderCase && 'keep-header-case']}>
+  <thead><tr>{headers.map((h) => <th set:html={renderInline(h)} />)}</tr></thead>
+  <tbody>{rows.map((r) => <tr>{r.map((c) => <td set:html={renderInline(c)} />)}</tr>)}</tbody>
+</table>

@@ -1,0 +1,574 @@
+{
+ "model-start": {
+  "Stacks": [
+   {
+    "T": "Top",
+    "N": 1,
+    "Layers": [
+     {
+      "M": "C",
+      "H": 11.508,
+      "HP": false,
+      "HF": false,
+      "Hmin": 0.1,
+      "Hmax": 40,
+      "ProfileH": "",
+      "s": 0.013446,
+      "SP": false,
+      "SF": false,
+      "Smin": 0.0,
+      "Smax": 15.0,
+      "ProfileS": "",
+      "r": 0.877321,
+      "RP": false,
+      "RF": false,
+      "Rmin": 0.2,
+      "Rmax": 1.8,
+      "ProfileR": ""
+     }
+    ]
+   },
+   {
+    "T": "ML",
+    "N": 20,
+    "Layers": [
+     {
+      "M": "C",
+      "H": 31.3439,
+      "HP": false,
+      "HF": false,
+      "Hmin": 20.93,
+      "Hmax": 41.87,
+      "ProfileH": "",
+      "s": 4.34591,
+      "SP": true,
+      "SF": false,
+      "Smin": 1,
+      "Smax": 8,
+      "ProfileS": "",
+      "r": 2.00455,
+      "RP": true,
+      "RF": false,
+      "Rmin": 1.5,
+      "Rmax": 2.4,
+      "ProfileR": ""
+     },
+     {
+      "M": "Co",
+      "H": 23.4458,
+      "HP": false,
+      "HF": false,
+      "Hmin": 15.53,
+      "Hmax": 31.07,
+      "ProfileH": "",
+      "s": 2.62413,
+      "SP": true,
+      "SF": false,
+      "Smin": 1,
+      "Smax": 8,
+      "ProfileS": "",
+      "r": 7.61481,
+      "RP": true,
+      "RF": false,
+      "Rmin": 6.0,
+      "Rmax": 8.79,
+      "ProfileR": ""
+     }
+    ]
+   }
+  ],
+  "Subs": {
+   "M": "SiO2",
+   "s": 3.8,
+   "r": 2.5
+  }
+ },
+ "paste-ok": true,
+ "start-texts": [
+  [
+   "TJvDesignScrollBox",
+   "Box"
+  ],
+  [
+   "TXRCStack",
+   "ML"
+  ],
+  [
+   "TRzSpinEdit",
+   "7.61"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.62"
+  ],
+  [
+   "TRzSpinEdit",
+   "23.45"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.00"
+  ],
+  [
+   "TRzSpinEdit",
+   "4.35"
+  ],
+  [
+   "TRzSpinEdit",
+   "31.34"
+  ],
+  [
+   "TXRCStack",
+   "Top"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.88"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.01"
+  ],
+  [
+   "TRzSpinEdit",
+   "11.51"
+  ],
+  [
+   "TXRCStack",
+   "Substrate"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.50"
+  ],
+  [
+   "TRzSpinEdit",
+   "3.80"
+  ],
+  [
+   "TRzComboBox",
+   "0.1"
+  ],
+  [
+   "Edit",
+   "0.1"
+  ],
+  [
+   "TCheckBox",
+   "P2-04/xrr.dat"
+  ],
+  [
+   "TCheckBox",
+   "fit-20260917-134614-8258"
+  ],
+  [
+   "TRzComboBox",
+   "1.383E-6"
+  ],
+  [
+   "Edit",
+   "1.383E-6"
+  ],
+  [
+   "TRzGroupBox",
+   "N"
+  ],
+  [
+   "TEdit",
+   "4000"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "by wave"
+  ],
+  [
+   "TRzGroupButton",
+   "by angle"
+  ],
+  [
+   "TRzCheckBox",
+   "2q"
+  ],
+  [
+   "TEdit",
+   "1.541874"
+  ],
+  [
+   "TEdit",
+   "0.014"
+  ],
+  [
+   "TEdit",
+   "13.3659"
+  ],
+  [
+   "TEdit",
+   "0.4165"
+  ],
+  [
+   "TEdit",
+   "0"
+  ],
+  [
+   "TEdit",
+   "85"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzRadioGroup",
+   "Polarization"
+  ],
+  [
+   "TRzGroupButton",
+   "sp-type"
+  ],
+  [
+   "TRzGroupButton",
+   "s-type"
+  ],
+  [
+   "TRzPanel",
+   "Fitting"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TRzCheckBox",
+   "Free period ±"
+  ],
+  [
+   "TEdit",
+   "0.2"
+  ],
+  [
+   "TRzCheckBox",
+   "Solve scale in χ2"
+  ],
+  [
+   "TRzCheckBox",
+   "Smooth"
+  ],
+  [
+   "TRzCheckBox",
+   "PW χ2"
+  ],
+  [
+   "TComboBox",
+   "None"
+  ],
+  [
+   "Edit",
+   "None"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzCheckBox",
+   "SeedR"
+  ],
+  [
+   "TRzCheckBox",
+   "Shake"
+  ],
+  [
+   "TEdit",
+   "5000"
+  ],
+  [
+   "TEdit",
+   "200"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "Polynomial"
+  ],
+  [
+   "TRzGroupButton",
+   "Periodic"
+  ],
+  [
+   "TRzGroupButton",
+   "Irregular"
+  ],
+  [
+   "TRzTabSheet",
+   "Thickness"
+  ],
+  [
+   "TRzMemo",
+   "fit_xrr on P2-04/xrr.dat, intensities x 1.593E-006"
+  ]
+ ],
+ "fit-button": "Run",
+ "fit-warning": [
+  "#32770",
+  "Warning",
+  "&Yes",
+  "&No"
+ ],
+ "after-texts": [
+  [
+   "TJvDesignScrollBox",
+   "Box"
+  ],
+  [
+   "TXRCStack",
+   "ML"
+  ],
+  [
+   "TRzSpinEdit",
+   "7.85"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.64"
+  ],
+  [
+   "TRzSpinEdit",
+   "23.50"
+  ],
+  [
+   "TRzSpinEdit",
+   "1.98"
+  ],
+  [
+   "TRzSpinEdit",
+   "4.37"
+  ],
+  [
+   "TRzSpinEdit",
+   "31.44"
+  ],
+  [
+   "TXRCStack",
+   "Top"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.90"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.00"
+  ],
+  [
+   "TRzSpinEdit",
+   "11.43"
+  ],
+  [
+   "TXRCStack",
+   "Substrate"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.50"
+  ],
+  [
+   "TRzSpinEdit",
+   "3.80"
+  ],
+  [
+   "TRzComboBox",
+   "0.1"
+  ],
+  [
+   "Edit",
+   "0.1"
+  ],
+  [
+   "TCheckBox",
+   "P2-04/xrr.dat"
+  ],
+  [
+   "TCheckBox",
+   "fit-20260917-134614-8258"
+  ],
+  [
+   "TRzComboBox",
+   "1.383E-6"
+  ],
+  [
+   "Edit",
+   "1.383E-6"
+  ],
+  [
+   "TRzGroupBox",
+   "N"
+  ],
+  [
+   "TEdit",
+   "4000"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "by wave"
+  ],
+  [
+   "TRzGroupButton",
+   "by angle"
+  ],
+  [
+   "TRzCheckBox",
+   "2q"
+  ],
+  [
+   "TEdit",
+   "1.541874"
+  ],
+  [
+   "TEdit",
+   "0.014"
+  ],
+  [
+   "TEdit",
+   "13.3659"
+  ],
+  [
+   "TEdit",
+   "0.4165"
+  ],
+  [
+   "TEdit",
+   "0"
+  ],
+  [
+   "TEdit",
+   "85"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzRadioGroup",
+   "Polarization"
+  ],
+  [
+   "TRzGroupButton",
+   "sp-type"
+  ],
+  [
+   "TRzGroupButton",
+   "s-type"
+  ],
+  [
+   "TRzPanel",
+   "Fitting"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TRzCheckBox",
+   "Free period ±"
+  ],
+  [
+   "TEdit",
+   "0.2"
+  ],
+  [
+   "TRzCheckBox",
+   "Solve scale in χ2"
+  ],
+  [
+   "TRzCheckBox",
+   "Smooth"
+  ],
+  [
+   "TRzCheckBox",
+   "PW χ2"
+  ],
+  [
+   "TComboBox",
+   "None"
+  ],
+  [
+   "Edit",
+   "None"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzCheckBox",
+   "SeedR"
+  ],
+  [
+   "TRzCheckBox",
+   "Shake"
+  ],
+  [
+   "TEdit",
+   "5000"
+  ],
+  [
+   "TEdit",
+   "200"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "Polynomial"
+  ],
+  [
+   "TRzGroupButton",
+   "Periodic"
+  ],
+  [
+   "TRzGroupButton",
+   "Irregular"
+  ],
+  [
+   "TRzTabSheet",
+   "Convergence"
+  ],
+  [
+   "TCheckBox",
+   "Worst"
+  ],
+  [
+   "TRzButton",
+   "Copy"
+  ],
+  [
+   "TRzTabSheet",
+   "Thickness"
+  ],
+  [
+   "TRzMemo",
+   "fit_xrr on P2-04/xrr.dat, intensities x 1.593E-006"
+  ]
+ ]
+}

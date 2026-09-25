@@ -1,0 +1,28 @@
+{
+ "measurement_id": "CoC5/CoC5.xrdml",
+ "file": "inbox\\CoC5\\CoC5.xrdml",
+ "points": 4635,
+ "points_returned": 4635,
+ "theta_range": [
+  0.04775,
+  6.99875
+ ],
+ "columns": "2theta,intensity",
+ "converted_from_2theta": true,
+ "theta_unit": "2theta",
+ "theta_unit_assumed": false,
+ "lambda": 1.54187,
+ "lambda_source": "file: K-Alpha doublet weighted by ratioKAlpha2KAlpha1 0.5",
+ "meta": null,
+ "header": [
+  "* XRDML 1.6, scan 2Theta-Omega (Continuous), status Aborted",
+  "* Sample: Co-C(260917A)",
+  "* Wavelength: 1.541874 A (Cu), K-Alpha doublet weighted by ratioKAlpha2KAlpha1 0.5; kAlpha1 1.540598, kAlpha2 1.544426",
+  "* Detector: PIXcel3D-Medipix3 1x1 detector, readOutPeriod 0.05 s",
+  "* Started: 2026-09-18T12:43:25+08:00",
+  "* Counting time: 0.176 s per point; counts / s, no attenuation factors in the file",
+  "* Intensity normalised to 1 at the maximum; peak rate 6107733 counts / s (counts x attenuation factor / counting time, before normalisation)",
+  "* Zero counts: 2085 of 4635 points floored to the smallest positive intensity before each, at most 1000 counts / s",
+  "* Angle column: 2Theta as scanned, 4635 points"
+ ]
+}

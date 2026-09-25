@@ -1,0 +1,524 @@
+{
+ "request": {
+  "lambda": 1.541874,
+  "polarization": "s",
+  "structure": {
+   "substrate": {
+    "material": "SiO2",
+    "sigma": 3.8,
+    "density": 2.5
+   },
+   "stacks": [
+    {
+     "N": 20,
+     "layers": [
+      {
+       "material": "C",
+       "thickness": 31.4,
+       "sigma": 4.0,
+       "density": 2.0
+      },
+      {
+       "material": "Co",
+       "thickness": 23.3,
+       "sigma": 4.0,
+       "density": 8.0
+      }
+     ]
+    },
+    {
+     "N": 1,
+     "layers": [
+      {
+       "material": "C",
+       "thickness": 15.0,
+       "sigma": 3.0,
+       "density": 0.9
+      }
+     ]
+    }
+   ]
+  },
+  "scale": "auto",
+  "auto_theta_max": 0.5,
+  "r_min": 1.383e-06,
+  "theta_range": {
+   "min": 0.20825,
+   "max": 6.6829314243197455
+  },
+  "resolution": 0.012,
+  "chi2": {
+   "theta_weight": 0,
+   "point_weight": true
+  },
+  "smooth": {
+   "passes": 0
+  },
+  "points_inline_max": 0,
+  "free": [
+   {
+    "stack": 0,
+    "layer": 0,
+    "parameters": [
+     "thickness",
+     "sigma",
+     "density"
+    ]
+   },
+   {
+    "stack": 0,
+    "layer": 1,
+    "parameters": [
+     "thickness",
+     "sigma",
+     "density"
+    ]
+   },
+   {
+    "stack": 1,
+    "layer": 0,
+    "parameters": [
+     "thickness",
+     "sigma",
+     "density"
+    ]
+   }
+  ],
+  "bounds": [
+   {
+    "stack": 0,
+    "layer": 0,
+    "parameter": "thickness",
+    "min": 20.93,
+    "max": 41.87
+   },
+   {
+    "stack": 0,
+    "layer": 0,
+    "parameter": "sigma",
+    "min": 1,
+    "max": 8
+   },
+   {
+    "stack": 0,
+    "layer": 0,
+    "parameter": "density",
+    "min": 1.5,
+    "max": 2.4
+   },
+   {
+    "stack": 0,
+    "layer": 1,
+    "parameter": "thickness",
+    "min": 15.53,
+    "max": 31.07
+   },
+   {
+    "stack": 0,
+    "layer": 1,
+    "parameter": "sigma",
+    "min": 1,
+    "max": 8
+   },
+   {
+    "stack": 0,
+    "layer": 1,
+    "parameter": "density",
+    "min": 6.0,
+    "max": 8.79
+   },
+   {
+    "stack": 1,
+    "layer": 0,
+    "parameter": "thickness",
+    "min": 5,
+    "max": 40
+   },
+   {
+    "stack": 1,
+    "layer": 0,
+    "parameter": "sigma",
+    "min": 0.0,
+    "max": 10
+   },
+   {
+    "stack": 1,
+    "layer": 0,
+    "parameter": "density",
+    "min": 0.6,
+    "max": 1.4
+   }
+  ],
+  "scale_solve": true,
+  "scale_solve_window": 0.2
+ },
+ "optimizer": {
+  "iterations": 200,
+  "population": 5000,
+  "range_seed": true
+ },
+ "widened": [
+  {
+   "seed": 20260921,
+   "chi2": 1.27788,
+   "chi2_plain": 1.19142,
+   "scale_ratio": 0.853557,
+   "scale_clamped": false,
+   "near_bounds": [
+    {
+     "target": "layer",
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "value": 0.0160993,
+     "min": 0,
+     "max": 10,
+     "bound": "min",
+     "margin_fraction": 0.00160993
+    }
+   ],
+   "C": {
+    "thickness": 31.3553,
+    "sigma": 2.5315,
+    "density": 2.00488
+   },
+   "Co": {
+    "thickness": 23.3449,
+    "sigma": 4.21818,
+    "density": 7.35841
+   },
+   "top": {
+    "thickness": 11.6561,
+    "sigma": 0.0160993,
+    "density": 0.753802
+   }
+  },
+  {
+   "seed": 20260922,
+   "chi2": 1.27788,
+   "chi2_plain": 1.19184,
+   "scale_ratio": 0.851906,
+   "scale_clamped": false,
+   "near_bounds": [
+    {
+     "target": "layer",
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "value": 0.00580403,
+     "min": 0,
+     "max": 10,
+     "bound": "min",
+     "margin_fraction": 0.000580403
+    }
+   ],
+   "C": {
+    "thickness": 31.3584,
+    "sigma": 2.52613,
+    "density": 2.00386
+   },
+   "Co": {
+    "thickness": 23.3417,
+    "sigma": 4.215,
+    "density": 7.34781
+   },
+   "top": {
+    "thickness": 11.6313,
+    "sigma": 0.00580403,
+    "density": 0.748761
+   }
+  },
+  {
+   "seed": 20260923,
+   "chi2": 1.27799,
+   "chi2_plain": 1.19168,
+   "scale_ratio": 0.851833,
+   "scale_clamped": false,
+   "near_bounds": [
+    {
+     "target": "layer",
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "value": 0.0215997,
+     "min": 0,
+     "max": 10,
+     "bound": "min",
+     "margin_fraction": 0.00215997
+    }
+   ],
+   "C": {
+    "thickness": 31.3516,
+    "sigma": 2.52891,
+    "density": 2.00346
+   },
+   "Co": {
+    "thickness": 23.3485,
+    "sigma": 4.20934,
+    "density": 7.34784
+   },
+   "top": {
+    "thickness": 11.5854,
+    "sigma": 0.0215997,
+    "density": 0.746284
+   }
+  },
+  {
+   "seed": 20260924,
+   "chi2": 1.27832,
+   "chi2_plain": 1.19233,
+   "scale_ratio": 0.853472,
+   "scale_clamped": false,
+   "near_bounds": [
+    {
+     "target": "layer",
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "value": 0.0282164,
+     "min": 0,
+     "max": 10,
+     "bound": "min",
+     "margin_fraction": 0.00282164
+    }
+   ],
+   "C": {
+    "thickness": 31.3621,
+    "sigma": 2.52791,
+    "density": 2.00034
+   },
+   "Co": {
+    "thickness": 23.3379,
+    "sigma": 4.22695,
+    "density": 7.35887
+   },
+   "top": {
+    "thickness": 11.5969,
+    "sigma": 0.0282164,
+    "density": 0.754075
+   }
+  },
+  {
+   "seed": 20260925,
+   "chi2": 1.27794,
+   "chi2_plain": 1.19138,
+   "scale_ratio": 0.851702,
+   "scale_clamped": false,
+   "near_bounds": [
+    {
+     "target": "layer",
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "value": 0.00185212,
+     "min": 0,
+     "max": 10,
+     "bound": "min",
+     "margin_fraction": 0.000185212
+    }
+   ],
+   "C": {
+    "thickness": 31.3535,
+    "sigma": 2.53089,
+    "density": 1.9975
+   },
+   "Co": {
+    "thickness": 23.3467,
+    "sigma": 4.21026,
+    "density": 7.3478
+   },
+   "top": {
+    "thickness": 11.6488,
+    "sigma": 0.00185212,
+    "density": 0.754267
+   }
+  }
+ ],
+ "chapter14": [
+  {
+   "case": "solved 0.2",
+   "seed": 20260921,
+   "chi2": 1.28366,
+   "chi2_plain": 1.19717,
+   "scale_ratio": 0.851414,
+   "scale_clamped": false,
+   "near_bounds": [
+    {
+     "target": "layer",
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "value": 1.00418,
+     "min": 1,
+     "max": 10,
+     "bound": "min",
+     "margin_fraction": 0.000464002
+    }
+   ],
+   "C": {
+    "thickness": 31.355,
+    "sigma": 2.5318,
+    "density": 1.99867
+   },
+   "Co": {
+    "thickness": 23.3451,
+    "sigma": 4.21594,
+    "density": 7.34772
+   },
+   "top": {
+    "thickness": 11.6488,
+    "sigma": 1.00418,
+    "density": 0.752568
+   },
+   "elapsed_s": 3.394
+  },
+  {
+   "case": "solved 0.2",
+   "seed": 20260922,
+   "chi2": 1.28408,
+   "chi2_plain": 1.19715,
+   "scale_ratio": 0.853531,
+   "scale_clamped": false,
+   "near_bounds": [
+    {
+     "target": "layer",
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "value": 1.01483,
+     "min": 1,
+     "max": 10,
+     "bound": "min",
+     "margin_fraction": 0.00164726
+    }
+   ],
+   "C": {
+    "thickness": 31.3823,
+    "sigma": 2.53225,
+    "density": 2.0036
+   },
+   "Co": {
+    "thickness": 23.3178,
+    "sigma": 4.21879,
+    "density": 7.35774
+   },
+   "top": {
+    "thickness": 11.6546,
+    "sigma": 1.01483,
+    "density": 0.76178
+   },
+   "elapsed_s": 3.36
+  },
+  {
+   "case": "solved 0.2",
+   "seed": 20260923,
+   "chi2": 1.28316,
+   "chi2_plain": 1.19617,
+   "scale_ratio": 0.851416,
+   "scale_clamped": false,
+   "near_bounds": [
+    {
+     "target": "layer",
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "value": 1.00041,
+     "min": 1,
+     "max": 10,
+     "bound": "min",
+     "margin_fraction": 4.60413e-05
+    }
+   ],
+   "C": {
+    "thickness": 31.357,
+    "sigma": 2.52897,
+    "density": 1.99999
+   },
+   "Co": {
+    "thickness": 23.3432,
+    "sigma": 4.21279,
+    "density": 7.34786
+   },
+   "top": {
+    "thickness": 11.6772,
+    "sigma": 1.00041,
+    "density": 0.765337
+   },
+   "elapsed_s": 3.445
+  },
+  {
+   "case": "solved 0.2",
+   "seed": 20260924,
+   "chi2": 1.28588,
+   "chi2_plain": 1.19843,
+   "scale_ratio": 0.850985,
+   "scale_clamped": false,
+   "near_bounds": [
+    {
+     "target": "layer",
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "value": 1.05532,
+     "min": 1,
+     "max": 10,
+     "bound": "min",
+     "margin_fraction": 0.00614643
+    }
+   ],
+   "C": {
+    "thickness": 31.3599,
+    "sigma": 2.5114,
+    "density": 2.00997
+   },
+   "Co": {
+    "thickness": 23.3403,
+    "sigma": 4.16381,
+    "density": 7.3309
+   },
+   "top": {
+    "thickness": 11.5449,
+    "sigma": 1.05532,
+    "density": 0.760877
+   },
+   "elapsed_s": 3.376
+  },
+  {
+   "case": "solved 0.2",
+   "seed": 20260925,
+   "chi2": 1.28325,
+   "chi2_plain": 1.19692,
+   "scale_ratio": 0.851106,
+   "scale_clamped": false,
+   "near_bounds": [
+    {
+     "target": "layer",
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "value": 1.00142,
+     "min": 1,
+     "max": 10,
+     "bound": "min",
+     "margin_fraction": 0.000157701
+    }
+   ],
+   "C": {
+    "thickness": 31.3635,
+    "sigma": 2.53212,
+    "density": 2.00394
+   },
+   "Co": {
+    "thickness": 23.3367,
+    "sigma": 4.22445,
+    "density": 7.34747
+   },
+   "top": {
+    "thickness": 11.6646,
+    "sigma": 1.00142,
+    "density": 0.751796
+   },
+   "elapsed_s": 3.403
+  }
+ ]
+}

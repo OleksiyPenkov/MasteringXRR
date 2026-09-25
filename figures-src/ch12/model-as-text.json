@@ -1,0 +1,84 @@
+{
+    "Stacks": [
+        {
+            "T": "Top",
+            "N": 1,
+            "Layers": [
+                {
+                    "M": "C",
+                    "H": 15,
+                    "HP": false,
+                    "HF": false,
+                    "Hmin": 15,
+                    "Hmax": 15,
+                    "ProfileH": "",
+                    "s": 3,
+                    "SP": false,
+                    "SF": false,
+                    "Smin": 3,
+                    "Smax": 3,
+                    "ProfileS": "",
+                    "r": 0.9,
+                    "RP": false,
+                    "RF": false,
+                    "Rmin": 0.9,
+                    "Rmax": 0.9,
+                    "ProfileR": ""
+                }
+            ]
+        },
+        {
+            "T": "ML",
+            "N": 20,
+            "Layers": [
+                {
+                    "M": "C",
+                    "H": 31.4,
+                    "HP": false,
+                    "HF": false,
+                    "Hmin": 31.4,
+                    "Hmax": 31.4,
+                    "ProfileH": "",
+                    "s": 4,
+                    "SP": false,
+                    "SF": false,
+                    "Smin": 4,
+                    "Smax": 4,
+                    "ProfileS": "",
+                    "r": 2,
+                    "RP": false,
+                    "RF": false,
+                    "Rmin": 2,
+                    "Rmax": 2,
+                    "ProfileR": ""
+                },
+                {
+                    "M": "Co",
+                    "H": 23.3,
+                    "HP": false,
+                    "HF": false,
+                    "Hmin": 23.3,
+                    "Hmax": 23.3,
+                    "ProfileH": "",
+                    "s": 4,
+                    "SP": false,
+                    "SF": false,
+                    "Smin": 4,
+                    "Smax": 4,
+                    "ProfileS": "",
+                    "r": 8,
+                    "RP": false,
+                    "RF": false,
+                    "Rmin": 8,
+                    "Rmax": 8,
+                    "ProfileR": ""
+                }
+            ]
+        }
+    ],
+    "Subs": {
+        "M": "SiO2",
+        "s": 3.8,
+        "r": 2.5
+    }
+}

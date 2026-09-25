@@ -1,0 +1,177 @@
+---
+title: Meet X-Ray Calc 3
+part: '1'
+number: '2'
+order: 20
+inThisChapter:
+  - Installing X-Ray Calc and choosing the 32-bit or 64-bit version
+  - Finding your way around the main window
+  - Opening a demo project, and what a project file holds
+  - Running your first calculation, and reading the angle axis
+---
+import Tip from '../../components/textbook/Tip.astro';
+import Remember from '../../components/textbook/Remember.astro';
+import Warning from '../../components/textbook/Warning.astro';
+import InXRayCalc from '../../components/textbook/InXRayCalc.astro';
+import Figure from '../../components/textbook/Figure.astro';
+import DataTable from '../../components/textbook/DataTable.astro';
+
+X-Ray Calc 3 is the program you fit with in this book. It calculates the XRR curve of a layered structure. It also fits that structure to a measured curve. This chapter gets the program running and takes you around its main window. By the end, you'll have calculated your first curve.
+
+## Getting X-Ray Calc
+
+X-Ray Calc 3 is open-source. Its Windows installer is published on the program's GitHub page, under Releases: [github.com/OleksiyPenkov/X-RayCalc3/releases](https://github.com/OleksiyPenkov/X-RayCalc3/releases). The installer runs only on 64-bit Windows.
+
+1. Download the installer, `XRayCalc3_Setup_<version>.exe`.
+2. Run it and accept the default folder, `Program Files\X-Ray Calc 3`.
+3. Start the program from the Start menu.
+
+The installer puts the 64-bit and 32-bit versions of the program on your PC. It adds the Henke tables of optical constants, a folder of demonstration projects called Examples, and the User Manual. It also makes Windows open X-Ray Calc project files (`.xrcx`) with the program.
+
+<InXRayCalc>The Start menu has a folder named **X-Ray Calc 3** with two program entries: **X-Ray Calc 3 x64** and **X-Ray Calc 3 x32**. The same folder holds the **User Manual**.</InXRayCalc>
+
+The screenshots in this book show version 3.9.4 (build 3.9.4.1250). Your version number is at the right end of the status bar, at the bottom of the main window. A later version may place a control differently. The menu names in this book are those of 3.9.4.
+
+## 32-bit or 64-bit?
+
+The two versions are built from the same source code. In recent builds they run at nearly the same speed: on the processor (without the graphics card) the difference is under 5 %. Older builds labeled the 32-bit entry **x32 (Fast)**. The 32-bit version was faster then.
+
+The difference that matters is memory. A 32-bit program can use about 2 GB of RAM. A large model fitted with a large swarm can need more. The 32-bit version then closes during the fit without any error message. The 64-bit version can use all the memory of your PC.
+
+So start **X-Ray Calc 3 x64**. If you ever use the 32-bit version and it closes in the middle of a fit, the memory limit is the first thing to suspect.
+
+## The main window
+
+The main window has three columns: the project on the left, the structure in the middle and the working area on the right (<a href="#fig-2-1">Figure 2-1</a>).
+
+<Figure id="fig-2-1" number="2-1" src={`${import.meta.env.BASE_URL}/figures/fig-2-1-main-window.png`} alt="The X-Ray Calc main window with seven numbered regions: the project panel, the structure panel, the calculation settings, the fitting settings, the main chart with the residual strip under it, the Chart Info bar and the chart pages" caption="The X-Ray Calc main window with a demo project open. (1) Project panel. (2) Structure panel. (3) Calculation settings. (4) Fitting settings. (5) Main chart, with the residual strip under it. (6) Chart Info bar. (7) Chart pages. X-Ray Calc 3.9.4.1250." />
+
+1. **The project panel** holds the **Project Items** tree. A project keeps its models under **Models** and its curves under **Data**. You can add folders of your own. A triangle marks the active model: the one the structure panel shows and the one a calculation uses. A lock marks the measured curve that the models are compared with. The box at the bottom of the column shows the description of the item you select.
+2. **The structure panel** shows the active model as a stack of blocks: the **Top** stack, the **Main** stack and the **Substrate**. The number at the right of a stack's title is N, its number of periods. Each layer shows its thickness H (Å), roughness σ (Å) and density ρ (g/cm³) in fields you can edit. The small box after each field is a fitting option. Ticked, it holds that parameter at one value in every period of the stack. <a href={`${import.meta.env.BASE_URL}/ch3-your-first-fit#what-the-fit-found`}>Chapter 3: What the fit found</a> shows it at work. The **Increment** box sets the step of the arrows beside each field. The **Limits** button opens the fit limits (<a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#the-fitting-limits-dialog`}>Chapter 15: The Fitting Limits dialog</a>).
+3. **The calculation settings** set the angle range, the wavelength, the resolution and the number of points. [Your first calculation](#your-first-calculation) goes through them.
+4. **The fitting settings** control a fit. Part 3 uses them.
+5. **The main chart** shows the calculated and the measured curves. The legend at its top right lists them under **Models** and **Data**. A tick in the legend shows or hides a curve. Under the curves, the residual strip plots log₁₀(calculated / measured) of each model curve. A point above 0 means that the model lies above the data there. **Result > Residual strip** turns the strip and its parts on and off (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-residual-by-band`}>Chapter 18: The residual by band</a>).
+6. **The Chart Info bar** shows the cursor position, the χ² of the active model against the linked curve, the scale, and the reflectivity floor (**R min**, the box that reads `1E-8`). The **Linear** button over **R min** switches the reflectivity axis between logarithmic and linear.
+7. **The chart pages** plot the layers period by period on the **Thickness**, **Roughness** and **Density** pages. The **Convergence** page follows χ² during a fit.
+
+The chart labels its reflectivity axis `1e-1`, `1e-2` and so on. That is the program's way of writing $10^{-1}$, $10^{-2}$. This book writes the powers of ten.
+
+The menus sit above the columns. <a href="#table-2-1">Table 2-1</a> lists what each one holds.
+
+<p id="table-2-1" class="table-caption"><strong>Table 2-1:</strong> The menus of X-Ray Calc 3.9.4.</p>
+
+<DataTable
+  headers={['Menu', 'What it holds', 'Chapter']}
+  rows={[
+    ['**File**', '**New project**, **Open project** (F3), **Recent projects**, **Save project** (Ctrl+S), **Save project As** (F2), **Settings**, **Exit**', '2'],
+    ['**Project**', '**New model**, **New extension**, **Duplicate Model**, **Copy model**, **Paste Model**, **New Folder**', '12'],
+    ['**Structure**', 'Add, insert and delete stacks and layers; **Edit as text**; **Import structure**; **Undo** (Ctrl+Z)', '12'],
+    ['**Data**', '**Load**, **From clipboard**, **Normalize**, **Normalize (Auto)**, **Smooth**, **Trim**, **Assess XRR quality**, export', '10, 14'],
+    ['**Calc**', '**Run** (F5), **Calc all models** (F6), **Auto Fitting** (F7), **Resume Fitting**, **Batch jobs Fitting**, **Benchmark**', '2, 16, 17'],
+    ['**Result**', '**Export**, **Save as graphics**, **Copy to clipboard**, **Copy as BMP**, **Copy as EMF**, **Export fit results**, **Fit report**, **Residual strip**', '18, 23'],
+    ['**Tools**', '**Create new material**, **Edit Henke table**', 'Appendix C'],
+    ['**Help**', '**User Manual** (F1), **About**', 'Introduction'],
+  ]}
+/>
+
+## Opening a demo project
+
+The Examples folder holds two demo projects. Open one of them:
+
+1. Choose **File > Open project**, or press F3.
+2. Go to the Examples folder, `Program Files\X-Ray Calc 3\Examples`.
+3. Open `ML(30x2)P3_Best.xrcx`.
+
+The program calculates the active model as soon as the project opens. The setting that does this is on by default, in **File > Settings**.
+
+The demo holds two models and one curve. The curve **Data 1.dat** was calculated from the model **Target**. It is not a measurement. **For fit** is a starting model for fitting that curve, so the demo is a fit whose answer you know. For fit has a 60 Å Si top layer on 30 periods of 24 Å Si and 18 Å Mo, all on a Si substrate. So its period is 42 Å.
+
+Double-click an item to change it:
+
+- a layer opens the **Layer properties** dialog: its material, H, σ and ρ;
+- a stack title opens the **Stack properties** dialog: its name and N;
+- a model in the project tree opens its **Properties**: name, color and description.
+
+A project is a single `.xrcx` file. Inside, it is a zip archive with these parts:
+
+- `project.dsc`: the project tree and the structure of every model;
+- `params.dsc`: the calculation and fitting settings;
+- `data_<number>.dat`: a copy of each curve you loaded;
+- `calc.dat`: the calculated curve of the active model.
+
+The measured curves are copied into the project. So the `.xrcx` file is all you need to send to a colleague. Save with **File > Save project** (Ctrl+S), or with **Save project As** (F2) under a new name.
+
+<Warning title="settings travel with a project">The wavelength, the resolution Δθ, the angle range and the fitting settings are saved in the project. When you open a colleague's project and load your own curve into it, you fit with their settings. Their Δθ belongs to their measurement and their instrument. Set Δθ for your own measurement (<a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#choosing-δθ-by-a-scan`}>Chapter 16: Choosing Δθ by a scan</a>).</Warning>
+
+<Tip>Before you change a demo, save a copy in your own folder with **Save project As** (F2). The Examples folder is inside Program Files. Windows may not let you save there.</Tip>
+
+## Your first calculation
+
+The calculation settings are at the top left of the working area (<a href="#fig-2-2">Figure 2-2</a>).
+
+<Figure id="fig-2-2" number="2-2" src={`${import.meta.env.BASE_URL}/figures/fig-2-2-calc-settings.png`} alt="The calculation settings panel: Mode by angle or by wave, Polarization s-type or sp-type, N, theta1, theta2, lambda, delta theta and the 2theta box" caption="The calculation settings of the demo project, at actual size. The fields on the right (λ1, λ2, θ and Δλ) belong to the by-wave mode and are grayed out. X-Ray Calc 3.9.4.1250." />
+
+- **Mode** chooses what the curve is plotted against: the angle (**by angle**) or the wavelength (**by wave**). This book always uses **by angle**.
+- **Polarization**: **s-type** is the right choice for XRR. **sp-type** takes about twice as long. At the small angles of XRR it gives almost the same curve (<a href={`${import.meta.env.BASE_URL}/ch8-how-x-ray-calc-computes-a-curve#polarization-s-type-or-sp-type`}>Chapter 8: Polarization: s-type or sp-type</a>).
+- **N** is the number of calculated points. When a measured curve is linked, N is not used: the model is calculated at the angles of the measured points.
+- **θ1** and **θ2** are the start and the end of the angle range.
+- **λ(Å)** is the wavelength, in Å.
+- **Δθ** is the angular resolution. The calculated curve is blurred by a Gaussian of this width, to match the blur of a real instrument (<a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#choosing-δθ-by-a-scan`}>Chapter 16: Choosing Δθ by a scan</a>).
+- **2θ** sets whether the angles are 2θ or θ. The next section explains it.
+
+A project that stores no settings opens with θ1 = 0.01, θ2 = 5, λ = 1.54043 Å, Δθ = 0.015 and the **2θ** box ticked. A wavelength of 1.54043 Å is close to copper Kα1, 1.5406 Å. Always check λ against your own instrument. <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#the-wavelength-comes-from-the-file`}>Chapter 10: The wavelength comes from the file</a> shows how to read it from the measurement file.
+
+Now calculate:
+
+1. Click **For fit** in the project tree.
+2. Choose **Calc > Run**, or press F5. The red curve is calculated again, and the Chart Info bar shows its χ² against **Data 1.dat**.
+3. In the structure panel, change H of the Mo layer from 18.00 to 20.00.
+4. Press F5 again. The Bragg orders of the red curve move to smaller angles, because the period has grown from 42 Å to 44 Å. The χ² changes too.
+
+**Calc > Calc all models** (F6) calculates every model in the project. In the demo it adds the green **Target** curve.
+
+The move in step 4 is the Bragg-order rule of <a href={`${import.meta.env.BASE_URL}/ch1-what-xrr-fitting-is#the-four-features-of-a-curve`}>Chapter 1: The four features of a curve</a>: the period sets the positions of the orders. <a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#doing-it-in-x-ray-calc`}>Chapter 13: Doing it in X-Ray Calc</a> turns this one-change-at-a-time test into a method.
+
+<InXRayCalc>**Calc > Run** (F5) calculates the active model. **Calc > Calc all models** (F6) calculates every model. The χ² appears in the Chart Info bar when a measured curve is linked.</InXRayCalc>
+
+## 2θ or θ: the angle on your screen
+
+The **2θ** box is ticked by default. With the box ticked, **θ1**, **θ2** and the chart axis are all in 2θ, the angle between the incoming beam and the detector. The program divides by 2 before it calculates, because the physics uses the grazing angle θ:
+
+$$
+\theta = \frac{2\theta}{2}
+$$
+
+The first Bragg order in <a href={`${import.meta.env.BASE_URL}/ch1-what-xrr-fitting-is#fig-1-2`}>Figure 1-2</a> stands at 2θ = 1.8295°. Its grazing angle is θ = 1.8295° / 2 = 0.91475°.
+
+This book leaves the box ticked. A measured curve is normally recorded against 2θ, so the chart then shows the angles your instrument used. A curve loaded from an `.xrdml` file is converted to whatever the box says.
+
+**Δθ is the exception.** It is always a θ value, whether the box is ticked or not. The program doubles it internally when the axis is 2θ.
+
+<Remember>Every angle you read off the chart, or type into a range, is 2θ. The resolution Δθ is always θ.</Remember>
+
+<Warning title="the wrong angle in a field">X-Ray Calc accepts any number in these fields. It never asks which angle you meant. If you type a θ value into **θ2** with the box ticked, the calculation stops at half the angle you wanted. If you type a 2θ resolution into **Δθ**, the calculated curve is blurred twice as much as your instrument blurs it.</Warning>
+
+## Sources
+
+- **X-Ray Calc Help:** *Installation* → *System Requirements* and *Data Storage*; *Application Overview* (the three columns and the menu bar); *Quick Start* (the demo projects, the dialogs opened by a double-click, the calculation settings); *Projects* (the `.xrcx` file); *Calculation* → *Theta Mode*, *Polarization*, *Number of Points* and *Running a Calculation*; *Troubleshooting* → *Choosing between x32 and x64* (the 2 GB limit of the 32-bit version, the same speed of the two versions) and *Application crashes without error message*; *Charts* → *Residual Strip*; *Data* → *Loading XRDML Files* (an `.xrdml` curve is converted to the unit of the 2θ box).
+- **The author (2026):** in recent builds the 32-bit and 64-bit versions differ in speed by less than 5 % on the processor. The 64-bit recommendation follows from it.
+- **The X-Ray Calc 3 source**, release 3.9.4.1250:
+  - the installer script `XRayCalc3Setup.iss`: 64-bit Windows only, the default folder, the Start-menu entries (the entry "x32 (Fast)" of older builds is removed), the installed files and the `.xrcx` association;
+  - the main window form: the menus, their commands and shortcuts;
+  - `frame_ChartInfo.dfm`: the **Linear** button and the **R min** box;
+  - `unit_Config.pas`, `unit_Residuals.pas`, `unit_ResidualStrip.pas`: the residual strip, log₁₀(calculated / measured) of each model curve, with all four items of **Result > Residual strip** on by default;
+  - `frame_ProjectPanel.pas`: what `SaveProject` writes into the `.xrcx` archive, the structures into `project.dsc` and the settings into `params.dsc`;
+  - `unit_XRCProjectTree.pas`: the triangle marks the active model and the lock marks the linked curve;
+  - `frame_CalcSettings.pas`: the defaults of a project that stores none;
+  - `unit_CalcOrchestrator.pas`: with a linked curve, the model is calculated at the measured angles;
+  - `editor_Layer.dfm`, `editor_Stack.dfm`: the **Layer properties** and **Stack properties** dialogs;
+  - `unit_calc.pas`: Δθ is doubled on a 2θ axis.
+- **The author (2026):** the demo's curve **Data 1.dat** was calculated from the **Target** model.
+- **The Help and the code disagree in three places.** The book uses what is on screen:
+  - *Quick Start* and *Calculation* say **Calc > Calculate**. The menu command is **Calc > Run**.
+  - *Application Overview* lists **Calculate All** in the Calc menu. The menu command is **Calc all models** (F6).
+  - *Calculation* says that Auto-Calc recalculates on every change. The only such setting in the code calculates when a project opens.
+- **Figures 2-1 and 2-2** are screenshots of X-Ray Calc 3.9.4.1250, 64-bit (light theme, 96 dpi, window set to 1620 × 900, captured as its visible frame of 1606 × 893), with the demo project as the 3.9.4.1250 installer ships it. `scripts/figures/fig_2_1_main_window.py` numbers the regions and crops the calculation settings.
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/introduction#beyond-the-book`}>Introduction: Beyond the Book</a>; <a href={`${import.meta.env.BASE_URL}/ch1-what-xrr-fitting-is#what-an-xrr-measurement-records`}>Chapter 1: What an XRR measurement records</a>; <a href={`${import.meta.env.BASE_URL}/ch8-how-x-ray-calc-computes-a-curve#polarization-s-type-or-sp-type`}>Chapter 8</a>; <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#the-wavelength-comes-from-the-file`}>Chapter 10</a>; <a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#the-periodic-stack`}>Chapter 12</a>; <a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#doing-it-in-x-ray-calc`}>Chapter 13</a>; <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#four-settings-in-this-order`}>Chapter 14: Four settings, in this order</a>; <a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#the-fitting-limits-dialog`}>Chapter 15: The Fitting Limits dialog</a>; <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#choosing-δθ-by-a-scan`}>Chapter 16: Choosing Δθ by a scan</a>; <a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#two-ways-to-describe-a-stack`}>Chapter 17: Two ways to describe a stack</a>; <a href={`${import.meta.env.BASE_URL}/ch23-reporting-a-fit#what-the-program-keeps-and-what-it-doesnt`}>Chapter 23: What the program keeps, and what it doesn't</a>; <a href={`${import.meta.env.BASE_URL}/appendix-c-optical-constants#what-a-henke-table-holds`}>Appendix C: Where Optical Constants Come From</a>; <a href={`${import.meta.env.BASE_URL}/appendix-a-notation#symbols`}>Appendix A: Notation and Units</a>; <a href={`${import.meta.env.BASE_URL}/appendix-b-menus#the-menus`}>Appendix B: Menus, Buttons and Keys</a>.

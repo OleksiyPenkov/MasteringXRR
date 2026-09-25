@@ -1,0 +1,52 @@
+engine λ = 1.541874 Å (file: K-Alpha doublet weighted by ratioKAlpha2KAlpha1 0.5); 4899 points
+counting: peak 608828 counts at 2θ = 0.4165°, 3459250 counts/s, 0.176 s per point, attenuation factors False; one count = 1.6425e-06
+zeros: 1710 (34.9 %), first at 2θ = 3.7495°
+plateau vs first order: 0.574 against the design's 0.473 (warn)
+orders visible: 8 of 9, design expects 6 (pass)
+
+seed, orders 1-6: D = 54.7045 ± 0.0152 Å, 2δ̄ = 2.1162e-05 ± 2.15e-06, 2θc = 0.5271 ± 0.0268°, rms 2.70e-06
+all eight orders:  D = 54.6969 ± 0.0065 Å, 2δ̄ = 2.0510e-05, 2θc = 0.5190 ± 0.0197°
+
+Table 11-1 (2θ; predicted from the seed of orders 1-6):
+  m   2θ meas.   counts      2θ pred.  diff     m×2θ1    even − meas.
+  1   1.6975     349170.8  1.6988  -0.0013  1.6975  +0.000
+  2   3.2695       8250.0  3.2730  -0.0035  3.3950  +0.126
+  3   4.8775       2387.0  4.8748  +0.0027  5.0925  +0.215
+  4   6.4825        321.0  6.4846  -0.0021  6.7900  +0.308
+  5   8.1025         62.0  8.0985  +0.0040  8.4875  +0.385
+  6   9.7135         10.0  9.7154  -0.0019  10.1850  +0.472
+  7   11.3365          5.0  11.3351  +0.0014  11.8825  +0.546
+  8   12.9595          4.0  12.9576  +0.0019  13.5800  +0.620
+  mean spacing of orders 1-6: 1.603°
+
+Γ (expert fit) = 0.440; sin²(mπΓ): 1: 0.96, 2: 0.14, 3: 0.71, 4: 0.47, 5: 0.35, 6: 0.82, 7: 0.06, 8: 1.00
+
+window test (2θ ± 0.04° around the prediction, counts per point):
+  m=4 at 6.485°: in window 246.48 (sum 6655, 27 pts), around 3.01
+  m=5 at 8.098°: in window 36.77 (sum 956, 26 pts), around 1.23
+  m=6 at 9.715°: in window 7.19 (sum 187, 26 pts), around 1.07
+  m=7 at 11.335°: in window 1.85 (sum 48, 26 pts), around 1.05
+  m=8 at 12.958°: in window 1.23 (sum 32, 26 pts), around 1.03
+  m=9 at 14.583°: in window 1.00 (sum 27, 27 pts), around 1.06
+  (the imported tail repeats a floored value for each zero count, so these means are upper bounds)
+
+Table 11-2, three numberings:
+  correct, orders 1-6        D = 54.70 Å  2δ̄ = +2.116e-05  2θc = 0.527°         rms = 2.70e-06 (1 × the correct)
+  every order one too high   D = 61.80 Å  2δ̄ = -5.715e-04  2θc = none (2δ̄ < 0) rms = 1.08e-04 (40 × the correct)
+  weak 2nd order missed      D = 46.22 Å  2δ̄ = +4.170e-04  2θc = 2.340°         rms = 2.96e-04 (110 × the correct)
+
+edge of the measured curve (fraction of the plateau maximum → 2θ):
+  0.9: 0.5125°
+  0.5: 0.5875°
+  0.1: 0.7045°
+  δ(C) = 7.2911e-06 at 2.266 g/cm³ → 5.9869e-06 at 1.861
+  δ(Co) = 2.3548e-05 at 8.79 g/cm³ → 2.1689e-05 at 8.096
+  expert model: δ̄ = 1.2897e-05, 2δ̄ = 2.5794e-05, 2θc = 0.5820°
+  seeded model falls to 0.9 at 2θ = 0.3120°
+  seeded model falls to 0.5 at 2θ = 0.5720°
+  seeded model falls to 0.1 at 2θ = 0.6960°
+  seeded model's own peaks 1-6 (no blur): D = 54.6986 Å (model 54.7045), 2δ̄ = 2.3455e-05, -9.1 % against the model's 2δ̄; 2θc = 0.5550°
+  seed intercept against the model's 2δ̄: -18.0 %
+
+Figure 11-3, model peak shift for D + 1 % (2θ): order 5: -0.080°, order 6: -0.096°, order 7: -0.112°
+  seeded model, order 5: FWHM = 0.072° in 2θ

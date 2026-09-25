@@ -1,0 +1,33 @@
+{
+ "lambda_A": 1.5406,
+ "materials": [
+  {
+   "material": "C",
+   "lambda_used": 1.5406,
+   "energy_eV": 8047.79,
+   "density_used": 2.266,
+   "delta": 7.27903e-06,
+   "beta": 1.16095e-08,
+   "n": 0.999993,
+   "k": 1.16095e-08,
+   "edges": []
+  },
+  {
+   "material": "Co",
+   "lambda_used": 1.5406,
+   "energy_eV": 8047.79,
+   "density_used": 8.79,
+   "delta": 2.35358e-05,
+   "beta": 3.40603e-06,
+   "n": 0.999976,
+   "k": 3.40603e-06,
+   "edges": [
+    {
+     "element": "Co",
+     "edge_eV": 7708.8,
+     "distance_eV": -338.987
+    }
+   ]
+  }
+ ]
+}

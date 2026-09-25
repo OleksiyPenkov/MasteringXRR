@@ -1,0 +1,156 @@
+---
+title: 'Building the Starting Model'
+part: '3'
+number: '12'
+order: 120
+inThisChapter:
+  - Choosing the substrate, and why the fit never changes it
+  - Building the periodic stack from the design and the measured period
+  - Adding the contamination layer, and a cap when the design has one
+  - Editing the model as text
+---
+import Tip from '../../components/textbook/Tip.astro';
+import Remember from '../../components/textbook/Remember.astro';
+import Warning from '../../components/textbook/Warning.astro';
+import InXRayCalc from '../../components/textbook/InXRayCalc.astro';
+import Figure from '../../components/textbook/Figure.astro';
+
+The starting model is the structure you ask X-Ray Calc to improve. This chapter builds one for the measured Co/C multilayer CoC4, from its design and from the period measured in <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-period-from-a-straight-line`}>Chapter 11: The period from a straight line</a>. The structure panel and its dialogs were introduced in <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#opening-a-demo-project`}>Chapter 2: Opening a demo project</a>.
+
+## What the starting model decides
+
+Some things in the model are never fitted. The fit keeps the materials, the order of the layers, the number of periods N of each stack and the whole substrate. Whatever you enter there is in the result. The substrate is held completely: X-Ray Calc takes its material, σ and ρ from the structure and never passes them to the fit.
+
+The other values are start values. With **SeedR** checked, the swarm starts spread over the fitting limits, so the start values matter through the limits you set around them (<a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#where-the-swarm-starts`}>Chapter 9: Where the swarm starts</a>). Polynomial mode always starts around the starting model. Periodic mode keeps the period you enter, or moves it only within the window of **Free period ±** (<a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#putting-the-period-into-the-model`}>Chapter 11: Putting the period into the model</a>).
+
+The design of CoC4 was "a 20-period Co/C multilayer on a glass substrate", "a period of about 54 Å with C about 31 Å and Co about 23 Å per period". A thin carbon layer of low density was expected on top. Chapter 11 measured the period as 54.70 Å.
+
+## The substrate
+
+The fitting procedure holds the substrate fixed: its material, its density and its σ. Because the fit can't correct them, enter the values that belong to your substrate.
+
+**The material** must be a name in the materials table, such as `Si` or `SiO2`. X-Ray Calc doesn't read the name as a formula.
+
+**The density** needs care. ρ = 0 means the bulk density of the material's table. The `SiO2` table holds crystalline quartz at 2.65 g/cm³ (<a href={`${import.meta.env.BASE_URL}/ch4-x-rays-meet-a-surface#where-δ-and-β-come-from`}>Chapter 4: Where δ and β come from</a>). Glass substrates are lighter. One laboratory's list of substrates, as an example:
+
+- **Soda-lime glass:** 2.5 g/cm³, the conventional density of this glass. It has no table of its own. `SiO2` at 2.50 g/cm³ has nearly the same electron density, within about 1 %.
+- **Fused silica:** `SiO2` at 2.2 g/cm³.
+- **A silicon wafer:** `Si` at 2.329 g/cm³. A wafer that was not etched just before deposition carries 10–20 Å of native oxide. Give it its own `SiO2` layer when the fit needs it, rather than raising σ.
+
+**The roughness** σ of the substrate is a start value in the procedure's words, but the fit never changes it. The same laboratory uses σ = 3.8 Å for its soda-lime glass, the value its fits kept returning. Treat such a number as your laboratory's value. Another supplier's glass can have another σ. For CoC4 the substrate is soda-lime glass: `SiO2`, ρ = 2.50 g/cm³, σ = 3.8 Å.
+
+<Warning title="a substrate density left at 0">A glass substrate entered as `SiO2` with ρ = 0 is calculated as quartz, 2.65 g/cm³. X-Ray Calc gives no warning. The expert fits of the Co/C curves in this book used 2.65 g/cm³ for their glass. The laboratory's own substrate list now calls that an error. Enter the density of your glass.</Warning>
+
+<Tip>If your substrate or layer material has no table, create one from its composition with **Tools > Create new material ...**. Then the material name works like any other.</Tip>
+
+## The periodic stack
+
+A stack is a group of layers repeated N times. The stack title shows its name and N. For CoC4:
+
+1. Choose **Structure > Add Stack**. The **Stack properties** dialog opens.
+2. Type a **Stack name** (ML) and **N** = 20. Click OK.
+3. With the new stack selected, choose **Structure > Add Layer**. The **Layer properties** dialog opens.
+4. Set the **Layer material**, **H (Å)**, **σ (Å)** and **ρ (g/cm³)** of the top layer of the period.
+5. Add the second layer the same way.
+
+**Structure > Add Stack** puts the new stack at the bottom, just above the substrate. **Structure > Insert Stack** puts it above the selected stack. **Structure > Add Layer** adds a layer at the bottom of the selected stack. A new layer starts as Si, 25 Å, σ = 3 Å, ρ = 0. The **&lt;&lt;** and **&gt;&gt;** buttons of the **Layer properties** dialog move to the previous and the next layer.
+
+**The order of the layers** is the order of the cross-section, from the surface down. In a stack of C over Co, C is the layer next to the surface in every period. Co is the layer next to the substrate. Enter the order that was deposited.
+
+**The thicknesses** come from the design, with the period from the curve. Scale both layers of the design by one factor so that their sum is the measured period. For CoC4 the factor is 54.70 / 54 = 1.013. The design's 31 Å of C becomes 31.40 Å. Its 23 Å of Co becomes 23.30 Å. The **D** box of the Chart Info bar then shows 54.70. The fit finds the ratio between the layers.
+
+**The densities** start near the bulk value of each material. One laboratory starts C at 2.0 g/cm³ and Co at 8.0 g/cm³, both inside its fitting limits. **σ** starts at 3–5 Å in the same laboratory. CoC4 starts at σ = 4 Å for both layers.
+
+## The top of the stack: contamination layer and cap
+
+**The contamination layer** stands for the hydrocarbons every surface collects in air (<a href={`${import.meta.env.BASE_URL}/ch7-roughness-interlayers-dirty-surface#the-dirty-surface-a-contamination-layer`}>Chapter 7: The dirty surface: a contamination layer</a>). It is a stack of its own with N = 1, above everything else. The fitting procedure says the layer is "listed after the periodic stack". That wording follows the procedure's own structure format, which lists the stacks from the substrate up. The structure panel lists them the other way round, from the surface down. So in X-Ray Calc the contamination layer is the first stack:
+
+1. Select the top stack (ML).
+2. Choose **Structure > Insert Stack**. Name the stack Top and keep **N** = 1.
+3. Add one layer: C, 15 Å, σ = 3 Å, ρ = 0.9 g/cm³.
+
+These are one laboratory's start values. Its preset includes the layer when the critical edge or the level between the orders doesn't fit without it. Chapter 7 showed that CoC4 needs it, so the CoC4 model has it from the start.
+
+**A cap** is a top layer that the design put there, such as the Si layer on the demo multilayer of Chapter 2. It stays as its own stack, with the values of the design. The contamination layer then goes above the cap. The cap belongs to the sample. The contamination layer comes from the air.
+
+<a href="#fig-12-1">Figure 12-1</a> shows the finished CoC4 starting model.
+
+<Figure id="fig-12-1" number="12-1" src={`${import.meta.env.BASE_URL}/figures/fig-12-1-starting-model.png`} alt="The X-Ray Calc structure panel with three blocks: the stack Top with N = 1 holding one C layer of 15 angstrom, sigma 3, density 0.9; the stack ML with N = 20 holding C 31.4 angstrom and Co 23.3 angstrom, sigma 4, densities 2 and 8; and the substrate SiO2 with sigma 3.8 and density 2.5" caption="The CoC4 starting model in the structure panel, surface first. **Top** (N = 1) is the contamination layer: C, 15 Å, σ = 3 Å, ρ = 0.9 g/cm³. **ML** (N = 20) is the period: C 31.40 Å over Co 23.30 Å, σ = 4 Å, ρ = 2.0 and 8.0 g/cm³. The **Substrate** is SiO2 with σ = 3.8 Å and ρ = 2.50 g/cm³; it has no thickness. The **D** box of the Chart Info bar reads 54.70. X-Ray Calc 3.9.4.1030." />
+
+<Remember>The structure panel lists stacks from the surface down. The model text does the same. Layers inside a stack are also listed from the surface down.</Remember>
+
+## The model as text
+
+**Structure > Edit as text ...** shows the whole model as JSON text, in a window titled **View/Edit structure as text**. Edit the text and click **Save**, and the structure panel follows. **Cancel** leaves the model as it was. Typing a model is often faster than clicking through the dialogs. It also gives you text you can keep with your notes.
+
+The CoC4 starting model can be typed as one line:
+
+```json
+{"Stacks":[{"T":"Top","N":1,"Layers":[{"M":"C","H":15,"s":3,"r":0.9}]},{"T":"ML","N":20,"Layers":[{"M":"C","H":31.4,"s":4,"r":2},{"M":"Co","H":23.3,"s":4,"r":8}]}],"Subs":{"M":"SiO2","s":3.8,"r":2.5}}
+```
+
+When you open the window again, X-Ray Calc shows every key of every layer, one per line. This is the contamination layer:
+
+```json
+{
+    "M": "C",
+    "H": 15,
+    "HP": false,
+    "HF": false,
+    "Hmin": 15,
+    "Hmax": 15,
+    "ProfileH": "",
+    "s": 3,
+    "SP": false,
+    "SF": false,
+    "Smin": 3,
+    "Smax": 3,
+    "ProfileS": "",
+    "r": 0.9,
+    "RP": false,
+    "RF": false,
+    "Rmin": 0.9,
+    "Rmax": 0.9,
+    "ProfileR": ""
+}
+```
+
+- `Stacks` lists the stacks from the surface down. Each has a title `T`, a number of periods `N` and its `Layers`, again from the surface down.
+- Each layer has its material `M` and its three values: `H` (thickness, Å), `s` (σ, Å) and `r` (ρ, g/cm³).
+- `HP`, `SP` and `RP` mark a parameter as paired, the box after its field in the structure panel. `HF`, `SF` and `RF` mark it frozen (<a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#freezing-a-parameter`}>Chapter 15: Freezing a parameter</a>).
+- `Hmin`, `Hmax`, `Smin`, `Smax`, `Rmin` and `Rmax` are its fitting limits (<a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#generous-limits`}>Chapter 15: Generous limits</a>).
+- `ProfileH`, `ProfileS` and `ProfileR` hold a profile of the parameter through the stack, empty when there is none.
+- `Subs` is the substrate: `M`, `s` and `r` only.
+
+When you type a model, you can leave out everything but `M`, `H`, `s` and `r`. A limit you leave out is set to the value itself, as `Hmin` and `Hmax` show, so set the limits before you fit.
+
+<InXRayCalc>**Structure > Import structure ...** reads a model from a `.json` file into a new model of the project. **Project > Duplicate Model** copies the active model, so you can try a change and keep the original. **Structure > Undo** (Ctrl+Z) takes back the last change to the structure.</InXRayCalc>
+
+## Checking the start on the chart
+
+Calculate the starting model with **Calc > Run** (F5) and compare it with the measured curve. With the curve linked to the model, the residual strip under the chart shows the difference (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-residual-by-band`}>Chapter 18: The residual by band</a>). <a href="#fig-12-2">Figure 12-2</a> does this for CoC4. The orders 1 to 6 of the model are within 0.007° of the measured ones, because the period came from them. Their heights are not yet right. Order 5 of the model reaches 2 % of the measured height, and the high orders fall off much faster. The heights depend on σ, ρ and the ratio of the layers, which the fit will find.
+
+<Figure id="fig-12-2" number="12-2" src={`${import.meta.env.BASE_URL}/figures/fig-12-2-starting-model.svg`} alt="The measured Co/C curve and the calculated curve of the starting model on a logarithmic axis. The first six Bragg orders of the model sit at the measured positions. From order 4 on, the model's orders are much lower than the measured ones" caption="The CoC4 starting model (blue) against the measured curve (gray, as imported). The model is 20 periods of 31.40 Å C and 23.30 Å Co with σ = 4 Å, under 15 Å of light carbon, on SiO2 at 2.50 g/cm³. It is calculated by X-Ray Calc 3.9.4.1250 at λ = 1.541874 Å and Δθ = 0.012°, without a scale. The orders are where the measured ones are. Their heights are for the fit to find." />
+
+Two settings of the calculation belong to the start as well. Calculate in s-polarization, which gives the same curve as sp-type at these angles in half the time (<a href={`${import.meta.env.BASE_URL}/ch8-how-x-ray-calc-computes-a-curve#polarization-s-type-or-sp-type`}>Chapter 8: Polarization: s-type or sp-type</a>). Keep the λ that the `.xrdml` file gave (<a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#the-wavelength-comes-from-the-file`}>Chapter 10: The wavelength comes from the file</a>).
+
+## What this means when you fit
+
+**Get the fixed parts right first.** The materials, the layer order, N, and the whole substrate stay as you enter them. Enter the density of your substrate.
+
+**Take the thicknesses from the design and the period from the curve.** Scale the design's layers so that they add up to the measured period.
+
+**Put the contamination layer on top, as its own stack.** In X-Ray Calc that is the first stack, above any cap.
+
+**Check the start on the chart before you fit.** The orders must already line up. <a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#the-variants-and-what-they-move`}>Chapter 13: The Sensitivity Check</a> uses this model to see what each parameter moves.
+
+## Sources
+
+- **Fitting procedure** (Penkov, Peng & Fu 2026): §2.1, the substrate from the laboratory's library with its material, density and σ held fixed, the library's σ a starting value for the laboratory's stock rather than a property of the material; §2.2, the layers from the nominal design (thickness, order, period count as deposited) as the start values, each density near bulk; §2.3, the light surface layer from the preset, as its own stack with N 1 "listed after the periodic stack", included always, never or only when the edge or the fringe field misses; §2.4, a design cap taken from the design and kept apart from the contamination layer; §2.5, s-polarization.
+- **The procedure's preset and substrate library** (`skill-v5\presets\csmic-empyrean.json`, `skill-v5\substrates.json`), one laboratory's values: the contamination layer (C, 15 Å, σ 3 Å, 0.9 g/cm³, included "when_edge_or_fringe_field_misses"); the density starts of C (2.0) and Co (8.0) and the σ start range 3–5 Å; soda-lime glass (2.5 g/cm³ from ISO 16293-1, σ 3.8 Å, no stock table, modeled as SiO2 at 2.50 within about 1 % of its electron density), fused silica (2.2), the Si wafer (2.329, native oxide 10–20 Å as a separate SiO2 layer), and the note that 2.65 g/cm³ for glass was an error of the earlier procedure.
+- **The design of CoC4** as given to the test sessions of the procedure's deposit (`procedure/as-sent/stage1-CoC4-round-3.md`, CC BY 4.0), quoted.
+- **X-Ray Calc Help,** *Defining a Model*: *The Structure Editor*, *Terminology*, *Stacks (Periods)* (**Add Stack** appends at the bottom, **Insert Stack** goes above the selected stack), *Layers*, *Density 0 and the substrate density* (quartz at 2.65 g/cm³ in the SiO2 table), *Adding a layer* (the material name must match a table), *Undo*, *Model Text (JSON)* (the keys; a limit left out is set to the value).
+- **The X-Ray Calc 3 source,** where it adds to the Help: the substrate set from the structure and kept out of the solution (`XRayCalc3\LFPSO\unit_LFPSO_Base.pas:410–414`); **Add Stack** appending at the bottom and **Insert Stack** inserting above the selected stack (`XRayCalc3\Components\unit_XRCStructure.pas:230–242, 512–535`, `AddStack`, `InsertStack`); a new layer as Si, 25 Å, σ 3 Å, ρ 0 (`XRayCalc3\Forms\frm_Main.pas:1127–1131`, `LayerAddExecute`); the model text and its keys, with a missing limit set to the value (`unit_XRCStructure.pas:864–1050`, `ToString`, `FromString`); **Import structure ...** reading a `.json` with `Stacks` and `Subs` into a new model (`XRayCalc3\Views\frame_ProjectPanel.pas`, `ImportStructure`); the procedure's structure format listing stacks from the substrate up and the GUI from the surface down, with the layers inside a stack surface first in both (`XRC_MCP\units\unit_MCPStructure.pas:29–38, 366–384`); the residual strip under the chart, drawn for each visible model against the linked curve (`XRayCalc3\Forms\frm_Main.pas`, `RefreshResiduals`, release 3.9.4.1250). The labels are from `frm_Main.dfm`, `editor_Stack.dfm` and `editor_Layer.dfm`.
+- **Calculated for this chapter (2026-09-24, rerun 2026-09-25)** with the X-Ray Calc 3.9.4.1250 engine: the starting model of Figure 12-2 at λ = 1.541874 Å and Δθ = 0.012°. `scripts/figures/ch12_engine_data.py` runs it and keeps the curve in `figures-src/ch12/`. `scripts/figures/fig_12_figures.py` draws Figure 12-2 and prints the order positions and heights (`figures-src/ch12/numbers.txt`). The measured curve is the import of Chapter 11. The scaling factor 1.013 and the thicknesses are computed on the page.
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#opening-a-demo-project`}>Chapter 2: Opening a demo project</a>; <a href={`${import.meta.env.BASE_URL}/ch4-x-rays-meet-a-surface#where-δ-and-β-come-from`}>Chapter 4: Where δ and β come from</a>; <a href={`${import.meta.env.BASE_URL}/ch7-roughness-interlayers-dirty-surface#the-dirty-surface-a-contamination-layer`}>Chapter 7: The dirty surface: a contamination layer</a>; <a href={`${import.meta.env.BASE_URL}/ch8-how-x-ray-calc-computes-a-curve#polarization-s-type-or-sp-type`}>Chapter 8: Polarization</a>; <a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#where-the-swarm-starts`}>Chapter 9: Where the swarm starts</a>; <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#the-wavelength-comes-from-the-file`}>Chapter 10: The wavelength comes from the file</a>; <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-period-from-a-straight-line`}>Chapter 11: The period from a straight line</a>; <a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#why-check-before-you-fit`}>Chapter 13</a>; <a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#generous-limits`}>Chapter 15: Generous limits</a>; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-residual-by-band`}>Chapter 18: The residual by band</a>; <a href={`${import.meta.env.BASE_URL}/ch24-ten-ways-a-fit-can-mislead-you#4-a-period-taken-from-the-design`}>Chapter 24: A period taken from the design</a>; <a href={`${import.meta.env.BASE_URL}/ch26-ten-things-x-ray-calc-does-not-fit#6-the-substrate`}>Chapter 26: The substrate</a>; <a href={`${import.meta.env.BASE_URL}/appendix-a-notation#symbols`}>Appendix A: Notation and Units</a>; <a href={`${import.meta.env.BASE_URL}/appendix-b-menus#the-menus`}>Appendix B: Menus, Buttons and Keys</a>; <a href={`${import.meta.env.BASE_URL}/appendix-c-optical-constants#what-a-henke-table-holds`}>Appendix C: Where Optical Constants Come From</a>; <a href={`${import.meta.env.BASE_URL}/appendix-d-glossary#a`}>Appendix D: Glossary</a>.

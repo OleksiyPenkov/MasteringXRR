@@ -1,0 +1,23 @@
+---
+/** Layout for src/pages/sampler.mdx only: the chapter look, without the nav. */
+import 'katex/dist/katex.min.css';
+import '../styles/textbook.css';
+import { BOOK_TITLE } from '../lib/site.mjs';
+import FigureZoom from '../components/textbook/FigureZoom.astro';
+const { frontmatter } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{frontmatter.title} | {BOOK_TITLE}</title>
+  </head>
+  <body>
+    <main class="chapter">
+      <header><p class="eyebrow">Not part of the book</p><h1>{frontmatter.title}</h1></header>
+      <article><slot /></article>
+    </main>
+    <FigureZoom />
+  </body>
+</html>

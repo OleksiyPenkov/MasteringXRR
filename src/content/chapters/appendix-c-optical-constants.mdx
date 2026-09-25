@@ -1,0 +1,91 @@
+---
+title: 'Where Optical Constants Come From'
+part: 'back'
+number: 'C'
+order: 290
+inThisChapter:
+  - What a Henke table holds
+  - How X-Ray Calc turns a table into δ and β
+  - Checking the table of a material
+  - Adding a material
+---
+import Warning from '../../components/textbook/Warning.astro';
+import InXRayCalc from '../../components/textbook/InXRayCalc.astro';
+
+{/* Appendix C. Outline approved 2026-09-25 (OUTLINE.md, back matter, choice 4 (a): the steps only). */}
+
+X-Ray Calc calculates every layer from a table of its material. The fit changes a layer's thickness, roughness and density. It never changes the table. A wrong table gives a wrong structure. No message says so. This appendix describes the tables and how to check and add one. <a href={`${import.meta.env.BASE_URL}/ch4-x-rays-meet-a-surface#where-δ-and-β-come-from`}>Chapter 4: Where δ and β come from</a> explains the physics.
+
+## What a Henke table holds
+
+X-Ray Calc stores one table for each material, as a file `<Name>.bin` in the Henke folder. The folder is set under **Paths and Files** in **File > Settings ...**, in the field **Henke library**. A table holds:
+
+- the atomic scattering factors f₁ and f₂ against the photon energy E;
+- the molar mass A;
+- the bulk density, in g/cm³.
+
+The element tables come from Henke, Gullikson and Davis (1993). They give f₁ and f₂ for 92 elements from 50 to 30,000 eV. They smooth over the fine structure close to an absorption edge, so a value near an edge can be wrong. A compound, such as `SiO2`, `B4C` or `CoC`, has a table of its own.
+
+## From the table to δ and β
+
+For a layer of density ρ, at the wavelength λ, the program computes
+
+$$
+2\delta = C\,\frac{\rho}{A}\,\lambda^2 f_1
+\qquad
+2\beta = C\,\frac{\rho}{A}\,\lambda^2 f_2
+$$
+
+with ρ in g/cm³, λ in Å and C = 0.54014 × 10⁻⁵. C is $r_e N_A/\pi$ in these units. The program converts λ to the energy, E = 12398.6/λ eV. It reads f₁ and f₂ by linear interpolation between the two nearest rows of the table.
+
+Three consequences follow for a fit:
+
+- **δ is proportional to ρ.** The fit reaches δ only through the density. Any error in f₁ or A appears as an error in the fitted density (<a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#a-free-parameter-not-a-result`}>Chapter 20: A free parameter, not a result</a>).
+- **δ grows with λ².** A wrong wavelength gives a wrong δ in every layer (<a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#the-wavelength-comes-from-the-file`}>Chapter 10: The wavelength comes from the file</a>).
+- **δ/β is f₁/f₂.** It does not depend on the density.
+
+## Density 0
+
+A layer with ρ = 0 is calculated with the bulk density of its table. The same holds for the substrate. The bulk density is also the density ceiling that **Initialize** gives to a density limit (<a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#the-density-ceiling`}>Chapter 15: The density ceiling</a>). A wrong bulk density enters both the calculation and the limits.
+
+## Checking a table
+
+Check the table of every material before its first fit:
+
+1. Choose **Tools > Edit Henke table...** and select the material.
+2. Read the bulk density in the field **ρ (g/cm³)** and the molar mass in **A (g/mol)**. Versions before 3.9.4 label the molar mass **N (a.u.)**.
+3. Compare the bulk density with the density of your material.
+
+<InXRayCalc>The editor shows the columns **E (eV)**, **λ (Å)**, **f1** and **f2**. The f₁ and f₂ cells, the molar mass and the density can be edited. **Save** overwrites the file. Every project that uses the material changes with it.</InXRayCalc>
+
+Three cases from this book show what to look for (<a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#check-the-table`}>Chapter 20: Check the table</a>):
+
+- **`SiO2`** holds crystalline quartz, 2.65 g/cm³. Fused silica and glass are less dense. A glass substrate left at ρ = 0 is calculated as quartz (<a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#the-substrate`}>Chapter 12: The substrate</a>).
+- **`B4C`** was held at 2.37 g/cm³ in an earlier table, with no source. One laboratory's record gives 2.52 g/cm³, which the table of X-Ray Calc 3.9.4.1030 holds.
+- **A compound** such as `CoC` has its own bulk density, 6.2 g/cm³. That value sets its density ceiling.
+
+<Warning title="the molar mass alone">f₁, f₂ and A are stored per formula unit, and they enter δ and β as a ratio. Change A only together with f₁ and f₂. A changed A alone changes the optical constants of every layer of that material.</Warning>
+
+## Adding a material
+
+A material with no table can be made from elements or existing materials:
+
+1. Choose **Tools > Create new material ...**. The **New Material** dialog opens.
+2. Set **Number of elements:** to the number of components.
+3. In the table, enter each component under **Element**, or pick it with the **...** button. A component can be an element or an existing material.
+4. Enter the concentration of each component under **Conc. at%**, in atomic per cent. The concentrations must add up to 100.
+5. Type the **Name** of the new material and its **Density** in g/cm³.
+6. Click **Save**.
+
+The program writes `<Name>.bin` into the Henke folder. It averages f₁, f₂ and the molar mass over the components per atom, weighted by the atomic fractions, on the energy grid of the first component. The other components are interpolated onto that grid. The density you entered becomes the bulk density of the new table. When the concentrations do not add up to 100, the dialog refuses to save. When a material of that name exists, it asks before replacing it.
+
+The new material is then used like any other: type its name into a layer's material field.
+
+## Sources
+
+- **X-Ray Calc Help:** *Tools* → *Create new material* (the components in atomic per cent adding to 100, the file written, f averaged per atom on the energy grid of the first component, the entered density as the bulk density) and *Edit Henke Table* (what a table holds; the λ column as 12398.6/E; the per-formula-unit note on the molar mass, paraphrased); *Models* → *Density 0*.
+- **The X-Ray Calc 3 source:** the **New Material** dialog and its labels, the check of the sum ("The concentrations add up to %g at.%, not 100."), the confirmation before replacing a table, and the file written into the Henke folder (`XRayCalc3\Forms\frm_NewMaterial.dfm`, `.pas`); the molar mass averaged with the atomic fractions and the other components read at the first component's energies (`frm_NewMaterial.pas`, `NewElement`); the **Henke library** field under **Paths and Files** in the settings (`Forms\frm_settings.dfm`, release 3.9.4.1250); the constant C and the interpolation linear in E (`Shared\Math\unit_materials.pas`); hc = 12398.6 eV·Å (`Shared\Math\math_globals.pas`).
+- **Henke, Gullikson & Davis (1993)**, *Atomic Data and Nuclear Data Tables* 54, 181–342: the element tables, 92 elements, 50–30,000 eV, as described in Chapter 4.
+- **This book:** the three table cases of Chapter 20; the formula and the constant of Chapter 4.
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/ch4-x-rays-meet-a-surface#where-δ-and-β-come-from`}>Chapter 4: Where δ and β come from</a>; <a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#the-substrate`}>Chapter 12: The substrate</a>; <a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#the-density-ceiling`}>Chapter 15: The density ceiling</a>; <a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#check-the-table`}>Chapter 20: Check the table</a>; <a href={`${import.meta.env.BASE_URL}/ch26-ten-things-x-ray-calc-does-not-fit#7-the-materials`}>Chapter 26: The materials</a>.

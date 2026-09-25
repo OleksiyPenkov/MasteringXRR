@@ -1,0 +1,1138 @@
+{
+ "base": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "period--2": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 30.772,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 22.834,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "period--1": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.086,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.067,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "period-+1": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.714,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.533,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "period-+2": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 32.028,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.766000000000002,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "ratio--2": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 33.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 21.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "ratio--1": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 32.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 22.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "ratio-+1": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 30.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 24.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "ratio-+2": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 29.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 25.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "sigC-1": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 1,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "sigC-2.5": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 2.5,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "sigC-6": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 6,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "sigC-8": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 8,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "sigCo-1": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 1,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "sigCo-2.5": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 2.5,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "sigCo-6": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 6,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "sigCo-8": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 8,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "rhoC--15": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 1.7
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "rhoC--7.5": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 1.85
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "rhoC-+7.5": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.15
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "rhoC-+15": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.3
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "rhoCo--15": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 6.8
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "rhoCo--7.5": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 7.4
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "rhoCo-+7.5": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.6
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "rhoCo-+15": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 9.2
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "top-none": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   }
+  ]
+ },
+ "top-20": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 20,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 20.0,
+      "sigma": 3.0,
+      "density": 1.2
+     }
+    ]
+   }
+  ]
+ },
+ "N-10": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 10,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "N-15": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 15,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "N-30": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 30,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ },
+ "N-40": {
+  "substrate": {
+   "material": "SiO2",
+   "sigma": 3.8,
+   "density": 2.5
+  },
+  "stacks": [
+   {
+    "N": 40,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 31.4,
+      "sigma": 4.0,
+      "density": 2.0
+     },
+     {
+      "material": "Co",
+      "thickness": 23.3,
+      "sigma": 4.0,
+      "density": 8.0
+     }
+    ]
+   },
+   {
+    "N": 1,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 15.0,
+      "sigma": 3.0,
+      "density": 0.9
+     }
+    ]
+   }
+  ]
+ }
+}

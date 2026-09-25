@@ -1,0 +1,241 @@
+{
+ "measurement_id": "CoC4/CoC4.xrdml",
+ "file": "inbox\\CoC4\\CoC4.xrdml",
+ "format": "xrdml",
+ "points": 4899,
+ "theta_range_deg": [
+  0.05075,
+  7.39775
+ ],
+ "two_theta_range_deg": [
+  0.1015,
+  14.7955
+ ],
+ "two_theta_scan": true,
+ "lambda": 1.54187,
+ "lambda_source": "file: K-Alpha doublet weighted by ratioKAlpha2KAlpha1 0.5",
+ "raw_facts": true,
+ "background": {
+  "level": 1.6425e-06,
+  "points": 100,
+  "rule": "median of the last points of the curve, as the fit report takes it",
+  "one_count": 1.6425e-06,
+  "level_counts": 1.0
+ },
+ "design": {
+  "period_A": 54.7663,
+  "total_thickness_A": 1095.33,
+  "theta_c_deg": 0.289881,
+  "resolution_deg": 0.012,
+  "model_points": 4899
+ },
+ "checks": {
+  "counting": {
+   "value": 3459250,
+   "threshold": null,
+   "verdict": "unknown",
+   "why": "the detector saw at most 3.459E006 counts/s; no detector_max_cps given to judge it against",
+   "unit": "counts",
+   "counting_time_s": 0.176,
+   "peak_counts": 608828,
+   "peak_rate_cps": 3459250,
+   "peak_theta_deg": 0.20825,
+   "peak_two_theta_deg": 0.4165,
+   "attenuation_factors": false,
+   "corrected_peak_counts": 608828,
+   "corrected_peak_rate_cps": 3459250,
+   "corrected_peak_theta_deg": 0.20825,
+   "corrected_peak_two_theta_deg": 0.4165,
+   "detector": "PIXcel3D-Medipix3 1x1 detector",
+   "readout_period_s": 0.05
+  },
+  "plateau_vs_first_order": {
+   "value": 0.573513,
+   "threshold": 0.473799,
+   "verdict": "warn",
+   "why": "measured ratio 0.574 exceeds the 0.474 the design can give: the plateau is depressed or the two features are against the same ceiling",
+   "low_angle_max": 1,
+   "low_angle_max_theta_deg": 0.20825,
+   "low_angle_max_two_theta_deg": 0.4165,
+   "first_order": 0.573513,
+   "first_order_theta_deg": 0.84875,
+   "first_order_two_theta_deg": 1.6975,
+   "first_order_found_by": "largest point in the design's order-1 window 0.7466 to 0.9171 deg theta",
+   "model_ratio": 0.473799
+  },
+  "total_reflection": {
+   "value": 0.05075,
+   "threshold": 0.289881,
+   "verdict": "pass",
+   "why": "the scan starts at 0.0507 deg theta, below the design's critical angle 0.2899 deg, and rises to its maximum at 0.2083 deg",
+   "scan_start_theta_deg": 0.05075,
+   "scan_start_two_theta_deg": 0.1015,
+   "max_theta_deg": 0.20825,
+   "max_two_theta_deg": 0.4165,
+   "points_before_max": 105,
+   "i_start_over_i_max": 0.394946
+  },
+  "orders_visible": {
+   "value": 8,
+   "threshold": 6,
+   "verdict": "pass",
+   "why": "8 of the 9 orders in the range are visible; the design scaled to the measured plateau puts 6 above the background. The background is the floor the 1710 zero counts were raised to (1 counts), not a measured noise level, so an order is visible from more than 3 counts",
+   "orders_predicted_in_range": 9,
+   "orders_visible": 8,
+   "orders_expected_visible": 6,
+   "peaks_above_background": 381,
+   "background": 1.6425e-06,
+   "visible_factor": 3,
+   "orders": [
+    {
+     "n": 1,
+     "theta_bragg_theta_deg": 0.806571,
+     "theta_bragg_two_theta_deg": 1.61314,
+     "theta_meas_theta_deg": 0.84875,
+     "theta_meas_two_theta_deg": 1.6975,
+     "i_meas": 0.573513,
+     "visible": true,
+     "i_model_scaled": 0.473799,
+     "expected_visible": true
+    },
+    {
+     "n": 2,
+     "theta_bragg_theta_deg": 1.6133,
+     "theta_bragg_two_theta_deg": 3.22661,
+     "theta_meas_theta_deg": 1.63475,
+     "theta_meas_two_theta_deg": 3.2695,
+     "i_meas": 0.0135506,
+     "visible": true,
+     "i_model_scaled": 0.0111998,
+     "expected_visible": true
+    },
+    {
+     "n": 3,
+     "theta_bragg_theta_deg": 2.42035,
+     "theta_bragg_two_theta_deg": 4.84071,
+     "theta_meas_theta_deg": 2.43875,
+     "theta_meas_two_theta_deg": 4.8775,
+     "i_meas": 0.00392065,
+     "visible": true,
+     "i_model_scaled": 0.00353299,
+     "expected_visible": true
+    },
+    {
+     "n": 4,
+     "theta_bragg_theta_deg": 3.22789,
+     "theta_bragg_two_theta_deg": 6.45577,
+     "theta_meas_theta_deg": 3.24125,
+     "theta_meas_two_theta_deg": 6.4825,
+     "i_meas": 0.000527242,
+     "visible": true,
+     "i_model_scaled": 0.000566788,
+     "expected_visible": true
+    },
+    {
+     "n": 5,
+     "theta_bragg_theta_deg": 4.03606,
+     "theta_bragg_two_theta_deg": 8.07212,
+     "theta_meas_theta_deg": 4.05125,
+     "theta_meas_two_theta_deg": 8.1025,
+     "i_meas": 0.000101835,
+     "visible": true,
+     "i_model_scaled": 0.000116237,
+     "expected_visible": true
+    },
+    {
+     "n": 6,
+     "theta_bragg_theta_deg": 4.84504,
+     "theta_bragg_two_theta_deg": 9.69008,
+     "theta_meas_theta_deg": 4.85675,
+     "theta_meas_two_theta_deg": 9.7135,
+     "i_meas": 1.6425e-05,
+     "visible": true,
+     "i_model_scaled": 2.43604e-05,
+     "expected_visible": true
+    },
+    {
+     "n": 7,
+     "theta_bragg_theta_deg": 5.65499,
+     "theta_bragg_two_theta_deg": 11.31,
+     "theta_meas_theta_deg": 5.66825,
+     "theta_meas_two_theta_deg": 11.3365,
+     "i_meas": 8.2125e-06,
+     "visible": true,
+     "i_model_scaled": 4.71707e-06,
+     "expected_visible": false
+    },
+    {
+     "n": 8,
+     "theta_bragg_theta_deg": 6.46607,
+     "theta_bragg_two_theta_deg": 12.9321,
+     "theta_meas_theta_deg": 6.47975,
+     "theta_meas_two_theta_deg": 12.9595,
+     "i_meas": 6.57e-06,
+     "visible": true,
+     "i_model_scaled": 8.4863e-07,
+     "expected_visible": false
+    },
+    {
+     "n": 9,
+     "theta_bragg_theta_deg": 7.27846,
+     "theta_bragg_two_theta_deg": 14.5569,
+     "theta_meas_theta_deg": 7.33775,
+     "theta_meas_two_theta_deg": 14.6755,
+     "i_meas": 3.285e-06,
+     "visible": false,
+     "i_model_scaled": 1.37989e-07,
+     "expected_visible": false
+    }
+   ]
+  },
+  "range_below_background": {
+   "value": 0.499898,
+   "threshold": null,
+   "verdict": "unknown",
+   "why": "2449 of 4899 points (50.0 %) sit at or below the background; no threshold says how much of a scan may be spent there",
+   "points_at_or_below_background": 2449,
+   "background": 1.6425e-06,
+   "background_points": 100,
+   "first_at_background_theta_deg": 1.83425,
+   "first_at_background_two_theta_deg": 3.6685,
+   "last_above_background_theta_deg": 6.47975,
+   "last_above_background_two_theta_deg": 12.9595,
+   "scan_end_theta_deg": 7.39775,
+   "scan_end_two_theta_deg": 14.7955
+  },
+  "sampling": {
+   "value": 26.8846,
+   "threshold": 3,
+   "verdict": "pass",
+   "why": "26.88 points per Kiessig fringe (fringe 0.04033 deg, step 0.00150 deg)",
+   "step_theta_deg": 0.00150001,
+   "step_two_theta_deg": 0.00300002,
+   "fringe_period_theta_deg": 0.0403272,
+   "points_per_fringe": 26.8846,
+   "resolution_deg": 0.012,
+   "fringe_contrast": 0.729646,
+   "fringes_resolved": true,
+   "points_per_resolution": 7.99994,
+   "order_spacing_theta_deg": 0.806545,
+   "points_per_order": 537.693,
+   "total_thickness_A": 1095.33
+  },
+  "footprint": {
+   "value": null,
+   "threshold": null,
+   "verdict": "unknown",
+   "why": "sample_length_mm and beam_width_mm are both needed for the footprint knee"
+  },
+  "zeros": {
+   "value": 1710,
+   "threshold": null,
+   "verdict": "warn",
+   "why": "1710 of 4899 points (34.9 %) have a non-positive count, the first at 1.8748 deg theta (3.7495 deg 2theta); they were replaced by the smallest positive count before them and any background taken there is a floor, not a measurement",
+   "fraction": 0.349051,
+   "first_theta_deg": 1.87475,
+   "first_two_theta_deg": 3.7495
+  }
+ },
+ "verdict": "warn",
+ "summary_text": "counting: unknown - the detector saw at most 3.459E006 counts/s; no detector_max_cps given to judge it against\r\nplateau_vs_first_order: warn - measured ratio 0.574 exceeds the 0.474 the design can give: the plateau is depressed or the two features are against the same ceiling\r\ntotal_reflection: pass - the scan starts at 0.0507 deg theta, below the design's critical angle 0.2899 deg, and rises to its maximum at 0.2083 deg\r\norders_visible: pass - 8 of the 9 orders in the range are visible; the design scaled to the measured plateau puts 6 above the background. The background is the floor the 1710 zero counts were raised to (1 counts), not a measured noise level, so an order is visible from more than 3 counts\r\nrange_below_background: unknown - 2449 of 4899 points (50.0 %) sit at or below the background; no threshold says how much of a scan may be spent there\r\nsampling: pass - 26.88 points per Kiessig fringe (fringe 0.04033 deg, step 0.00150 deg)\r\nfootprint: unknown - sample_length_mm and beam_width_mm are both needed for the footprint knee\r\nzeros: warn - 1710 of 4899 points (34.9 %) have a non-positive count, the first at 1.8748 deg theta (3.7495 deg 2theta); they were replaced by the smallest positive count before them and any background taken there is a floor, not a measurement"
+}

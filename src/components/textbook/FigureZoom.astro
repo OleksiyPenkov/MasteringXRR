@@ -1,0 +1,81 @@
+---
+/**
+ * Click a figure to see it full size (web only).
+ *
+ * One <dialog> per page. A click on a figure's image (PNG or SVG file) or on an
+ * inline SVG sketch opens it, fitted to the window. A raster image larger than
+ * the window can be clicked again for its natural size, and the window then
+ * scrolls. An image file also gets a link that opens the file itself. Esc, the
+ * close button or a click outside the image closes the viewer.
+ *
+ * The dialog is closed in print (display: none), and the figures themselves are
+ * not changed, so the print pipeline's .figure markup is untouched.
+ */
+---
+<dialog class="figzoom" aria-label="Enlarged figure">
+  <div class="figzoom-bar">
+    <a class="figzoom-open" target="_blank" rel="noopener">Open the image file</a>
+    <button type="button" class="figzoom-close" aria-label="Close">×</button>
+  </div>
+  <div class="figzoom-stage"></div>
+  <p class="figzoom-caption"></p>
+</dialog>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('dialog.figzoom');
+  if (dialog) {
+    const stage = dialog.querySelector<HTMLElement>('.figzoom-stage')!;
+    const caption = dialog.querySelector<HTMLElement>('.figzoom-caption')!;
+    const openLink = dialog.querySelector<HTMLAnchorElement>('.figzoom-open')!;
+
+    const show = (figure: HTMLElement, target: Element) => {
+      stage.replaceChildren();
+      dialog.classList.remove('figzoom-actual');
+      if (target instanceof HTMLImageElement) {
+        const img = new Image();
+        img.src = target.currentSrc || target.src;
+        img.alt = target.alt;
+        img.className = 'figzoom-img';
+        const isSvg = /\.svg(\?|#|$)/i.test(img.src);
+        img.addEventListener('click', (e) => {
+          e.stopPropagation();
+          // Vector art is sharp at any size; only a raster larger than the window gains from 1:1.
+          if (!isSvg && (img.naturalWidth > stage.clientWidth || img.naturalHeight > stage.clientHeight)) {
+            dialog.classList.toggle('figzoom-actual');
+          }
+        });
+        stage.append(img);
+        openLink.href = img.src;
+        openLink.hidden = false;
+      } else {
+        const svg = target.cloneNode(true) as SVGElement;
+        svg.classList.add('figzoom-svg');
+        svg.addEventListener('click', (e) => e.stopPropagation());
+        stage.append(svg);
+        openLink.hidden = true;
+      }
+      caption.innerHTML = figure.querySelector('figcaption')?.innerHTML ?? '';
+      dialog.showModal();
+    };
+
+    document.querySelectorAll<HTMLElement>('article .figure').forEach((figure) => {
+      const target = figure.querySelector('img') ?? figure.querySelector('.figure-svg svg');
+      if (!target) return;
+      target.classList.add('figzoom-target');
+      target.setAttribute('tabindex', '0');
+      target.setAttribute('title', 'Click to enlarge');
+      target.addEventListener('click', () => show(figure, target));
+      target.addEventListener('keydown', (e) => {
+        const key = (e as KeyboardEvent).key;
+        if (key === 'Enter' || key === ' ') { e.preventDefault(); show(figure, target); }
+      });
+    });
+
+    dialog.querySelector('.figzoom-close')!.addEventListener('click', () => dialog.close());
+    // A click on the backdrop, the stage or the caption closes; the image itself does not.
+    dialog.addEventListener('click', (e) => {
+      if (!(e.target as Element).closest('.figzoom-bar, .figzoom-img, .figzoom-svg')) dialog.close();
+    });
+    dialog.addEventListener('close', () => stage.replaceChildren());
+  }
+</script>

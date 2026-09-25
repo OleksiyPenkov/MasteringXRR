@@ -1,0 +1,215 @@
+/* Light theme only, adapted from the Vacuum book's stylesheet. Accent #1a5276. */
+:root {
+  --accent: #1a5276;
+  --accent-2: #2980b9;
+  --ink: #222;
+  --muted: #777;
+  --line: #e0e0e0;
+  --bg-soft: #f7f9fb;
+
+  /* The five icons of STYLE.md §3. A closed set: a sixth callout needs an
+     author decision, not a new color. */
+  --c-tip:      #2e7d32; /* green */
+  --c-remember: #1a5276; /* blue */
+  --c-warning:  #c62828; /* red: a wrong number with no error message */
+  --c-xrc:      #00695c; /* teal: the program */
+  --c-deeper:   #52606d; /* neutral: skippable */
+
+  /* figure theming (light only) */
+  --fig-stroke: #334155; --fig-fill: #dbe5fb; --fig-fill-2: #c7d7f7;
+  --fig-muted: #94a3b8; --fig-accent: var(--accent); --fig-bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--ink);
+  font-size: 15px;
+  background: #fff;
+  margin: 0;
+  line-height: 1.55;
+}
+a { color: var(--accent); }
+
+/* ---- Topbar (chapter pages) ---- */
+.topbar {
+  background: var(--accent); color: #fff; padding: 10px 32px; font-size: 14px;
+  display: flex; align-items: center; gap: 14px;
+}
+.topbar .app-title { font-weight: 700; letter-spacing: .3px; }
+.topbar a { color: #b0d4f1; text-decoration: none; }
+.topbar a:hover { color: #fff; }
+.topbar .sep { color: #4a90b8; }
+.topbar .crumb { color: #e8f1f8; }
+
+/* ---- Two-pane shell ---- */
+.shell { display: grid; grid-template-columns: 16rem 1fr; gap: 0; }
+.sidebar {
+  padding: 1.1rem 1.25rem; border-right: 1px solid var(--line); background: var(--bg-soft);
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+}
+.home { display: block; font-weight: 700; font-size: 1.05rem; color: var(--accent); text-decoration: none; margin-bottom: .75rem; }
+
+/* ---- Chapter content ---- */
+.chapter { max-width: 46rem; margin: 0 auto; padding: 1.5rem 2rem 3rem; line-height: 1.6; }
+.chapter > header { border-bottom: 2px solid var(--accent); margin-bottom: 1.25rem; padding-bottom: .55rem; }
+.eyebrow { text-transform: uppercase; letter-spacing: .05em; font-size: .72rem; color: var(--muted); margin: 0 0 .25rem; }
+.chapter h1 { font-size: 26px; font-weight: 600; color: var(--accent); margin: 0; }
+.chapter h2 {
+  font-size: 20px; font-weight: 600; color: var(--accent);
+  margin: 1.9rem 0 .6rem; padding-top: .55rem; border-top: 1px solid #eee;
+}
+.chapter h2:first-of-type { border-top: none; padding-top: 0; }
+.chapter h3 { font-size: 16px; font-weight: 600; color: #2c3e50; margin: 1rem 0 .4rem; }
+
+/* ---- "In This Chapter" (STYLE.md §3) ---- */
+.in-this-chapter { border: 1px solid var(--line); border-radius: 6px; padding: 10px 16px 6px; margin: 0 0 1.5rem; background: var(--bg-soft); }
+.itc-title { margin: 0 0 .3rem; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.in-this-chapter ul { margin: 0 0 .4rem; padding-left: 1.2rem; }
+.in-this-chapter li { margin: .15rem 0; }
+
+/* ---- Icons / callouts (src/components/textbook/Callout.astro) ---- */
+.box { border-left: 3px solid #ccc; padding: 10px 14px; margin: 1.25rem 0; border-radius: 4px; background: var(--bg-soft); font-size: 14px; }
+.box-title { display: flex; align-items: center; gap: .45rem; font-weight: 600; margin: 0 0 .4rem; }
+.box-icon { width: 18px; height: 18px; flex-shrink: 0; fill: currentColor; stroke: currentColor; }
+.box .box-body { margin: 0; }
+.box .box-body > :first-child { margin-top: 0; }
+.box .box-body > :last-child { margin-bottom: 0; }
+.box-tip { border-color: var(--c-tip); background: #e8f5e9; }
+.box-tip .box-title { color: var(--c-tip); }
+.box-remember { border-color: var(--c-remember); background: #f0f4f8; }
+.box-remember .box-title { color: var(--c-remember); }
+.box-warning { border-color: var(--c-warning); background: #fdecea; }
+.box-warning .box-title { color: var(--c-warning); }
+.box-xrc { border-color: var(--c-xrc); background: #e0f2f1; }
+.box-xrc .box-title { color: var(--c-xrc); }
+.box-deeper { border-color: var(--line); background: var(--bg-soft); }
+.box-deeper .box-title { color: var(--c-deeper); }
+.box-collapsible > summary.box-title { cursor: pointer; list-style: none; }
+.box-collapsible > summary.box-title::-webkit-details-marker { display: none; }
+.box-collapsible > summary.box-title::after { content: '▸'; margin-left: auto; }
+.box-collapsible[open] > summary.box-title::after { content: '▾'; }
+.box-collapsible:not([open]) > summary.box-title { margin-bottom: 0; }
+
+/* ---- One source, two outputs (src/lib/remark-output-directives.mjs) ----
+   On screen the print fallback is hidden. The print renderer removes .web-only
+   and shows .print-only; this @media rule covers a browser's own Print too.
+   Inline, a <span class="web-only"> / <span class="print-only"> pair swaps a few
+   words inside a sentence: a link to a download, which print can't follow. */
+.print-only { display: none; }
+@media print {
+  .print-only { display: block; }
+  span.print-only { display: inline; }
+  .web-only { display: none; }
+}
+
+/* ---- Tables (uppercase head, hairline rows) ---- */
+.chapter table, .data-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 14px; }
+.chapter th, .data-table th {
+  text-align: left; font-size: 12px; font-weight: 600; color: #555;
+  text-transform: uppercase; letter-spacing: .5px;
+  border-bottom: 2px solid #ddd; padding: 4px 10px 6px;
+}
+/* Opt-out for headers whose case is load-bearing: uppercasing a symbol changes
+   it (δ→Δ, σ→Σ, ρ→Ρ), and this book's tables are full of them. */
+.data-table.keep-header-case th { text-transform: none; letter-spacing: 0; font-size: 12.5px; }
+.chapter td, .data-table td { padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+.chapter tbody tr:hover td, .data-table tbody tr:hover td { background: #f4f8fb; }
+
+/* ---- Code ---- */
+code { font-family: Consolas, monospace; font-size: .92em; background: #f3f3f3; padding: 1px 5px; border-radius: 3px; }
+/* Fenced blocks (the model text of Chapter 12). Astro highlights them with a dark
+   Shiki theme; the book keeps them plain and light, and wraps long lines so the
+   one-line model text neither scrolls on a phone nor runs off a printed page. */
+pre, pre.astro-code { background: var(--bg-soft) !important; color: var(--ink) !important;
+  border: 1px solid var(--line); border-radius: 4px; padding: 10px 14px; margin: 1em 0;
+  font-size: 13px; line-height: 1.45; white-space: pre-wrap; overflow-wrap: anywhere; }
+pre code { background: none; padding: 0; border-radius: 0; font-size: inherit; }
+pre.astro-code span { color: inherit !important; background: none !important; }
+
+/* ---- Sub/superscripts (renderInline): keep them out of the line leading.
+   The Vacuum book's reasoning, including the .82em floor for print. ---- */
+sub, sup { font-size: .82em; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -.42em; }
+sub { bottom: -.22em; }
+
+/* ---- Figures ---- */
+.figure { margin: 1.5rem 0; }
+.figure img { max-width: 100%; height: auto; display: block; margin-inline: auto; }
+.figure figcaption { font-size: .85rem; color: #555; text-align: center; margin-top: .4rem; }
+.figure-svg svg { display: block; width: 100%; height: auto; max-width: 680px; margin: 0 auto; }
+.figure-svg text { font-family: inherit; }
+
+/* ---- Figure viewer (src/components/textbook/FigureZoom.astro), web only ---- */
+.figzoom-target { cursor: zoom-in; }
+.figzoom-target:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+.figzoom {
+  width: 96vw; max-width: 96vw; height: 94vh; max-height: 94vh; padding: 0;
+  border: none; border-radius: 6px; background: #fff; box-shadow: 0 8px 40px rgba(0,0,0,.35);
+  flex-direction: column;
+}
+.figzoom[open] { display: flex; }
+.figzoom::backdrop { background: rgba(15, 23, 42, .72); }
+.figzoom-bar { display: flex; justify-content: flex-end; align-items: center; gap: 1rem; padding: 6px 12px; border-bottom: 1px solid var(--line); font-size: 14px; }
+.figzoom-close { font-size: 26px; line-height: 1; border: none; background: none; cursor: pointer; color: var(--muted); padding: 0 4px; }
+.figzoom-close:hover { color: var(--accent); }
+.figzoom-stage { flex: 1; min-height: 0; overflow: auto; display: flex; padding: 12px; }
+.figzoom-img, .figzoom-svg { margin: auto; display: block; }
+/* Fitted: as large as the stage allows (an SVG file grows past its drawn size). */
+.figzoom-img { width: 100%; height: 100%; object-fit: contain; cursor: zoom-in; }
+.figzoom-svg { width: 100%; height: 100%; max-width: none; }
+/* Natural size for a raster larger than the window; the stage scrolls. */
+.figzoom-actual .figzoom-img { width: auto; height: auto; max-width: none; object-fit: none; cursor: zoom-out; }
+.figzoom-actual .figzoom-stage { display: block; }
+.figzoom-caption { margin: 0; padding: 8px 16px 12px; font-size: .88rem; color: #444; text-align: center; border-top: 1px solid var(--line); max-height: 22vh; overflow: auto; }
+@media print { .figzoom { display: none !important; } }
+
+/* ---- Sources, collapsed on the web (src/lib/rehype-collapse-sources.mjs) ---- */
+.sources-section > summary { cursor: pointer; list-style: none; }
+.sources-section > summary::-webkit-details-marker { display: none; }
+.sources-section > summary > h2 { display: flex; align-items: baseline; gap: .5rem; border-top: 1px solid #eee; padding-top: .55rem; }
+.sources-section > summary > h2::after { content: '▸'; font-size: 15px; color: var(--muted); }
+.sources-section[open] > summary > h2::after { content: '▾'; }
+@media print { .sources-section > summary > h2::after { content: none; } }
+
+/* ---- Chapter prev/next footer ---- */
+.chapter-footer { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 1rem; border-top: 2px solid var(--line); font-size: 14px; }
+.chapter-footer a { text-decoration: none; }
+.chapter-footer a:hover { text-decoration: underline; }
+
+/* ---- Home page ---- */
+.home-hero { background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%); color: #fff; padding: 42px 32px 34px; text-align: center; }
+.home-hero .eyebrow { color: #cfe2f0; }
+.home-hero h1 { margin: 0 0 8px; font-size: 30px; font-weight: 700; color: #fff; }
+.home-tagline { margin: 0 auto; max-width: 640px; font-size: 15px; color: #eaf2f8; opacity: .95; line-height: 1.5; }
+.home-meta { margin: 22px auto 0; padding-top: 16px; max-width: 640px; border-top: 1px solid rgba(255,255,255,.25); }
+.home-meta p { margin: 0; color: #eaf2f8; }
+.home-author { font-size: 16px; font-weight: 700; color: #fff; }
+.home-body { max-width: 960px; margin: 0 auto; padding: 8px 32px 48px; }
+.home-part { margin: 0; }
+.home-part h2 {
+  font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  color: var(--accent); margin: 28px 0 14px; padding-bottom: 6px; border-bottom: 2px solid var(--line);
+}
+.home-chapters { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.home-chapters li { margin: 0; }
+.home-chapters a {
+  /* height: 100% so a one-line card is as tall as a neighbor whose title wrapped. */
+  display: flex; align-items: center; gap: 14px; padding: 14px 18px; height: 100%;
+  border: 1px solid var(--line); border-radius: 6px; text-decoration: none; color: var(--ink);
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.home-chapters a:hover { border-color: var(--accent); box-shadow: 0 2px 8px rgba(26,82,118,.12); background: #f7fafd; }
+.home-num {
+  font-weight: 700; color: #fff; background: var(--accent); border-radius: 6px;
+  min-width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 14px;
+}
+.home-title { font-weight: 600; color: var(--accent); }
+.home-footer { text-align: center; padding: 22px 32px; font-size: 12px; color: #999; border-top: 1px solid #eee; }
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; }
+}

@@ -1,0 +1,116 @@
+CoC4: Δθ 0.014, widening [{"round": 0, "changes": [{"stack": 1, "layer": 0, "parameter": "thickness", "from": [5, 40], "to": [0.1, 40]}, {"stack": 1, "layer": 0, "parameter": "sigma", "from": [0.0, 10], "to": [0.0, 15.0]}, {"stack": 1, "layer": 0, "parameter": "density", "from": [0.6, 1.4], "to": [0.2, 1.8]}]}, {"round": 1, "changes": []}]
+  final bounds [{"stack": 0, "layer": 0, "parameter": "thickness", "min": 20.93, "max": 41.87}, {"stack": 0, "layer": 0, "parameter": "sigma", "min": 1, "max": 8}, {"stack": 0, "layer": 0, "parameter": "density", "min": 1.5, "max": 2.4}, {"stack": 0, "layer": 1, "parameter": "thickness", "min": 15.53, "max": 31.07}, {"stack": 0, "layer": 1, "parameter": "sigma", "min": 1, "max": 8}, {"stack": 0, "layer": 1, "parameter": "density", "min": 6.0, "max": 8.79}, {"stack": 1, "layer": 0, "parameter": "thickness", "min": 0.1, "max": 40}, {"stack": 1, "layer": 0, "parameter": "sigma", "min": 0.0, "max": 15.0}, {"stack": 1, "layer": 0, "parameter": "density", "min": 0.2, "max": 1.8}]
+CoC5: Δθ 0.012, widening [{"round": 0, "changes": [{"stack": 0, "layer": 1, "parameter": "density", "from": [6.0, 8.79], "to": [4.605, 8.79]}, {"stack": 1, "layer": 0, "parameter": "sigma", "from": [0, 10], "to": [0, 15.0]}, {"stack": 1, "layer": 0, "parameter": "density", "from": [0.6, 1.4], "to": [0.2, 1.8]}]}, {"round": 1, "changes": [{"stack": 1, "layer": 0, "parameter": "sigma", "from": [0, 15.0], "to": [0, 22.5]}, {"stack": 1, "layer": 0, "parameter": "density", "from": [0.2, 1.8], "to": [0.0, 1.8]}]}, {"round": 2, "changes": [{"stack": 1, "layer": 0, "parameter": "thickness", "from": [5, 40], "to": [0.1, 40]}, {"stack": 1, "layer": 0, "parameter": "density", "from": [0.0, 1.8], "to": [0.0, 2.7]}]}, {"round": 3, "changes": []}]
+  final bounds [{"stack": 0, "layer": 0, "parameter": "thickness", "min": 20.93, "max": 41.87}, {"stack": 0, "layer": 0, "parameter": "sigma", "min": 1, "max": 8}, {"stack": 0, "layer": 0, "parameter": "density", "min": 1.5, "max": 2.4}, {"stack": 0, "layer": 1, "parameter": "thickness", "min": 12.62, "max": 25.24}, {"stack": 0, "layer": 1, "parameter": "sigma", "min": 1, "max": 8}, {"stack": 0, "layer": 1, "parameter": "density", "min": 4.605, "max": 8.79}, {"stack": 1, "layer": 0, "parameter": "thickness", "min": 0.1, "max": 40}, {"stack": 1, "layer": 0, "parameter": "sigma", "min": 0, "max": 22.5}, {"stack": 1, "layer": 0, "parameter": "density", "min": 0.0, "max": 2.7}]
+
+CoC4 (final limits)
+  Periodic, period held: χ² [1.2341, 1.242, 1.242, 1.2341, 1.2415]  best 1.2341 (seed 20260921)  χ² sd 0.0042
+     D mean over the stack [54.7, 54.7, 54.7, 54.7, 54.7]
+     seed 20260921: χ² 1.2341  C H 31.35 σ 2.53 ρ 2.005 | Co H 23.35 σ 4.23 ρ 7.326 | top H 11.63 σ 0.01 ρ 0.773 | nb [(1, 0, 'sigma', 'min', 0.0)]
+     seed 20260922: χ² 1.2420  C H 31.31 σ 4.32 ρ 1.960 | Co H 23.39 σ 2.59 ρ 7.348 | top H 11.66 σ 0.05 ρ 0.803 | nb [(1, 0, 'sigma', 'min', 0.003)]
+     seed 20260923: χ² 1.2420  C H 31.30 σ 4.30 ρ 1.964 | Co H 23.40 σ 2.60 ρ 7.348 | top H 11.66 σ 0.37 ρ 0.804 | nb [(1, 0, 'sigma', 'min', 0.025)]
+     seed 20260924: χ² 1.2341  C H 31.35 σ 2.53 ρ 1.997 | Co H 23.35 σ 4.23 ρ 7.326 | top H 11.64 σ 0.04 ρ 0.748 | nb [(1, 0, 'sigma', 'min', 0.003)]
+     seed 20260925: χ² 1.2415  C H 31.30 σ 4.34 ρ 1.967 | Co H 23.40 σ 2.59 ρ 7.348 | top H 11.66 σ 0.41 ρ 0.810 | nb [(1, 0, 'sigma', 'min', 0.027)]
+     order ratios (best run) [(1, 1.02), (2, 0.92), (3, 0.92), (4, 1.1), (5, 0.67), (6, 1.19), (7, 0.42), (8, 0.3)]
+  every box ticked (period free): χ² [0.9755, 0.9766, 0.9751, 0.9751, 0.9789]  best 0.9751 (seed 20260924)  χ² sd 0.0016
+     D mean over the stack [54.79, 54.789, 54.789, 54.788, 54.789]
+     seed 20260921: χ² 0.9755  C H 31.35 σ 4.33 ρ 1.999 | Co H 23.44 σ 2.63 ρ 7.602 | top H 11.46 σ 0.09 ρ 0.886 | nb [(1, 0, 'sigma', 'min', 0.006)]
+     seed 20260922: χ² 0.9766  C H 31.35 σ 4.31 ρ 2.015 | Co H 23.44 σ 2.63 ρ 7.602 | top H 11.74 σ 0.00 ρ 0.859 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260923: χ² 0.9751  C H 31.34 σ 4.35 ρ 1.997 | Co H 23.45 σ 2.62 ρ 7.604 | top H 11.50 σ 0.00 ρ 0.883 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260924: χ² 0.9751  C H 31.35 σ 4.31 ρ 2.023 | Co H 23.44 σ 2.62 ρ 7.569 | top H 11.48 σ 0.00 ρ 0.900 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260925: χ² 0.9789  C H 31.38 σ 4.29 ρ 2.037 | Co H 23.41 σ 2.62 ρ 7.525 | top H 11.54 σ 0.00 ρ 0.934 | nb [(1, 0, 'sigma', 'min', 0)]
+     order ratios (best run) [(1, 1.01), (2, 0.96), (3, 0.96), (4, 1.17), (5, 0.78), (6, 1.09), (7, 0.28), (8, 0.28)]
+  Polynomial, order 1: χ² [0.9588, 0.9595, 0.9853, 1.0342, 0.96]  best 0.9588 (seed 20260921)  χ² sd 0.0326
+     D mean over the stack [54.806, 54.812, 54.726, 54.771, 54.809]
+     drift [-0.393, -0.387, -0.434, -0.268, -0.396]  best-run drift -0.393  sd 0.063  2 sd 0.125  → drift reported
+     best run: top D 55.002, bottom D 54.609, min 54.609, max 55.002
+     seed 20260921: χ² 0.9588  C H 31.36 σ 4.30 ρ 2.036 | Co H 23.45 σ 2.62 ρ 7.589 | top H 11.42 σ 0.00 ρ 0.919 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260922: χ² 0.9595  C H 31.33 σ 4.34 ρ 2.020 | Co H 23.48 σ 2.63 ρ 7.637 | top H 11.45 σ 0.00 ρ 0.898 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260923: χ² 0.9853  C H 31.36 σ 4.36 ρ 1.992 | Co H 23.36 σ 2.62 ρ 7.559 | top H 10.92 σ 2.15 ρ 1.064 | nb []
+     seed 20260924: χ² 1.0342  C H 31.44 σ 2.57 ρ 2.034 | Co H 23.33 σ 4.21 ρ 7.582 | top H 11.69 σ 0.00 ρ 0.880 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260925: χ² 0.9600  C H 31.36 σ 4.37 ρ 2.025 | Co H 23.45 σ 2.62 ρ 7.615 | top H 11.26 σ 0.00 ρ 0.902 | nb [(1, 0, 'sigma', 'min', 0)]
+     order ratios (best run) [(1, 1.01), (2, 0.96), (3, 0.95), (4, 1.13), (5, 0.77), (6, 1.11), (7, 0.26), (8, 0.28)]
+  Polynomial, order 3: χ² [0.7893, 0.9384, 0.9069, 0.8067, 0.9049]  best 0.7893 (seed 20260921)  χ² sd 0.0667
+     D mean over the stack [54.797, 54.834, 54.814, 54.827, 54.809]
+     drift [0.779, -0.189, 0.587, 0.524, 0.813]  best-run drift +0.779  sd 0.406  2 sd 0.812  → uniform
+     best run: top D 54.689, bottom D 55.469, min 54.633, max 55.469
+     seed 20260921: χ² 0.7893  C H 31.35 σ 4.43 ρ 1.963 | Co H 23.44 σ 2.58 ρ 7.558 | top H 10.93 σ 1.46 ρ 0.957 | nb []
+     seed 20260922: χ² 0.9384  C H 31.53 σ 2.57 ρ 2.016 | Co H 23.31 σ 4.30 ρ 7.678 | top H 11.82 σ 1.53 ρ 0.914 | nb []
+     seed 20260923: χ² 0.9069  C H 31.47 σ 2.55 ρ 2.032 | Co H 23.35 σ 4.29 ρ 7.577 | top H 11.72 σ 0.00 ρ 0.794 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260924: χ² 0.8067  C H 31.36 σ 4.61 ρ 1.948 | Co H 23.47 σ 2.60 ρ 7.645 | top H 11.20 σ 0.00 ρ 0.802 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260925: χ² 0.9049  C H 31.39 σ 2.58 ρ 2.004 | Co H 23.42 σ 4.34 ρ 7.621 | top H 12.03 σ 0.19 ρ 0.815 | nb [(1, 0, 'sigma', 'min', 0.013)]
+     order ratios (best run) [(1, 1.01), (2, 0.94), (3, 0.96), (4, 1.14), (5, 0.79), (6, 1.05), (7, 0.33), (8, 0.28)]
+  order test (§9.8): order-1 best 0.9588 − order-3 best 0.7893 = 0.1695 against 2 × order-1 χ² sd = 0.0651 → order 3 passes the χ² margin
+
+CoC5 (final limits)
+  Periodic, period held: χ² [0.8519, 0.8521, 0.8519, 0.8519, 0.852]  best 0.8519 (seed 20260924)  χ² sd 0.0001
+     D mean over the stack [50.33, 50.33, 50.33, 50.33, 50.33]
+     seed 20260921: χ² 0.8519  C H 31.12 σ 4.45 ρ 2.237 | Co H 19.21 σ 5.99 ρ 6.369 | top H 11.79 σ 9.21 ρ 1.128 | nb []
+     seed 20260922: χ² 0.8521  C H 31.12 σ 4.45 ρ 2.235 | Co H 19.21 σ 5.99 ρ 6.370 | top H 11.72 σ 9.12 ρ 1.129 | nb []
+     seed 20260923: χ² 0.8519  C H 31.14 σ 4.46 ρ 2.232 | Co H 19.19 σ 6.03 ρ 6.391 | top H 11.80 σ 9.19 ρ 1.125 | nb []
+     seed 20260924: χ² 0.8519  C H 31.13 σ 4.45 ρ 2.230 | Co H 19.20 σ 6.01 ρ 6.392 | top H 11.76 σ 9.32 ρ 1.128 | nb []
+     seed 20260925: χ² 0.8520  C H 31.11 σ 4.45 ρ 2.237 | Co H 19.21 σ 6.00 ρ 6.370 | top H 11.90 σ 9.23 ρ 1.111 | nb []
+     order ratios (best run) [(1, 1.01), (2, 1.2), (3, 1.06), (4, 0.48)]
+  every box ticked (period free): χ² [0.7064, 0.6875, 0.6875, 0.6883, 0.6825]  best 0.6825 (seed 20260925)  χ² sd 0.0092
+     D mean over the stack [50.222, 50.186, 50.186, 50.188, 50.192]
+     seed 20260921: χ² 0.7064  C H 30.89 σ 4.45 ρ 2.141 | Co H 19.33 σ 5.62 ρ 6.102 | top H 4.57 σ 7.07 ρ 2.266 | nb []
+     seed 20260922: χ² 0.6875  C H 30.69 σ 5.51 ρ 2.062 | Co H 19.49 σ 4.52 ρ 6.046 | top H 9.38 σ 0.00 ρ 0.832 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260923: χ² 0.6875  C H 30.69 σ 5.51 ρ 2.067 | Co H 19.49 σ 4.52 ρ 6.046 | top H 9.38 σ 0.00 ρ 0.838 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260924: χ² 0.6883  C H 30.69 σ 5.44 ρ 2.082 | Co H 19.50 σ 4.51 ρ 6.024 | top H 9.51 σ 0.00 ρ 0.855 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260925: χ² 0.6825  C H 30.72 σ 5.54 ρ 2.081 | Co H 19.47 σ 4.50 ρ 6.046 | top H 9.42 σ 2.17 ρ 0.963 | nb []
+     order ratios (best run) [(1, 1.01), (2, 1.12), (3, 0.97), (4, 0.59)]
+  Polynomial, order 1: χ² [0.6907, 0.7069, 0.6995, 0.6833, 0.7055]  best 0.6833 (seed 20260924)  χ² sd 0.0100
+     D mean over the stack [50.128, 50.22, 50.221, 50.171, 50.223]
+     drift [0.599, -0.148, 0.112, 0.344, -0.254]  best-run drift +0.344  sd 0.350  2 sd 0.701  → uniform
+     best run: top D 49.999, bottom D 50.343, min 49.999, max 50.343
+     seed 20260921: χ² 0.6907  C H 30.61 σ 5.34 ρ 2.047 | Co H 19.51 σ 4.57 ρ 6.004 | top H 9.54 σ 0.87 ρ 0.923 | nb [(1, 0, 'sigma', 'min', 0.039)]
+     seed 20260922: χ² 0.7069  C H 31.04 σ 4.44 ρ 2.144 | Co H 19.18 σ 5.84 ρ 6.169 | top H 6.29 σ 7.22 ρ 1.783 | nb []
+     seed 20260923: χ² 0.6995  C H 31.17 σ 4.46 ρ 2.141 | Co H 19.05 σ 6.07 ρ 6.261 | top H 10.16 σ 8.60 ρ 1.198 | nb []
+     seed 20260924: χ² 0.6833  C H 30.65 σ 5.58 ρ 2.054 | Co H 19.52 σ 4.52 ρ 6.055 | top H 9.50 σ 0.61 ρ 0.833 | nb [(1, 0, 'sigma', 'min', 0.027)]
+     seed 20260925: χ² 0.7055  C H 30.87 σ 4.48 ρ 2.144 | Co H 19.36 σ 5.57 ρ 6.130 | top H 4.91 σ 6.98 ρ 2.266 | nb []
+     order ratios (best run) [(1, 1.0), (2, 1.08), (3, 1.0), (4, 0.62)]
+  Polynomial, order 3: χ² [0.6156, 0.6492, 0.623, 0.652, 0.6589]  best 0.6156 (seed 20260921)  χ² sd 0.0192
+     D mean over the stack [50.248, 50.209, 50.235, 50.176, 50.256]
+     drift [-0.006, 0.02, 0.025, 0.347, 0.324]  best-run drift -0.006  sd 0.177  2 sd 0.354  → uniform
+     best run: top D 50.421, bottom D 50.416, min 50.149, max 50.421
+     seed 20260921: χ² 0.6156  C H 30.93 σ 4.45 ρ 2.172 | Co H 19.32 σ 5.80 ρ 6.203 | top H 7.58 σ 9.10 ρ 1.417 | nb []
+     seed 20260922: χ² 0.6492  C H 30.63 σ 5.50 ρ 2.071 | Co H 19.58 σ 4.51 ρ 6.025 | top H 9.52 σ 0.00 ρ 0.772 | nb [(1, 0, 'sigma', 'min', 0)]
+     seed 20260923: χ² 0.6230  C H 30.98 σ 4.43 ρ 2.158 | Co H 19.26 σ 5.71 ρ 6.197 | top H 6.39 σ 9.01 ρ 1.616 | nb []
+     seed 20260924: χ² 0.6520  C H 30.72 σ 5.49 ρ 2.069 | Co H 19.46 σ 4.50 ρ 6.027 | top H 9.85 σ 2.15 ρ 0.922 | nb []
+     seed 20260925: χ² 0.6589  C H 31.15 σ 4.46 ρ 2.178 | Co H 19.10 σ 5.84 ρ 6.247 | top H 11.84 σ 9.17 ρ 1.113 | nb []
+     order ratios (best run) [(1, 1.01), (2, 1.12), (3, 1.06), (4, 0.47)]
+  order test (§9.8): order-1 best 0.6833 − order-3 best 0.6156 = 0.0677 against 2 × order-1 χ² sd = 0.0201 → order 3 passes the χ² margin
+
+Demo (the demo's own limits)
+  every box ticked (period free): χ² [21.1291, 21.1325, 21.1289, 21.1185, 21.13]  best 21.1185 (seed 20260924)  χ² sd 0.0054
+     D mean over the stack [42.415, 42.407, 42.416, 42.413, 42.417]
+     seed 20260921: χ² 21.1291  C H 27.38 σ 2.76 ρ 2.400 | Co H 15.03 σ 3.09 ρ 9.764 | top H 41.12 σ 1.00 ρ 1.850 | nb [(0, 0, 'density', 'max', -0.0), (1, 0, 'sigma', 'min', 0)]
+     seed 20260922: χ² 21.1325  C H 27.38 σ 2.74 ρ 2.400 | Co H 15.03 σ 3.07 ρ 9.743 | top H 41.08 σ 1.00 ρ 1.800 | nb [(0, 0, 'density', 'max', -0.0), (1, 0, 'sigma', 'min', 0), (1, 0, 'density', 'min', -0.0)]
+     seed 20260923: χ² 21.1289  C H 27.39 σ 2.76 ρ 2.400 | Co H 15.02 σ 3.09 ρ 9.763 | top H 41.12 σ 1.00 ρ 1.850 | nb [(0, 0, 'density', 'max', -0.0), (1, 0, 'sigma', 'min', 0)]
+     seed 20260924: χ² 21.1185  C H 27.38 σ 2.75 ρ 2.400 | Co H 15.04 σ 3.08 ρ 9.764 | top H 41.11 σ 1.15 ρ 1.886 | nb [(0, 0, 'density', 'max', -0.0), (1, 0, 'sigma', 'min', 0.037)]
+     seed 20260925: χ² 21.1300  C H 27.40 σ 2.77 ρ 2.400 | Co H 15.02 σ 3.10 ρ 9.785 | top H 41.13 σ 1.00 ρ 1.868 | nb [(0, 0, 'density', 'max', -0.0), (1, 0, 'sigma', 'min', 0)]
+     order ratios (best run) [(1, 1.14), (2, 1.89), (3, 5.56), (4, 3.13), (5, 9.27)]
+  Polynomial, order 1: χ² [6.3974, 6.4142, 6.3968, 6.3967, 6.3966]  best 6.3966 (seed 20260925)  χ² sd 0.0077
+     D mean over the stack [42.263, 42.264, 42.261, 42.261, 42.262]
+     drift [3.579, 3.59, 3.573, 3.573, 3.574]  best-run drift +3.574  sd 0.007  2 sd 0.014  → drift reported
+     best run: top D 40.474, bottom D 44.049, min 40.474, max 44.049
+     seed 20260921: χ² 6.3974  C H 27.26 σ 3.13 ρ 2.400 | Co H 15.00 σ 3.06 ρ 10.103 | top H 50.38 σ 2.44 ρ 2.225 | nb [(0, 0, 'density', 'max', -0.0)]
+     seed 20260922: χ² 6.4142  C H 27.20 σ 3.04 ρ 2.400 | Co H 15.06 σ 3.13 ρ 10.054 | top H 50.43 σ 2.45 ρ 2.230 | nb [(0, 0, 'density', 'max', -0.0)]
+     seed 20260923: χ² 6.3968  C H 27.27 σ 3.15 ρ 2.400 | Co H 14.99 σ 3.05 ρ 10.104 | top H 50.37 σ 2.46 ρ 2.224 | nb [(0, 0, 'density', 'max', -0.0)]
+     seed 20260924: χ² 6.3967  C H 27.29 σ 3.16 ρ 2.400 | Co H 14.97 σ 3.04 ρ 10.125 | top H 50.37 σ 2.45 ρ 2.225 | nb [(0, 0, 'density', 'max', -0.0)]
+     seed 20260925: χ² 6.3966  C H 27.29 σ 3.16 ρ 2.400 | Co H 14.97 σ 3.05 ρ 10.125 | top H 50.37 σ 2.45 ρ 2.224 | nb [(0, 0, 'density', 'max', -0.0)]
+     order ratios (best run) [(1, 1.0), (2, 1.11), (3, 1.05), (4, 0.94), (5, 0.51)]
+  Polynomial, order 3: χ² [0.8883, 0.123, 0.0397, 0.9364, 0.3892]  best 0.0397 (seed 20260923)  χ² sd 0.4197
+     D mean over the stack [42.274, 42.272, 42.267, 42.272, 42.233]
+     drift [3.719, 2.071, 1.956, 3.835, 2.02]  best-run drift +1.956  sd 0.966  2 sd 1.933  → drift reported
+     best run: top D 39.981, bottom D 41.938, min 39.981, max 43.570
+     seed 20260921: χ² 0.8883  C H 27.28 σ 3.07 ρ 2.400 | Co H 15.00 σ 3.08 ρ 10.250 | top H 50.81 σ 3.00 ρ 2.323 | nb [(0, 0, 'density', 'max', -0.0), (0, 1, 'density', 'max', 0)]
+     seed 20260922: χ² 0.1230  C H 27.31 σ 3.05 ρ 2.400 | Co H 14.96 σ 2.96 ρ 10.242 | top H 50.09 σ 3.16 ρ 2.400 | nb [(0, 0, 'density', 'max', -0.0), (0, 1, 'density', 'max', 0.006), (1, 0, 'density', 'max', -0.0)]
+     seed 20260923: χ² 0.0397  C H 27.26 σ 2.99 ρ 2.400 | Co H 15.01 σ 3.00 ρ 10.250 | top H 50.00 σ 3.10 ρ 2.400 | nb [(0, 0, 'density', 'max', -0.0), (0, 1, 'density', 'max', 0), (1, 0, 'density', 'max', 0.0)]
+     seed 20260924: χ² 0.9364  C H 27.40 σ 3.21 ρ 2.400 | Co H 14.88 σ 2.97 ρ 10.250 | top H 51.06 σ 3.29 ρ 2.400 | nb [(0, 0, 'density', 'max', -0.0), (0, 1, 'density', 'max', 0), (1, 0, 'density', 'max', 0.0)]
+     seed 20260925: χ² 0.3892  C H 27.34 σ 3.09 ρ 2.400 | Co H 14.89 σ 2.97 ρ 10.250 | top H 50.11 σ 2.72 ρ 2.326 | nb [(0, 0, 'density', 'max', -0.0), (0, 1, 'density', 'max', 0)]
+     order ratios (best run) [(1, 0.99), (2, 0.98), (3, 1.04), (4, 1.02), (5, 1.02)]
+  order test (§9.8): order-1 best 6.3966 − order-3 best 0.0397 = 6.3569 against 2 × order-1 χ² sd = 0.0155 → order 3 passes the χ² margin
+  demo truth: top D 40.00, bottom D 41.96, max 43.60 at period 22, mean 42.298, drift +1.958
+
+Figure 17-2: one-period fit seed 20260924, χ² 21.1185, D 42.413, scale ratio 1.00017

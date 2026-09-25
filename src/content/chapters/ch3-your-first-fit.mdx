@@ -1,0 +1,150 @@
+---
+title: Your First Fit, the Short Way
+part: '1'
+number: '3'
+order: 30
+inThisChapter:
+  - Running a complete fit on the demo project
+  - Reading what the fit changed
+  - Knowing why a first fit is not yet a result
+---
+import Remember from '../../components/textbook/Remember.astro';
+import GoingDeeper from '../../components/textbook/GoingDeeper.astro';
+import Warning from '../../components/textbook/Warning.astro';
+import InXRayCalc from '../../components/textbook/InXRayCalc.astro';
+import Figure from '../../components/textbook/Figure.astro';
+import DataTable from '../../components/textbook/DataTable.astro';
+
+This chapter runs a whole fit in a few minutes, with the settings a demo project already carries. You'll see the program fit a curve, and you'll see what it gives back. Then you'll run the same fit a second time and compare. The comparison shows why the rest of this book exists.
+
+## The example
+
+The fit uses the demo project from <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#opening-a-demo-project`}>Chapter 2: Opening a demo project</a>, `ML(30x2)P3_Best.xrcx`. Its curve **Data 1.dat** was calculated from the model **Target**, so this fit has a known answer. Calculate **Target** and its χ² against the curve is 0.0013. It is not zero because the curve was calculated by an older version of the program, whose roughness factor differed very slightly (<a href={`${import.meta.env.BASE_URL}/ch7-roughness-interlayers-dirty-surface#a-boundary-with-a-width`}>Chapter 7: A boundary with a width</a>). No real measurement lets you check a fit this way.
+
+**Target** is not a plain repeat of one period. The thickness of its Si layers changes through the stack. It is 25.00 Å in the top period, grows to 28.60 Å in periods 21 and 22, and falls to 26.96 Å in the bottom period, next to the substrate. The Mo layers are 15 Å in every period. So the period grows from 40.00 Å at the top to 43.60 Å, then falls to 41.96 Å. Its mean is 42.30 Å. The structure panel shows only 25.00 Å for the Si layer of **Target**, the value in the top period. The rest of the profile is held in the item **Gradient 1** under **Target**.
+
+**For fit** is the starting model: a 60 Å Si top layer on 30 periods of 24 Å Si and 18 Å Mo, with no gradient. Its fit limits and its fitting settings are already set. The fit has to find the gradient.
+
+If you changed the demo in Chapter 2, open it again from the Examples folder and don't save your changes. The fit must start from the model as installed.
+
+## Running the fit
+
+1. Open `ML(30x2)P3_Best.xrcx` with **File > Open project** (F3).
+2. In the project tree, click **For fit**. The triangle moves to it.
+3. Check the fitting settings at the top right of the working area: **Population** 5000 and **Iterations** 200. The demo stores these values. They are also the book's default. **Mode** is **Polynomial** with **Order** 3. <a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#two-ways-to-describe-a-stack`}>Chapter 17: Two ways to describe a stack</a> explains the modes.
+4. Choose **Calc > Auto Fitting**, or press F7. The **Fitting Limits** dialog opens (<a href="#fig-3-1">Figure 3-1</a>). The fit hasn't started yet.
+5. Click **Run**. The fit starts.
+
+<Figure id="fig-3-1" number="3-1" src={`${import.meta.env.BASE_URL}/figures/fig-3-1-fitting-limits.png`} alt="The Fitting Limits dialog with the minimum and maximum of H, sigma and rho for the Si top layer and the Si and Mo layers of the Main stack" caption="The **Fitting Limits** dialog of the demo, opened by **Calc > Auto Fitting**. Each row is a layer, and each parameter has a minimum and a maximum. A parameter is fitted only when its minimum and maximum differ. X-Ray Calc 3.9.4.1250." />
+
+The dialog shows the limits of every parameter that the fit may change. <a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#generous-limits`}>Chapter 15: Generous limits</a> explains how to choose them. In the demo every cell is white. In your own projects some cells may be yellow: a start value outside its limits, on a limit, or within 5 % of the range from one. A red cell is an error, such as a minimum above its maximum. The **Fix** button at the bottom right repairs both, and **Run** then asks no questions. If you click **Run** with yellow cells, a **Warning** box lists them and asks "Proceed anyway?".
+
+While the fit runs, the red curve of **For fit** moves toward the blue measured curve. The **Convergence** page at the bottom plots the best χ² at each iteration. When the fit ends, the status bar shows the fitting time and the device the fit ran on.
+
+On the author's PC the fit took 3.22 s on the graphics card, an NVIDIA GeForce RTX 5080. The program fits on the graphics card whenever it finds one it can use. That setting is on by default (**File > Settings**).
+
+<InXRayCalc>**Calc > Auto Fitting** (F7) opens the **Fitting Limits** dialog. **Run** starts the fit. The **Stop** button ends a fit early. It appears at the top of the chart while a calculation or a fit runs.</InXRayCalc>
+
+## What the fit found
+
+<Figure id="fig-3-2" number="3-2" src={`${import.meta.env.BASE_URL}/figures/fig-3-2-first-fit.png`} alt="The fitted curve lying on the demo curve, the residual strip close to zero under it, the Chart Info bar with chi-squared 0.1244, and the Convergence page with chi-squared falling over 200 iterations" caption="The working area after the first fit. The red fitted curve lies on the blue curve of Data 1.dat. The residual strip under the chart stays close to zero. The Chart Info bar shows χ² = 0.1244. The Convergence page shows χ² falling over 200 iterations. Its triangles mark the iterations at which the swarm was shaken (Chapter 9). X-Ray Calc 3.9.4.1250." />
+
+The red curve now lies on the blue one (<a href="#fig-3-2">Figure 3-2</a>). χ² fell from 45.13 before the fit to 0.1244. The residual strip under the chart shows what is left: the logarithm of the calculated over the measured reflectivity, now close to zero everywhere (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-residual-by-band`}>Chapter 18: The residual by band</a>). The structure panel shows the fitted values of **For fit**.
+
+The project tree also has a new item under **For fit**: **F(H Main/Si)**. It is the fitted thickness profile of the Si layers in the **Main** stack. Polynomial mode gave the Si thickness a profile because its box in the structure panel was cleared. A ticked box holds a parameter at one value in every period. In **For fit** every other box of the **Main** stack is ticked. <a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#reading-a-drift-in-x-ray-calc`}>Chapter 17: Reading a drift in X-Ray Calc</a> explains the profiles.
+
+A profiled layer shows one number in its H field: the value in the top period. After this fit the Si field reads 24.66 Å. The profile item holds the rest. The **Thickness** page at the bottom of the working area draws the whole profile, period by period (<a href="#fig-3-3">Figure 3-3</a>).
+
+<Figure id="fig-3-3" number="3-3" src={`${import.meta.env.BASE_URL}/figures/fig-3-3-thickness-profile.png`} alt="The Thickness page: the Si thickness of the Main stack rising from about 24.7 angstrom in period 1 to about 28.6 angstrom near period 21 and falling to about 27 angstrom in period 30, and the Mo thickness flat at 15 angstrom" caption="The **Thickness** page after the first fit. The horizontal axis is the period, from 1 at the surface to 30 next to the substrate. The fitted Si thickness rises from 24.66 Å to 28.57 Å and falls to 27.05 Å. The Mo thickness stays at 15.00 Å. X-Ray Calc 3.9.4.1250." />
+
+<Warning title="the D box shows the top period">The **D** box of the Chart Info bar adds up the H fields of the stack. After this fit it reads 39.66 Å. That is the period at the top of the stack only. The mean period of the fitted stack is 42.29 Å, and the program shows no warning that the two differ.</Warning>
+
+<GoingDeeper title="how a profile gives the value in each period">
+
+X-Ray Calc numbers the periods of a stack from the surface: k = 1 is the top period, and k = 30 the one next to the substrate. A profile is a polynomial in k:
+
+$$
+H(k) = C_0 + C_1 (k-1) + C_2 (k-1)^2 + C_3 (k-1)^3
+$$
+
+C₀ is the value in the layer's H field. C₁ to C₃ are stored in the profile item, **F(H Main/Si)**. With **Order** 3 there are three of them. The values in <a href="#table-3-1">Table 3-1</a> were computed with this formula from the coefficients saved in each fitted project. **Target**'s **Gradient 1** uses the same formula, with C₀ = 25, C₁ = 0.14, C₂ = 0.012 and C₃ = −0.0005.
+
+</GoingDeeper>
+
+## Run it again
+
+Fit the same curve a second time, from the same start:
+
+1. Open `ML(30x2)P3_Best.xrcx` again, and don't save the first fit.
+2. Click **For fit**, choose **Calc > Auto Fitting** (F7), and click **Run**.
+
+<a href="#table-3-1">Table 3-1</a> puts the two runs side by side with the true values of **Target**.
+
+<p id="table-3-1" class="table-caption"><strong>Table 3-1:</strong> Two fits of the demo from the same starting model, against the Target values the curve was calculated from. Values on a fit limit are in bold.</p>
+
+<DataTable
+  keepHeaderCase
+  headers={['Parameter', 'Start', 'Run 1', 'Run 2', 'Target']}
+  rows={[
+    ['Top Si, H (Å)', '60', '50.33', '51.06', '50'],
+    ['Top Si, σ (Å)', '2', '3.42', '3.11', '3'],
+    ['Top Si, ρ (g/cm³)', '2', '**2.35**', '**2.35**', '2.33'],
+    ['Si, H in period 1, the top (Å)', '24', '24.66', '24.30', '25.00'],
+    ['Si, H in period 21 (Å)', '24', '28.57', '28.41', '28.60'],
+    ['Si, H in period 30, the bottom (Å)', '24', '27.05', '28.04', '26.96'],
+    ['Si, mean H (Å)', '24', '27.29', '27.32', '27.30'],
+    ['Si, σ (Å)', '4', '2.99', '2.98', '3'],
+    ['Si, ρ (g/cm³)', '2', '**2.35**', '**2.35**', '2.33'],
+    ['Mo, H (Å)', '18', '15.00', '14.99', '15'],
+    ['Mo, σ (Å)', '4', '3.03', '3.14', '3'],
+    ['Mo, ρ (g/cm³)', '9.5', '10.13', '10.14', '10.20'],
+    ['Mean period (Å)', '42', '42.29', '42.31', '42.30'],
+    ['χ²', '45.13', '0.1244', '0.8147', '0.0013'],
+  ]}
+/>
+
+Your numbers will differ from both runs. Every fit starts its swarm at random, so no two runs are the same (<a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#random-seeds-why-two-runs-disagree`}>Chapter 9: Random seeds</a>). The project saves the seed each fit used, so a run you want to keep can be repeated.
+
+## Why this is not yet a result
+
+The thicknesses came out well. In all 30 periods the fitted Si profile matches the true one, within 0.34 Å in run 1 and 1.09 Å in run 2. The runs give a mean period of 42.29 Å and 42.31 Å, against 42.30 Å in **Target**.
+
+The densities came out less well. In both runs both Si densities ended at 2.35 g/cm³, which is their upper limit. The true value is 2.33. A value on a limit was set by the limit. It says nothing about the layer. The Mo density was 10.13 g/cm³ in run 1 and 10.14 in run 2, against a true 10.20.
+
+<Warning title="a value on its limit">The structure panel reported a Si density of 2.35 g/cm³, and nothing in the main window said that 2.35 is the upper limit. In a real measurement you have no Target to compare with. Open the **Fitting Limits** dialog after every fit, with the **Limits** button. It marks a value on or near its limit with a yellow cell: here the two Si densities. <a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#the-near-bound-rule`}>Chapter 15: The near-bound rule</a> gives the rule: extend the limit and fit again.</Warning>
+
+χ² does not show this either. Run 1 reached χ² = 0.1244 and run 2 reached 0.8147. Both are far above the 0.0013 of **Target**, so neither run found the true structure. Yet on the chart both fitted curves lie on the data. The residual strip stays close to zero. Neither the chart nor χ² tells you that a density sits on its limit.
+
+<Remember>Run every fit at least twice. A number that changes between runs is not fixed by your curve.</Remember>
+
+The short way also skipped most of the work a real curve needs. Each skipped step has its row in <a href={`${import.meta.env.BASE_URL}/ch1-what-xrr-fitting-is#table-1-1`}>Chapter 1: Table 1-1</a> and its own chapter:
+
+- **The curve was never checked or prepared.** A real measurement needs its quality assessed, its scale set and its fitting range chosen (<a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#is-this-curve-worth-fitting`}>Chapter 10: Is This Curve Worth Fitting?</a>; <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#what-you-read-before-the-first-fit`}>Chapter 11: Reading the Curve Before You Fit</a>; <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#four-settings-in-this-order`}>Chapter 14: Preparing the Data</a>).
+- **The model came ready-made.** Your own starting model comes from the design and from the curve (<a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#what-the-starting-model-decides`}>Chapter 12: Building the Starting Model</a>).
+- **The limits came with the project.** <a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#what-is-free-and-what-the-limits-are-for`}>Chapter 15: Choosing What to Fit</a> shows how to set them, and what to do when a value ends on one.
+- **The settings came with the project.** The resolution Δθ and the wavelength belong to your own measurement and instrument (<a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#the-settings-and-the-ones-you-change`}>Chapter 16: Fit Settings</a>).
+- **The fit was judged by χ² and by eye.** <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#χ-is-one-check-among-several`}>Chapter 18: Judging a Fit</a> checks the Bragg orders, the critical edge and the fringes, and compares repeated runs.
+- **The densities were read as numbers.** A fitted density is a free parameter. Don't report it as a property of the material (<a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#a-free-parameter-not-a-result`}>Chapter 20: A free parameter, not a result</a>).
+
+## Saving the fit
+
+Save the fitted project in your own folder with **File > Save project As** (F2). The fitted values are saved in the model **For fit**, and the profile in its item **F(H Main/Si)**. The demo in the Examples folder stays as installed, so you can repeat this chapter at any time.
+
+## Sources
+
+- **The two runs and the Target calculation** were made for this chapter on 2026-09-25. They used X-Ray Calc 3.9.4.1250, 64-bit, on an NVIDIA GeForce RTX 5080, with the demo `ML(30x2)P3_Best.xrcx` as the 3.9.4.1250 installer ships it (the author's revision of 2026-09-25). Each run started from a fresh copy of the demo and was saved with **File > Save project**. The fitting times (3.22 s and 3.21 s) were read from the screen. χ² and the seed of each run come from the fit record in its saved project. For run 2 the screen of 3.9.4.1250 showed 0.8131, the running best on the graphics card; from 3.9.4.1270 the screen shows the recorded value, 0.8147. After run 1, the **Fitting Limits** dialog, opened with the **Limits** button, showed the two Si density cells yellow. **Target** was calculated with **Calc > Run** (F5). Every other number in Table 3-1 was read from the saved projects by `scripts/figures/ch3_table.py`, which also evaluates the profiles period by period. The saved projects are kept in `figures-src/fits/`.
+- **The author (2026):** the demo's curve **Data 1.dat** was calculated from **Target**. The book's default of 5000 particles and 200 iterations takes a few seconds on a GPU. The curve predates 3.9.4.1050, which changed the roughness exponent from 0.50299 to ½ (X-Ray Calc source, `Shared\Math\unit_calc.pas`). Hence the χ² of 0.0013 for **Target**.
+- **The X-Ray Calc 3 source**, as read by the X-Ray Calc code session (2026-09-23):
+  - a profile is a polynomial in the period index counted from the surface (`Shared\Math\math_globals.pas:80–91`, `unit_materials.pas:237–247`);
+  - C₀ is taken from the layer's own field (`frame_ProjectPanel.pas:1702`), and after a fit the H field receives the fitted C₀ (`unit_LFPSO_Base.pas:1258–1272`);
+  - the extension stores C₁ and up (`unit_XRCProjectTree.pas:515–538, 662–668`);
+  - the box after a field sets "Paired", one value in every period (`unit_XRCLayerControl.pas:153`). Only an unpaired parameter of a stack with N > 1 gets a profile (`unit_LFPSO_Poly.pas:422`);
+  - **Target**'s **Gradient 1** grades only the Si thickness of the **Main** stack;
+  - the **D** box shows the sum of the H fields (`unit_XRCStructure.pas:508–512`, `unit_CalcOrchestrator.pas:197`);
+  - GPU fitting is on by default (`unit_Config.pas`), and the triangles on the Convergence page mark the shaken iterations (`frame_ChartPages.pas:115–124`);
+  - checked again in release 3.9.4.1250: the yellow and red cells of the **Fitting Limits** dialog, yellow also for a value within 5 % of the range from a limit (`Units\unit_SmartLimits.pas`); the residual strip, on by default (**Result > Residual strip**); the seed of each fit saved in the project's fit record.
+- **X-Ray Calc Help:** *Fitting* → *Prerequisites for Fitting*, *Setting Fit Limits*, *Validation and Visual Feedback* (yellow cells and **Fix**), *Running a Fit*. *Running a Fit* says that **Calc > Auto Fitting** starts the fit. The program opens the **Fitting Limits** dialog first, and **Run** starts the fit. The book follows the program.
+- **Fitting procedure** (Penkov, Peng & Fu 2026): §7.5 (a value that ends on a limit was decided by the limit; extend the limit and fit again); §8.4 and §10.6–10.7 (the spread over repeated fits); §11.1 (a fitted density is a free parameter).
+- **Figures 3-1 to 3-3** are screenshots of the first run, X-Ray Calc 3.9.4.1250 (light theme, 96 dpi, window 1620 × 900). `scripts/figures/fig_3_fit_demo.py` makes all three from the raw captures in `figures-src/screenshots/`.
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/ch1-what-xrr-fitting-is#table-1-1`}>Chapter 1: Table 1-1</a>; <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#opening-a-demo-project`}>Chapter 2: Opening a demo project</a>; <a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#random-seeds-why-two-runs-disagree`}>Chapter 9: Random seeds</a>; <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#is-this-curve-worth-fitting`}>Chapter 10</a>; <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#what-you-read-before-the-first-fit`}>Chapter 11</a>; <a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#what-the-starting-model-decides`}>Chapter 12</a>; <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#four-settings-in-this-order`}>Chapter 14: Four settings, in this order</a>; <a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#the-near-bound-rule`}>Chapter 15: The near-bound rule</a>; <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#several-runs-and-their-spread`}>Chapter 16: Several runs, and their spread</a>; <a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#reading-a-drift-in-x-ray-calc`}>Chapter 17: Reading a drift in X-Ray Calc</a>; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#χ-is-one-check-among-several`}>Chapter 18: Judging a Fit</a>; <a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#two-causes-and-only-two`}>Chapter 19: When the Fit Will Not Converge</a>; <a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#a-free-parameter-not-a-result`}>Chapter 20: Density: A Free Parameter, Not a Result</a>.

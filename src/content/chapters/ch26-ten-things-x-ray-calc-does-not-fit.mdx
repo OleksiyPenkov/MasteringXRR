@@ -1,0 +1,63 @@
+---
+title: 'Ten Things X-Ray Calc Does Not Fit for You'
+part: '5'
+number: '26'
+order: 260
+inThisChapter:
+  - Ten things that stay fixed while X-Ray Calc fits
+  - Where you set each one
+  - Why each is set before the fit
+---
+
+{/* Chapter 26. Section outline approved 2026-09-25 (OUTLINE.md): choice 1 (a), the beam footprint as item 5; choice 2 (a), a number from the book's runs where one exists. */}
+
+A fit changes the thickness H, the roughness σ and the density ρ of each layer. In Polynomial mode, or with **Free period ±** ticked, it also changes the period (<a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#two-ways-to-describe-a-stack`}>Chapter 17: Two ways to describe a stack</a>). Everything else is fixed while the fit runs. You set it before the fit. The fitting procedure gives the reason: "These are conditioning, not results, so they must be set correctly before the fit rather than discovered by it." A wrong value among them doesn't stop the fit. The fit ends normally. The free parameters carry the error.
+
+## 1. The wavelength
+
+The wavelength sets the scale of every length in the model. At fixed angles the period is proportional to λ. Loading an `.xrdml` file writes the wavelength it implies into the **λ(Å)** field of the calculation settings. A text file carries no wavelength, and the field keeps its old value. Type yours in before you calculate (<a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#the-wavelength-comes-from-the-file`}>Chapter 10: The wavelength comes from the file</a>). For CoC5, the Kα1 wavelength in place of the Kα average puts the period 0.04 Å too low.
+
+## 2. The background
+
+X-Ray Calc has no background term. The **R min** box of the Chart Info bar is a floor. Every calculated value below it is raised to it, in each calculation and each fit. Set it from the curve: one count on the scaled curve (<a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#the-floor-one-count`}>Chapter 14: The floor: one count</a>). The floor comes from the measurement's background, read before the fit (<a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-plateau-and-the-background`}>Chapter 11: The plateau and the background</a>). A floor above the background cuts off the model where the data fall lower. A floor below it leaves the model under data that can't go lower.
+
+## 3. The resolution
+
+X-Ray Calc blurs the calculated curve with a Gaussian of width **Δθ**, as the instrument blurs the measured one (<a href={`${import.meta.env.BASE_URL}/ch8-how-x-ray-calc-computes-a-curve#the-resolution-a-blur-of-the-calculated-curve`}>Chapter 8: The resolution: a blur of the calculated curve</a>). Δθ changes the depth of the fringes and the height of the orders. The fit doesn't move it. Choose it by a scan of χ² against Δθ on each curve. For CoC4 the scan gave χ² 1.2779 at 0.012° and 1.2334 at 0.014° (<a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#choosing-δθ-by-a-scan`}>Chapter 16: Choosing Δθ by a scan</a>).
+
+## 4. The scale
+
+**Data > Normalize (Auto)** sets the anchor of the scale. **Solve scale in χ²** then finds the best factor for every structure the fit scores, within the **Window** around the anchor (<a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#the-scale`}>Chapter 9: The scale</a>). The factor is worked out for each structure. It is not one of the parameters the swarm searches. The anchor and the window are yours to set. In one laboratory's tests, a 15 % error in the anchor cost 0.67 g/cm³ in the density of Co when the scale was held (<a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#letting-the-fit-solve-the-scale`}>Chapter 14: Letting the fit solve the scale</a>).
+
+## 5. The beam footprint
+
+At the smallest angles the beam can be longer on the specimen than the specimen itself. Part of the beam then misses it, and the measured plateau is low. X-Ray Calc doesn't correct the calculated curve for this. **Data > Assess XRR quality ...** gives the angle below which the beam overfills the specimen, once you type the specimen length and the beam width (<a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#is-this-curve-worth-fitting`}>Chapter 10: Is this curve worth fitting?</a>). It warns when the plateau maximum lies below that angle. **Normalize (Auto)** then sets the whole curve too high. Let the fit solve the scale (item 4).
+
+## 6. The substrate
+
+The substrate's material, density and σ are held. X-Ray Calc never passes them to the fit. Enter the values of your substrate: the material, its real density and your laboratory's σ (<a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#the-substrate`}>Chapter 12: The substrate</a>). A glass entered as `SiO2` with ρ = 0 is calculated as quartz, at 2.65 g/cm³. Under a thick layer the substrate matters less. Glass or silicon under the 290 Å W underlayer of the W/BN mirror gave the same profile (<a href={`${import.meta.env.BASE_URL}/ch22-graded-multilayers-and-supermirrors#a-gradient-in-polynomial-mode`}>Chapter 22: A gradient in Polynomial mode</a>).
+
+## 7. The materials
+
+Each layer takes its optical constants from the Henke table of its material. The fit changes them only through the density (<a href={`${import.meta.env.BASE_URL}/ch8-how-x-ray-calc-computes-a-curve#from-the-substrate-up-the-recursion`}>Chapter 8: From the substrate up</a>). So a wrong material, or a table with a wrong bulk density, can't be fitted away. The density takes up the difference. With B4C held at 2.37 g/cm³ by an old table, the W of the procedure's tests took up the difference (<a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#check-the-table`}>Chapter 20: Check the table</a>). Check the table with **Tools > Edit Henke table...** before you set a density limit.
+
+## 8. The number of periods
+
+N is a whole number of the model. The fit keeps it. N changes the heights of the orders (<a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#the-variants-and-what-they-move`}>Chapter 13: The variants and what they move</a>). Take it from the deposition record. When the record is in doubt, fit each value and compare. The W/BN mirror was designed with 60 periods. Its record says the deposition stopped after 36. It fits better with 36: χ² 3.10 against 3.98 at order 2 (<a href={`${import.meta.env.BASE_URL}/ch22-graded-multilayers-and-supermirrors#a-gradient-in-polynomial-mode`}>Chapter 22: A gradient in Polynomial mode</a>).
+
+## 9. The layers in the model
+
+The fit changes the values of the layers you give it. It adds no layer and removes none. A contamination layer on top, an interlayer at an interface or an oxide on a metal is your decision (<a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#the-top-of-the-stack-contamination-layer-and-cap`}>Chapter 12: The top of the stack</a>). Without the layer it needs, the model makes another parameter do its work. The cobalt film of <a href={`${import.meta.env.BASE_URL}/ch21-single-films#a-metal-film-and-the-layers-on-top`}>Chapter 21: A metal film and the layers on top</a>, fitted as one layer, ended with σ = 13.8 Å (<a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#the-model-is-too-simple`}>Chapter 19: The model is too simple</a>; <a href={`${import.meta.env.BASE_URL}/ch24-ten-ways-a-fit-can-mislead-you#6-a-layer-that-stands-in-for-a-missing-one`}>Chapter 24: A layer that stands in for a missing one</a>).
+
+## 10. The shape of an interface
+
+Every interface is described by one σ, a Gaussian width, applied as the Névot–Croce factor (<a href={`${import.meta.env.BASE_URL}/ch7-roughness-interlayers-dirty-surface#a-boundary-with-a-width`}>Chapter 7: A boundary with a width</a>). The fit changes the width. It can't change the shape. A mixed zone thick enough to act as a layer of its own is modeled as an interlayer of a compound material, such as CoC. You add it (<a href={`${import.meta.env.BASE_URL}/ch7-roughness-interlayers-dirty-surface#interlayers-when-the-two-interfaces-of-a-period-differ`}>Chapter 7: Interlayers</a>). Then fit each side it could sit on (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#asymmetric-interlayers-fit-each-assignment`}>Chapter 18: Asymmetric interlayers</a>).
+
+## Sources
+
+- **Fitting procedure** (Penkov, Peng & Fu 2026): Appendix 1–6, what the engine fits, the background, the resolution, the scale and the substrate refused if freed, and item 6 quoted; §2, the substrate from the library; §4.3, the scale solved in a window; §8.2, Δθ by a scan; §10.13, a parameter that stands in for a missing layer.
+- **The X-Ray Calc 3 source**, checked for this chapter: the calculation (`Shared\Math\unit_calc.pas`) has no background term, no angle offset and no footprint correction, and applies the **R min** floor and the Gaussian resolution; the fit units (`XRayCalc3\LFPSO\`) search H, σ and ρ, and the period in Polynomial mode or with **Free period ±**; the substrate is not passed to the fit (Chapter 12). The optical constants from the Henke table scaled by ρ (Chapter 8).
+- **X-Ray Calc Help:** *Calculation* → *Algorithm* (the floor, the roughness factor); *Data* → *Assessing a Measurement* (the footprint knee, asin(beam width / specimen length), and the warn when the plateau maximum lies below it).
+- **This book's examples**, each from the chapter linked in its item: the CoC5 wavelength (Chapter 10), the CoC4 Δθ scan (Chapter 16), the scale tests (Chapter 14), the substrate under the W/BN mirror and its number of periods (Chapter 22), the B4C table (Chapter 20), the one-layer cobalt film (Chapter 21).
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/ch7-roughness-interlayers-dirty-surface#a-boundary-with-a-width`}>Chapter 7</a>; <a href={`${import.meta.env.BASE_URL}/ch8-how-x-ray-calc-computes-a-curve#the-resolution-a-blur-of-the-calculated-curve`}>Chapter 8</a>; <a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#the-scale`}>Chapter 9</a>; <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#the-wavelength-comes-from-the-file`}>Chapter 10</a>; <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-plateau-and-the-background`}>Chapter 11</a>; <a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#the-substrate`}>Chapter 12</a>; <a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#the-variants-and-what-they-move`}>Chapter 13</a>; <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#the-floor-one-count`}>Chapter 14</a>; <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#choosing-δθ-by-a-scan`}>Chapter 16</a>; <a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#two-ways-to-describe-a-stack`}>Chapter 17</a>; <a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#the-model-is-too-simple`}>Chapter 19</a>; <a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#check-the-table`}>Chapter 20</a>; <a href={`${import.meta.env.BASE_URL}/ch22-graded-multilayers-and-supermirrors#a-gradient-in-polynomial-mode`}>Chapter 22</a>; <a href={`${import.meta.env.BASE_URL}/ch24-ten-ways-a-fit-can-mislead-you#6-a-layer-that-stands-in-for-a-missing-one`}>Chapter 24</a>; <a href={`${import.meta.env.BASE_URL}/ch25-ten-checks-before-you-trust-a-number#2-were-the-data-and-the-settings-set-for-this-curve`}>Chapter 25: Ten Checks Before You Trust a Number</a>; <a href={`${import.meta.env.BASE_URL}/appendix-c-optical-constants#what-a-henke-table-holds`}>Appendix C: Where Optical Constants Come From</a>; <a href={`${import.meta.env.BASE_URL}/appendix-d-glossary#a`}>Appendix D: Glossary</a>.

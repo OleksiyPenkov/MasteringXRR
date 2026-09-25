@@ -1,0 +1,64 @@
+---
+import 'katex/dist/katex.min.css';
+import '../styles/textbook.css';
+import { getCollection } from 'astro:content';
+import ChapterNav from '../components/nav/ChapterNav.svelte';
+import { pageEyebrow, pageLabel } from '../lib/parts';
+import { renderInline } from '../lib/inline-markdown';
+import { BOOK_TITLE } from '../lib/site.mjs';
+import FigureZoom from '../components/textbook/FigureZoom.astro';
+
+interface Props { title: string; part: string; number: string; inThisChapter: string[]; slug: string; }
+const { title, part, number, inThisChapter, slug } = Astro.props;
+
+const all = (await getCollection('chapters')).sort((a, b) => a.data.order - b.data.order);
+const items = all.map((c) => ({ slug: c.id, title: c.data.title, part: c.data.part, number: c.data.number }));
+const idx = all.findIndex((c) => c.id === slug);
+const prev = idx > 0 ? all[idx - 1] : null;
+const next = idx < all.length - 1 ? all[idx + 1] : null;
+const base = import.meta.env.BASE_URL;
+const label = pageLabel(number);
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Revalidate the HTML on every load so new deploys appear without a hard
+        refresh; the JS/CSS it references are content-hashed and cache long-term. */}
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <title>{title} | {BOOK_TITLE}</title>
+  </head>
+  <body>
+    <div class="topbar">
+      <span class="app-title">{BOOK_TITLE}</span>
+      <span class="sep">|</span>
+      <a href={`${base}/`}>Home</a>
+      <span class="sep">/</span>
+      <span class="crumb">{label ? `${label}: ${title}` : title}</span>
+    </div>
+    <div class="shell">
+      <aside class="sidebar">
+        <a href={`${base}/`} class="home">{BOOK_TITLE}</a>
+        <ChapterNav client:load items={items} current={slug} />
+      </aside>
+      <main class="chapter">
+        <header>
+          <p class="eyebrow">{pageEyebrow(part, number)}</p>
+          <h1>{title}</h1>
+        </header>
+        {inThisChapter.length > 0 && (
+          <section class="in-this-chapter" aria-label="In this chapter">
+            <p class="itc-title">In This Chapter</p>
+            <ul>{inThisChapter.map((item) => <li set:html={renderInline(item)} />)}</ul>
+          </section>
+        )}
+        <article><slot /></article>
+        <footer class="chapter-footer">
+          {prev && <a href={`${base}/${prev.id}`}>← {prev.data.title}</a>}
+          {next && <a href={`${base}/${next.id}`}>{next.data.title} →</a>}
+        </footer>
+      </main>
+    </div>
+    <FigureZoom />
+  </body>
+</html>

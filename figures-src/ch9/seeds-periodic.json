@@ -1,0 +1,196 @@
+{
+ "start_D": 50.23,
+ "optimizer": {
+  "population": 5000,
+  "iterations": 200,
+  "tolerance": 0.005,
+  "shake": true,
+  "range_seed": true,
+  "jamming_max": 1,
+  "reinit_max": 3,
+  "k_chi": 1.41,
+  "k_vmax": 1.41,
+  "w1": 0.3,
+  "w2": 0.3,
+  "vmax": 0.3,
+  "adapt_velocity": false,
+  "use_constriction": true,
+  "ksxr": 0.2,
+  "poly_factor": 10,
+  "poly_order": 1,
+  "period_smooth": false,
+  "period_smooth_window": -1,
+  "device": "auto"
+ },
+ "extra": {},
+ "runs": [
+  {
+   "seed": 1,
+   "chi2": 1.98738,
+   "chi2_plain": 1.86248,
+   "scale_ratio": 1.04818,
+   "scale_clamped": false,
+   "near_bounds": [],
+   "device": "NVIDIA GeForce RTX 5080",
+   "elapsed_s": 2.367,
+   "D": 50.2299,
+   "C": {
+    "thickness": 31.3531,
+    "sigma": 4.67546,
+    "density": 2.06948
+   },
+   "Co": {
+    "thickness": 18.8768,
+    "sigma": 6.68713,
+    "density": 6.6804
+   }
+  },
+  {
+   "seed": 2,
+   "chi2": 1.98751,
+   "chi2_plain": 1.85782,
+   "scale_ratio": 1.05372,
+   "scale_clamped": false,
+   "near_bounds": [],
+   "device": "NVIDIA GeForce RTX 5080",
+   "elapsed_s": 2.264,
+   "D": 50.2299,
+   "C": {
+    "thickness": 31.3813,
+    "sigma": 4.70449,
+    "density": 2.04811
+   },
+   "Co": {
+    "thickness": 18.8486,
+    "sigma": 6.80737,
+    "density": 6.72492
+   }
+  },
+  {
+   "seed": 3,
+   "chi2": 1.98737,
+   "chi2_plain": 1.86238,
+   "scale_ratio": 1.04816,
+   "scale_clamped": false,
+   "near_bounds": [],
+   "device": "NVIDIA GeForce RTX 5080",
+   "elapsed_s": 2.324,
+   "D": 50.2299,
+   "C": {
+    "thickness": 31.3555,
+    "sigma": 4.67564,
+    "density": 2.0683
+   },
+   "Co": {
+    "thickness": 18.8744,
+    "sigma": 6.68578,
+    "density": 6.68054
+   }
+  },
+  {
+   "seed": 4,
+   "chi2": 1.98736,
+   "chi2_plain": 1.86215,
+   "scale_ratio": 1.04752,
+   "scale_clamped": false,
+   "near_bounds": [],
+   "device": "NVIDIA GeForce RTX 5080",
+   "elapsed_s": 2.174,
+   "D": 50.2298,
+   "C": {
+    "thickness": 31.3596,
+    "sigma": 4.67692,
+    "density": 2.06887
+   },
+   "Co": {
+    "thickness": 18.8702,
+    "sigma": 6.69256,
+    "density": 6.6804
+   }
+  },
+  {
+   "seed": 5,
+   "chi2": 1.98742,
+   "chi2_plain": 1.86236,
+   "scale_ratio": 1.0478,
+   "scale_clamped": false,
+   "near_bounds": [],
+   "device": "NVIDIA GeForce RTX 5080",
+   "elapsed_s": 2.159,
+   "D": 50.2299,
+   "C": {
+    "thickness": 31.3545,
+    "sigma": 4.67658,
+    "density": 2.06651
+   },
+   "Co": {
+    "thickness": 18.8754,
+    "sigma": 6.6906,
+    "density": 6.68046
+   }
+  },
+  {
+   "seed": 6,
+   "chi2": 1.98741,
+   "chi2_plain": 1.86242,
+   "scale_ratio": 1.04807,
+   "scale_clamped": false,
+   "near_bounds": [],
+   "device": "NVIDIA GeForce RTX 5080",
+   "elapsed_s": 2.185,
+   "D": 50.2299,
+   "C": {
+    "thickness": 31.3546,
+    "sigma": 4.67588,
+    "density": 2.06577
+   },
+   "Co": {
+    "thickness": 18.8753,
+    "sigma": 6.68739,
+    "density": 6.6804
+   }
+  },
+  {
+   "seed": 7,
+   "chi2": 1.98771,
+   "chi2_plain": 1.85999,
+   "scale_ratio": 1.0495,
+   "scale_clamped": false,
+   "near_bounds": [],
+   "device": "NVIDIA GeForce RTX 5080",
+   "elapsed_s": 2.16,
+   "D": 50.2299,
+   "C": {
+    "thickness": 31.3396,
+    "sigma": 4.69829,
+    "density": 2.04922
+   },
+   "Co": {
+    "thickness": 18.8903,
+    "sigma": 6.77872,
+    "density": 6.70275
+   }
+  },
+  {
+   "seed": 8,
+   "chi2": 1.9874,
+   "chi2_plain": 1.86243,
+   "scale_ratio": 1.04785,
+   "scale_clamped": false,
+   "near_bounds": [],
+   "device": "NVIDIA GeForce RTX 5080",
+   "elapsed_s": 2.171,
+   "D": 50.2299,
+   "C": {
+    "thickness": 31.3532,
+    "sigma": 4.67623,
+    "density": 2.06903
+   },
+   "Co": {
+    "thickness": 18.8767,
+    "sigma": 6.69117,
+    "density": 6.68045
+   }
+  }
+ ]
+}

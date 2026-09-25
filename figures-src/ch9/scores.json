@@ -1,0 +1,67 @@
+[
+ {
+  "case": "PW on, TW None, scale solved",
+  "settings": {},
+  "chi2": 3.39554,
+  "chi2_plain": 3.26656,
+  "scale_ratio": 0.991947
+ },
+ {
+  "case": "PW off",
+  "settings": {
+   "chi2": {
+    "theta_weight": 0,
+    "point_weight": false
+   }
+  },
+  "chi2": 3.26656,
+  "chi2_plain": 3.26656,
+  "scale_ratio": 0.992043
+ },
+ {
+  "case": "TW sqr (\u03b8\u00b2)",
+  "settings": {
+   "chi2": {
+    "theta_weight": 1,
+    "point_weight": true
+   }
+  },
+  "chi2": 12.4402,
+  "chi2_plain": 3.27756,
+  "scale_ratio": 0.97127
+ },
+ {
+  "case": "TW 1/sqr (1/\u03b8\u00b2)",
+  "settings": {
+   "chi2": {
+    "theta_weight": 4,
+    "point_weight": true
+   }
+  },
+  "chi2": 3.25616,
+  "chi2_plain": 3.50553,
+  "scale_ratio": 0.89885
+ },
+ {
+  "case": "scale anchored",
+  "settings": {
+   "scale_solve": false
+  },
+  "chi2": 3.39751,
+  "chi2_plain": 3.26812,
+  "scale_ratio": 1
+ },
+ {
+  "case": "PW off, TW None, scale anchored",
+  "settings": {
+   "chi2": {
+    "theta_weight": 0,
+    "point_weight": false
+   },
+   "scale_solve": false
+  },
+  "chi2": 3.26812,
+  "chi2_plain": 3.26812,
+  "scale_ratio": 1
+ }
+]

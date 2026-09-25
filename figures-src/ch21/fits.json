@@ -1,0 +1,4527 @@
+{
+ "c1-edge": {
+  "request": {
+   "lambda": 1.541874,
+   "polarization": "s",
+   "structure": {
+    "substrate": {
+     "material": "SiO2",
+     "density": 2.5,
+     "sigma": 3.8
+    },
+    "stacks": [
+     {
+      "N": 1,
+      "layers": [
+       {
+        "material": "C",
+        "thickness": 300.0,
+        "sigma": 4.0,
+        "density": 2.0
+       }
+      ]
+     }
+    ]
+   },
+   "scale": "auto",
+   "auto_theta_max": 0.5,
+   "scale_solve": true,
+   "scale_solve_window": 0.2,
+   "theta_range": {
+    "min": 0.18725,
+    "max": 1.6775
+   },
+   "chi2": {
+    "theta_weight": 0,
+    "point_weight": true
+   },
+   "smooth": {
+    "passes": 0
+   },
+   "points_inline_max": 0,
+   "free": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameters": [
+      "thickness",
+      "sigma",
+      "density"
+     ]
+    }
+   ],
+   "bounds": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "thickness",
+     "min": 200.0,
+     "max": 400.0
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "sigma",
+     "min": 1.0,
+     "max": 10.0
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "density",
+     "min": 1.5,
+     "max": 2.4
+    }
+   ],
+   "resolution": 0.015,
+   "r_min": 1.06387e-06
+  },
+  "info": {
+   "theta_max": 0.18725,
+   "scale": 1.06387e-06,
+   "roles": [
+    "film"
+   ]
+  },
+  "scan": [
+   {
+    "resolution": 0.012,
+    "chi2": 1.96883
+   },
+   {
+    "resolution": 0.013,
+    "chi2": 1.96439
+   },
+   {
+    "resolution": 0.014,
+    "chi2": 1.96084
+   },
+   {
+    "resolution": 0.015,
+    "chi2": 1.95656
+   }
+  ],
+  "widening": [
+   {
+    "round": 0,
+    "changes": []
+   }
+  ],
+  "runs": [
+   {
+    "key": "c1-edge",
+    "seed": 20260921,
+    "chi2": 1.95656,
+    "chi2_plain": 1.94483,
+    "scale": 1.06385e-06,
+    "scale_ratio": 1.01955,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.29825,
+     "points": [
+      {
+       "theta_deg": 0.21575,
+       "i_meas": 0.8607,
+       "r_calc": 0.820394,
+       "ratio": 0.953171
+      },
+      {
+       "theta_deg": 0.24275,
+       "i_meas": 0.189128,
+       "r_calc": 0.260319,
+       "ratio": 1.37642
+      },
+      {
+       "theta_deg": 0.26975,
+       "i_meas": 0.0690147,
+       "r_calc": 0.0593965,
+       "ratio": 0.860636
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.18725,
+       0.37325
+      ],
+      "n": 125,
+      "mean": 0.0280283,
+      "rms": 0.146588
+     },
+     {
+      "theta_deg": [
+       0.37325,
+       0.55925
+      ],
+      "n": 124,
+      "mean": 0.0681275,
+      "rms": 0.171862
+     },
+     {
+      "theta_deg": [
+       0.55925,
+       0.74525
+      ],
+      "n": 124,
+      "mean": -0.00874966,
+      "rms": 0.109928
+     },
+     {
+      "theta_deg": [
+       0.74525,
+       0.93125
+      ],
+      "n": 124,
+      "mean": -0.0725819,
+      "rms": 0.11316
+     },
+     {
+      "theta_deg": [
+       0.93125,
+       1.11725
+      ],
+      "n": 124,
+      "mean": -0.101873,
+      "rms": 0.164366
+     },
+     {
+      "theta_deg": [
+       1.11725,
+       1.30325
+      ],
+      "n": 122,
+      "mean": 0.000798143,
+      "rms": 0.200516
+     },
+     {
+      "theta_deg": [
+       1.30325,
+       1.48925
+      ],
+      "n": 115,
+      "mean": 0.0957477,
+      "rms": 0.245465
+     },
+     {
+      "theta_deg": [
+       1.48925,
+       1.67525
+      ],
+      "n": 91,
+      "mean": -0.0833588,
+      "rms": 0.288942
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 307.12,
+      "sigma": 7.41186,
+      "density": 1.94133
+     }
+    ]
+   },
+   {
+    "key": "c1-edge",
+    "seed": 20260922,
+    "chi2": 1.95657,
+    "chi2_plain": 1.94479,
+    "scale": 1.06385e-06,
+    "scale_ratio": 1.01903,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.29825,
+     "points": [
+      {
+       "theta_deg": 0.21575,
+       "i_meas": 0.860266,
+       "r_calc": 0.820408,
+       "ratio": 0.953668
+      },
+      {
+       "theta_deg": 0.24275,
+       "i_meas": 0.189033,
+       "r_calc": 0.260311,
+       "ratio": 1.37707
+      },
+      {
+       "theta_deg": 0.26975,
+       "i_meas": 0.0689799,
+       "r_calc": 0.0593998,
+       "ratio": 0.861117
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.18725,
+       0.37325
+      ],
+      "n": 125,
+      "mean": 0.0282244,
+      "rms": 0.146596
+     },
+     {
+      "theta_deg": [
+       0.37325,
+       0.55925
+      ],
+      "n": 124,
+      "mean": 0.0682573,
+      "rms": 0.171852
+     },
+     {
+      "theta_deg": [
+       0.55925,
+       0.74525
+      ],
+      "n": 124,
+      "mean": -0.00874171,
+      "rms": 0.109881
+     },
+     {
+      "theta_deg": [
+       0.74525,
+       0.93125
+      ],
+      "n": 124,
+      "mean": -0.0726384,
+      "rms": 0.113168
+     },
+     {
+      "theta_deg": [
+       0.93125,
+       1.11725
+      ],
+      "n": 124,
+      "mean": -0.102177,
+      "rms": 0.164663
+     },
+     {
+      "theta_deg": [
+       1.11725,
+       1.30325
+      ],
+      "n": 122,
+      "mean": 0.00032315,
+      "rms": 0.200711
+     },
+     {
+      "theta_deg": [
+       1.30325,
+       1.48925
+      ],
+      "n": 115,
+      "mean": 0.0954147,
+      "rms": 0.245281
+     },
+     {
+      "theta_deg": [
+       1.48925,
+       1.67525
+      ],
+      "n": 91,
+      "mean": -0.0836073,
+      "rms": 0.288968
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 307.115,
+      "sigma": 7.41551,
+      "density": 1.94082
+     }
+    ]
+   },
+   {
+    "key": "c1-edge",
+    "seed": 20260923,
+    "chi2": 1.95656,
+    "chi2_plain": 1.94483,
+    "scale": 1.06385e-06,
+    "scale_ratio": 1.01999,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.29825,
+     "points": [
+      {
+       "theta_deg": 0.21575,
+       "i_meas": 0.861074,
+       "r_calc": 0.820381,
+       "ratio": 0.952742
+      },
+      {
+       "theta_deg": 0.24275,
+       "i_meas": 0.18921,
+       "r_calc": 0.260318,
+       "ratio": 1.37582
+      },
+      {
+       "theta_deg": 0.26975,
+       "i_meas": 0.0690447,
+       "r_calc": 0.0594018,
+       "ratio": 0.860339
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.18725,
+       0.37325
+      ],
+      "n": 125,
+      "mean": 0.0278561,
+      "rms": 0.146531
+     },
+     {
+      "theta_deg": [
+       0.37325,
+       0.55925
+      ],
+      "n": 124,
+      "mean": 0.0680356,
+      "rms": 0.171825
+     },
+     {
+      "theta_deg": [
+       0.55925,
+       0.74525
+      ],
+      "n": 124,
+      "mean": -0.00879084,
+      "rms": 0.109976
+     },
+     {
+      "theta_deg": [
+       0.74525,
+       0.93125
+      ],
+      "n": 124,
+      "mean": -0.0724858,
+      "rms": 0.113153
+     },
+     {
+      "theta_deg": [
+       0.93125,
+       1.11725
+      ],
+      "n": 124,
+      "mean": -0.101584,
+      "rms": 0.164292
+     },
+     {
+      "theta_deg": [
+       1.11725,
+       1.30325
+      ],
+      "n": 122,
+      "mean": 0.00111311,
+      "rms": 0.200598
+     },
+     {
+      "theta_deg": [
+       1.30325,
+       1.48925
+      ],
+      "n": 115,
+      "mean": 0.0960918,
+      "rms": 0.245593
+     },
+     {
+      "theta_deg": [
+       1.48925,
+       1.67525
+      ],
+      "n": 91,
+      "mean": -0.0831117,
+      "rms": 0.288948
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 307.117,
+      "sigma": 7.40864,
+      "density": 1.94217
+     }
+    ]
+   },
+   {
+    "key": "c1-edge",
+    "seed": 20260924,
+    "chi2": 1.95656,
+    "chi2_plain": 1.94482,
+    "scale": 1.06385e-06,
+    "scale_ratio": 1.01996,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.29825,
+     "points": [
+      {
+       "theta_deg": 0.21575,
+       "i_meas": 0.861046,
+       "r_calc": 0.820392,
+       "ratio": 0.952785
+      },
+      {
+       "theta_deg": 0.24275,
+       "i_meas": 0.189204,
+       "r_calc": 0.260317,
+       "ratio": 1.37585
+      },
+      {
+       "theta_deg": 0.26975,
+       "i_meas": 0.0690424,
+       "r_calc": 0.0594036,
+       "ratio": 0.860393
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.18725,
+       0.37325
+      ],
+      "n": 125,
+      "mean": 0.0278693,
+      "rms": 0.146523
+     },
+     {
+      "theta_deg": [
+       0.37325,
+       0.55925
+      ],
+      "n": 124,
+      "mean": 0.0680477,
+      "rms": 0.171816
+     },
+     {
+      "theta_deg": [
+       0.55925,
+       0.74525
+      ],
+      "n": 124,
+      "mean": -0.0087962,
+      "rms": 0.109974
+     },
+     {
+      "theta_deg": [
+       0.74525,
+       0.93125
+      ],
+      "n": 124,
+      "mean": -0.0724812,
+      "rms": 0.113153
+     },
+     {
+      "theta_deg": [
+       0.93125,
+       1.11725
+      ],
+      "n": 124,
+      "mean": -0.101599,
+      "rms": 0.164343
+     },
+     {
+      "theta_deg": [
+       1.11725,
+       1.30325
+      ],
+      "n": 122,
+      "mean": 0.00106643,
+      "rms": 0.200655
+     },
+     {
+      "theta_deg": [
+       1.30325,
+       1.48925
+      ],
+      "n": 115,
+      "mean": 0.0960803,
+      "rms": 0.245575
+     },
+     {
+      "theta_deg": [
+       1.48925,
+       1.67525
+      ],
+      "n": 91,
+      "mean": -0.0831221,
+      "rms": 0.288955
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 307.115,
+      "sigma": 7.40886,
+      "density": 1.94168
+     }
+    ]
+   },
+   {
+    "key": "c1-edge",
+    "seed": 20260925,
+    "chi2": 1.95657,
+    "chi2_plain": 1.94482,
+    "scale": 1.06385e-06,
+    "scale_ratio": 1.01969,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.29825,
+     "points": [
+      {
+       "theta_deg": 0.21575,
+       "i_meas": 0.860817,
+       "r_calc": 0.820371,
+       "ratio": 0.953015
+      },
+      {
+       "theta_deg": 0.24275,
+       "i_meas": 0.189154,
+       "r_calc": 0.260315,
+       "ratio": 1.37621
+      },
+      {
+       "theta_deg": 0.26975,
+       "i_meas": 0.069024,
+       "r_calc": 0.0594008,
+       "ratio": 0.860582
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.18725,
+       0.37325
+      ],
+      "n": 125,
+      "mean": 0.0279715,
+      "rms": 0.146552
+     },
+     {
+      "theta_deg": [
+       0.37325,
+       0.55925
+      ],
+      "n": 124,
+      "mean": 0.0681059,
+      "rms": 0.171835
+     },
+     {
+      "theta_deg": [
+       0.55925,
+       0.74525
+      ],
+      "n": 124,
+      "mean": -0.00877489,
+      "rms": 0.109946
+     },
+     {
+      "theta_deg": [
+       0.74525,
+       0.93125
+      ],
+      "n": 124,
+      "mean": -0.072535,
+      "rms": 0.113158
+     },
+     {
+      "theta_deg": [
+       0.93125,
+       1.11725
+      ],
+      "n": 124,
+      "mean": -0.101772,
+      "rms": 0.164407
+     },
+     {
+      "theta_deg": [
+       1.11725,
+       1.30325
+      ],
+      "n": 122,
+      "mean": 0.000862875,
+      "rms": 0.200631
+     },
+     {
+      "theta_deg": [
+       1.30325,
+       1.48925
+      ],
+      "n": 115,
+      "mean": 0.0958754,
+      "rms": 0.245494
+     },
+     {
+      "theta_deg": [
+       1.48925,
+       1.67525
+      ],
+      "n": 91,
+      "mean": -0.0832703,
+      "rms": 0.288954
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 307.116,
+      "sigma": 7.41082,
+      "density": 1.9428
+     }
+    ]
+   }
+  ]
+ },
+ "c1-film": {
+  "request": {
+   "lambda": 1.541874,
+   "polarization": "s",
+   "structure": {
+    "substrate": {
+     "material": "SiO2",
+     "density": 2.5,
+     "sigma": 3.8
+    },
+    "stacks": [
+     {
+      "N": 1,
+      "layers": [
+       {
+        "material": "C",
+        "thickness": 300.0,
+        "sigma": 4.0,
+        "density": 2.0
+       }
+      ]
+     }
+    ]
+   },
+   "scale": "auto",
+   "auto_theta_max": 0.5,
+   "scale_solve": true,
+   "scale_solve_window": 0.2,
+   "theta_range": {
+    "min": 0.3,
+    "max": 1.6775
+   },
+   "chi2": {
+    "theta_weight": 0,
+    "point_weight": true
+   },
+   "smooth": {
+    "passes": 0
+   },
+   "points_inline_max": 0,
+   "free": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameters": [
+      "thickness",
+      "sigma",
+      "density"
+     ]
+    }
+   ],
+   "bounds": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "thickness",
+     "min": 200.0,
+     "max": 400.0
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "sigma",
+     "min": 1.0,
+     "max": 10.0
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "density",
+     "min": 1.5,
+     "max": 2.4
+    }
+   ],
+   "resolution": 0.015,
+   "r_min": 1.06387e-06
+  },
+  "info": {
+   "theta_max": 0.18725,
+   "scale": 1.06387e-06,
+   "roles": [
+    "film"
+   ]
+  },
+  "scan": [
+   {
+    "resolution": 0.012,
+    "chi2": 1.30293
+   },
+   {
+    "resolution": 0.013,
+    "chi2": 1.3017
+   },
+   {
+    "resolution": 0.014,
+    "chi2": 1.30072
+   },
+   {
+    "resolution": 0.015,
+    "chi2": 1.29946
+   }
+  ],
+  "widening": [
+   {
+    "round": 0,
+    "changes": []
+   }
+  ],
+  "runs": [
+   {
+    "key": "c1-film",
+    "seed": 20260921,
+    "chi2": 1.29946,
+    "chi2_plain": 1.29111,
+    "scale": 1.06385e-06,
+    "scale_ratio": 0.94823,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": null,
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.30125,
+       0.473
+      ],
+      "n": 115,
+      "mean": 0.0874083,
+      "rms": 0.177598
+     },
+     {
+      "theta_deg": [
+       0.473,
+       0.64475
+      ],
+      "n": 115,
+      "mean": 0.00297044,
+      "rms": 0.105946
+     },
+     {
+      "theta_deg": [
+       0.64475,
+       0.8165
+      ],
+      "n": 114,
+      "mean": -0.0153165,
+      "rms": 0.0812813
+     },
+     {
+      "theta_deg": [
+       0.8165,
+       0.98825
+      ],
+      "n": 115,
+      "mean": -0.101729,
+      "rms": 0.133161
+     },
+     {
+      "theta_deg": [
+       0.98825,
+       1.16
+      ],
+      "n": 114,
+      "mean": -0.0968825,
+      "rms": 0.154108
+     },
+     {
+      "theta_deg": [
+       1.16,
+       1.33175
+      ],
+      "n": 113,
+      "mean": 0.064321,
+      "rms": 0.223348
+     },
+     {
+      "theta_deg": [
+       1.33175,
+       1.5035
+      ],
+      "n": 105,
+      "mean": 0.113048,
+      "rms": 0.280016
+     },
+     {
+      "theta_deg": [
+       1.5035,
+       1.67525
+      ],
+      "n": 82,
+      "mean": -0.0200086,
+      "rms": 0.285501
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 307.331,
+      "sigma": 7.41157,
+      "density": 1.85886
+     }
+    ]
+   },
+   {
+    "key": "c1-film",
+    "seed": 20260922,
+    "chi2": 1.29946,
+    "chi2_plain": 1.29109,
+    "scale": 1.06385e-06,
+    "scale_ratio": 0.948157,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": null,
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.30125,
+       0.473
+      ],
+      "n": 115,
+      "mean": 0.087416,
+      "rms": 0.177549
+     },
+     {
+      "theta_deg": [
+       0.473,
+       0.64475
+      ],
+      "n": 115,
+      "mean": 0.00299971,
+      "rms": 0.105889
+     },
+     {
+      "theta_deg": [
+       0.64475,
+       0.8165
+      ],
+      "n": 114,
+      "mean": -0.0152718,
+      "rms": 0.0812145
+     },
+     {
+      "theta_deg": [
+       0.8165,
+       0.98825
+      ],
+      "n": 115,
+      "mean": -0.101786,
+      "rms": 0.133238
+     },
+     {
+      "theta_deg": [
+       0.98825,
+       1.16
+      ],
+      "n": 114,
+      "mean": -0.0969386,
+      "rms": 0.154248
+     },
+     {
+      "theta_deg": [
+       1.16,
+       1.33175
+      ],
+      "n": 113,
+      "mean": 0.0642898,
+      "rms": 0.223478
+     },
+     {
+      "theta_deg": [
+       1.33175,
+       1.5035
+      ],
+      "n": 105,
+      "mean": 0.113105,
+      "rms": 0.279936
+     },
+     {
+      "theta_deg": [
+       1.5035,
+       1.67525
+      ],
+      "n": 82,
+      "mean": -0.0200626,
+      "rms": 0.28553
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 307.326,
+      "sigma": 7.41198,
+      "density": 1.8595
+     }
+    ]
+   },
+   {
+    "key": "c1-film",
+    "seed": 20260923,
+    "chi2": 1.29946,
+    "chi2_plain": 1.2911,
+    "scale": 1.06385e-06,
+    "scale_ratio": 0.947444,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": null,
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.30125,
+       0.473
+      ],
+      "n": 115,
+      "mean": 0.0876938,
+      "rms": 0.177745
+     },
+     {
+      "theta_deg": [
+       0.473,
+       0.64475
+      ],
+      "n": 115,
+      "mean": 0.00315896,
+      "rms": 0.10592
+     },
+     {
+      "theta_deg": [
+       0.64475,
+       0.8165
+      ],
+      "n": 114,
+      "mean": -0.0152977,
+      "rms": 0.0812377
+     },
+     {
+      "theta_deg": [
+       0.8165,
+       0.98825
+      ],
+      "n": 115,
+      "mean": -0.101879,
+      "rms": 0.133311
+     },
+     {
+      "theta_deg": [
+       0.98825,
+       1.16
+      ],
+      "n": 114,
+      "mean": -0.0971744,
+      "rms": 0.154358
+     },
+     {
+      "theta_deg": [
+       1.16,
+       1.33175
+      ],
+      "n": 113,
+      "mean": 0.0639605,
+      "rms": 0.223291
+     },
+     {
+      "theta_deg": [
+       1.33175,
+       1.5035
+      ],
+      "n": 105,
+      "mean": 0.112701,
+      "rms": 0.279861
+     },
+     {
+      "theta_deg": [
+       1.5035,
+       1.67525
+      ],
+      "n": 82,
+      "mean": -0.0201904,
+      "rms": 0.285391
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 307.332,
+      "sigma": 7.41642,
+      "density": 1.85866
+     }
+    ]
+   },
+   {
+    "key": "c1-film",
+    "seed": 20260924,
+    "chi2": 1.29945,
+    "chi2_plain": 1.29113,
+    "scale": 1.06385e-06,
+    "scale_ratio": 0.949181,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": null,
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.30125,
+       0.473
+      ],
+      "n": 115,
+      "mean": 0.087071,
+      "rms": 0.177445
+     },
+     {
+      "theta_deg": [
+       0.473,
+       0.64475
+      ],
+      "n": 115,
+      "mean": 0.002737,
+      "rms": 0.105998
+     },
+     {
+      "theta_deg": [
+       0.64475,
+       0.8165
+      ],
+      "n": 114,
+      "mean": -0.0153557,
+      "rms": 0.0813584
+     },
+     {
+      "theta_deg": [
+       0.8165,
+       0.98825
+      ],
+      "n": 115,
+      "mean": -0.10153,
+      "rms": 0.132956
+     },
+     {
+      "theta_deg": [
+       0.98825,
+       1.16
+      ],
+      "n": 114,
+      "mean": -0.0965209,
+      "rms": 0.153764
+     },
+     {
+      "theta_deg": [
+       1.16,
+       1.33175
+      ],
+      "n": 113,
+      "mean": 0.0647662,
+      "rms": 0.223357
+     },
+     {
+      "theta_deg": [
+       1.33175,
+       1.5035
+      ],
+      "n": 105,
+      "mean": 0.113433,
+      "rms": 0.280228
+     },
+     {
+      "theta_deg": [
+       1.5035,
+       1.67525
+      ],
+      "n": 82,
+      "mean": -0.0197754,
+      "rms": 0.28562
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 307.332,
+      "sigma": 7.40574,
+      "density": 1.85991
+     }
+    ]
+   },
+   {
+    "key": "c1-film",
+    "seed": 20260925,
+    "chi2": 1.29945,
+    "chi2_plain": 1.29112,
+    "scale": 1.06385e-06,
+    "scale_ratio": 0.948243,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": null,
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.30125,
+       0.473
+      ],
+      "n": 115,
+      "mean": 0.0874221,
+      "rms": 0.177655
+     },
+     {
+      "theta_deg": [
+       0.473,
+       0.64475
+      ],
+      "n": 115,
+      "mean": 0.00295581,
+      "rms": 0.105998
+     },
+     {
+      "theta_deg": [
+       0.64475,
+       0.8165
+      ],
+      "n": 114,
+      "mean": -0.0153571,
+      "rms": 0.0813424
+     },
+     {
+      "theta_deg": [
+       0.8165,
+       0.98825
+      ],
+      "n": 115,
+      "mean": -0.101684,
+      "rms": 0.133098
+     },
+     {
+      "theta_deg": [
+       0.98825,
+       1.16
+      ],
+      "n": 114,
+      "mean": -0.0968502,
+      "rms": 0.153993
+     },
+     {
+      "theta_deg": [
+       1.16,
+       1.33175
+      ],
+      "n": 113,
+      "mean": 0.0643247,
+      "rms": 0.223219
+     },
+     {
+      "theta_deg": [
+       1.33175,
+       1.5035
+      ],
+      "n": 105,
+      "mean": 0.112968,
+      "rms": 0.280082
+     },
+     {
+      "theta_deg": [
+       1.5035,
+       1.67525
+      ],
+      "n": 82,
+      "mean": -0.0199702,
+      "rms": 0.285465
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 307.336,
+      "sigma": 7.41153,
+      "density": 1.85731
+     }
+    ]
+   }
+  ]
+ },
+ "c1-surf": {
+  "request": {
+   "lambda": 1.541874,
+   "polarization": "s",
+   "structure": {
+    "substrate": {
+     "material": "SiO2",
+     "density": 2.5,
+     "sigma": 3.8
+    },
+    "stacks": [
+     {
+      "N": 1,
+      "layers": [
+       {
+        "material": "C",
+        "thickness": 300.0,
+        "sigma": 4.0,
+        "density": 2.0
+       }
+      ]
+     },
+     {
+      "N": 1,
+      "layers": [
+       {
+        "material": "C",
+        "thickness": 15.0,
+        "sigma": 3.0,
+        "density": 0.9
+       }
+      ]
+     }
+    ]
+   },
+   "scale": "auto",
+   "auto_theta_max": 0.5,
+   "scale_solve": true,
+   "scale_solve_window": 0.2,
+   "theta_range": {
+    "min": 0.3,
+    "max": 1.6775
+   },
+   "chi2": {
+    "theta_weight": 0,
+    "point_weight": true
+   },
+   "smooth": {
+    "passes": 0
+   },
+   "points_inline_max": 0,
+   "free": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameters": [
+      "thickness",
+      "sigma",
+      "density"
+     ]
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameters": [
+      "thickness",
+      "sigma",
+      "density"
+     ]
+    }
+   ],
+   "bounds": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "thickness",
+     "min": 200.0,
+     "max": 400.0
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "sigma",
+     "min": 0.0,
+     "max": 10.0
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "density",
+     "min": 1.5,
+     "max": 2.4
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameter": "thickness",
+     "min": 5.0,
+     "max": 40.0
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "min": 0.0,
+     "max": 10.0
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameter": "density",
+     "min": 0.6,
+     "max": 1.4
+    }
+   ],
+   "resolution": 0.015,
+   "r_min": 1.06363e-06
+  },
+  "info": {
+   "theta_max": 0.18725,
+   "scale": 1.06363e-06,
+   "roles": [
+    "film",
+    "surf"
+   ]
+  },
+  "scan": [
+   {
+    "resolution": 0.012,
+    "chi2": 1.18218
+   },
+   {
+    "resolution": 0.013,
+    "chi2": 1.1793
+   },
+   {
+    "resolution": 0.014,
+    "chi2": 1.17542
+   },
+   {
+    "resolution": 0.015,
+    "chi2": 1.17328
+   }
+  ],
+  "widening": [
+   {
+    "round": 0,
+    "changes": [
+     {
+      "stack": 0,
+      "parameter": "sigma",
+      "from": [
+       1.0,
+       10.0
+      ],
+      "to": [
+       0.0,
+       10.0
+      ]
+     },
+     {
+      "stack": 1,
+      "parameter": "sigma",
+      "from": [
+       1.0,
+       10.0
+      ],
+      "to": [
+       0.0,
+       10.0
+      ]
+     }
+    ]
+   },
+   {
+    "round": 1,
+    "changes": []
+   }
+  ],
+  "runs": [
+   {
+    "key": "c1-surf",
+    "seed": 20260921,
+    "chi2": 1.16984,
+    "chi2_plain": 1.15958,
+    "scale": 1.06359e-06,
+    "scale_ratio": 0.97202,
+    "scale_clamped": false,
+    "near_bounds": [
+     {
+      "target": "layer",
+      "stack": 0,
+      "layer": 0,
+      "parameter": "sigma",
+      "value": 0.176092,
+      "min": 0,
+      "max": 10,
+      "bound": "min",
+      "margin_fraction": 0.0176092
+     },
+     {
+      "target": "layer",
+      "stack": 1,
+      "layer": 0,
+      "parameter": "sigma",
+      "value": 0.103823,
+      "min": 0,
+      "max": 10,
+      "bound": "min",
+      "margin_fraction": 0.0103823
+     }
+    ],
+    "edge": null,
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.30125,
+       0.473
+      ],
+      "n": 115,
+      "mean": 0.0796947,
+      "rms": 0.176453
+     },
+     {
+      "theta_deg": [
+       0.473,
+       0.64475
+      ],
+      "n": 115,
+      "mean": 0.00811735,
+      "rms": 0.0989735
+     },
+     {
+      "theta_deg": [
+       0.64475,
+       0.8165
+      ],
+      "n": 114,
+      "mean": 0.00502657,
+      "rms": 0.0738295
+     },
+     {
+      "theta_deg": [
+       0.8165,
+       0.98825
+      ],
+      "n": 115,
+      "mean": -0.0776811,
+      "rms": 0.117396
+     },
+     {
+      "theta_deg": [
+       0.98825,
+       1.16
+      ],
+      "n": 114,
+      "mean": -0.0810559,
+      "rms": 0.148939
+     },
+     {
+      "theta_deg": [
+       1.16,
+       1.33175
+      ],
+      "n": 113,
+      "mean": 0.0468779,
+      "rms": 0.220266
+     },
+     {
+      "theta_deg": [
+       1.33175,
+       1.5035
+      ],
+      "n": 105,
+      "mean": 0.0242982,
+      "rms": 0.269279
+     },
+     {
+      "theta_deg": [
+       1.5035,
+       1.67525
+      ],
+      "n": 82,
+      "mean": -0.12717,
+      "rms": 0.281699
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 299.511,
+      "sigma": 0.176092,
+      "density": 1.83534
+     },
+     {
+      "material": "C",
+      "thickness": 13.0324,
+      "sigma": 0.103823,
+      "density": 1.01683
+     }
+    ]
+   },
+   {
+    "key": "c1-surf",
+    "seed": 20260922,
+    "chi2": 1.16968,
+    "chi2_plain": 1.15868,
+    "scale": 1.06359e-06,
+    "scale_ratio": 0.972741,
+    "scale_clamped": false,
+    "near_bounds": [
+     {
+      "target": "layer",
+      "stack": 0,
+      "layer": 0,
+      "parameter": "sigma",
+      "value": 0.10433,
+      "min": 0,
+      "max": 10,
+      "bound": "min",
+      "margin_fraction": 0.010433
+     },
+     {
+      "target": "layer",
+      "stack": 1,
+      "layer": 0,
+      "parameter": "sigma",
+      "value": 0.0644219,
+      "min": 0,
+      "max": 10,
+      "bound": "min",
+      "margin_fraction": 0.00644219
+     }
+    ],
+    "edge": null,
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.30125,
+       0.473
+      ],
+      "n": 115,
+      "mean": 0.079872,
+      "rms": 0.177439
+     },
+     {
+      "theta_deg": [
+       0.473,
+       0.64475
+      ],
+      "n": 115,
+      "mean": 0.00804363,
+      "rms": 0.0998774
+     },
+     {
+      "theta_deg": [
+       0.64475,
+       0.8165
+      ],
+      "n": 114,
+      "mean": 0.00503742,
+      "rms": 0.0744224
+     },
+     {
+      "theta_deg": [
+       0.8165,
+       0.98825
+      ],
+      "n": 115,
+      "mean": -0.076508,
+      "rms": 0.11625
+     },
+     {
+      "theta_deg": [
+       0.98825,
+       1.16
+      ],
+      "n": 114,
+      "mean": -0.0804658,
+      "rms": 0.148223
+     },
+     {
+      "theta_deg": [
+       1.16,
+       1.33175
+      ],
+      "n": 113,
+      "mean": 0.0461751,
+      "rms": 0.221182
+     },
+     {
+      "theta_deg": [
+       1.33175,
+       1.5035
+      ],
+      "n": 105,
+      "mean": 0.0233361,
+      "rms": 0.265198
+     },
+     {
+      "theta_deg": [
+       1.5035,
+       1.67525
+      ],
+      "n": 82,
+      "mean": -0.138972,
+      "rms": 0.285719
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 299.755,
+      "sigma": 0.10433,
+      "density": 1.83262
+     },
+     {
+      "material": "C",
+      "thickness": 12.9814,
+      "sigma": 0.0644219,
+      "density": 0.999885
+     }
+    ]
+   },
+   {
+    "key": "c1-surf",
+    "seed": 20260923,
+    "chi2": 1.17052,
+    "chi2_plain": 1.15931,
+    "scale": 1.06359e-06,
+    "scale_ratio": 0.970319,
+    "scale_clamped": false,
+    "near_bounds": [
+     {
+      "target": "layer",
+      "stack": 0,
+      "layer": 0,
+      "parameter": "sigma",
+      "value": 0.120596,
+      "min": 0,
+      "max": 10,
+      "bound": "min",
+      "margin_fraction": 0.0120596
+     }
+    ],
+    "edge": null,
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.30125,
+       0.473
+      ],
+      "n": 115,
+      "mean": 0.0808616,
+      "rms": 0.17821
+     },
+     {
+      "theta_deg": [
+       0.473,
+       0.64475
+      ],
+      "n": 115,
+      "mean": 0.00862021,
+      "rms": 0.100116
+     },
+     {
+      "theta_deg": [
+       0.64475,
+       0.8165
+      ],
+      "n": 114,
+      "mean": 0.00503951,
+      "rms": 0.07446
+     },
+     {
+      "theta_deg": [
+       0.8165,
+       0.98825
+      ],
+      "n": 115,
+      "mean": -0.0767312,
+      "rms": 0.116389
+     },
+     {
+      "theta_deg": [
+       0.98825,
+       1.16
+      ],
+      "n": 114,
+      "mean": -0.0813722,
+      "rms": 0.14878
+     },
+     {
+      "theta_deg": [
+       1.16,
+       1.33175
+      ],
+      "n": 113,
+      "mean": 0.0447839,
+      "rms": 0.221057
+     },
+     {
+      "theta_deg": [
+       1.33175,
+       1.5035
+      ],
+      "n": 105,
+      "mean": 0.022115,
+      "rms": 0.264115
+     },
+     {
+      "theta_deg": [
+       1.5035,
+       1.67525
+      ],
+      "n": 82,
+      "mean": -0.141602,
+      "rms": 0.28651
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 299.785,
+      "sigma": 0.120596,
+      "density": 1.83253
+     },
+     {
+      "material": "C",
+      "thickness": 12.982,
+      "sigma": 0.581478,
+      "density": 0.997754
+     }
+    ]
+   },
+   {
+    "key": "c1-surf",
+    "seed": 20260924,
+    "chi2": 1.16992,
+    "chi2_plain": 1.15931,
+    "scale": 1.06359e-06,
+    "scale_ratio": 0.962668,
+    "scale_clamped": false,
+    "near_bounds": [
+     {
+      "target": "layer",
+      "stack": 0,
+      "layer": 0,
+      "parameter": "sigma",
+      "value": 0.0644261,
+      "min": 0,
+      "max": 10,
+      "bound": "min",
+      "margin_fraction": 0.00644261
+     },
+     {
+      "target": "layer",
+      "stack": 1,
+      "layer": 0,
+      "parameter": "sigma",
+      "value": 0.241239,
+      "min": 0,
+      "max": 10,
+      "bound": "min",
+      "margin_fraction": 0.0241239
+     }
+    ],
+    "edge": null,
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.30125,
+       0.473
+      ],
+      "n": 115,
+      "mean": 0.0812841,
+      "rms": 0.180863
+     },
+     {
+      "theta_deg": [
+       0.473,
+       0.64475
+      ],
+      "n": 115,
+      "mean": 0.00808418,
+      "rms": 0.0967229
+     },
+     {
+      "theta_deg": [
+       0.64475,
+       0.8165
+      ],
+      "n": 114,
+      "mean": 0.00283478,
+      "rms": 0.0702375
+     },
+     {
+      "theta_deg": [
+       0.8165,
+       0.98825
+      ],
+      "n": 115,
+      "mean": -0.0793939,
+      "rms": 0.119258
+     },
+     {
+      "theta_deg": [
+       0.98825,
+       1.16
+      ],
+      "n": 114,
+      "mean": -0.082472,
+      "rms": 0.152171
+     },
+     {
+      "theta_deg": [
+       1.16,
+       1.33175
+      ],
+      "n": 113,
+      "mean": 0.0467691,
+      "rms": 0.222584
+     },
+     {
+      "theta_deg": [
+       1.33175,
+       1.5035
+      ],
+      "n": 105,
+      "mean": 0.0265946,
+      "rms": 0.266341
+     },
+     {
+      "theta_deg": [
+       1.5035,
+       1.67525
+      ],
+      "n": 82,
+      "mean": -0.131253,
+      "rms": 0.282148
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 299.642,
+      "sigma": 0.0644261,
+      "density": 1.82731
+     },
+     {
+      "material": "C",
+      "thickness": 13.0283,
+      "sigma": 0.241239,
+      "density": 1.00326
+     }
+    ]
+   },
+   {
+    "key": "c1-surf",
+    "seed": 20260925,
+    "chi2": 1.16972,
+    "chi2_plain": 1.15921,
+    "scale": 1.06359e-06,
+    "scale_ratio": 0.965668,
+    "scale_clamped": false,
+    "near_bounds": [
+     {
+      "target": "layer",
+      "stack": 0,
+      "layer": 0,
+      "parameter": "sigma",
+      "value": 0.0771853,
+      "min": 0,
+      "max": 10,
+      "bound": "min",
+      "margin_fraction": 0.00771853
+     },
+     {
+      "target": "layer",
+      "stack": 1,
+      "layer": 0,
+      "parameter": "sigma",
+      "value": 0.0353464,
+      "min": 0,
+      "max": 10,
+      "bound": "min",
+      "margin_fraction": 0.00353464
+     }
+    ],
+    "edge": null,
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.30125,
+       0.473
+      ],
+      "n": 115,
+      "mean": 0.0801301,
+      "rms": 0.180273
+     },
+     {
+      "theta_deg": [
+       0.473,
+       0.64475
+      ],
+      "n": 115,
+      "mean": 0.00723774,
+      "rms": 0.0967019
+     },
+     {
+      "theta_deg": [
+       0.64475,
+       0.8165
+      ],
+      "n": 114,
+      "mean": 0.00256603,
+      "rms": 0.0703297
+     },
+     {
+      "theta_deg": [
+       0.8165,
+       0.98825
+      ],
+      "n": 115,
+      "mean": -0.0790075,
+      "rms": 0.118831
+     },
+     {
+      "theta_deg": [
+       0.98825,
+       1.16
+      ],
+      "n": 114,
+      "mean": -0.0812823,
+      "rms": 0.151188
+     },
+     {
+      "theta_deg": [
+       1.16,
+       1.33175
+      ],
+      "n": 113,
+      "mean": 0.0485445,
+      "rms": 0.222962
+     },
+     {
+      "theta_deg": [
+       1.33175,
+       1.5035
+      ],
+      "n": 105,
+      "mean": 0.0288391,
+      "rms": 0.266788
+     },
+     {
+      "theta_deg": [
+       1.5035,
+       1.67525
+      ],
+      "n": 82,
+      "mean": -0.129819,
+      "rms": 0.28205
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "C",
+      "thickness": 299.65,
+      "sigma": 0.0771853,
+      "density": 1.82047
+     },
+     {
+      "material": "C",
+      "thickness": 13.0032,
+      "sigma": 0.0353464,
+      "density": 0.996701
+     }
+    ]
+   }
+  ]
+ },
+ "co-bare": {
+  "request": {
+   "lambda": 1.541874,
+   "polarization": "s",
+   "structure": {
+    "substrate": {
+     "material": "SiO2",
+     "density": 2.5,
+     "sigma": 3.8
+    },
+    "stacks": [
+     {
+      "N": 1,
+      "layers": [
+       {
+        "material": "Co",
+        "thickness": 290.0,
+        "sigma": 4.0,
+        "density": 8.0
+       }
+      ]
+     }
+    ]
+   },
+   "scale": "auto",
+   "auto_theta_max": 0.5,
+   "scale_solve": true,
+   "scale_solve_window": 0.2,
+   "theta_range": {
+    "min": 0.24425,
+    "max": 2.7
+   },
+   "chi2": {
+    "theta_weight": 0,
+    "point_weight": true
+   },
+   "smooth": {
+    "passes": 0
+   },
+   "points_inline_max": 0,
+   "free": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameters": [
+      "thickness",
+      "sigma",
+      "density"
+     ]
+    }
+   ],
+   "bounds": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "thickness",
+     "min": 193.33,
+     "max": 386.67
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "sigma",
+     "min": 1.0,
+     "max": 14.5
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "density",
+     "min": 6.0,
+     "max": 8.79
+    }
+   ],
+   "resolution": 0.015,
+   "r_min": 1.18938e-06
+  },
+  "info": {
+   "theta_max": 0.24425,
+   "scale": 1.18938e-06,
+   "roles": [
+    "film"
+   ]
+  },
+  "scan": [
+   {
+    "resolution": 0.012,
+    "chi2": 8.4374
+   },
+   {
+    "resolution": 0.013,
+    "chi2": 8.4079
+   },
+   {
+    "resolution": 0.014,
+    "chi2": 8.37965
+   },
+   {
+    "resolution": 0.015,
+    "chi2": 8.35202
+   }
+  ],
+  "widening": [
+   {
+    "round": 0,
+    "changes": [
+     {
+      "stack": 0,
+      "parameter": "sigma",
+      "from": [
+       1.0,
+       10.0
+      ],
+      "to": [
+       1.0,
+       14.5
+      ]
+     }
+    ]
+   },
+   {
+    "round": 1,
+    "changes": []
+   }
+  ],
+  "runs": [
+   {
+    "key": "co-bare",
+    "seed": 20260921,
+    "chi2": 6.33079,
+    "chi2_plain": 6.33079,
+    "scale": 1.18932e-06,
+    "scale_ratio": 0.833333,
+    "scale_clamped": true,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.49175,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.602094,
+       "r_calc": 0.522597,
+       "ratio": 0.867966
+      },
+      {
+       "theta_deg": 0.36875,
+       "i_meas": 0.416374,
+       "r_calc": 0.392771,
+       "ratio": 0.943314
+      },
+      {
+       "theta_deg": 0.43025,
+       "i_meas": 0.117417,
+       "r_calc": 0.108542,
+       "ratio": 0.924409
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.0458259,
+      "rms": 0.0488154
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0929412,
+      "rms": 0.140283
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0931369,
+      "rms": 0.253951
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.40687,
+      "rms": 0.614982
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.13692,
+      "rms": 0.4301
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0113201,
+      "rms": 0.373577
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0635904,
+      "rms": 0.296426
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.107016,
+      "rms": 0.292485
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 296.886,
+      "sigma": 13.7803,
+      "density": 8.34894
+     }
+    ]
+   },
+   {
+    "key": "co-bare",
+    "seed": 20260922,
+    "chi2": 6.33078,
+    "chi2_plain": 6.33078,
+    "scale": 1.18932e-06,
+    "scale_ratio": 0.833333,
+    "scale_clamped": true,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.49175,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.602094,
+       "r_calc": 0.522583,
+       "ratio": 0.867942
+      },
+      {
+       "theta_deg": 0.36875,
+       "i_meas": 0.416374,
+       "r_calc": 0.392766,
+       "ratio": 0.943301
+      },
+      {
+       "theta_deg": 0.43025,
+       "i_meas": 0.117417,
+       "r_calc": 0.108535,
+       "ratio": 0.924351
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.0458445,
+      "rms": 0.0488379
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0929607,
+      "rms": 0.140744
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0931049,
+      "rms": 0.25376
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.406898,
+      "rms": 0.61493
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.13694,
+      "rms": 0.430073
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0113322,
+      "rms": 0.37357
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0635815,
+      "rms": 0.296423
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.10701,
+      "rms": 0.292484
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 296.87,
+      "sigma": 13.781,
+      "density": 8.34896
+     }
+    ]
+   },
+   {
+    "key": "co-bare",
+    "seed": 20260923,
+    "chi2": 6.33076,
+    "chi2_plain": 6.33076,
+    "scale": 1.18932e-06,
+    "scale_ratio": 0.833333,
+    "scale_clamped": true,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.49175,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.602094,
+       "r_calc": 0.522469,
+       "ratio": 0.867753
+      },
+      {
+       "theta_deg": 0.36875,
+       "i_meas": 0.416374,
+       "r_calc": 0.392717,
+       "ratio": 0.943185
+      },
+      {
+       "theta_deg": 0.43025,
+       "i_meas": 0.117417,
+       "r_calc": 0.10851,
+       "ratio": 0.924137
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.0459677,
+      "rms": 0.0489616
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0933675,
+      "rms": 0.140738
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0930474,
+      "rms": 0.253705
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.406857,
+      "rms": 0.61483
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.136926,
+      "rms": 0.430063
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0113251,
+      "rms": 0.373571
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0635877,
+      "rms": 0.296425
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.107015,
+      "rms": 0.292485
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 296.879,
+      "sigma": 13.7865,
+      "density": 8.34906
+     }
+    ]
+   },
+   {
+    "key": "co-bare",
+    "seed": 20260924,
+    "chi2": 6.33078,
+    "chi2_plain": 6.33078,
+    "scale": 1.18932e-06,
+    "scale_ratio": 0.833333,
+    "scale_clamped": true,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.49175,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.602094,
+       "r_calc": 0.522581,
+       "ratio": 0.867939
+      },
+      {
+       "theta_deg": 0.36875,
+       "i_meas": 0.416374,
+       "r_calc": 0.392763,
+       "ratio": 0.943294
+      },
+      {
+       "theta_deg": 0.43025,
+       "i_meas": 0.117417,
+       "r_calc": 0.108534,
+       "ratio": 0.924343
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.0458466,
+      "rms": 0.0488404
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0929587,
+      "rms": 0.140822
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0930979,
+      "rms": 0.253728
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.406902,
+      "rms": 0.614921
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.136943,
+      "rms": 0.430068
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0113331,
+      "rms": 0.373568
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0635808,
+      "rms": 0.296423
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.10701,
+      "rms": 0.292484
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 296.868,
+      "sigma": 13.781,
+      "density": 8.34903
+     }
+    ]
+   },
+   {
+    "key": "co-bare",
+    "seed": 20260925,
+    "chi2": 6.33077,
+    "chi2_plain": 6.33077,
+    "scale": 1.18932e-06,
+    "scale_ratio": 0.833333,
+    "scale_clamped": true,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.49175,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.602094,
+       "r_calc": 0.52242,
+       "ratio": 0.867671
+      },
+      {
+       "theta_deg": 0.36875,
+       "i_meas": 0.416374,
+       "r_calc": 0.3927,
+       "ratio": 0.943142
+      },
+      {
+       "theta_deg": 0.43025,
+       "i_meas": 0.117417,
+       "r_calc": 0.1085,
+       "ratio": 0.924052
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.0460199,
+      "rms": 0.0490138
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0935489,
+      "rms": 0.140667
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0930295,
+      "rms": 0.253709
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.406837,
+      "rms": 0.614794
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.136919,
+      "rms": 0.430064
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0113218,
+      "rms": 0.373572
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0635909,
+      "rms": 0.296425
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.107017,
+      "rms": 0.292485
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 296.885,
+      "sigma": 13.789,
+      "density": 8.34901
+     }
+    ]
+   }
+  ]
+ },
+ "co-c": {
+  "request": {
+   "lambda": 1.541874,
+   "polarization": "s",
+   "structure": {
+    "substrate": {
+     "material": "SiO2",
+     "density": 2.5,
+     "sigma": 3.8
+    },
+    "stacks": [
+     {
+      "N": 1,
+      "layers": [
+       {
+        "material": "Co",
+        "thickness": 290.0,
+        "sigma": 4.0,
+        "density": 8.0
+       }
+      ]
+     },
+     {
+      "N": 1,
+      "layers": [
+       {
+        "material": "C",
+        "thickness": 15.0,
+        "sigma": 3.0,
+        "density": 0.9
+       }
+      ]
+     }
+    ]
+   },
+   "scale": "auto",
+   "auto_theta_max": 0.5,
+   "scale_solve": true,
+   "scale_solve_window": 0.2,
+   "theta_range": {
+    "min": 0.24425,
+    "max": 2.7
+   },
+   "chi2": {
+    "theta_weight": 0,
+    "point_weight": true
+   },
+   "smooth": {
+    "passes": 0
+   },
+   "points_inline_max": 0,
+   "free": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameters": [
+      "thickness",
+      "sigma",
+      "density"
+     ]
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameters": [
+      "thickness",
+      "sigma",
+      "density"
+     ]
+    }
+   ],
+   "bounds": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "thickness",
+     "min": 193.33,
+     "max": 386.67
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "sigma",
+     "min": 1.0,
+     "max": 14.5
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "density",
+     "min": 6.0,
+     "max": 8.79
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameter": "thickness",
+     "min": 5.0,
+     "max": 40.0
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "min": 1.0,
+     "max": 10.0
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameter": "density",
+     "min": 0.6,
+     "max": 2.4
+    }
+   ],
+   "resolution": 0.015,
+   "r_min": 1.21636e-06
+  },
+  "info": {
+   "theta_max": 0.24425,
+   "scale": 1.21636e-06,
+   "roles": [
+    "film",
+    "surf"
+   ]
+  },
+  "scan": [
+   {
+    "resolution": 0.012,
+    "chi2": 2.97178
+   },
+   {
+    "resolution": 0.013,
+    "chi2": 2.95757
+   },
+   {
+    "resolution": 0.014,
+    "chi2": 2.94897
+   },
+   {
+    "resolution": 0.015,
+    "chi2": 2.93833
+   }
+  ],
+  "widening": [
+   {
+    "round": 0,
+    "changes": [
+     {
+      "stack": 0,
+      "parameter": "sigma",
+      "from": [
+       1.0,
+       10.0
+      ],
+      "to": [
+       1.0,
+       14.5
+      ]
+     },
+     {
+      "stack": 1,
+      "parameter": "density",
+      "from": [
+       0.6,
+       1.4
+      ],
+      "to": [
+       0.6,
+       1.8
+      ]
+     }
+    ]
+   },
+   {
+    "round": 1,
+    "changes": [
+     {
+      "stack": 1,
+      "parameter": "density",
+      "from": [
+       0.6,
+       1.8
+      ],
+      "to": [
+       0.6,
+       2.4
+      ]
+     }
+    ]
+   }
+  ],
+  "runs": [
+   {
+    "key": "co-c",
+    "seed": 20260921,
+    "chi2": 2.3896,
+    "chi2_plain": 2.3896,
+    "scale": 1.21629e-06,
+    "scale_ratio": 0.905067,
+    "scale_clamped": false,
+    "near_bounds": [
+     {
+      "target": "layer",
+      "stack": 1,
+      "layer": 0,
+      "parameter": "density",
+      "value": 2.39745,
+      "min": 0.6,
+      "max": 2.4,
+      "bound": "max",
+      "margin_fraction": 0.00141629
+     }
+    ],
+    "edge": {
+     "first_min_deg": 0.49325,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.668751,
+       "r_calc": 0.7229,
+       "ratio": 1.08097
+      },
+      {
+       "theta_deg": 0.37025,
+       "i_meas": 0.452495,
+       "r_calc": 0.435525,
+       "ratio": 0.962497
+      },
+      {
+       "theta_deg": 0.43175,
+       "i_meas": 0.127812,
+       "r_calc": 0.121128,
+       "ratio": 0.947708
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.00503826,
+      "rms": 0.0276673
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0551093,
+      "rms": 0.106123
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0620752,
+      "rms": 0.182252
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.348967,
+      "rms": 0.4019
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.13615,
+      "rms": 0.216699
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0566616,
+      "rms": 0.167703
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0166522,
+      "rms": 0.230486
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.0842383,
+      "rms": 0.251112
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 291.017,
+      "sigma": 8.4771,
+      "density": 8.41521
+     },
+     {
+      "material": "C",
+      "thickness": 22.1829,
+      "sigma": 4.69871,
+      "density": 2.39745
+     }
+    ]
+   },
+   {
+    "key": "co-c",
+    "seed": 20260922,
+    "chi2": 2.38941,
+    "chi2_plain": 2.38941,
+    "scale": 1.21629e-06,
+    "scale_ratio": 0.905704,
+    "scale_clamped": false,
+    "near_bounds": [
+     {
+      "target": "layer",
+      "stack": 1,
+      "layer": 0,
+      "parameter": "density",
+      "value": 2.3971,
+      "min": 0.6,
+      "max": 2.4,
+      "bound": "max",
+      "margin_fraction": 0.00161298
+     }
+    ],
+    "edge": {
+     "first_min_deg": 0.49325,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.669222,
+       "r_calc": 0.723002,
+       "ratio": 1.08036
+      },
+      {
+       "theta_deg": 0.37025,
+       "i_meas": 0.452814,
+       "r_calc": 0.435771,
+       "ratio": 0.962361
+      },
+      {
+       "theta_deg": 0.43175,
+       "i_meas": 0.127902,
+       "r_calc": 0.121227,
+       "ratio": 0.947816
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.00501185,
+      "rms": 0.0275471
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0542988,
+      "rms": 0.106952
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0617012,
+      "rms": 0.181059
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.348931,
+      "rms": 0.40193
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.136075,
+      "rms": 0.217003
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0566955,
+      "rms": 0.168225
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0164799,
+      "rms": 0.229717
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.0842858,
+      "rms": 0.251271
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 290.982,
+      "sigma": 8.44732,
+      "density": 8.41554
+     },
+     {
+      "material": "C",
+      "thickness": 22.19,
+      "sigma": 4.70227,
+      "density": 2.3971
+     }
+    ]
+   },
+   {
+    "key": "co-c",
+    "seed": 20260923,
+    "chi2": 2.39037,
+    "chi2_plain": 2.39037,
+    "scale": 1.21629e-06,
+    "scale_ratio": 0.9056,
+    "scale_clamped": false,
+    "near_bounds": [
+     {
+      "target": "layer",
+      "stack": 1,
+      "layer": 0,
+      "parameter": "density",
+      "value": 2.39461,
+      "min": 0.6,
+      "max": 2.4,
+      "bound": "max",
+      "margin_fraction": 0.00299515
+     }
+    ],
+    "edge": {
+     "first_min_deg": 0.49325,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.669145,
+       "r_calc": 0.723031,
+       "ratio": 1.08053
+      },
+      {
+       "theta_deg": 0.37025,
+       "i_meas": 0.452762,
+       "r_calc": 0.43578,
+       "ratio": 0.962492
+      },
+      {
+       "theta_deg": 0.43175,
+       "i_meas": 0.127887,
+       "r_calc": 0.121212,
+       "ratio": 0.947809
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.00500194,
+      "rms": 0.0275741
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.053987,
+      "rms": 0.106502
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.062111,
+      "rms": 0.181746
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.349119,
+      "rms": 0.402732
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.135544,
+      "rms": 0.216748
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0558159,
+      "rms": 0.167773
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0176347,
+      "rms": 0.229084
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.0853468,
+      "rms": 0.25162
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 290.993,
+      "sigma": 8.45908,
+      "density": 8.41061
+     },
+     {
+      "material": "C",
+      "thickness": 22.1639,
+      "sigma": 4.723,
+      "density": 2.39461
+     }
+    ]
+   },
+   {
+    "key": "co-c",
+    "seed": 20260924,
+    "chi2": 2.39098,
+    "chi2_plain": 2.39098,
+    "scale": 1.21629e-06,
+    "scale_ratio": 0.900495,
+    "scale_clamped": false,
+    "near_bounds": [
+     {
+      "target": "layer",
+      "stack": 1,
+      "layer": 0,
+      "parameter": "density",
+      "value": 2.39515,
+      "min": 0.6,
+      "max": 2.4,
+      "bound": "max",
+      "margin_fraction": 0.0026962
+     }
+    ],
+    "edge": {
+     "first_min_deg": 0.49175,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.665373,
+       "r_calc": 0.722917,
+       "ratio": 1.08648
+      },
+      {
+       "theta_deg": 0.36875,
+       "i_meas": 0.460133,
+       "r_calc": 0.443069,
+       "ratio": 0.962913
+      },
+      {
+       "theta_deg": 0.43025,
+       "i_meas": 0.129757,
+       "r_calc": 0.122575,
+       "ratio": 0.944645
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.00494715,
+      "rms": 0.0292862
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0537522,
+      "rms": 0.103722
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0620779,
+      "rms": 0.182011
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.348595,
+      "rms": 0.401781
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.135756,
+      "rms": 0.217257
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0568421,
+      "rms": 0.16883
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0155921,
+      "rms": 0.229234
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.0826744,
+      "rms": 0.250787
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 290.966,
+      "sigma": 8.43279,
+      "density": 8.3923
+     },
+     {
+      "material": "C",
+      "thickness": 22.1645,
+      "sigma": 4.69685,
+      "density": 2.39515
+     }
+    ]
+   },
+   {
+    "key": "co-c",
+    "seed": 20260925,
+    "chi2": 2.38969,
+    "chi2_plain": 2.38969,
+    "scale": 1.21629e-06,
+    "scale_ratio": 0.90588,
+    "scale_clamped": false,
+    "near_bounds": [
+     {
+      "target": "layer",
+      "stack": 1,
+      "layer": 0,
+      "parameter": "density",
+      "value": 2.39809,
+      "min": 0.6,
+      "max": 2.4,
+      "bound": "max",
+      "margin_fraction": 0.00106276
+     }
+    ],
+    "edge": {
+     "first_min_deg": 0.49325,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.669352,
+       "r_calc": 0.723009,
+       "ratio": 1.08016
+      },
+      {
+       "theta_deg": 0.37025,
+       "i_meas": 0.452902,
+       "r_calc": 0.435873,
+       "ratio": 0.9624
+      },
+      {
+       "theta_deg": 0.43175,
+       "i_meas": 0.127927,
+       "r_calc": 0.121293,
+       "ratio": 0.948147
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.00489305,
+      "rms": 0.0274251
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0532327,
+      "rms": 0.106279
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0615912,
+      "rms": 0.180863
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.349178,
+      "rms": 0.403769
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.135585,
+      "rms": 0.215341
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0554069,
+      "rms": 0.167056
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0187768,
+      "rms": 0.22952
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.0869604,
+      "rms": 0.252068
+     }
+    ],
+    "resolution": 0.015,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 291.018,
+      "sigma": 8.43371,
+      "density": 8.41492
+     },
+     {
+      "material": "C",
+      "thickness": 22.1689,
+      "sigma": 4.74116,
+      "density": 2.39809
+     }
+    ]
+   }
+  ]
+ },
+ "co-coo": {
+  "request": {
+   "lambda": 1.541874,
+   "polarization": "s",
+   "structure": {
+    "substrate": {
+     "material": "SiO2",
+     "density": 2.5,
+     "sigma": 3.8
+    },
+    "stacks": [
+     {
+      "N": 1,
+      "layers": [
+       {
+        "material": "Co",
+        "thickness": 290.0,
+        "sigma": 4.0,
+        "density": 8.0
+       }
+      ]
+     },
+     {
+      "N": 1,
+      "layers": [
+       {
+        "material": "CoO",
+        "thickness": 17.0,
+        "sigma": 5.0,
+        "density": 5.58
+       }
+      ]
+     },
+     {
+      "N": 1,
+      "layers": [
+       {
+        "material": "C",
+        "thickness": 15.0,
+        "sigma": 3.0,
+        "density": 0.9
+       }
+      ]
+     }
+    ]
+   },
+   "scale": "auto",
+   "auto_theta_max": 0.5,
+   "scale_solve": true,
+   "scale_solve_window": 0.2,
+   "theta_range": {
+    "min": 0.24425,
+    "max": 2.7
+   },
+   "chi2": {
+    "theta_weight": 0,
+    "point_weight": true
+   },
+   "smooth": {
+    "passes": 0
+   },
+   "points_inline_max": 0,
+   "free": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameters": [
+      "thickness",
+      "sigma",
+      "density"
+     ]
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameters": [
+      "thickness",
+      "sigma",
+      "density"
+     ]
+    },
+    {
+     "stack": 2,
+     "layer": 0,
+     "parameters": [
+      "thickness",
+      "sigma",
+      "density"
+     ]
+    }
+   ],
+   "bounds": [
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "thickness",
+     "min": 193.33,
+     "max": 386.67
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "sigma",
+     "min": 1.0,
+     "max": 10.0
+    },
+    {
+     "stack": 0,
+     "layer": 0,
+     "parameter": "density",
+     "min": 6.0,
+     "max": 8.79
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameter": "thickness",
+     "min": 5.0,
+     "max": 40.0
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameter": "sigma",
+     "min": 1.0,
+     "max": 10.0
+    },
+    {
+     "stack": 1,
+     "layer": 0,
+     "parameter": "density",
+     "min": 3.41,
+     "max": 6.2
+    },
+    {
+     "stack": 2,
+     "layer": 0,
+     "parameter": "thickness",
+     "min": 5.0,
+     "max": 40.0
+    },
+    {
+     "stack": 2,
+     "layer": 0,
+     "parameter": "sigma",
+     "min": 1.0,
+     "max": 10.0
+    },
+    {
+     "stack": 2,
+     "layer": 0,
+     "parameter": "density",
+     "min": 0.6,
+     "max": 1.8
+    }
+   ],
+   "resolution": 0.013,
+   "r_min": 1.2282e-06
+  },
+  "info": {
+   "theta_max": 0.24425,
+   "scale": 1.2282e-06,
+   "roles": [
+    "film",
+    "oxide",
+    "surf"
+   ]
+  },
+  "scan": [
+   {
+    "resolution": 0.012,
+    "chi2": 2.48382
+   },
+   {
+    "resolution": 0.013,
+    "chi2": 2.47918
+   },
+   {
+    "resolution": 0.014,
+    "chi2": 2.48582
+   },
+   {
+    "resolution": 0.015,
+    "chi2": 2.48801
+   }
+  ],
+  "widening": [
+   {
+    "round": 0,
+    "changes": [
+     {
+      "stack": 1,
+      "parameter": "density",
+      "from": [
+       4.34,
+       6.2
+      ],
+      "to": [
+       3.41,
+       6.2
+      ]
+     },
+     {
+      "stack": 2,
+      "parameter": "density",
+      "from": [
+       0.6,
+       1.4
+      ],
+      "to": [
+       0.6,
+       1.8
+      ]
+     }
+    ]
+   },
+   {
+    "round": 1,
+    "changes": []
+   }
+  ],
+  "runs": [
+   {
+    "key": "co-coo",
+    "seed": 20260921,
+    "chi2": 2.50774,
+    "chi2_plain": 2.50774,
+    "scale": 1.2282e-06,
+    "scale_ratio": 0.862953,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.49325,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.64388,
+       "r_calc": 0.656549,
+       "ratio": 1.01968
+      },
+      {
+       "theta_deg": 0.37025,
+       "i_meas": 0.435666,
+       "r_calc": 0.41988,
+       "ratio": 0.963764
+      },
+      {
+       "theta_deg": 0.43175,
+       "i_meas": 0.123058,
+       "r_calc": 0.117775,
+       "ratio": 0.957067
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.00554058,
+      "rms": 0.0228256
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0586731,
+      "rms": 0.108859
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0767521,
+      "rms": 0.197242
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.363709,
+      "rms": 0.411432
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.15392,
+      "rms": 0.23145
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0650814,
+      "rms": 0.177256
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0320257,
+      "rms": 0.215791
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.115857,
+      "rms": 0.271157
+     }
+    ],
+    "resolution": 0.013,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 289.039,
+      "sigma": 6.43339,
+      "density": 8.47994
+     },
+     {
+      "material": "CoO",
+      "thickness": 17.7423,
+      "sigma": 7.87084,
+      "density": 4.65275
+     },
+     {
+      "material": "C",
+      "thickness": 8.7734,
+      "sigma": 3.18094,
+      "density": 1.02553
+     }
+    ]
+   },
+   {
+    "key": "co-coo",
+    "seed": 20260922,
+    "chi2": 2.46726,
+    "chi2_plain": 2.46726,
+    "scale": 1.2282e-06,
+    "scale_ratio": 0.879291,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.49325,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.65607,
+       "r_calc": 0.66232,
+       "ratio": 1.00953
+      },
+      {
+       "theta_deg": 0.37025,
+       "i_meas": 0.443915,
+       "r_calc": 0.428399,
+       "ratio": 0.965047
+      },
+      {
+       "theta_deg": 0.43175,
+       "i_meas": 0.125388,
+       "r_calc": 0.120394,
+       "ratio": 0.960171
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.0049722,
+      "rms": 0.0202855
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0520685,
+      "rms": 0.108113
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0725334,
+      "rms": 0.195583
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.357385,
+      "rms": 0.403736
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.15111,
+      "rms": 0.231727
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.062492,
+      "rms": 0.175568
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0386014,
+      "rms": 0.219608
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.119844,
+      "rms": 0.272885
+     }
+    ],
+    "resolution": 0.013,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 288.639,
+      "sigma": 6.18837,
+      "density": 8.49216
+     },
+     {
+      "material": "CoO",
+      "thickness": 15.7656,
+      "sigma": 7.55425,
+      "density": 4.8613
+     },
+     {
+      "material": "C",
+      "thickness": 10.9386,
+      "sigma": 3.67592,
+      "density": 1.47759
+     }
+    ]
+   },
+   {
+    "key": "co-coo",
+    "seed": 20260923,
+    "chi2": 2.46328,
+    "chi2_plain": 2.46328,
+    "scale": 1.2282e-06,
+    "scale_ratio": 0.88194,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.49325,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.658047,
+       "r_calc": 0.671776,
+       "ratio": 1.02086
+      },
+      {
+       "theta_deg": 0.37025,
+       "i_meas": 0.445252,
+       "r_calc": 0.429919,
+       "ratio": 0.965563
+      },
+      {
+       "theta_deg": 0.43175,
+       "i_meas": 0.125766,
+       "r_calc": 0.120442,
+       "ratio": 0.95767
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.00476795,
+      "rms": 0.0199398
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.057342,
+      "rms": 0.110587
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0724561,
+      "rms": 0.196419
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.358587,
+      "rms": 0.40582
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.151243,
+      "rms": 0.229479
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0626725,
+      "rms": 0.177008
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0327271,
+      "rms": 0.21235
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.124281,
+      "rms": 0.275959
+     }
+    ],
+    "resolution": 0.013,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 289.457,
+      "sigma": 6.53663,
+      "density": 8.51534
+     },
+     {
+      "material": "CoO",
+      "thickness": 15.8415,
+      "sigma": 6.857,
+      "density": 4.4576
+     },
+     {
+      "material": "C",
+      "thickness": 9.78349,
+      "sigma": 4.37592,
+      "density": 1.68995
+     }
+    ]
+   },
+   {
+    "key": "co-coo",
+    "seed": 20260924,
+    "chi2": 2.52648,
+    "chi2_plain": 2.52648,
+    "scale": 1.2282e-06,
+    "scale_ratio": 0.866239,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.49325,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.646332,
+       "r_calc": 0.657977,
+       "ratio": 1.01802
+      },
+      {
+       "theta_deg": 0.37025,
+       "i_meas": 0.437326,
+       "r_calc": 0.421199,
+       "ratio": 0.963125
+      },
+      {
+       "theta_deg": 0.43175,
+       "i_meas": 0.123527,
+       "r_calc": 0.118274,
+       "ratio": 0.957473
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.00479435,
+      "rms": 0.0219854
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0564182,
+      "rms": 0.10855
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0771102,
+      "rms": 0.198314
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.364066,
+      "rms": 0.412297
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.154863,
+      "rms": 0.23232
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0664091,
+      "rms": 0.178551
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0329697,
+      "rms": 0.215935
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.1171,
+      "rms": 0.276099
+     }
+    ],
+    "resolution": 0.013,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 289.28,
+      "sigma": 6.40896,
+      "density": 8.5047
+     },
+     {
+      "material": "CoO",
+      "thickness": 18.7166,
+      "sigma": 7.54916,
+      "density": 4.5678
+     },
+     {
+      "material": "C",
+      "thickness": 8.13181,
+      "sigma": 2.07901,
+      "density": 0.730141
+     }
+    ]
+   },
+   {
+    "key": "co-coo",
+    "seed": 20260925,
+    "chi2": 2.48419,
+    "chi2_plain": 2.48419,
+    "scale": 1.2282e-06,
+    "scale_ratio": 0.869911,
+    "scale_clamped": false,
+    "near_bounds": [],
+    "edge": {
+     "first_min_deg": 0.49325,
+     "points": [
+      {
+       "theta_deg": 0.30725,
+       "i_meas": 0.649071,
+       "r_calc": 0.675302,
+       "ratio": 1.04041
+      },
+      {
+       "theta_deg": 0.37025,
+       "i_meas": 0.439179,
+       "r_calc": 0.423048,
+       "ratio": 0.963271
+      },
+      {
+       "theta_deg": 0.43175,
+       "i_meas": 0.12405,
+       "r_calc": 0.118306,
+       "ratio": 0.953693
+      }
+     ]
+    },
+    "fringes": null,
+    "bands": [
+     {
+      "theta_deg": [
+       0.24575,
+       0.552313
+      ],
+      "n": 205,
+      "mean": -0.00436871,
+      "rms": 0.0236582
+     },
+     {
+      "theta_deg": [
+       0.552313,
+       0.858875
+      ],
+      "n": 204,
+      "mean": -0.0606367,
+      "rms": 0.111074
+     },
+     {
+      "theta_deg": [
+       0.858875,
+       1.16544
+      ],
+      "n": 205,
+      "mean": 0.0748833,
+      "rms": 0.194439
+     },
+     {
+      "theta_deg": [
+       1.16544,
+       1.472
+      ],
+      "n": 203,
+      "mean": 0.361823,
+      "rms": 0.407609
+     },
+     {
+      "theta_deg": [
+       1.472,
+       1.77856
+      ],
+      "n": 203,
+      "mean": 0.153878,
+      "rms": 0.23184
+     },
+     {
+      "theta_deg": [
+       1.77856,
+       2.08513
+      ],
+      "n": 198,
+      "mean": 0.0656089,
+      "rms": 0.177519
+     },
+     {
+      "theta_deg": [
+       2.08513,
+       2.39169
+      ],
+      "n": 181,
+      "mean": -0.0300097,
+      "rms": 0.212235
+     },
+     {
+      "theta_deg": [
+       2.39169,
+       2.69825
+      ],
+      "n": 161,
+      "mean": -0.12266,
+      "rms": 0.276342
+     }
+    ],
+    "resolution": 0.013,
+    "layers": [
+     {
+      "material": "Co",
+      "thickness": 290.127,
+      "sigma": 6.99288,
+      "density": 8.49278
+     },
+     {
+      "material": "CoO",
+      "thickness": 16.7287,
+      "sigma": 5.54507,
+      "density": 3.92744
+     },
+     {
+      "material": "C",
+      "thickness": 8.86479,
+      "sigma": 3.9341,
+      "density": 1.4799
+     }
+    ]
+   }
+  ]
+ }
+}

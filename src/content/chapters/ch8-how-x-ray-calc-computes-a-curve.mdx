@@ -1,0 +1,166 @@
+---
+title: 'How X-Ray Calc Computes a Curve'
+part: '2'
+number: '8'
+order: 80
+inThisChapter:
+  - Following how X-Ray Calc builds a curve from the substrate up
+  - Understanding the resolution Δθ as a blur of the calculated curve
+  - Knowing why s- and p-polarization give the same curve at small angles
+  - Choosing the scan mode and the number of calculated points
+---
+import Remember from '../../components/textbook/Remember.astro';
+import Warning from '../../components/textbook/Warning.astro';
+import GoingDeeper from '../../components/textbook/GoingDeeper.astro';
+import InXRayCalc from '../../components/textbook/InXRayCalc.astro';
+import Figure from '../../components/textbook/Figure.astro';
+import DataTable from '../../components/textbook/DataTable.astro';
+
+Chapters 4 to 7 described what a structure does to the curve. This chapter shows how X-Ray Calc turns a structure into a curve: the calculation itself, the blur that makes it look like a measurement, and the settings that control both. The settings are those of <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#your-first-calculation`}>Chapter 2: Your first calculation</a>. The engine figures use the fitted model of the measured Co/C multilayer from <a href={`${import.meta.env.BASE_URL}/ch6-many-films-bragg-peaks#the-bragg-law-with-refraction`}>Chapter 6: The Bragg law with refraction</a>.
+
+## From the substrate up: the recursion
+
+Every interface reflects a small part of the beam (<a href={`${import.meta.env.BASE_URL}/ch4-x-rays-meet-a-surface#why-the-curve-falls-so-steeply-above-the-critical-angle`}>Chapter 4: Why the curve falls so steeply above the critical angle</a>). The waves reflected at all the interfaces add up. The reflection from one film, top and bottom together, was worked out in <a href={`${import.meta.env.BASE_URL}/ch5-one-film-kiessig-fringes#two-reflections-one-film`}>Chapter 5: Two reflections, one film</a>. X-Ray Calc uses that result again and again, from the bottom of the structure to the top (<a href="#fig-8-1">Figure 8-1</a>):
+
+1. Start at the substrate. It is infinitely thick, so nothing comes back from below it.
+2. Take the interface above it. Combine its own reflection with the reflection from everything below. The wave that went below travels through the layer and back, so it arrives later and weaker.
+3. Treat the result as one new "interface" and move up one layer.
+4. Repeat until the top surface. The result there is the reflection of the whole structure. Its square is the reflectivity R.
+
+<Figure id="fig-8-1" number="8-1" caption="The recursion runs from the substrate to the surface. At the substrate nothing comes back from below. At each interface above, the reflection of that interface is combined with the reflection of everything under it, delayed by the trip through the layer. At the top surface the result is the reflection of the whole structure.">
+  <svg viewBox="0 0 800 280" role="img" aria-label="A stack of three layers on a substrate, with an arrow running from the substrate up to the surface and the partial reflections labeled at each interface">
+    <defs>
+      <marker id="fig81arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10 Z" style={{ fill: 'var(--fig-accent)' }} />
+      </marker>
+    </defs>
+    <rect x="40" y="70" width="420" height="40" style={{ fill: 'var(--fig-fill)' }} />
+    <rect x="40" y="110" width="420" height="40" style={{ fill: 'var(--fig-muted)' }} />
+    <rect x="40" y="150" width="420" height="40" style={{ fill: 'var(--fig-fill)' }} />
+    <rect x="40" y="190" width="420" height="60" style={{ fill: 'var(--fig-fill-2)' }} />
+    <line x1="40" y1="70" x2="460" y2="70" style={{ stroke: 'var(--fig-stroke)', strokeWidth: 1.2 }} />
+    <line x1="40" y1="110" x2="460" y2="110" style={{ stroke: 'var(--fig-stroke)', strokeWidth: 1 }} />
+    <line x1="40" y1="150" x2="460" y2="150" style={{ stroke: 'var(--fig-stroke)', strokeWidth: 1 }} />
+    <line x1="40" y1="190" x2="460" y2="190" style={{ stroke: 'var(--fig-stroke)', strokeWidth: 1 }} />
+    <text x="60" y="50" style={{ fill: 'var(--fig-stroke)', fontSize: '16.5px' }}>vacuum</text>
+    <text x="60" y="95" style={{ fill: 'var(--fig-stroke)', fontSize: '16.5px' }}>layer 1</text>
+    <text x="60" y="135" style={{ fill: 'var(--fig-stroke)', fontSize: '16.5px' }}>layer 2</text>
+    <text x="60" y="175" style={{ fill: 'var(--fig-stroke)', fontSize: '16.5px' }}>layer 3</text>
+    <text x="60" y="228" style={{ fill: 'var(--fig-stroke)', fontSize: '16.5px' }}>substrate</text>
+    <line x1="500" y1="240" x2="500" y2="78" style={{ stroke: 'var(--fig-accent)', strokeWidth: 2.2 }} marker-end="url(#fig81arrow)" />
+    <text x="530" y="74" style={{ fill: 'var(--fig-stroke)', fontSize: '16.5px' }}>whole structure: R = |r|²</text>
+    <text x="530" y="114" style={{ fill: 'var(--fig-stroke)', fontSize: '16.5px' }}>layers 2, 3 and the substrate</text>
+    <text x="530" y="154" style={{ fill: 'var(--fig-stroke)', fontSize: '16.5px' }}>layer 3 and the substrate</text>
+    <text x="530" y="194" style={{ fill: 'var(--fig-stroke)', fontSize: '16.5px' }}>the substrate surface</text>
+    <text x="530" y="240" style={{ fill: 'var(--fig-stroke)', fontSize: '16.5px' }}>start: nothing from below</text>
+  </svg>
+</Figure>
+
+This is Parratt's recursion, published in 1954. The Help calls it exact. It keeps everything the simple picture of Chapter 6 left out: the beam reflected more than once inside the stack, and the beam weakened by absorption on its way down. The simple picture treats each reflection as small and adds them once (Spiller p. 108). That works while the reflections are weak. Near a strong order the full calculation is needed (Spiller p. 109).
+
+The inputs are the ones you set in the structure panel. A layer's ε comes from the Henke table of its material and its density ρ (<a href={`${import.meta.env.BASE_URL}/ch4-x-rays-meet-a-surface#where-δ-and-β-come-from`}>Chapter 4: Where δ and β come from</a>). Its thickness H sets the delay. Every interface is weakened by the roughness factor of <a href={`${import.meta.env.BASE_URL}/ch7-roughness-interlayers-dirty-surface#a-boundary-with-a-width`}>Chapter 7: A boundary with a width</a>. The medium above the structure is vacuum.
+
+One more setting changes the curve. Calculated values below a floor are raised to it. The floor is the **R min** box of the Chart Info bar (default 10⁻⁷). It applies to χ² too. <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#the-floor-one-count`}>Chapter 14: The floor: one count</a> sets it.
+
+<GoingDeeper title="the recursion as a formula">
+
+Number the media from the top: 0 is vacuum, and the substrate is last. In medium j the wave vector across the layers is
+
+$$
+k_j = \frac{2\pi}{\lambda}\sqrt{\varepsilon_j - \cos^2\theta}
+$$
+
+The interface between media j and j + 1 reflects, for s-polarization,
+
+$$
+F_j = \frac{k_j - k_{j+1}}{k_j + k_{j+1}}\;\exp\!\left(-\tfrac{1}{2}\,q_0\,q'\,\sigma_{j+1}^2\right)
+$$
+
+with the roughness σ of the layer under the interface. The substrate sends nothing back, so its $r$ is zero. Then, from the bottom up,
+
+$$
+r_j = \frac{F_j + r_{j+1}\,e^{2i k_{j+1} H_{j+1}}}{1 + F_j\,r_{j+1}\,e^{2i k_{j+1} H_{j+1}}}
+$$
+
+and $R = |r_0|^2$. The factor $e^{2ik_{j+1}H_{j+1}}$ is the trip through layer j + 1 and back. Its imaginary part of k gives the absorption. The formula has the form of the single-film formula in Chapter 5, with $r_{j+1}$ standing for everything below.
+
+</GoingDeeper>
+
+## The resolution: a blur of the calculated curve
+
+A real beam is not perfectly parallel, and the detector is not infinitely narrow. So each measured point is an average over a small range of angles. The measured curve is smoother than the calculated one. Its fringes are shallower, and its peaks are lower.
+
+X-Ray Calc copies this blur. It convolves the calculated curve with a Gaussian whose full width at half maximum (FWHM) is the **Δθ** of the calculation settings. Δθ is always a θ value, as <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#2θ-or-θ-the-angle-on-your-screen`}>Chapter 2: 2θ or θ</a> explained. On a 2θ axis the program doubles it.
+
+<a href="#fig-8-2">Figure 8-2</a> shows the Co/C model at three values of Δθ. The fringes react first. Between the 1st and 2nd orders each fringe maximum stands 7.7 times above the next minimum on average when Δθ = 0. At Δθ = 0.01° the ratio falls to 4.6, while the orders keep 0.97–0.98 of their height. At Δθ = 0.03° the fringes are almost flat, at a ratio of 1.4. The orders then keep only 0.80–0.82 of their height. The positions of the orders don't move.
+
+<Figure id="fig-8-2" number="8-2" src={`${import.meta.env.BASE_URL}/figures/fig-8-2-resolution.svg`} alt="The Co/C model calculated at three resolutions. On the left the whole curve, on the right the fringes between the first and second Bragg orders, which lose contrast as the resolution grows" caption="The resolution blurs the calculated curve. The fitted model of the measured Co/C multilayer (20 periods, D = 50.03 Å) at λ = 1.5406 Å, with Δθ = 0 (gray), 0.01° (blue) and 0.03° (orange). The shaded band on the left is magnified on the right. A larger Δθ flattens the fringes first and lowers the orders second. Calculated by X-Ray Calc 3.9.4.1250, s-polarization." />
+
+The convolution has three limits, all described in the Help. The Gaussian is cut off at ±0.1° of the chart axis. So a Δθ wider than about 0.04° (with **2θ** ticked) loses its tails. At the start of the curve the Gaussian reaches below the first angle. There the program takes the value of the first point, which is the plateau when the scan starts below the critical angle. The last points are replaced by a short moving average. χ² leaves out the points at both ends. The convolution also assumes that the points are evenly spaced.
+
+<Remember>Δθ is a setting that you choose for each measurement. It is not a property of the program, and the fit never changes it. <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#choosing-δθ-by-a-scan`}>Chapter 16: Choosing Δθ by a scan</a> shows how to choose it.</Remember>
+
+<Warning title="a resolution copied from another project">A Δθ stored in someone else's project stands for their instrument and their measurement. If you load your curve into their project and fit, the fit uses their Δθ without telling you. The fringe contrast of the model then matches their measurement. Set Δθ for your own measurement.</Warning>
+
+## Polarization: s-type or sp-type
+
+The **Polarization** setting has two choices. **s-type** calculates the reflectivity for the electric field parallel to the surface. **sp-type** calculates it for both polarizations and averages them, which is right for an unpolarized beam.
+
+At grazing angles the two give almost the same curve. Away from the critical angle the p reflectivity is about the s reflectivity times cos²2θ. So sp-type is lower than s-type by (1 − cos²2θ)/2. <a href="#table-8-1">Table 8-1</a> shows the numbers X-Ray Calc calculates for the Co/C model. Up to 2θ = 8° the difference stays under 1 %.
+
+<p id="table-8-1" class="table-caption"><strong>Table 8-1:</strong> How much lower sp-type is than s-type for the Co/C model of <a href="#fig-8-2">Figure 8-2</a>, calculated by X-Ray Calc 3.9.4.1250, against the approximation (1 − cos²2θ)/2.</p>
+
+<DataTable
+  keepHeaderCase
+  headers={['θ (°)', '2θ (°)', 'sp-type lower by (%)', '(1 − cos²2θ)/2 (%)']}
+  rows={[
+    ['0.5', '1', '0.01', '0.02'],
+    ['1', '2', '0.06', '0.06'],
+    ['2', '4', '0.24', '0.24'],
+    ['3', '6', '0.54', '0.55'],
+    ['4', '8', '0.96', '0.97'],
+  ]}
+/>
+
+So use **s-type** for XRR. It gives the same curve and takes about half the time. sp-type matters at large angles. Near θ = 45° the p reflectivity falls almost to zero. That is the geometry of near-normal EUV and soft X-ray mirrors.
+
+## Scanning the angle or the wavelength
+
+**Mode** chooses the scan. **by angle** is XRR: the wavelength is fixed, and the angle runs from **θ1** to **θ2**. The calculated points are θ1 + i·(θ2 − θ1)/N, so θ2 itself is not calculated.
+
+**by wave** fixes the angle and scans the wavelength from **λ1** to **λ2**, at the angle **θ** (default 85°). Its resolution is **Δλ**, in Å. Since 3.9.3 it reads the optical constants at every wavelength, absorption edges included. It suits mirrors that work at one angle over a band of wavelengths. This book always uses **by angle**.
+
+## How many points?
+
+**N** is the number of calculated points: 2000 in a new session, and 1000 in a project that stores no settings. It matters only for a model on its own. When a measured curve is linked, N is not used: the model is calculated at the angles of the measured points.
+
+Too few points skip across the fringes. The fringes of the Co/C stack, 1000 Å thick in total, are about 0.088° apart in 2θ (<a href={`${import.meta.env.BASE_URL}/ch5-one-film-kiessig-fringes#two-reflections-one-film`}>Chapter 5: Two reflections, one film</a>). <a href="#fig-8-3">Figure 8-3</a> calculates the model at 150 points up to 2θ = 9°, a step of 0.060°. That is about 1.5 points per fringe. The coarse curve still finds the orders, but its fringes are random. A new session calculates 2000 points over 2θ = 0.01–10°, a step of 0.005°. That is about 18 points per fringe here.
+
+<Figure id="fig-8-3" number="8-3" src={`${import.meta.env.BASE_URL}/figures/fig-8-3-sampling.svg`} alt="The Co/C model calculated at 9000 points, with regular fringes, and at 150 points, whose points jump irregularly across the fringes" caption="Too few calculated points. The Co/C model of Figure 8-2 with Δθ = 0, calculated at 9000 points (gray) and at 150 points (blue dots) over 2θ = 0–9°. The coarse curve has about 1.5 points per fringe. It finds the orders but not the fringes. Calculated by X-Ray Calc 3.9.4.1250." />
+
+The same rule applies to a measurement. There it can't be fixed afterward. A measured curve needs at least two points on each fringe that the instrument resolves, as <a href={`${import.meta.env.BASE_URL}/ch5-one-film-kiessig-fringes#reading-a-thickness-from-the-fringes`}>Chapter 5: Reading a thickness from the fringes</a> noted. **Data > Assess XRR quality ...** checks it. Fringes closer together than Δθ are blurred away by the instrument, so for them the check judges the step against Δθ instead (<a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#when-not-to-fit`}>Chapter 10: When not to fit</a>).
+
+A calculation is fast. The Help gives 0.05–0.25 s for a model of 300 stacks of 4 layers at 3000 points on a 16-core processor. X-Ray Calc splits the points between the processor cores. The fit also uses the graphics card when one is available (<a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#when-the-fit-stops`}>Chapter 9: When the fit stops</a>).
+
+<InXRayCalc>**Calc > Run** (F5) calculates the active model. **Calc > Calc all models** (F6) calculates every model in the project. The number of processor cores is set on the **Calc & Fit** page of **File > Settings**. The default uses all of them.</InXRayCalc>
+
+## What this means when you fit
+
+**Use s-type.** It gives the same curve as sp-type at XRR angles, in half the time. The fitting procedure makes the same choice (§2.5).
+
+**Take λ from your measurement.** The recursion uses it everywhere, through ε and through k. <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#the-wavelength-comes-from-the-file`}>Chapter 10: The wavelength comes from the file</a> reads it from the file.
+
+**Choose Δθ for this measurement, and don't fit it.** It sets the fringe contrast of the model (<a href="#fig-8-2">Figure 8-2</a>). The fitting procedure calls it "a tuning parameter of the instrument, not a constant" (§8.1). <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#choosing-δθ-by-a-scan`}>Chapter 16: Choosing Δθ by a scan</a> chooses it.
+
+**Mind the floor.** It lies under the calculated curve and under χ² (<a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#the-floor-one-count`}>Chapter 14: The floor: one count</a>).
+
+## Sources
+
+- **X-Ray Calc Help,** *Calculation*: *Algorithm* (the exact Parratt recursion, vacuum above, a semi-infinite substrate, ε from the Henke tables, the roughness factor, the **R min** floor in the curve and in χ²); *Calculation Modes* (the points θ1 + i·(θ2 − θ1)/N; Δθ as the FWHM in θ of a normalized Gaussian cut at ±0.1°, too wide above about 0.04° with 2θ ticked; the convolution edges: the first 0.1° convolved with the angles below the start taken at the first point's value, the last points replaced by a short moving average, and the ends left out of χ²; evenly spaced points; the by-wave mode, its default θ of 85°, Δλ, and optical constants read at every wavelength from 3.9.3); *Polarization* (s-type and sp-type, Rp ≈ Rs cos²2θ away from the critical angle, Rp near zero at θ ≈ 45°); *Number of Points* (2000 in a new session, 1000 in a project that stores none, not used with a linked curve); *Multi-Threading* (0.05–0.25 s for 300 stacks of 4 layers at 3000 points on 16 cores). The Help's *Calculation* names the command **Calc > Calculate**. The menu reads **Calc > Run** (reported with Chapter 2).
+- **Parratt, L. G. (1954).** Surface studies of solids by total reflection of X-rays. *Phys. Rev.* 95, 359–369. The recursion formula, solved from the bottom medium, whose reflection is zero because it is infinitely thick (p. 361, Eq. 8).
+- **Spiller, E. (1994).** *Soft X-ray Optics.* SPIE. The single-film formula applied layer by layer to build any structure (p. 105, Eq. 7.6); the kinematical approximation, which neglects multiple reflections and the depletion of the beam (p. 108), and the full theory needed near a strong maximum (p. 109).
+- **Fitting procedure** (Penkov, Peng & Fu 2026): §2.5, s-polarization, because s and p give the same reflectivity at grazing incidence and the s-only calculation runs twice as fast; §8.1, the resolution "is a tuning parameter of the instrument, not a constant", never fitted and never inherited from another operator's project.
+- **The X-Ray Calc 3 source** (release 3.9.4.1250): the recursion (`Shared\Math\unit_calc.pas`, `TotalRecursiveRefraction`) and the wave vectors k = (2π/λ)√(ε − cos²θ) (`unit_calc.pas`, `FresnelCoefficients`); the resolution width Δθ × K, with K = 2 on a 2θ axis (`unit_calc.pas`, the calls of `Convolute`), and the normalized Gaussian kernel over ±0.1° (`unit_calc.pas`, `ConvolutionWeights`); the convolution edges (`unit_calc.pas`, `Convolute`: the first points convolved with the start value, then `MVA` on the last points; before 3.9.4.1050 the first 0.1° was copied unconvolved); N = 2000 in a new session and 1000 in a project that stores none, and θ2 = 10 in a new session (`XRayCalc3\Views\frame_CalcSettings.dfm`, `edN` and `edEndTeta`; `frame_CalcSettings.pas`, `LoadFromINI`); the labels **by angle**, **by wave**, **s-type**, **sp-type** (`XRayCalc3\Views\frame_CalcSettings.dfm`) and the **Calc & Fit** page of the settings (`XRayCalc3\Forms\frm_settings.dfm:399`).
+- **Calculated for this chapter (2026-09-24, rerun 2026-09-25)** with the X-Ray Calc 3.9.4.1250 engine at λ = 1.5406 Å, with the reflectivity floor lowered to 10⁻¹⁵: the CoC5 expert model of Chapter 6 at three resolutions, in s- and sp-polarization, and at 150 points. `scripts/figures/ch8_engine_data.py` runs the calculations and keeps the curves in `figures-src/ch8/`. `scripts/figures/fig_8_figures.py` draws Figures 8-2 and 8-3 and computes the order heights, the fringe contrasts, the points per fringe and Table 8-1. The fringe spacing λ/(N·D) and the 18 points per fringe of a new session are computed on the page.
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#your-first-calculation`}>Chapter 2: Your first calculation</a>; <a href={`${import.meta.env.BASE_URL}/ch4-x-rays-meet-a-surface#where-δ-and-β-come-from`}>Chapter 4: Where δ and β come from</a>; <a href={`${import.meta.env.BASE_URL}/ch5-one-film-kiessig-fringes#two-reflections-one-film`}>Chapter 5: Two reflections, one film</a>; <a href={`${import.meta.env.BASE_URL}/ch7-roughness-interlayers-dirty-surface#a-boundary-with-a-width`}>Chapter 7: A boundary with a width</a>; <a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#when-the-fit-stops`}>Chapter 9: When the fit stops</a>; <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#the-wavelength-comes-from-the-file`}>Chapter 10</a>; <a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#checking-the-start-on-the-chart`}>Chapter 12</a>; <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#the-floor-one-count`}>Chapter 14: The floor: one count</a>; <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#choosing-δθ-by-a-scan`}>Chapter 16: Choosing Δθ by a scan</a>; <a href={`${import.meta.env.BASE_URL}/ch26-ten-things-x-ray-calc-does-not-fit#3-the-resolution`}>Chapter 26: The resolution</a>; <a href={`${import.meta.env.BASE_URL}/appendix-a-notation#symbols`}>Appendix A: Notation and Units</a>; <a href={`${import.meta.env.BASE_URL}/appendix-b-menus#the-menus`}>Appendix B: Menus, Buttons and Keys</a>; <a href={`${import.meta.env.BASE_URL}/appendix-d-glossary#a`}>Appendix D: Glossary</a>.

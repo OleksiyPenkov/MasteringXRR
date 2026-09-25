@@ -1,0 +1,18 @@
+---
+/**
+ * A numbered figure with a caption that stands on its own (STYLE.md §6).
+ * `id` is the cross-reference label (`fig-4-1`); it becomes the element id, so
+ * a link to `#fig-4-1` is checked by scripts/check-links.mjs.
+ *
+ * "Figure 4-1: caption", with a colon: the house style has no em-dash, and the
+ * chapter-hyphen-number form is the one the "… for Dummies" format uses.
+ */
+import { renderInline } from '../../lib/inline-markdown';
+interface Props { id?: string; src?: string; alt?: string; number?: string; caption: string; }
+const { id, src, alt = '', number, caption } = Astro.props;
+const label = number ? `**Figure ${number}:** ${caption}` : caption;
+---
+<figure class="figure" id={id}>
+  {src ? <img src={src} alt={alt} loading="lazy" /> : <div class="figure-svg"><slot /></div>}
+  <figcaption set:html={renderInline(label)} />
+</figure>

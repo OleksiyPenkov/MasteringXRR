@@ -1,0 +1,131 @@
+{
+ "measurement_id": "CoC5/CoC5.xrdml",
+ "file": "inbox\\CoC5\\CoC5.xrdml",
+ "format": "xrdml",
+ "points": 4635,
+ "theta_range_deg": [
+  0.04775,
+  6.99875
+ ],
+ "two_theta_range_deg": [
+  0.0955,
+  13.9975
+ ],
+ "two_theta_scan": true,
+ "lambda": 1.54187,
+ "lambda_source": "file: K-Alpha doublet weighted by ratioKAlpha2KAlpha1 0.5",
+ "raw_facts": true,
+ "background": {
+  "level": 9.30266e-07,
+  "points": 100,
+  "rule": "median of the last points of the curve, as the fit report takes it",
+  "one_count": 9.30266e-07,
+  "level_counts": 1.0
+ },
+ "design": null,
+ "checks": {
+  "counting": {
+   "value": 6107730.0,
+   "threshold": null,
+   "verdict": "unknown",
+   "why": "the detector saw at most 6.108E006 counts/s; no detector_max_cps given to judge it against",
+   "unit": "counts",
+   "counting_time_s": 0.176,
+   "peak_counts": 1074961,
+   "peak_rate_cps": 6107730.0,
+   "peak_theta_deg": 0.20075,
+   "peak_two_theta_deg": 0.4015,
+   "attenuation_factors": false,
+   "corrected_peak_counts": 1074961,
+   "corrected_peak_rate_cps": 6107733,
+   "corrected_peak_theta_deg": 0.20075,
+   "corrected_peak_two_theta_deg": 0.4015,
+   "detector": "PIXcel3D-Medipix3 1x1 detector",
+   "readout_period_s": 0.05
+  },
+  "plateau_vs_first_order": {
+   "value": 0.250002,
+   "threshold": null,
+   "verdict": "unknown",
+   "why": "measured ratio 0.250; no design to say what the first order should be against the plateau",
+   "low_angle_max": 1,
+   "low_angle_max_theta_deg": 0.20075,
+   "low_angle_max_two_theta_deg": 0.4015,
+   "first_order": 0.250002,
+   "first_order_theta_deg": 0.91475,
+   "first_order_two_theta_deg": 1.8295,
+   "first_order_found_by": "highest maximum after the plateau's first minimum (no design given: on a single film or a bare substrate this is a Kiessig fringe or noise, not a Bragg order)",
+   "model_ratio": null
+  },
+  "total_reflection": {
+   "value": 0.04775,
+   "threshold": null,
+   "verdict": "unknown",
+   "why": "the scan starts at 0.0477 deg theta and reaches its maximum at 0.2007 deg; no design to place the critical angle",
+   "scan_start_theta_deg": 0.04775,
+   "scan_start_two_theta_deg": 0.0955,
+   "max_theta_deg": 0.20075,
+   "max_two_theta_deg": 0.4015,
+   "points_before_max": 102,
+   "i_start_over_i_max": 0.192676
+  },
+  "orders_visible": {
+   "value": null,
+   "threshold": null,
+   "verdict": "unknown",
+   "why": "204 maxima stand more than 3 times above the background; without a design nothing says how many orders they are or how many there should be (on a single film or a bare substrate they are fringes or noise)",
+   "peaks_above_background": 204,
+   "background": 9.30266e-07,
+   "orders": null
+  },
+  "range_below_background": {
+   "value": 0.607983,
+   "threshold": null,
+   "verdict": "unknown",
+   "why": "2818 of 4635 points (60.8 %) sit at or below the background; no threshold says how much of a scan may be spent there",
+   "points_at_or_below_background": 2818,
+   "background": 9.30266e-07,
+   "background_points": 100,
+   "first_at_background_theta_deg": 1.91075,
+   "first_at_background_two_theta_deg": 3.8215,
+   "last_above_background_theta_deg": 3.55925,
+   "last_above_background_two_theta_deg": 7.1185,
+   "scan_end_theta_deg": 6.99875,
+   "scan_end_two_theta_deg": 13.9975
+  },
+  "sampling": {
+   "value": null,
+   "threshold": 3,
+   "verdict": "unknown",
+   "why": "the grid step is 0.00150 deg theta; no design gives the total thickness the fringe spacing follows from",
+   "step_theta_deg": 0.00150001,
+   "step_two_theta_deg": 0.00300002,
+   "fringe_period_theta_deg": null,
+   "points_per_fringe": null,
+   "resolution_deg": 0.009,
+   "fringe_contrast": null,
+   "fringes_resolved": true,
+   "points_per_resolution": 5.99996,
+   "order_spacing_theta_deg": null,
+   "points_per_order": null,
+   "total_thickness_A": null
+  },
+  "footprint": {
+   "value": null,
+   "threshold": null,
+   "verdict": "unknown",
+   "why": "sample_length_mm and beam_width_mm are both needed for the footprint knee"
+  },
+  "zeros": {
+   "value": 2085,
+   "threshold": null,
+   "verdict": "warn",
+   "why": "2085 of 4635 points (45.0 %) have a non-positive count, the first at 2.0322 deg theta (4.0645 deg 2theta); they were replaced by the smallest positive count before them and any background taken there is a floor, not a measurement",
+   "fraction": 0.449838,
+   "first_theta_deg": 2.03225,
+   "first_two_theta_deg": 4.0645
+  }
+ },
+ "verdict": "warn",
+ "summary_text": "counting: unknown - the detector saw at most 6.108E006 counts/s; no detector_max_cps given to judge it against\r\nplateau_vs_first_order: unknown - measured ratio 0.250; no design to say what the first order should be against the plateau\r\ntotal_reflection: unknown - the scan starts at 0.0477 deg theta and reaches its maximum at 0.2007 deg; no design to place the critical angle\r\norders_visible: unknown - 204 maxima stand more than 3 times above the background; without a design nothing says how many orders they are or how many there should be (on a single film or a bare substrate they are fringes or noise)\r\nrange_below_background: unknown - 2818 of 4635 points (60.8 %) sit at or below the background; no threshold says how much of a scan may be spent there\r\nsampling: unknown - the grid step is 0.00150 deg theta; no design gives the total thickness the fringe spacing follows from\r\nfootprint: unknown - sample_length_mm and beam_width_mm are both needed for the footprint knee\r\nzeros: warn - 2085 of 4635 points (45.0 %) have a non-positive count, the first at 2.0322 deg theta (4.0645 deg 2theta); they were replaced by the smallest positive count before them and any background taken there is a floor, not a measurement"
+}

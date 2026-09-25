@@ -1,0 +1,190 @@
+---
+title: 'Preparing the Data: Scale, Smoothing, and Fitting Range'
+part: '3'
+number: '14'
+order: 140
+inThisChapter:
+  - Setting the scale with Normalize (Auto), and letting the fit solve it
+  - Leaving smoothing off
+  - Setting the floor to one count
+  - Choosing where the fitting range starts and ends, and trimming the data to it
+---
+import Tip from '../../components/textbook/Tip.astro';
+import Remember from '../../components/textbook/Remember.astro';
+import Warning from '../../components/textbook/Warning.astro';
+import GoingDeeper from '../../components/textbook/GoingDeeper.astro';
+import InXRayCalc from '../../components/textbook/InXRayCalc.astro';
+import Figure from '../../components/textbook/Figure.astro';
+import DataTable from '../../components/textbook/DataTable.astro';
+
+The fit compares a calculated curve with the measured one. Four settings decide what that comparison sees: the scale of the measured curve, whether it is smoothed, the lowest reflectivity the model may reach, and the range of angles. None of them is fitted. This chapter sets all four for the Co/C multilayer CoC4, with the starting model of <a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#checking-the-start-on-the-chart`}>Chapter 12: Checking the start on the chart</a>. It uses the numbers read off the curve in <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#what-you-read-before-the-first-fit`}>Chapter 11: What you read before the first fit</a>.
+
+## Four settings, in this order
+
+Set them in this order: the scale, then smoothing, then the fitting range, then the floor. The scale is anchored at $\theta_{\max}$, the angle of the plateau maximum. So read $\theta_{\max}$ and set the scale before you trim anything.
+
+The fitting procedure started as the author's own practice in X-Ray Calc. Three of the author's four choices were later tested on curves calculated from a known structure. All three were changed. <a href="#table-14-1">Table 14-1</a> lists them. The rest of the chapter teaches the tested versions.
+
+<p id="table-14-1" class="table-caption"><strong>Table 14-1:</strong> Preparing the data: what the author did in X-Ray Calc, and what testing against a known structure changed.</p>
+
+<DataTable
+  keepHeaderCase
+  headers={['Setting', 'The author’s practice', 'After testing']}
+  rows={[
+    ['Scale', '**Data > Normalize (Auto)**', 'the same, and **Solve scale in χ²** lets the fit correct it within a window'],
+    ['Smoothing', '**Data > Smooth**, one pass, always', 'off'],
+    ['Fitting range', 'from θ_max to past the last visible order, then **Data > Trim**', 'from θ_max to at least the seventh order the period predicts'],
+    ['Floor', 'at the background, read off the curve', 'one count (not tested)'],
+  ]}
+/>
+
+<Warning>**Normalize (Auto)**, **Normalize ...**, **Smooth** and **Trim** change the data item itself, and the project saves the change at once. **Undo** covers the structure only. The file you loaded is not changed, so load it again to start over.</Warning>
+
+## Setting the scale: Normalize (Auto)
+
+An imported curve has its largest value at 1 (<a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#what-the-import-does-to-the-counts`}>Chapter 10: What the import does to the counts</a>). The model's reflectivity at the same angle is lower than 1. **Data > Normalize (Auto)** moves the measured curve so that the two agree at that point:
+
+1. Select the starting model and choose **Calc > Run** (F5).
+2. Select the data item and choose **Data > Normalize (Auto)**.
+3. Zoom on the plateau and check that the measured maximum now lies on the model.
+
+The command finds the largest measured value below θ = 0.5° (2θ = 1° with the **2θ** box ticked) and its angle. It takes the model's value at the first calculated point at or above that angle. Then it divides every measured value by (largest measured value) / (model value). If the model has not been calculated that far, the command says so and changes nothing. It adds a line with the factor and the angle to the item's description, the box at the bottom of the project panel.
+
+For CoC4 the largest value is the plateau at 2θ = 0.4165°, the $\theta_{\max}$ of Chapter 11. The starting model gives 0.842 there. So the command divides the curve by 1.188. The plateau maximum becomes 0.842. The description gets the line `* Normalised (Auto): divided by 1.1877 at 2Theta 0.4165`.
+
+<Warning>**Normalize (Auto)** takes the largest value below θ = 0.5°. On most curves that is the plateau. The Bragg law puts the first order below θ = 0.5° when the period is longer than λ / (2 sin 0.5°) = 88 Å at λ = 1.5419 Å. On such a stack, if the specimen is badly aligned, the first order can stand above the plateau. The command then matches a Bragg peak to the model and gives no message. Check the angle in the description line before you go on. If it is not on the plateau, use **Data > Normalize ...** instead. Enter the measured value at $\theta_{\max}$ divided by the model's value at $\theta_{\max}$. Read both with the cursor, as in <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-plateau-and-the-background`}>Chapter 11: The plateau and the background</a>.</Warning>
+
+<InXRayCalc>**Data > Normalize ...** opens the **Data normalization** box. Every measured value is divided by the number you enter in **Coefficient**. **Data > Normalize (Auto)** computes that number for you.</InXRayCalc>
+
+## Letting the fit solve the scale
+
+The anchor is one point. It is not a measurement of the scale. A reflectometer counts photons. The reflectivity is that count divided by the intensity of the incident beam. That intensity is seldom known to better than several percent. The specimen adds its own errors at small angles. A beam wider than the specimen loses part of its footprint, and a small alignment error lowers the plateau. Each of these errors multiplies the whole curve by one factor.
+
+CoC4 shows the problem. Its first order stands at 0.574 of the plateau. The structure can make at most 0.474 (Chapter 11). The plateau was probably measured too low. **Normalize (Auto)** then puts the whole measured curve too high.
+
+A fit held at a wrong scale corrects it with the structure. The density of Co raises and lowers every order and the edge together (<a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#the-variants-and-what-they-move`}>Chapter 13: The variants and what they move</a>). A scale error does almost the same. So the error goes into the densities and the σ values. In one laboratory's tests on calculated curves, a 15 % error in the anchor cost 0.67 g/cm³ in the density of Co.
+
+**Solve scale in χ²** removes most of this. For every structure it scores, X-Ray Calc finds the scale factor that gives that structure the lowest χ² (<a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#the-scale`}>Chapter 9: The scale</a>). The anchor becomes the starting point. **Window** says how far the fit may move from it: the solved factor stays between 1/(1 + **Window**) and 1 + **Window** times the anchored one.
+
+<Figure id="fig-14-3" number="14-3" src={`${import.meta.env.BASE_URL}/figures/fig-14-3-fit-settings.png`} alt="The fit settings of X-Ray Calc: Iterations 200, Population 5000, Shake and SeedR ticked, the Mode group with Periodic selected, the Smooth box grayed out, PW chi-squared ticked, TW chi-squared set to None, the Advanced Settings button, Solve scale in chi-squared ticked and Window 0.2" caption="The fit settings at the top right of the working area. **Solve scale in χ²** is ticked and **Window** is 0.2, the defaults. **Smooth** is grayed out because the mode is Periodic. X-Ray Calc 3.9.4.1270." />
+
+The default window is 0.2, which allows a factor from 0.833 to 1.2. One laboratory uses 0.7, which allows 0.588 to 1.7. In its tests, the window of 0.2 held the solved scale at a bound in up to 54 of 240 fits. One real glass specimen needed a factor of 1.476.
+
+<a href="#table-14-2">Table 14-2</a> fits CoC4 three ways from the same start: with the scale held, and solved within each window.
+
+<p id="table-14-2" class="table-caption"><strong>Table 14-2:</strong> CoC4 fitted with the scale held and solved. Each row gives the mean and the standard deviation of five fits with different seeds. The scale factor is the one the fit found, relative to **Normalize (Auto)**. No fit ended with its scale at a bound. Periodic mode, the period held at 54.70 Å (Chapter 11), **Population** 5000, **Iterations** 200, **PW χ²** on, **TW χ²** None, Δθ = 0.012°, no smoothing, the floor and range of this chapter. Fitted by X-Ray Calc 3.9.4.1250.</p>
+
+<DataTable
+  keepHeaderCase
+  headers={['Scale', 'Scale factor', 'ρ of Co (g/cm³)', 'ρ of C (g/cm³)', 'χ²']}
+  rows={[
+    ['held (**Solve scale in χ²** off)', '1', '7.834 ± 0.003', '1.76 ± 0.03', '1.458 ± 0.009'],
+    ['solved, **Window** 0.2', '0.852 ± 0.001', '7.346 ± 0.010', '2.003 ± 0.004', '1.284 ± 0.001'],
+    ['solved, **Window** 0.7', '0.853 ± 0.003', '7.351 ± 0.007', '1.99 ± 0.02', '1.291 ± 0.015'],
+  ]}
+/>
+
+The fit moved the scale down by 15 %. That is close to the 0.83 the first order suggests (0.474 / 0.574). Held at the anchor, the fit put the difference into the densities: Co 0.49 g/cm³ higher and C 0.24 g/cm³ lower. The thicknesses changed by 0.15 Å or less, because the order positions fix them. On this curve the two windows gave the same answer. The factor of 0.852 lies inside both windows, but only 2 % inside the window of 0.2. The χ² values of the held and solved rows can't be compared. A solved χ² is never higher than the held χ² of the same structure (<a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#the-scale`}>Chapter 9: The scale</a>).
+
+**Reading the result.** After each **Calc > Run** and each fit, the **scale** box of the Chart Info bar shows the factor: "solved x0.8514", for example. "anchored" means the option is off. "at bound" after the number means that the best factor lies outside the window and the fit used the edge of the window. A fit at the bound has not solved its scale. Look first at the end of the fitting range, because a long tail lying on the floor pulls the scale. Then look at the model.
+
+**Renormalizing after a fit.** The scale was anchored to the starting model. After a fit, look at the plateau and the edge. If the fitted model no longer lies on the measured curve there, set the scale again from the fitted model and fit again:
+
+1. Select the fitted model and choose **Calc > Run** (F5).
+2. Choose **Data > Normalize (Auto)**.
+3. Set the floor again (see <a href="#the-floor-one-count">The floor: one count</a>) and run the fit from the fitted structure.
+
+You can also apply the solved factor itself with **Data > Normalize ...**. The chart then shows the measured curve at the scale the fit used. Set the floor again after this too.
+
+<Warning>The solved factor multiplies the measured curve. **Normalize ...** divides by the number you enter. So enter 1 / factor: for a factor of 0.852, enter 1.174. Entering 0.852 moves the curve the wrong way and doubles the error.</Warning>
+
+<Remember>The chart and the saved data stay at the anchored scale. With a factor of 0.852, the model is drawn about 15 % under the measured curve, even when the fit is good. Judge the plateau by eye only when the factor is near 1. At any factor, the residual strip under the chart shows the plateau at the solved scale, and a good fit puts it near zero (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-residual-by-band`}>Chapter 18: The residual by band</a>).</Remember>
+
+## Why smoothing stays off
+
+**Data > Smooth** replaces each point by the mean of six points: the three below it, the point itself and the two above it. It works on the linear reflectivity. Each click smooths again.
+
+The author smoothed every curve once before fitting. Tested on calculated curves with counting noise at four brightness levels, one pass was the better choice in 39, 47, 28 and 35 % of the paired fits, for plateaus of 605 000, 87 000, 17 000 and 3600 counts. A pass was expected to help a dim curve. The dimmest curve was among the worst. So no brightness exists at which smoothing pays. The period suffers most. A heavy layer's density is pushed up, because smoothing raises the minima of the curve and the fit compensates. Only the program's own six-point window was tested.
+
+<a href="#fig-14-1">Figure 14-1</a> shows one pass on CoC4. The fringes keep their shape. The strong orders lose little: orders 1 to 4 fall by 1–3 %. The weak orders are made of a few counts, and the pass spreads them out. Order 5 falls to 0.78 of its height, and orders 7 and 8 fall to about half.
+
+<Figure id="fig-14-1" number="14-1" src={`${import.meta.env.BASE_URL}/figures/fig-14-1-smoothing.svg`} alt="Two panels of the CoC4 curve against 2θ, measured and after one pass of Data > Smooth. On the left the Kiessig fringes between orders 1 and 2 keep their shape with the noise removed. On the right orders 5 and 6 lose part of their height. The noise between them is flattened" caption="One pass of **Data > Smooth** on CoC4 after **Normalize (Auto)**. Left: the fringes between orders 1 and 2. Right: orders 5 and 6. The pass lowers order 5 to 0.78 of its measured height. Measured CoC4 from the fitting procedure's data deposit (CC BY 4.0). The pass is the program's own six-point mean." />
+
+<Remember>Leave **Data > Smooth** alone. If a pass was run, say so when you report the fit, and treat a density near its upper limit as a possible effect of the smoothing.</Remember>
+
+<Warning>The **Smooth** box in the fit settings is a different thing (<a href="#fig-14-3">Figure 14-3</a>). It works only in Irregular mode. It smooths the layer values from period to period. It doesn't touch the data (<a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#step-1-one-period-with-the-period-free`}>Chapter 17: Step 1, one period with the period free</a>).</Warning>
+
+## Where the fitting range starts and ends
+
+**The start.** The range starts at $\theta_{\max}$, so it includes the critical edge. For CoC4 that is 2θ = 0.4165°. A single film of a light material is the exception (<a href={`${import.meta.env.BASE_URL}/ch21-single-films#the-edge-of-a-carbon-film`}>Chapter 21: The edge of a carbon film</a>).
+
+**The end.** The range covers at least the first seven Bragg orders that the period predicts, whether the curve shows them or not. It never runs past the end of the measurement. An order counts as visible when it stands more than three times above the background. Take the predictions from the straight line of <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-period-from-a-straight-line`}>Chapter 11: The period from a straight line</a>:
+
+- **Seven or more orders visible:** end a quarter of the order spacing past the last visible order.
+- **Fewer than seven visible:** end half a spacing past the seventh predicted order, where the missing orders would be.
+
+The rule comes from fits of curves calculated from a known structure. With four or five visible orders, running the range on to the seventh predicted order cut the errors of the fitted parameters to 0.70 of their size with the old end, past the last visible order. With seven visible orders, any extension raised the errors, by a factor of 1.19. Past the seventh order the gain shrank again. A longer range is not always better. An order that the model predicts and the data don't show still carries information about the layer ratio and the interfaces. The fit can use it only if the range reaches the angle where the model puts a peak. The rule was tested with **PW χ²** on, the default.
+
+**CoC4** shows eight visible orders (Chapter 11). Order 8 is at 2θ = 12.96°, and the predicted spacing there is 1.63°. So the range ends at 12.96 + 1.63 / 4 = 13.37°. The measurement runs on to 14.80°.
+
+**CoC5**, the Co/C curve of Chapter 10, shows only four orders. A straight line through them gives D = 50.34 Å and predicts order 7 at 2θ = 12.32° and order 8 at 14.09°. So the range ends at 12.32 + (14.09 − 12.32) / 2 = 13.20°, before the measurement ends at 14.00°. The CoC5 fit of <a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#the-scale`}>Chapter 9: The scale</a> ended at 8.4°, just past order 4, as the older rule said.
+
+<Figure id="fig-14-2" number="14-2" src={`${import.meta.env.BASE_URL}/figures/fig-14-2-fitting-range.svg`} alt="Two panels of measured reflectivity against 2θ on a log axis, each with a shaded fitting range, marks at the predicted Bragg orders and a dashed line at one count. Top: CoC4 with orders 1 to 8 visible and the range ending at 13.37 degrees, a quarter spacing past order 8. Bottom: CoC5 with orders 1 to 4 visible, orders 5 to 8 predicted but lost in the background, and the range ending at 13.20 degrees, half a spacing past order 7" caption="Where the fitting range ends. Top: CoC4 after **Normalize (Auto)**, with eight visible orders; the range ends a quarter spacing past order 8. Bottom: CoC5 as imported, with four visible orders; the range runs on to half a spacing past the seventh predicted order. Blue marks: visible orders. Orange marks: predicted orders that do not stand out. Dashed line: one count. Dotted line: the end of the measurement. Measured curves from the fitting procedure's data deposit (CC BY 4.0)." />
+
+## Trimming the data to the range
+
+<Remember>When a measured curve is linked to the model, X-Ray Calc calculates the model at the measured points, and the fit uses every one of them. **θ1** and **θ2** don't limit the fit. The fitting range is the data that remain after **Data > Trim**.</Remember>
+
+1. Tick the **2θ** box of the calculation settings, so that **θ1** and **θ2** are in 2θ.
+2. Enter the start of the range in **θ1** and the end in **θ2**. For CoC4: 0.4165 and 13.37.
+3. Choose **Calc > Run** (F5) and note χ².
+4. Select the data item and choose **Data > Trim**. X-Ray Calc deletes the points below **θ1** and above **θ2**. The points at **θ1** and **θ2** stay.
+5. Choose **Calc > Run** (F5) again. χ² changes, because the points it sums have changed.
+
+Compare χ² values only over the same range (<a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#the-scale`}>Chapter 9: The scale</a>). Trim after **Normalize (Auto)**. The maximum that the scale is anchored to is then still in the data.
+
+<Tip>Before you trim, load the file a second time with **Data > Load ...**. Keep one data item as measured and trim the other. Link the trimmed item to the model for the fit.</Tip>
+
+## The floor: one count
+
+X-Ray Calc raises every calculated value below a floor to the floor. It does this in every **Calc > Run** and in every fit, before the resolution blur. The measured values are not changed. The floor is the **R min** box under the **Linear** button, at the right end of the Chart Info bar. It also sets the bottom of the chart. The default is `1E-7`. The project saves the value.
+
+Set the floor to one count on the scaled curve:
+
+1. Read the factor in the line **Normalize (Auto)** added to the item's description.
+2. Divide one count by it. On an imported curve one count is 1 / (peak rate × counting time) (<a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#what-the-import-does-to-the-counts`}>Chapter 10: What the import does to the counts</a>). On a text file in counts it is 1.
+3. Type the result into **R min**, for example `1.38E-6`, and press Enter.
+
+For CoC4, one count on the imported curve is $1.64\times10^{-6}$. The factor is 1.1877. One count on the normalized curve is $1.64\times10^{-6}$ / 1.1877 = $1.38\times10^{-6}$. As a check, divide the plateau maximum by $I_{\max}$: 0.842 / 608 828 gives the same number. The expert's own CoC4 project had a floor of $1.6\times10^{-6}$ (<a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-chart-info-bar`}>Chapter 11: The Chart Info bar</a>). That is one count on the curve before normalization.
+
+Why one count: the background of an `.xrdml` import is one count, because zero counts were replaced (<a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-plateau-and-the-background`}>Chapter 11: The plateau and the background</a>). A floor above the background cuts off the model where the data fall lower. A floor below it lets the model fall under data that can't go lower, so the residual in the tail is all on one side. <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-residual-by-band`}>Chapter 18: The residual by band</a> finds both.
+
+<Remember>Never copy a floor from another curve or from another scale. Each later **Normalize (Auto)** or **Normalize ...** divides the curve again. Divide the floor by the same number.</Remember>
+
+<GoingDeeper title="why the floor comes last">
+The floor depends on the scale, and the scale can change after a fit. The range and the trim don't depend on it. So the floor is the one setting you check again before every fit. The description keeps one line for each **Normalize (Auto)**, so you can trace every factor the curve was divided by.
+</GoingDeeper>
+
+## What this means when you fit
+
+**Set the scale with Normalize (Auto),** after checking that the largest value is the plateau. Keep **Solve scale in χ²** on. Choose the window from how well you trust the anchor, and report the factor with every fit (<a href={`${import.meta.env.BASE_URL}/ch23-reporting-a-fit#writing-the-numbers`}>Chapter 23: Writing the numbers</a>).
+
+**Don't smooth.**
+
+**Trim to the range:** from $\theta_{\max}$ to at least the seventh predicted order.
+
+**Set the floor to one count,** and set it again whenever the scale changes.
+
+**Then choose the free parameters and their limits** (<a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#what-is-free-and-what-the-limits-are-for`}>Chapter 15: Choosing What to Fit</a>) and the fit settings (<a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#the-settings-and-the-ones-you-change`}>Chapter 16: Fit Settings</a>). After the fit, the edge check (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-edge`}>Chapter 18: The edge</a>) tells you whether to renormalize.
+
+## Sources
+
+- **Fitting procedure** (Penkov, Peng & Fu 2026): §4.1, the scale anchored at the measured maximum below a set angle, as R_calc(θ_max) / I_max; §4.2, renormalize when the fitted model's plateau and edge no longer overlap the measured curve; §4.3, the scale solved within a window around the anchor, and a scale at the bound read first as a tail on the floor; §5.1–5.4, smoothing off, no condition to switch it on, what a pass costs, only the default window tested; §6.1–6.2, the floor at one count times the scale, and why; §6.3, the range from θ_max, with the single-film exception; §6.4, at least the first seven predicted orders, a quarter spacing past the last visible order or half a spacing past the seventh predicted one, never past the measured end; §6.5, trim after normalizing; §1.3 and §1.5, the one-count background of an `.xrdml` import; Appendix, scale, background and resolution are never fitted.
+- **The procedure's preset** (`skill-v5\presets\csmic-empyrean.json`), one laboratory's values and their grounds: `scale.solve_window` 0.7, and in `scale.reason` the 15 % anchor error costing 0.67 g/cm³ in Co, the default window clamping 15/240, 54/240 and 10/199 fits, and the glass specimen needing 1.476; `smoothing.reason`, the paired comparisons 39 / 47 / 28 / 35 % at 605 000 / 87 000 / 17 000 / 3600 counts; `fitting_range.reason`, the error ratios 0.70 at four or five visible orders and 1.19 for any extension at seven, the minimum at the seventh order, and the dependence on **PW χ²**; `acceptance.thresholds.order_visible_factor` 3. The preset's range reason still names the older end "half a spacing past the last visible order"; the procedure's §6.4 states a quarter and says the implementation always used a quarter. The chapter follows §6.4 (reported to the author).
+- **The methods paper on the procedure** (Penkov, Peng & Fu 2026, [arXiv:2609.28926](https://arxiv.org/abs/2609.28926)), Table 1 (the expert's choices and what testing against known truth revised: the scale solved inside the objective, smoothing off, at least seven predicted orders; the background floor not tested) and Table 2 (the GUI actions: **Data > Normalize (Auto)**; **Data > Smooth**, one pass; **Data > Trim** with the left and right limits set).
+- **The X-Ray Calc 3 source:** **Normalize (Auto)** takes the largest measured value below θ = 0.5° (2θ = 1°; the whole curve by wavelength or when no point lies below), divides by it over the model's value at the first calculated point at or above its angle, refuses when the model stops short, and adds the line "* Normalised (Auto): divided by … at …" to the item's description (`XRayCalc3\Units\unit_DataProcessing.pas`, `NormalizeAuto`; `XRayCalc3\Views\frame_ChartInfo.pas`, `NormalizeDataAuto`); **Normalize ...** divides by the coefficient of the **Data normalization** box, and **Smooth** is `MovAvg(Data, 5)`, the six-point mean (`XRayCalc3\Views\frame_ChartInfo.pas`, `NormalizeData`, `SmoothData`; `unit_DataProcessing.pas`, `MovAvg`); **Trim** keeps the points from **θ1** to **θ2** inclusive (`frame_ChartInfo.pas`, `TrimData`); the **R min** box and its default `1E-7` (`frame_ChartInfo.dfm`, `cbMinLimit`; `Shared\Math\unit_AxisLimit.pas`), sent to the calculation and the fit as `Limit` (`XRayCalc3\Units\unit_CalcOrchestrator.pas:206, 364`, `PrepareCalc`, `PrepareLFPSO`) and applied to the unblurred curve (`Shared\Math\unit_calc.pas`, `CalcTet`), saved with the project (`frame_ProjectPanel.pas`, `SaveProjectINI`); the residual strip, which reads the measured curve at the solved scale of the last calculation (`XRayCalc3\Forms\frm_Main.pas`, `RefreshResiduals`, release 3.9.4.1250); with a linked curve the model is calculated at the measured points (`unit_calc.pas`, `PrepareWorkers`); the solved factor applied to the measured values and the **scale** box texts "anchored", "solved x…" and "at bound" (`unit_calc.pas`, `CalcChiSquare`; `frame_ChartInfo.pas`, `SetChiScale`); **Solve scale in χ²** checked and **Window** 0.2 by default, and the fit-settings **Smooth** box enabled in Irregular mode only (`XRayCalc3\Views\frame_CalcSettings.pas`, `.dfm`).
+- **X-Ray Calc Help,** *Data*: *Normalize*, *Smooth*, *Trim* (and the note that the three change the data item at once, outside **Undo**); *Fitting*: *Solving the Measured Scale* (the incident intensity known to several percent, footprint and alignment, a wrong scale absorbed as roughness or density, the window, reading the **scale** box, applying the ratio, the chart kept at the anchored scale, solved and anchored χ² not comparable). *Data*: *Normalize* also gives the search below θ = 0.5° and the description line. *Charts*: *Interaction* (**R min**, the floor of every calculation and fit, one count after normalization). *Data Conditioning Walkthrough*, Step 2, "Do not smooth". Reported with this chapter and corrected in the program and the Help on 2026-09-24: the box had no label and the Help called it "Min limit"; **Normalize (Auto)** searched the whole curve and did not record its factor; the walkthrough advised smoothing a noisy tail.
+- **The measured curves** CoC4 and CoC5 are from the fitting procedure's data deposit (CC BY 4.0), `curves/CoC4.xrdml` and `curves/CoC5.xrdml`, read in place, as imported in Chapters 10 and 11.
+- **Calculated for this chapter (2026-09-24, rerun 2026-09-25)** with the X-Ray Calc 3.9.4.1250 engine. `scripts/figures/ch14_engine_data.py` anchors the scale of CoC4 on the starting model of Chapter 12 (0.842 at θ_max), computes the range ends of CoC4 and CoC5 from the straight lines of Chapters 10 and 11, and runs the fifteen fits of Table 14-2 (five seeds each; bounds: thicknesses from two thirds to four thirds of the start, σ 1–8 Å, ρ of C 1.5–2.4 and of Co 6.0–8.79 g/cm³, the top layer 5–40 Å, σ 1–10 Å, ρ 0.6–1.4 g/cm³). In every fit the σ of the top layer ended at its lower limit of 1 Å. `scripts/figures/fig_14_figures.py` draws Figures 14-1 and 14-2, crops Figure 14-3, and prints every number of the chapter (`figures-src/ch14/numbers.txt`). Figure 14-1 applies the program's six-point mean, copied line for line.
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/introduction#about-this-book`}>Introduction: About This Book</a>; <a href={`${import.meta.env.BASE_URL}/ch1-what-xrr-fitting-is#what-an-xrr-measurement-records`}>Chapter 1: What an XRR measurement records</a>; <a href={`${import.meta.env.BASE_URL}/ch4-x-rays-meet-a-surface#what-this-means-when-you-fit`}>Chapter 4: What this means when you fit</a>; <a href={`${import.meta.env.BASE_URL}/ch6-many-films-bragg-peaks#what-this-means-when-you-fit`}>Chapter 6: What this means when you fit</a>; <a href={`${import.meta.env.BASE_URL}/ch8-how-x-ray-calc-computes-a-curve#what-this-means-when-you-fit`}>Chapter 8: What this means when you fit</a>; <a href={`${import.meta.env.BASE_URL}/ch9-how-x-ray-calc-finds-a-fit#the-scale`}>Chapter 9: The scale</a>; <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#what-the-import-does-to-the-counts`}>Chapter 10: What the import does to the counts</a>; <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-plateau-and-the-background`}>Chapter 11: The plateau and the background</a>; <a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#checking-the-start-on-the-chart`}>Chapter 12: Checking the start on the chart</a>; <a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#the-variants-and-what-they-move`}>Chapter 13: The variants and what they move</a>; <a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#what-is-free-and-what-the-limits-are-for`}>Chapter 15: Choosing What to Fit</a>; <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#the-settings-and-the-ones-you-change`}>Chapter 16: Fit Settings</a>; <a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#step-1-one-period-with-the-period-free`}>Chapter 17: Step 1, one period with the period free</a>; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-edge`}>Chapter 18: The edge</a>; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-residual-by-band`}>Chapter 18: The residual by band</a>; <a href={`${import.meta.env.BASE_URL}/ch21-single-films#the-single-film-exceptions`}>Chapter 21: The single-film exceptions</a>; <a href={`${import.meta.env.BASE_URL}/ch23-reporting-a-fit#writing-the-numbers`}>Chapter 23: Writing the numbers</a>; <a href={`${import.meta.env.BASE_URL}/ch24-ten-ways-a-fit-can-mislead-you#7-a-clamped-scale`}>Chapter 24: A clamped scale</a>; <a href={`${import.meta.env.BASE_URL}/ch25-ten-checks-before-you-trust-a-number#3-is-the-scale-inside-its-window`}>Chapter 25: Is the scale inside its window?</a>; <a href={`${import.meta.env.BASE_URL}/ch26-ten-things-x-ray-calc-does-not-fit#4-the-scale`}>Chapter 26: The scale</a>; <a href={`${import.meta.env.BASE_URL}/appendix-a-notation#symbols`}>Appendix A: Notation and Units</a>; <a href={`${import.meta.env.BASE_URL}/appendix-b-menus#the-menus`}>Appendix B: Menus, Buttons and Keys</a>; <a href={`${import.meta.env.BASE_URL}/appendix-d-glossary#a`}>Appendix D: Glossary</a>.

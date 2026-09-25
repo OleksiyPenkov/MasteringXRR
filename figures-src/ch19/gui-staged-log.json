@@ -1,0 +1,1340 @@
+{
+ "paste-ok": true,
+ "model-start": {
+  "Stacks": [
+   {
+    "T": "Top",
+    "N": 1,
+    "Layers": [
+     {
+      "M": "C",
+      "H": 11.508,
+      "HP": false,
+      "HF": false,
+      "Hmin": 5,
+      "Hmax": 40,
+      "ProfileH": "",
+      "s": 0.013446,
+      "SP": false,
+      "SF": false,
+      "Smin": 0,
+      "Smax": 10,
+      "ProfileS": "",
+      "r": 0.877321,
+      "RP": false,
+      "RF": false,
+      "Rmin": 0.6,
+      "Rmax": 1.4,
+      "ProfileR": ""
+     }
+    ]
+   },
+   {
+    "T": "ML",
+    "N": 20,
+    "Layers": [
+     {
+      "M": "C",
+      "H": 31.3439,
+      "HP": false,
+      "HF": false,
+      "Hmin": 20.93,
+      "Hmax": 41.87,
+      "ProfileH": "",
+      "s": 4.34591,
+      "SP": false,
+      "SF": false,
+      "Smin": 1,
+      "Smax": 8,
+      "ProfileS": "",
+      "r": 2.00455,
+      "RP": false,
+      "RF": false,
+      "Rmin": 1.5,
+      "Rmax": 2.4,
+      "ProfileR": ""
+     },
+     {
+      "M": "Co",
+      "H": 23.4458,
+      "HP": false,
+      "HF": false,
+      "Hmin": 15.53,
+      "Hmax": 31.07,
+      "ProfileH": "",
+      "s": 2.62413,
+      "SP": false,
+      "SF": false,
+      "Smin": 1,
+      "Smax": 8,
+      "ProfileS": "",
+      "r": 7.61481,
+      "RP": false,
+      "RF": false,
+      "Rmin": 6.0,
+      "Rmax": 8.79,
+      "ProfileR": ""
+     }
+    ]
+   }
+  ],
+  "Subs": {
+   "M": "SiO2",
+   "s": 3.8,
+   "r": 2.5
+  }
+ },
+ "tw1": "None",
+ "s0-texts": [
+  [
+   "TJvDesignScrollBox",
+   "Box"
+  ],
+  [
+   "TXRCStack",
+   "ML"
+  ],
+  [
+   "TRzSpinEdit",
+   "7.61"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.62"
+  ],
+  [
+   "TRzSpinEdit",
+   "23.45"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.00"
+  ],
+  [
+   "TRzSpinEdit",
+   "4.35"
+  ],
+  [
+   "TRzSpinEdit",
+   "31.34"
+  ],
+  [
+   "TXRCStack",
+   "Top"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.88"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.01"
+  ],
+  [
+   "TRzSpinEdit",
+   "11.51"
+  ],
+  [
+   "TXRCStack",
+   "Substrate"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.50"
+  ],
+  [
+   "TRzSpinEdit",
+   "3.80"
+  ],
+  [
+   "TRzComboBox",
+   "0.1"
+  ],
+  [
+   "Edit",
+   "0.1"
+  ],
+  [
+   "TCheckBox",
+   "P2-04/xrr.dat"
+  ],
+  [
+   "TCheckBox",
+   "fit-20260917-134614-8258"
+  ],
+  [
+   "TRzComboBox",
+   "1.383E-6"
+  ],
+  [
+   "Edit",
+   "1.383E-6"
+  ],
+  [
+   "TRzGroupBox",
+   "N"
+  ],
+  [
+   "TEdit",
+   "4000"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "by wave"
+  ],
+  [
+   "TRzGroupButton",
+   "by angle"
+  ],
+  [
+   "TRzCheckBox",
+   "2q"
+  ],
+  [
+   "TEdit",
+   "1.541874"
+  ],
+  [
+   "TEdit",
+   "0.014"
+  ],
+  [
+   "TEdit",
+   "13.3659"
+  ],
+  [
+   "TEdit",
+   "0.4165"
+  ],
+  [
+   "TEdit",
+   "0"
+  ],
+  [
+   "TEdit",
+   "85"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzRadioGroup",
+   "Polarization"
+  ],
+  [
+   "TRzGroupButton",
+   "sp-type"
+  ],
+  [
+   "TRzGroupButton",
+   "s-type"
+  ],
+  [
+   "TRzPanel",
+   "Fitting"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TRzCheckBox",
+   "Free period ±"
+  ],
+  [
+   "TEdit",
+   "0.2"
+  ],
+  [
+   "TRzCheckBox",
+   "Solve scale in χ2"
+  ],
+  [
+   "TRzCheckBox",
+   "Smooth"
+  ],
+  [
+   "TRzCheckBox",
+   "PW χ2"
+  ],
+  [
+   "TComboBox",
+   "None"
+  ],
+  [
+   "Edit",
+   "None"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzCheckBox",
+   "SeedR"
+  ],
+  [
+   "TRzCheckBox",
+   "Shake"
+  ],
+  [
+   "TEdit",
+   "5000"
+  ],
+  [
+   "TEdit",
+   "200"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "Polynomial"
+  ],
+  [
+   "TRzGroupButton",
+   "Periodic"
+  ],
+  [
+   "TRzGroupButton",
+   "Irregular"
+  ],
+  [
+   "TRzTabSheet",
+   "Thickness"
+  ],
+  [
+   "TRzMemo",
+   "fit_xrr on P2-04/xrr.dat, intensities x 1.593E-006"
+  ]
+ ],
+ "s1-button": "Run",
+ "s1-warning": [
+  "#32770",
+  "Warning",
+  "&Yes",
+  "&No"
+ ],
+ "s1-texts": [
+  [
+   "TJvDesignScrollBox",
+   "Box"
+  ],
+  [
+   "TXRCStack",
+   "ML"
+  ],
+  [
+   "TRzSpinEdit",
+   "7.77"
+  ],
+  [
+   "TRzSpinEdit",
+   "4.33"
+  ],
+  [
+   "TRzSpinEdit",
+   "23.41"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.02"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.57"
+  ],
+  [
+   "TRzSpinEdit",
+   "31.35"
+  ],
+  [
+   "TXRCStack",
+   "Top"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.80"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.02"
+  ],
+  [
+   "TRzSpinEdit",
+   "11.80"
+  ],
+  [
+   "TXRCStack",
+   "Substrate"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.50"
+  ],
+  [
+   "TRzSpinEdit",
+   "3.80"
+  ],
+  [
+   "TRzComboBox",
+   "0.1"
+  ],
+  [
+   "Edit",
+   "0.1"
+  ],
+  [
+   "TCheckBox",
+   "P2-04/xrr.dat"
+  ],
+  [
+   "TCheckBox",
+   "fit-20260917-134614-8258"
+  ],
+  [
+   "TRzComboBox",
+   "1.383E-6"
+  ],
+  [
+   "Edit",
+   "1.383E-6"
+  ],
+  [
+   "TRzGroupBox",
+   "N"
+  ],
+  [
+   "TEdit",
+   "4000"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "by wave"
+  ],
+  [
+   "TRzGroupButton",
+   "by angle"
+  ],
+  [
+   "TRzCheckBox",
+   "2q"
+  ],
+  [
+   "TEdit",
+   "1.541874"
+  ],
+  [
+   "TEdit",
+   "0.014"
+  ],
+  [
+   "TEdit",
+   "13.3659"
+  ],
+  [
+   "TEdit",
+   "0.4165"
+  ],
+  [
+   "TEdit",
+   "0"
+  ],
+  [
+   "TEdit",
+   "85"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzRadioGroup",
+   "Polarization"
+  ],
+  [
+   "TRzGroupButton",
+   "sp-type"
+  ],
+  [
+   "TRzGroupButton",
+   "s-type"
+  ],
+  [
+   "TRzPanel",
+   "Fitting"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TRzCheckBox",
+   "Free period ±"
+  ],
+  [
+   "TEdit",
+   "0.2"
+  ],
+  [
+   "TRzCheckBox",
+   "Solve scale in χ2"
+  ],
+  [
+   "TRzCheckBox",
+   "Smooth"
+  ],
+  [
+   "TRzCheckBox",
+   "PW χ2"
+  ],
+  [
+   "TComboBox",
+   "None"
+  ],
+  [
+   "Edit",
+   "None"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzCheckBox",
+   "SeedR"
+  ],
+  [
+   "TRzCheckBox",
+   "Shake"
+  ],
+  [
+   "TEdit",
+   "5000"
+  ],
+  [
+   "TEdit",
+   "200"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "Polynomial"
+  ],
+  [
+   "TRzGroupButton",
+   "Periodic"
+  ],
+  [
+   "TRzGroupButton",
+   "Irregular"
+  ],
+  [
+   "TRzTabSheet",
+   "Convergence"
+  ],
+  [
+   "TCheckBox",
+   "Worst"
+  ],
+  [
+   "TRzButton",
+   "Copy"
+  ],
+  [
+   "TRzTabSheet",
+   "Thickness"
+  ],
+  [
+   "TRzMemo",
+   "fit_xrr on P2-04/xrr.dat, intensities x 1.593E-006"
+  ]
+ ],
+ "s1-report": "Model \"fit-20260917-134614-8258\" against \"P2-04/xrr.dat\"\r\nMeasured curve x 0.9177, the solved scale of the last calculation.   Period 54.76 Å,   λ 1.5419 Å,   4317 points\r\n\r\nBragg orders\r\nn\t2θ meas (°)\t2θ calc (°)\tI meas\tR calc\tcalc / meas\tVisible\r\n1\t1.6975\t1.6975\t0.44313\t0.44426\t1.003\tyes\r\n2\t3.2695\t3.2725\t0.01047\t0.0099127\t0.947\tyes\r\n3\t4.8775\t4.8745\t0.0030293\t0.0028534\t0.942\tyes\r\n4\t6.4825\t6.4765\t0.00040738\t0.00044622\t1.095\tyes\r\n5\t8.1025\t8.0935\t7.8684E-5\t5.3835E-5\t0.684\tyes\r\n6\t9.7135\t9.7105\t1.2691E-5\t1.447E-5\t1.140\tyes\r\n7\t11.3365\t11.3245\t6.3455E-6\t2.5276E-6\t0.398\tyes\r\n8\t12.9595\t12.8155\t5.0764E-6\t1.383E-6\t0.272\tyes\r\n\r\nCritical edge\r\n2θ (°)\tI meas\tR calc\tcalc / meas\r\n0.5425\t0.61367\t0.61717\t1.006\r\n0.6685\t0.11306\t0.11058\t0.978\r\n0.7975\t0.032835\t0.033359\t1.016\r\n\r\nFringes between orders 1 and 2\r\nQuantity\tValue\r\nBetween, 2θ (°)\t1.6975 - 3.2695\r\nPairs (maximum and next minimum)\t42\r\nMean contrast, measured\t2.173\r\nMean contrast, calculated\t1.622\r\n\r\nResidual by band: log10(R calc / I meas)\r\n2θ from (°)\t2θ to (°)\tn\tMean\tRMS\r\n0.4165\t2.0350\t540\t0.004\t0.044\r\n2.0350\t3.6535\t539\t-0.021\t0.115\r\n3.6535\t5.2720\t540\t-0.071\t0.253\r\n5.2720\t6.8905\t539\t-0.040\t0.273\r\n6.8905\t8.5090\t540\t-0.036\t0.179\r\n8.5090\t10.1275\t540\t0.012\t0.115\r\n10.1275\t11.7460\t539\t0.019\t0.090\r\n11.7460\t13.3645\t540\t0.024\t0.070\r\n\r\nParameters within 5 % of a bound\r\nStack\tLayer\tParameter\tValue\tMin\tMax\tNear\r\nTop\tC\tσ\t0.0157556\t0\t10\tmin\r\n\r\n",
+ "freeze-ok": true,
+ "model2": {
+  "Stacks": [
+   {
+    "T": "Top",
+    "N": 1,
+    "Layers": [
+     {
+      "M": "C",
+      "H": 11.798522,
+      "HP": false,
+      "HF": false,
+      "Hmin": 5,
+      "Hmax": 40,
+      "ProfileH": "",
+      "s": 0.015755646,
+      "SP": false,
+      "SF": false,
+      "Smin": 0,
+      "Smax": 10,
+      "ProfileS": "",
+      "r": 0.80276215,
+      "RP": false,
+      "RF": false,
+      "Rmin": 0.6,
+      "Rmax": 1.4,
+      "ProfileR": ""
+     }
+    ]
+   },
+   {
+    "T": "ML",
+    "N": 20,
+    "Layers": [
+     {
+      "M": "C",
+      "H": 31.34832,
+      "HP": false,
+      "HF": true,
+      "Hmin": 20.93,
+      "Hmax": 41.87,
+      "ProfileH": "",
+      "s": 2.5730577,
+      "SP": false,
+      "SF": true,
+      "Smin": 1,
+      "Smax": 8,
+      "ProfileS": "",
+      "r": 2.022778,
+      "RP": false,
+      "RF": true,
+      "Rmin": 1.5,
+      "Rmax": 2.4,
+      "ProfileR": ""
+     },
+     {
+      "M": "Co",
+      "H": 23.41206,
+      "HP": false,
+      "HF": true,
+      "Hmin": 15.53,
+      "Hmax": 31.07,
+      "ProfileH": "",
+      "s": 4.3330708,
+      "SP": false,
+      "SF": true,
+      "Smin": 1,
+      "Smax": 8,
+      "ProfileS": "",
+      "r": 7.770573,
+      "RP": false,
+      "RF": true,
+      "Rmin": 6,
+      "Rmax": 8.79,
+      "ProfileR": ""
+     }
+    ]
+   }
+  ],
+  "Subs": {
+   "M": "SiO2",
+   "s": 3.8,
+   "r": 2.5
+  }
+ },
+ "tw2": "1/sqr",
+ "s2-button": "Resume",
+ "s2-warning": [
+  "#32770",
+  "Warning",
+  "&Yes",
+  "&No"
+ ],
+ "s2-texts": [
+  [
+   "TJvDesignScrollBox",
+   "Box"
+  ],
+  [
+   "TXRCStack",
+   "ML [frozen]"
+  ],
+  [
+   "TRzSpinEdit",
+   "7.77"
+  ],
+  [
+   "TRzSpinEdit",
+   "4.33"
+  ],
+  [
+   "TRzSpinEdit",
+   "23.41"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.02"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.57"
+  ],
+  [
+   "TRzSpinEdit",
+   "31.35"
+  ],
+  [
+   "TXRCStack",
+   "Top"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.76"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.00"
+  ],
+  [
+   "TRzSpinEdit",
+   "11.45"
+  ],
+  [
+   "TXRCStack",
+   "Substrate"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.50"
+  ],
+  [
+   "TRzSpinEdit",
+   "3.80"
+  ],
+  [
+   "TRzComboBox",
+   "0.1"
+  ],
+  [
+   "Edit",
+   "0.1"
+  ],
+  [
+   "TCheckBox",
+   "P2-04/xrr.dat"
+  ],
+  [
+   "TCheckBox",
+   "fit-20260917-134614-8258"
+  ],
+  [
+   "TRzComboBox",
+   "1.383E-6"
+  ],
+  [
+   "Edit",
+   "1.383E-6"
+  ],
+  [
+   "TRzGroupBox",
+   "N"
+  ],
+  [
+   "TEdit",
+   "4000"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "by wave"
+  ],
+  [
+   "TRzGroupButton",
+   "by angle"
+  ],
+  [
+   "TRzCheckBox",
+   "2q"
+  ],
+  [
+   "TEdit",
+   "1.541874"
+  ],
+  [
+   "TEdit",
+   "0.014"
+  ],
+  [
+   "TEdit",
+   "13.3659"
+  ],
+  [
+   "TEdit",
+   "0.4165"
+  ],
+  [
+   "TEdit",
+   "0"
+  ],
+  [
+   "TEdit",
+   "85"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzRadioGroup",
+   "Polarization"
+  ],
+  [
+   "TRzGroupButton",
+   "sp-type"
+  ],
+  [
+   "TRzGroupButton",
+   "s-type"
+  ],
+  [
+   "TRzPanel",
+   "Fitting"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TRzCheckBox",
+   "Free period ±"
+  ],
+  [
+   "TEdit",
+   "0.2"
+  ],
+  [
+   "TRzCheckBox",
+   "Solve scale in χ2"
+  ],
+  [
+   "TRzCheckBox",
+   "Smooth"
+  ],
+  [
+   "TRzCheckBox",
+   "PW χ2"
+  ],
+  [
+   "TComboBox",
+   "1/sqr"
+  ],
+  [
+   "Edit",
+   "1/sqr"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzCheckBox",
+   "SeedR"
+  ],
+  [
+   "TRzCheckBox",
+   "Shake"
+  ],
+  [
+   "TEdit",
+   "5000"
+  ],
+  [
+   "TEdit",
+   "200"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "Polynomial"
+  ],
+  [
+   "TRzGroupButton",
+   "Periodic"
+  ],
+  [
+   "TRzGroupButton",
+   "Irregular"
+  ],
+  [
+   "TRzTabSheet",
+   "Convergence"
+  ],
+  [
+   "TCheckBox",
+   "Worst"
+  ],
+  [
+   "TRzButton",
+   "Copy"
+  ],
+  [
+   "TRzTabSheet",
+   "Thickness"
+  ],
+  [
+   "TRzMemo",
+   "fit_xrr on P2-04/xrr.dat, intensities x 1.593E-006"
+  ]
+ ],
+ "s2-report": "Model \"fit-20260917-134614-8258\" against \"P2-04/xrr.dat\"\r\nMeasured curve x 0.9249, the solved scale of the last calculation.   Period 54.76 Å,   λ 1.5419 Å,   4317 points\r\n\r\nBragg orders\r\nn\t2θ meas (°)\t2θ calc (°)\tI meas\tR calc\tcalc / meas\tVisible\r\n1\t1.6975\t1.6975\t0.44658\t0.44399\t0.994\tyes\r\n2\t3.2695\t3.2725\t0.010552\t0.0098873\t0.937\tyes\r\n3\t4.8775\t4.8745\t0.0030529\t0.0028561\t0.936\tyes\r\n4\t6.4825\t6.4765\t0.00041055\t0.00044823\t1.092\tyes\r\n5\t8.1025\t8.0935\t7.9297E-5\t5.3724E-5\t0.678\tyes\r\n6\t9.7135\t9.7105\t1.279E-5\t1.4166E-5\t1.108\tyes\r\n7\t11.3365\t11.3245\t6.3949E-6\t2.4757E-6\t0.387\tyes\r\n8\t12.9595\t12.8155\t5.1159E-6\t1.383E-6\t0.270\tyes\r\n\r\nCritical edge\r\n2θ (°)\tI meas\tR calc\tcalc / meas\r\n0.5425\t0.61845\t0.61691\t0.998\r\n0.6685\t0.11394\t0.11103\t0.975\r\n0.7975\t0.033091\t0.033674\t1.018\r\n\r\nFringes between orders 1 and 2\r\nQuantity\tValue\r\nBetween, 2θ (°)\t1.6975 - 3.2695\r\nPairs (maximum and next minimum)\t42\r\nMean contrast, measured\t2.173\r\nMean contrast, calculated\t1.611\r\n\r\nResidual by band: log10(R calc / I meas)\r\n2θ from (°)\t2θ to (°)\tn\tMean\tRMS\r\n0.4165\t2.0350\t540\t0.005\t0.045\r\n2.0350\t3.6535\t539\t-0.015\t0.115\r\n3.6535\t5.2720\t540\t-0.068\t0.253\r\n5.2720\t6.8905\t539\t-0.060\t0.277\r\n6.8905\t8.5090\t540\t-0.040\t0.178\r\n8.5090\t10.1275\t540\t0.009\t0.114\r\n10.1275\t11.7460\t539\t0.016\t0.089\r\n11.7460\t13.3645\t540\t0.021\t0.069\r\n\r\nParameters within 5 % of a bound\r\nStack\tLayer\tParameter\tValue\tMin\tMax\tNear\r\nTop\tC\tσ\t0.00438857\t0\t10\tmin\r\n\r\n",
+ "thaw-ok": true,
+ "model3": {
+  "Stacks": [
+   {
+    "T": "Top",
+    "N": 1,
+    "Layers": [
+     {
+      "M": "C",
+      "H": 11.451503,
+      "HP": false,
+      "HF": false,
+      "Hmin": 0,
+      "Hmax": 35,
+      "ProfileH": "",
+      "s": 0.0043885736,
+      "SP": false,
+      "SF": false,
+      "Smin": 0,
+      "Smax": 10,
+      "ProfileS": "",
+      "r": 0.7640893,
+      "RP": false,
+      "RF": false,
+      "Rmin": 0.4,
+      "Rmax": 1.2,
+      "ProfileR": ""
+     }
+    ]
+   },
+   {
+    "T": "ML",
+    "N": 20,
+    "Layers": [
+     {
+      "M": "C",
+      "H": 31.34832,
+      "HP": false,
+      "HF": false,
+      "Hmin": 20.93,
+      "Hmax": 41.87,
+      "ProfileH": "",
+      "s": 2.5730577,
+      "SP": false,
+      "SF": false,
+      "Smin": 1,
+      "Smax": 8,
+      "ProfileS": "",
+      "r": 2.022778,
+      "RP": false,
+      "RF": false,
+      "Rmin": 1.5,
+      "Rmax": 2.4,
+      "ProfileR": ""
+     },
+     {
+      "M": "Co",
+      "H": 23.41206,
+      "HP": false,
+      "HF": false,
+      "Hmin": 15.53,
+      "Hmax": 31.07,
+      "ProfileH": "",
+      "s": 4.3330708,
+      "SP": false,
+      "SF": false,
+      "Smin": 1,
+      "Smax": 8,
+      "ProfileS": "",
+      "r": 7.770573,
+      "RP": false,
+      "RF": false,
+      "Rmin": 6,
+      "Rmax": 8.79,
+      "ProfileR": ""
+     }
+    ]
+   }
+  ],
+  "Subs": {
+   "M": "SiO2",
+   "s": 3.8,
+   "r": 2.5
+  }
+ },
+ "tw3": "None",
+ "s3-button": "Resume",
+ "s3-warning": [
+  "#32770",
+  "Warning",
+  "&Yes",
+  "&No"
+ ],
+ "s3-texts": [
+  [
+   "TJvDesignScrollBox",
+   "Box"
+  ],
+  [
+   "TXRCStack",
+   "ML"
+  ],
+  [
+   "TRzSpinEdit",
+   "7.77"
+  ],
+  [
+   "TRzSpinEdit",
+   "4.33"
+  ],
+  [
+   "TRzSpinEdit",
+   "23.42"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.02"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.57"
+  ],
+  [
+   "TRzSpinEdit",
+   "31.34"
+  ],
+  [
+   "TXRCStack",
+   "Top"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.81"
+  ],
+  [
+   "TRzSpinEdit",
+   "0.01"
+  ],
+  [
+   "TRzSpinEdit",
+   "11.77"
+  ],
+  [
+   "TXRCStack",
+   "Substrate"
+  ],
+  [
+   "TRzSpinEdit",
+   "2.50"
+  ],
+  [
+   "TRzSpinEdit",
+   "3.80"
+  ],
+  [
+   "TRzComboBox",
+   "0.1"
+  ],
+  [
+   "Edit",
+   "0.1"
+  ],
+  [
+   "TCheckBox",
+   "P2-04/xrr.dat"
+  ],
+  [
+   "TCheckBox",
+   "fit-20260917-134614-8258"
+  ],
+  [
+   "TRzComboBox",
+   "1.383E-6"
+  ],
+  [
+   "Edit",
+   "1.383E-6"
+  ],
+  [
+   "TRzGroupBox",
+   "N"
+  ],
+  [
+   "TEdit",
+   "4000"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "by wave"
+  ],
+  [
+   "TRzGroupButton",
+   "by angle"
+  ],
+  [
+   "TRzCheckBox",
+   "2q"
+  ],
+  [
+   "TEdit",
+   "1.541874"
+  ],
+  [
+   "TEdit",
+   "0.014"
+  ],
+  [
+   "TEdit",
+   "13.3659"
+  ],
+  [
+   "TEdit",
+   "0.4165"
+  ],
+  [
+   "TEdit",
+   "0"
+  ],
+  [
+   "TEdit",
+   "85"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzRadioGroup",
+   "Polarization"
+  ],
+  [
+   "TRzGroupButton",
+   "sp-type"
+  ],
+  [
+   "TRzGroupButton",
+   "s-type"
+  ],
+  [
+   "TRzPanel",
+   "Fitting"
+  ],
+  [
+   "TEdit",
+   "10"
+  ],
+  [
+   "TRzCheckBox",
+   "Free period ±"
+  ],
+  [
+   "TEdit",
+   "0.2"
+  ],
+  [
+   "TRzCheckBox",
+   "Solve scale in χ2"
+  ],
+  [
+   "TRzCheckBox",
+   "Smooth"
+  ],
+  [
+   "TRzCheckBox",
+   "PW χ2"
+  ],
+  [
+   "TComboBox",
+   "None"
+  ],
+  [
+   "Edit",
+   "None"
+  ],
+  [
+   "TEdit",
+   "1"
+  ],
+  [
+   "TRzCheckBox",
+   "SeedR"
+  ],
+  [
+   "TRzCheckBox",
+   "Shake"
+  ],
+  [
+   "TEdit",
+   "5000"
+  ],
+  [
+   "TEdit",
+   "200"
+  ],
+  [
+   "TRzRadioGroup",
+   "Mode"
+  ],
+  [
+   "TRzGroupButton",
+   "Polynomial"
+  ],
+  [
+   "TRzGroupButton",
+   "Periodic"
+  ],
+  [
+   "TRzGroupButton",
+   "Irregular"
+  ],
+  [
+   "TRzTabSheet",
+   "Convergence"
+  ],
+  [
+   "TCheckBox",
+   "Worst"
+  ],
+  [
+   "TRzButton",
+   "Copy"
+  ],
+  [
+   "TRzTabSheet",
+   "Thickness"
+  ],
+  [
+   "TRzMemo",
+   "fit_xrr on P2-04/xrr.dat, intensities x 1.593E-006"
+  ]
+ ],
+ "s3-report": "Model \"fit-20260917-134614-8258\" against \"P2-04/xrr.dat\"\r\nMeasured curve x 0.9180, the solved scale of the last calculation.   Period 54.76 Å,   λ 1.5419 Å,   4317 points\r\n\r\nBragg orders\r\nn\t2θ meas (°)\t2θ calc (°)\tI meas\tR calc\tcalc / meas\tVisible\r\n1\t1.6975\t1.6975\t0.44328\t0.44433\t1.002\tyes\r\n2\t3.2695\t3.2725\t0.010474\t0.0098966\t0.945\tyes\r\n3\t4.8775\t4.8745\t0.0030303\t0.0028636\t0.945\tyes\r\n4\t6.4825\t6.4765\t0.00040751\t0.00044732\t1.098\tyes\r\n5\t8.1025\t8.0935\t7.8709E-5\t5.403E-5\t0.686\tyes\r\n6\t9.7135\t9.7105\t1.2695E-5\t1.4529E-5\t1.144\tyes\r\n7\t11.3365\t11.3245\t6.3476E-6\t2.543E-6\t0.401\tyes\r\n8\t12.9595\t12.8155\t5.078E-6\t1.383E-6\t0.272\tyes\r\n\r\nCritical edge\r\n2θ (°)\tI meas\tR calc\tcalc / meas\r\n0.5425\t0.61387\t0.61731\t1.006\r\n0.6685\t0.11309\t0.11065\t0.978\r\n0.7975\t0.032846\t0.033389\t1.017\r\n\r\nFringes between orders 1 and 2\r\nQuantity\tValue\r\nBetween, 2θ (°)\t1.6975 - 3.2695\r\nPairs (maximum and next minimum)\t42\r\nMean contrast, measured\t2.173\r\nMean contrast, calculated\t1.621\r\n\r\nResidual by band: log10(R calc / I meas)\r\n2θ from (°)\t2θ to (°)\tn\tMean\tRMS\r\n0.4165\t2.0350\t540\t0.005\t0.044\r\n2.0350\t3.6535\t539\t-0.021\t0.115\r\n3.6535\t5.2720\t540\t-0.071\t0.253\r\n5.2720\t6.8905\t539\t-0.041\t0.273\r\n6.8905\t8.5090\t540\t-0.036\t0.179\r\n8.5090\t10.1275\t540\t0.012\t0.115\r\n10.1275\t11.7460\t539\t0.019\t0.090\r\n11.7460\t13.3645\t540\t0.024\t0.070\r\n\r\nParameters within 5 % of a bound\r\nStack\tLayer\tParameter\tValue\tMin\tMax\tNear\r\nTop\tC\tσ\t0.00908254\t0\t10\tmin\r\n\r\n",
+ "model-final": {
+  "Stacks": [
+   {
+    "T": "Top",
+    "N": 1,
+    "Layers": [
+     {
+      "M": "C",
+      "H": 11.7651825,
+      "HP": false,
+      "HF": false,
+      "Hmin": 0,
+      "Hmax": 35,
+      "ProfileH": "",
+      "s": 0.009082537,
+      "SP": false,
+      "SF": false,
+      "Smin": 0,
+      "Smax": 10,
+      "ProfileS": "",
+      "r": 0.80532736,
+      "RP": false,
+      "RF": false,
+      "Rmin": 0.36,
+      "Rmax": 1.16,
+      "ProfileR": ""
+     }
+    ]
+   },
+   {
+    "T": "ML",
+    "N": 20,
+    "Layers": [
+     {
+      "M": "C",
+      "H": 31.34274,
+      "HP": false,
+      "HF": false,
+      "Hmin": 20.88,
+      "Hmax": 41.82,
+      "ProfileH": "",
+      "s": 2.570734,
+      "SP": false,
+      "SF": false,
+      "Smin": 0,
+      "Smax": 7,
+      "ProfileS": "",
+      "r": 2.0181897,
+      "RP": false,
+      "RF": false,
+      "Rmin": 1.57,
+      "Rmax": 2.47,
+      "ProfileR": ""
+     },
+     {
+      "M": "Co",
+      "H": 23.41738,
+      "HP": false,
+      "HF": false,
+      "Hmin": 15.64,
+      "Hmax": 31.18,
+      "ProfileH": "",
+      "s": 4.3290844,
+      "SP": false,
+      "SF": false,
+      "Smin": 0.83,
+      "Smax": 7.83,
+      "ProfileS": "",
+      "r": 7.7700143,
+      "RP": false,
+      "RF": false,
+      "Rmin": 6,
+      "Rmax": 8.79,
+      "ProfileR": ""
+     }
+    ]
+   }
+  ],
+  "Subs": {
+   "M": "SiO2",
+   "s": 3.8,
+   "r": 2.5
+  }
+ }
+}

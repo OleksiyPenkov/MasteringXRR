@@ -1,0 +1,33 @@
+wrote fig-15-1-fitting-limits.png (698, 508)
+
+Table 15-1: Initialize at Δ = 0.25 against the laboratory's limits
+  Top/C: start H 15.0 σ 3.0 ρ 0.9; Henke bulk 2.266
+    Initialize  H 11.25–18.75  σ 2.25–3.75  ρ 0.67–1.12
+    laboratory  H 5–40  σ 1–10  ρ 0.6–1.4
+    ρ Max / bulk: Initialize 0.494, laboratory 0.618
+  ML/C: start H 31.4 σ 4.0 ρ 2.0; Henke bulk 2.266
+    Initialize  H 23.55–39.25  σ 3.00–5.00  ρ 1.50–2.27
+    laboratory  H 20.93–41.87  σ 1–8  ρ 1.5–2.4
+    ρ Max / bulk: Initialize 1.002, laboratory 1.059
+  ML/Co: start H 23.3 σ 4.0 ρ 8.0; Henke bulk 8.790
+    Initialize  H 17.47–29.13  σ 3.00–5.00  ρ 6.00–8.79
+    laboratory  H 15.53–31.07  σ 1–8  ρ 6.0–8.79
+    ρ Max / bulk: Initialize 1.000, laboratory 1.000
+
+Table 15-2: mean ± sample sd over five seeds
+  Chapter 14, top σ 1–10 Å
+    top σ 1.015 ± 0.023  (min 1.0004, max 1.0553)
+    top H 11.64 ± 0.05  top ρ 0.758 ± 0.006
+    C  H 31.36 ± 0.01  σ 2.53 ± 0.01  ρ 2.003 ± 0.004
+    Co H 23.34 ± 0.01  σ 4.21 ± 0.02  ρ 7.346 ± 0.010
+    scale 0.852 ± 0.001  χ² 1.284 ± 0.001  (min 1.2832, max 1.2859)
+    near bounds: [('sigma', 'min', 1.0042), ('sigma', 'min', 1.0148), ('sigma', 'min', 1.0004), ('sigma', 'min', 1.0553), ('sigma', 'min', 1.0014)]
+  widened, top σ 0–10 Å
+    top σ 0.015 ± 0.011  (min 0.0019, max 0.0282)
+    top H 11.62 ± 0.03  top ρ 0.751 ± 0.004
+    C  H 31.36 ± 0.00  σ 2.53 ± 0.00  ρ 2.002 ± 0.003
+    Co H 23.34 ± 0.00  σ 4.22 ± 0.01  ρ 7.352 ± 0.006
+    scale 0.852 ± 0.001  χ² 1.278 ± 0.000  (min 1.2779, max 1.2783)
+    near bounds: [('sigma', 'min', 0.0161), ('sigma', 'min', 0.0058), ('sigma', 'min', 0.0216), ('sigma', 'min', 0.0282), ('sigma', 'min', 0.0019)]
+
+  widened: top σ as a fraction of its 0–10 Å range: 0.0028 at most (rule: 0.05)

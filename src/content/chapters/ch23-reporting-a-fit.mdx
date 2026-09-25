@@ -1,0 +1,182 @@
+---
+title: 'Reporting a Fit Others Can Trust'
+part: '4'
+number: '23'
+order: 230
+inThisChapter:
+  - What X-Ray Calc keeps after a fit, and what you must write down at once
+  - The report, item by item, and where each value comes from
+  - How to write the numbers, the spreads and the undetermined parameters
+  - A complete report for CoC4
+  - Which files to keep
+---
+import Tip from '../../components/textbook/Tip.astro';
+import Remember from '../../components/textbook/Remember.astro';
+import Warning from '../../components/textbook/Warning.astro';
+import InXRayCalc from '../../components/textbook/InXRayCalc.astro';
+import DataTable from '../../components/textbook/DataTable.astro';
+
+{/* Chapter 23. Section outline approved 2026-09-25 (OUTLINE.md). */}
+
+A fit is judged by what is reported with it. A structure without its settings, its spread and its checks can't be tested by anyone else, and often not by you a month later. The fitting procedure ends with a report of 22 items, every one filled. Its paper gives the reason: "Every item has to be filled, so a fit cannot be judged from a number the agent chose to show." The same holds for a person. This chapter rewrites the 22 items for someone working in X-Ray Calc and fills them in for CoC4.
+
+## Why a report
+
+The author's own fits show why. When the procedure was tested against them, the project files of the author's fits carried no χ² at all. The structure was there. The number that says how well it fits the curve was not.
+
+A report makes three things visible. The first is how the curve was prepared and which settings shaped the fit. The second is how far repeated runs agree. The third is which checks the fit passed and which it failed. Each chapter from <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#is-this-curve-worth-fitting`}>Chapter 10: Is this curve worth fitting?</a> to <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#writing-the-verdict`}>Chapter 18: Writing the verdict</a> produced some of these items. The report collects them in a fixed order.
+
+## What the program keeps, and what it doesn't
+
+**File > Save project** (Ctrl+S) writes an `.xrcx` file. The file keeps:
+
+- the structure: every value, its **Min** and **Max**, and the boxes that pair or freeze it;
+- the profiles and tables that a Polynomial or Irregular fit created;
+- the settings: λ, Δθ, **R min**, the mode, the polynomial order, **Population**, **Iterations**, the χ² weighting, **Solve scale in χ²** and its **Window**, **Smooth**;
+- the data as prepared for the fit, after normalizing, smoothing and trimming.
+
+It also keeps a record of the last fit: χ², the plain χ², the solved scale factor, the date, the fit time, the device, the program version and the random seed. A new fit replaces the record. To repeat a fit, type its seed into the **Seed** box of the **Advanced fitting settings** dialog (the **Advanced Settings** button). The same seed repeats the fit exactly only on the same device. The project doesn't hold the raw measurement.
+
+<InXRayCalc>
+
+Right after a fit you accept:
+
+1. **Result > Export fit results...** writes the fit record as a `.json` file: the program version, the date, the fit time, the device and the seed; χ² and the plain χ²; the solved scale and whether it was clamped; the χ² weighting and **R min**; every setting as the fit ran; and the structure with its limits, its values in every period and its polynomial coefficients.
+2. **Result > Fit report ...**, then **Copy as text**, puts the order table, the edge, the fringes, the residual by band and the parameters near a limit on the clipboard. Paste them into your report.
+3. **File > Save project As ...** (F2) saves the project under a name of its own.
+4. Read the **χ²**, **plain χ²** and **scale** fields of the Chart Info bar into the report. The scale reads "solved x…", or "solved x… at bound" when the window clamped it.
+
+Keep the raw measurement file next to the project.
+
+</InXRayCalc>
+
+<Warning title="one record per project">The project keeps the record of its last fit only. A new fit replaces it. So export the fit results, and save the project under a new name, before you start the next run.</Warning>
+
+The record describes the fit as it ran. A setting you change after the fit doesn't enter it.
+
+## The report, item by item
+
+<a href="#table-23-1">Table 23-1</a> gives the 22 items of the procedure's report in its order (§13), with what to write and where it comes from. Four items were written for the program's command-line server. The table replaces each with what a GUI user can record: the limits table you used for the server's preset, the seeds from your fit records for its seeds, and the saved projects for its job numbers.
+
+<p id="table-23-1" class="table-caption"><strong>Table 23-1:</strong> The report, item by item: the fitting procedure's 22 items (§13), rewritten for X-Ray Calc. The last column names the chapter that produces the value, or the place in the program where you read it. A plain-text template of the same list is in <span class="web-only"><a href={`${import.meta.env.BASE_URL}/data/xrr-fit-report-template.txt`}>xrr-fit-report-template.txt</a>.</span><span class="print-only">xrr-fit-report-template.txt, which comes with the web edition.</span></p>
+
+<DataTable
+  keepHeaderCase
+  headers={['Item', 'What to write', 'Where it comes from']}
+  rows={[
+    ['1', 'the measurement and the instrument; the limits table you used, and its date; the substrate', 'Chapters 10, 12 and 15'],
+    ['2', 'θ_max and I_max; the background; from an .xrdml file, the peak count rate and the counting time; the highest visible order divided by I_max', 'Chapter 11; the Chart Info bar'],
+    ['3', 'the sensitivity map: one line per change, the feature it moves', 'Chapter 13'],
+    ['4', 'the starting model', 'Chapter 12; Structure > Edit as text ...'],
+    ['5', 'the normalization; the scale solved in χ² or not, its window, the solved factor, clamped or not; any renormalization', 'Chapter 14; the Chart Info bar'],
+    ['6', 'smoothing: none, or how many passes and why', 'Chapter 14'],
+    ['7', 'R min, and how it was chosen', 'Chapters 11 and 14'],
+    ['8', 'the fitting range in 2θ, and the reason for its end', 'Chapter 14'],
+    ['9', 'Δθ and the χ² scan that chose it; the fringe contrast beside it', 'Chapter 16'],
+    ['10', 'the χ² settings: PW χ², TW χ²', 'Chapter 16'],
+    ['11', 'Population, Iterations, Shake, SeedR; the number of runs and the seed of each', 'Chapter 16'],
+    ['12', 'Periodic and Polynomial, both fitted, with χ² and spreads; the period drift and its spread; the choice and why; the order and its coefficients', 'Chapter 17'],
+    ['13', 'the limits as first set and as used; every limit widened, and the value that forced it', 'Chapter 15; the Fitting Limits dialog'],
+    ['14', 'the saved project of every run', 'File > Save project As ...'],
+    ['15', 'χ² of the starting model and of the reported fit', 'Calc > Run before the fit; the Chart Info bar after it'],
+    ['16', 'the fitted structure: the best run with each spread; undetermined parameters; sums; densities as free parameters', 'Chapters 18, 20 and 21'],
+    ['17', 'every value on a limit or near one, and what was done', 'Chapters 15 and 18; Fit report'],
+    ['18', 'the order table', 'Chapter 18; Fit report'],
+    ['19', 'the edge check and the fringe check', 'Chapter 18; Fit report'],
+    ['20', 'the residual by band', 'Chapter 18; Fit report'],
+    ['21', 'the verdict, check by check, with the calibration of each limit', 'Chapters 18 and 19'],
+    ['22', 'the saved project of the reported fit, and its exported fit results', 'File > Save project As ...; Result > Export fit results...'],
+  ]}
+/>
+
+Fill every item. Write "none" where nothing was done, such as a smoothing pass that was not run. An empty item reads as a step that was skipped.
+
+## Writing the numbers
+
+**The reported structure is the best run.** Report the run with the lowest χ², with the spread of each parameter over the runs beside it. Don't report a mean over the runs. The procedure's reason: "a mean over seeds is a structure no seed found" (§8.4). The spread is the sample standard deviation over the runs. It says how well the fit fixes a parameter. It is not an error bar of the measurement (<a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#several-runs-and-their-spread`}>Chapter 16: Several runs, and their spread</a>).
+
+**An undetermined parameter gets no number.** When the spread is larger than the precision you would claim, write "undetermined" (§10.7; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#what-the-runs-dont-agree-on`}>Chapter 18: What the runs don't agree on</a>). When two layers trade thickness, report their sum and say that the split is undetermined (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#two-layers-as-a-sum`}>Chapter 18: Two layers as a sum</a>).
+
+**A density is a free parameter.** List every density with the words "free parameter, not a result" (§13, item 16). A density on its bulk ceiling is reported at the ceiling. Give the reason the limit stayed there (<a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#reporting-a-density`}>Chapter 20: Reporting a density</a>).
+
+**σ is reported as fitted.** Don't say which interface of a period is the rougher one, or on which side an interlayer sits, unless repeated fits of each assignment agree (§10.14; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#which-interface-is-rougher`}>Chapter 18: Which interface is rougher?</a>).
+
+**Every limit travels with its calibration.** A verdict limit was set on certain curves, under certain settings. When your fit lies outside them, the verdict says so (§10.5).
+
+**Say what you chose.** When the floored points outnumber the visible orders, **R min** is "a floor you have chosen rather than one you have measured" (§1.3; <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-plateau-and-the-background`}>Chapter 11: The plateau and the background</a>). Report the scale factor and its window with every fit (<a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#letting-the-fit-solve-the-scale`}>Chapter 14: Letting the fit solve the scale</a>). Report both fits of the mode test. The fit you didn't keep belongs in the report too (<a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#decide-on-the-drift-not-on-χ`}>Chapter 17: Decide on the drift, not on χ²</a>).
+
+**A single film** reports its thickness, the total of the layers on the substrate, the deposition rate, and σ and ρ as undetermined (<a href={`${import.meta.env.BASE_URL}/ch21-single-films#reporting-a-film`}>Chapter 21: Reporting a film</a>). **A graded stack** reports what its runs agree on: a profile in Polynomial mode, the set of periods and the total in Irregular mode (<a href={`${import.meta.env.BASE_URL}/ch22-graded-multilayers-and-supermirrors#what-the-fit-can-tell-you-about-each-layer`}>Chapter 22: What the fit can tell you about each layer</a>).
+
+<Remember title="a fail is a result">A fit that fails a check is reported with the fail and its cause. Don't loosen a limit to make it pass. Don't leave the failed check out either (<a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#when-to-stop`}>Chapter 19: When to stop</a>).</Remember>
+
+## A complete report for CoC4
+
+CoC4 is the Co/C multilayer that Chapters 10 to 20 prepared, fitted and judged. <a href="#table-23-2">Table 23-2</a> is its report. Every number comes from those chapters or from the data files of their runs. The reported fit is the Polynomial fit of order 1 of <a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#decide-on-the-drift-not-on-χ`}>Chapter 17</a>, judged in <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#writing-the-verdict`}>Chapter 18</a>.
+
+<p id="table-23-2" class="table-caption"><strong>Table 23-2:</strong> The report for CoC4. Lengths in Å, densities in g/cm³. Spreads are standard deviations over five runs. The runs were made with the X-Ray Calc 3.9.4.1250 and 3.9.4.1270 engines; they have no project files.</p>
+
+<DataTable
+  keepHeaderCase
+  headers={['Item', 'CoC4']}
+  rows={[
+    ['1', 'CoC4 (Co/C, 20 periods on glass), measured on a laboratory diffractometer, .xrdml file from the fitting procedure\'s data deposit. Limits: one laboratory\'s table (Table 15-1). Substrate: glass as SiO2, 2.50 g/cm³, σ 3.8 Å, held.'],
+    ['2', 'θ_max at 2θ = 0.4165°. I_max 608 828 counts (3 459 250 counts/s for 0.176 s). Background: one count, a floor chosen rather than measured (1710 of 4899 points counted zero). Highest visible order: 8, with 4 counts, 6.6 × 10⁻⁶ of I_max.'],
+    ['3', 'Table 13-1: the period ±2 %, the layer ratio ±2 Å, σ at 1 and 8 Å, each density ±15 %, a surface layer, N = 10 and 40, each with the feature it moves.'],
+    ['4', 'Top: C 15 Å, σ 3 Å, ρ 0.9. Stack, N = 20: C 31.40 Å and Co 23.30 Å, σ 4 Å, ρ 2.0 and 8.0; D = 54.70 Å, the design scaled to the period of the orders.'],
+    ['5', 'Data > Normalize (Auto): divided by 1.1877 at 2θ = 0.4165°. Scale solved in χ², window 0.2; solved ×0.877, inside the window. No renormalization.'],
+    ['6', 'None.'],
+    ['7', 'R min 1.38 × 10⁻⁶: one count divided by 1.1877.'],
+    ['8', '2θ = 0.4165–13.37°: a quarter of the order spacing past order 8, the last visible order.'],
+    ['9', 'Δθ = 0.014° by a scan of one run each: χ² 1.2779, 1.2479, 1.2334 and 1.2337 at 0.012, 0.013, 0.014 and 0.015°. Fringe contrast between orders 1 and 2: 2.17 measured, 1.75 fitted.'],
+    ['10', 'PW χ² on; TW χ² None.'],
+    ['11', 'Population 5000, 200 iterations, Shake on, SeedR on (Polynomial mode doesn\'t use it). Five runs.'],
+    ['12', 'Period held: χ² 1.2341–1.2420. One period, free: 0.9751–0.9760. Order 1: 0.9588–1.0342, drift −0.39 ± 0.06 Å, more than twice its spread: a drift. Order 3: 0.7893–0.9384, drift +0.78 ± 0.41 Å, undecided. Reported: order 1, H of C and Co on the polynomial, σ and ρ paired; c₁ = −0.0320 Å per period for C and +0.0113 Å for Co.'],
+    ['13', 'First set: Table 15-1. Widened: the contamination layer\'s σ from 1–10 to 0–10 Å (Chapter 15); then its H from 5–40 to 0.1–40 Å, σ to 0–15 Å, ρ from 0.6–1.4 to 0.2–1.8 (one round of the near-bound rule, Chapter 17).'],
+    ['14', 'Five runs of each mode, stored as the data files of Chapter 17. In the GUI: the saved project of each run.'],
+    ['15', 'χ² 5.563 for the starting model; 0.959 for the reported fit.'],
+    ['16', 'Period 55.00 ± 0.05 Å at the surface, 54.61 ± 0.05 Å at the substrate. C 31.66 ± 0.36 → 31.05 ± 0.41 Å; Co 23.34 ± 0.32 → 23.55 ± 0.44 Å (how the drift divides between them is undetermined). σ of C and of Co: undetermined. ρ of C 2.04 and of Co 7.59: free parameters, not results. Contamination layer 11.42 ± 0.28 Å, σ undetermined, ρ 0.92 (a free parameter).'],
+    ['17', 'The contamination layer\'s σ at 0, its lower limit, which can\'t be widened. No density on its ceiling.'],
+    ['18', 'Orders 1–8, calculated / measured: 1.01, 0.96, 0.95, 1.13, 0.77, 1.11, 0.26, 0.28.'],
+    ['19', 'Edge: 1.06, 1.01, 1.00 at 2θ = 0.543, 0.669 and 0.798°. Fringes: 2.17 measured, 1.75 fitted.'],
+    ['20', 'Bands 1–8: −0.008, −0.018, −0.020, −0.034, −0.026, +0.026, +0.030, +0.043. No warning; the last three bands lie on the floor.'],
+    ['21', 'χ²: pass. Orders 1–6: pass; orders 7 and 8: fail, with 4 to 5 counts in each peak, too few to test the 25 % band (Chapter 19). Edge: pass. Bands: no warning. Calibration: outside (8 orders against 4; Δθ 0.014° against 0.012°; scale window 0.2 against 0.7). Verdict: fail on orders 7 and 8, explained by the counts.'],
+    ['22', 'The runs have no project: they were made with the program\'s engine. In the GUI: the project name and its exported fit results.'],
+  ]}
+/>
+
+The report fails its verdict and still reports a structure. Both are true. The period and its drift are fixed, and so are the thicknesses. The weak orders at the end of the curve fail a limit that was set on curves with four orders, and the counts in those peaks explain the fail.
+
+<Tip title="keep the template">Copy <span class="web-only"><a href={`${import.meta.env.BASE_URL}/data/xrr-fit-report-template.txt`}>xrr-fit-report-template.txt</a></span><span class="print-only">xrr-fit-report-template.txt</span> once for every curve you fit, and fill it as you go through Chapters 10 to 18. At the end, only items 15 to 22 are left.</Tip>
+
+## Keeping the files
+
+Keep these together, under names that say what they hold:
+
+- **the raw measurement**, as it came from the instrument. The project keeps only the prepared curve.
+- **the project of every run** (**File > Save project As ...**), with the run's number in its name.
+- **the exported fit results** of the reported run (`.json`).
+- **the report**, with the Fit report text pasted in.
+- **a picture of the chart**, from **Result > Save as graphics ...** (BMP, EMF or WMF) or **Result > Copy as BMP**.
+
+<Warning title="automatic saving">**File > Settings ...** can save every fit automatically (**Automatically save results to output folder after fitting**), as `<name>-fitted.xrcx` in the **Fitting Output** folder. With no folder set, the file goes next to the project. A project that was never saved sends it to the **Default Project's Folder**.</Warning>
+
+## What this means when you fit
+
+- **Export the fit results before the next fit.** The project keeps the record of its last fit only.
+- **Fill all 22 items.** Write "none" where nothing was done.
+- **Report the best run, with the spread of each parameter.** Never a mean over runs.
+- **Write "undetermined" without a number** where the runs don't agree. Report a sum where only the sum is fixed.
+- **Call every density a free parameter,** and give its ceiling when it sits there.
+- **State the calibration of every limit,** and say where the fit lies outside it.
+- **Report a fail with its cause.** Don't change a limit to make the fit pass.
+- **Keep the raw file, every run's project and the exported results together.**
+
+## Sources
+
+- **Fitting procedure** (Penkov, Peng & Fu 2026): §13, the 22 report items, "every one filled", in their order; §1.3, a floor "chosen rather than … measured", quoted in part; §8.4, the spread over seeds a sample standard deviation and the reported structure the lowest-χ² seed, "a mean over seeds is a structure no seed found", quoted; §10.5, every threshold with its calibration; §10.7–10.8, undetermined parameters and sums; §10.14, σ without a claim about the rougher interface; §11.1, density never a result; §9.7, the split of a drift between the layers not a reported quantity.
+- **The methods paper on the procedure** (Penkov, Peng & Fu 2026, [arXiv:2609.28926](https://arxiv.org/abs/2609.28926)): §4, the reason for the template ("Every item has to be filled, so a fit cannot be judged from a number the agent chose to show.", quoted) and Table 2, where the report has no GUI equivalent; §7, the author's project files carry no χ².
+- **The procedure's preset** (`skill-v5\presets\csmic-empyrean.json`): `acceptance.calibrated_under` (CoC4 and CoC5, four orders, Δθ 0.012°, `scale_solve_window` 0.7), used for the calibration line of item 21.
+- **The X-Ray Calc 3 source** (release 3.9.4.1250): what **File > Save project** writes (the structure with its limits and flags, the settings, the prepared data and the record of the last fit); **Result > Export fit results...** and its fields; the **Seed** box of **Advanced fitting settings**; **Result > Fit report ...** and **Copy as text**; **Result > Export ...**, **Save as graphics ...** (BMP, EMF, WMF), **Copy as BMP**, **Copy as EMF**; the Chart Info bar's scale text ("solved x…", "at bound"); the automatic save as `<name>-fitted.xrcx`, next to the project when no Fitting Output folder is set. **X-Ray Calc Help:** *Results*, *Exporting Fit Results* and *Auto-Save Results*; *Fitting*, the **Seed** row.
+- **The CoC4 values** of Table 23-2: Chapters 10–20 and the data files of their runs (engines 3.9.4.1250 and 3.9.4.1270): `figures-src/ch17/coc4-final.json` (the reported run, its thickness profiles and the widening round; c₁ computed from the profiles), `figures-src/ch18/coc4-poly1-report.json` (χ² at the start, 5.56331; the eight band means). The highest order's share of I_max is computed on the page: 4 / 608 828.
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/ch2-meet-x-ray-calc-3#the-main-window`}>Chapter 2: The main window</a>; <a href={`${import.meta.env.BASE_URL}/ch7-roughness-interlayers-dirty-surface#a-stack-that-drifts`}>Chapter 7: Roughness, Interlayers, and a Dirty Surface</a>; <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#is-this-curve-worth-fitting`}>Chapter 10: Is this curve worth fitting?</a>; <a href={`${import.meta.env.BASE_URL}/ch11-reading-the-curve#the-plateau-and-the-background`}>Chapter 11: The plateau and the background</a>; <a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#two-rules-for-reading-a-curve`}>Chapter 13: Two rules for reading a curve</a>; <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#letting-the-fit-solve-the-scale`}>Chapter 14: Letting the fit solve the scale</a>; <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#several-runs-and-their-spread`}>Chapter 16: Several runs, and their spread</a>; <a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#decide-on-the-drift-not-on-χ`}>Chapter 17: Decide on the drift, not on χ²</a>; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#writing-the-verdict`}>Chapter 18: Writing the verdict</a>; <a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#when-to-stop`}>Chapter 19: When to stop</a>; <a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#reporting-a-density`}>Chapter 20: Reporting a density</a>; <a href={`${import.meta.env.BASE_URL}/ch21-single-films#reporting-a-film`}>Chapter 21: Reporting a film</a>; <a href={`${import.meta.env.BASE_URL}/ch22-graded-multilayers-and-supermirrors#what-the-fit-can-tell-you-about-each-layer`}>Chapter 22: What the fit can tell you about each layer</a>; <a href={`${import.meta.env.BASE_URL}/ch24-ten-ways-a-fit-can-mislead-you#1-2θ-read-as-θ`}>Chapter 24: Ten Ways a Fit Can Mislead You</a>; <a href={`${import.meta.env.BASE_URL}/ch25-ten-checks-before-you-trust-a-number#10-is-it-written-down-with-its-settings`}>Chapter 25: Ten Checks Before You Trust a Number</a>; <a href={`${import.meta.env.BASE_URL}/appendix-b-menus#the-menus`}>Appendix B: Menus, Buttons and Keys</a>.

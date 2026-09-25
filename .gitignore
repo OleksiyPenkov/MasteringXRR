@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.astro/
+.superpowers/
+test-results/
+playwright-report/
+pdf-build/out/
+pdf-build/*.pdf
+pdf-build/__pycache__/
+__pycache__/
+.pytest_cache/
+*.log
+
+# Session-local Claude Code state (settings.local.json, HANDOFF.md) is personal.
+.claude/settings.local.json
+.claude/HANDOFF.md
+
+# Machine paths (the deposit, the X-Ray Calc copy, the deploy folder); see scripts/figures/local_paths.py.
+local-paths.json

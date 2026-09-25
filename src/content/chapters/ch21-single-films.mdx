@@ -1,0 +1,162 @@
+---
+title: 'Single Films'
+part: '4'
+number: '21'
+order: 210
+inThisChapter:
+  - What a single film tells you, and what it doesn't
+  - The single-film exceptions to the fitting rules
+  - The critical edge of a carbon film
+  - A metal film and the layers that grow on it
+  - Reporting a film as a thickness and a rate
+---
+import Tip from '../../components/textbook/Tip.astro';
+import Remember from '../../components/textbook/Remember.astro';
+import Warning from '../../components/textbook/Warning.astro';
+import InXRayCalc from '../../components/textbook/InXRayCalc.astro';
+import GoingDeeper from '../../components/textbook/GoingDeeper.astro';
+import Figure from '../../components/textbook/Figure.astro';
+import DataTable from '../../components/textbook/DataTable.astro';
+
+A single film on a substrate is the usual way to calibrate a deposition rate. Deposit one material for a known time, measure the film, and divide. This chapter fits two such films by the rules of the fitting procedure: a carbon film on glass and a cobalt film on glass. Both were deposited in the same laboratory as the Co/C multilayers of the earlier chapters. <a href={`${import.meta.env.BASE_URL}/ch5-one-film-kiessig-fringes#reading-a-thickness-from-the-fringes`}>Chapter 5: Reading a thickness from the fringes</a> read the thickness of the carbon film from its fringes. This chapter fits it.
+
+## What one film tells you
+
+The fitting procedure is strict about a film of the light material: "A single film of the light material of the design, on the substrate, gives its thickness, and from it the deposition rate, and nothing else: report its sigma and density as undetermined." (§12.1)
+
+The reason is in the fringes. Their positions fix the thickness. Their depth depends on the density of the film and on the roughness of both of its boundaries at once (<a href={`${import.meta.env.BASE_URL}/ch5-one-film-kiessig-fringes#what-this-means-when-you-fit`}>Chapter 5: What this means when you fit</a>). A carbon film on glass is a weak pair. The two have similar δ, so the fringes are shallow and the three effects can't be told apart.
+
+## The single-film exceptions
+
+A film is fitted with a few settings of its own. <a href="#table-21-1">Table 21-1</a> sets them beside the settings of a multilayer.
+
+<p id="table-21-1" class="table-caption"><strong>Table 21-1:</strong> The settings that differ for a single film, from the fitting procedure and one laboratory's preset. The reasons are the procedure's.</p>
+
+<DataTable
+  keepHeaderCase
+  headers={['Setting', 'Multilayer', 'Single film', 'Why']}
+  rows={[
+    ['Start of the range', 'θ_max, the edge included', 'θ = 0.3° (2θ = 0.6°), for a film of the light material', 'the model shows a feature at the edge that the data don\'t have (§6.3)'],
+    ['End of the range', 'at least the first seven predicted orders', 'past the last fringe that stands 3 times above the background', 'a film has no orders (§6.4)'],
+    ['σ limits', '1–8 Å', '1–10 Å', 'the preset\'s value for a film'],
+    ['**Population**', '5000', '2000', 'the preset\'s value for a film'],
+    ['Weighting', 'θ weight off, peak weight on', 'the same', 'the preset'],
+    ['Polynomial fit', 'always, after the fit with one period', 'none', 'a film has no periods (§9.2)'],
+    ['Report', 'H, σ and ρ, with their spreads', 'H only; σ and ρ undetermined, for a film of the light material', '§12.1'],
+  ]}
+/>
+
+Everything else stays as for a multilayer: the solved scale, **R min** at one count, smoothing off, the Δθ scan, five runs and the near-bound rule (<a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#four-settings-in-this-order`}>Chapter 14</a> to <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#several-runs-and-their-spread`}>Chapter 16</a>).
+
+<InXRayCalc>Build a film as one stack with N = 1, and give the contamination layer a stack of its own above it (<a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#the-top-of-the-stack-contamination-layer-and-cap`}>Chapter 12: The top of the stack</a>). Set the start of the range by trimming the data (<a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#trimming-the-data-to-the-range`}>Chapter 14: Trimming the data to the range</a>). The chart shows 2θ, so trim at 2θ = 0.6°. Set **Population** to 2000 and the σ limits in the **Fitting Limits** dialog. Leave **Mode** at Periodic. With N = 1 there is nothing for Polynomial mode to vary.</InXRayCalc>
+
+## The edge of a carbon film
+
+The first exception comes from the author's own fits. In the author's words: "The problem of single layer carbon and X-Ray Calc: we often have this artifact. So I trimmed to 0.6. But only for single carbon; in other cases it works fine."
+
+<a href="#fig-21-1">Figure 21-1</a> shows it on the carbon film. A one-layer model was fitted twice: once with the range from θ_max, and once from θ = 0.3°. On the lower part of the edge, over 2θ = 0.44–0.52°, both calculated curves stay above the data. With the edge in the range, the edge check of <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-edge`}>Chapter 18: The edge</a> reads 0.95, 1.38 and 0.86, so the middle point misses by 38 %. The paper on the procedure records the same miss in an earlier fit: 0.127 calculated against 0.073 measured, at θ = 0.26°.
+
+<Figure id="fig-21-1" number="21-1" src={`${import.meta.env.BASE_URL}/figures/fig-21-1-c1-edge.svg`} alt="The critical edge of a carbon film on a logarithmic axis from 2θ = 0.25 to 0.9 degrees. The measured points fall steeply from 2θ 0.43 degrees with a kink near 0.47. Two fitted curves, one layer each, fall later and more smoothly and lie above the data between 0.44 and 0.52 degrees. Dotted lines mark the start of each fitting range, at 0.3745 and 0.6 degrees" caption="The critical edge of the carbon film C1 and two fits of one C layer: with the range from θ_max (orange, starting at the orange dotted line) and from θ = 0.3° (blue, starting at the blue dotted line). Best of five runs each. The data are at the anchored scale, and each model is divided by its solved scale ratio, as the chart draws them. The two χ² values cover different ranges and don't compare. Fitted by X-Ray Calc 3.9.4.1270. Measured C1 from the fitting procedure's data deposit." />
+
+Neither fit can match the edge, and the rest of the curve pays for trying. So the procedure moves the start past the edge for a film of the light material. The thickness hardly notices: 307.1 Å with the edge in the range, 307.3 Å without it.
+
+<Warning title="the start moved for a metal film">The later start is for a film of the light material only. A metal film has a strong edge. The edge carries its density and the scale. Keep its range from θ_max. The procedure's rule was set on carbon films. It was not tested on other light materials.</Warning>
+
+## Fitting the carbon film
+
+The procedure's model for the carbon film is one C layer with the contamination layer above it (<a href={`${import.meta.env.BASE_URL}/ch7-roughness-interlayers-dirty-surface#the-dirty-surface-a-contamination-layer`}>Chapter 7: The dirty surface</a>). The author's comment on a one-layer fit of this film was: "Is bad, because it's not possible to fit a single-layer carbon with a single-layer model. For metals it works nice, but not for carbon. It needs something lighter on top." <a href="#table-21-2">Table 21-2</a> gives the fits with and without the contamination layer.
+
+<p id="table-21-2" class="table-caption"><strong>Table 21-2:</strong> The carbon film C1 (deposited for 1000 s), fitted by the single-film rules: the run with the lowest χ², with the spread over five runs where it is larger than the last digit. Δθ = 0.015° by the scan. Fitted by X-Ray Calc 3.9.4.1270.</p>
+
+<DataTable
+  keepHeaderCase
+  headers={['Model', 'Range from', 'χ²', 'Film: H (Å), σ (Å), ρ (g/cm³)', 'Contamination layer: H (Å), ρ', 'Total H (Å)']}
+  rows={[
+    ['one C layer', 'θ_max', '1.957', '307.1, 7.41, 1.94', 'none', '307.1'],
+    ['one C layer', 'θ = 0.3°', '1.299', '307.3, 7.41, 1.86', 'none', '307.3'],
+    ['C layer + contamination layer', 'θ = 0.3°', '1.170', '299.8 ± 0.1, 0.10, 1.83', '13.0, 1.00', '312.7 ± 0.1'],
+  ]}
+/>
+
+The contamination layer lowers χ² from 1.30 to 1.17. The film comes out at 299.8 Å under 13.0 Å of contamination. That agrees with the laboratory's own refit of the same curve, 300.5 Å under 13 Å. The five runs agree on the thicknesses to 0.1 Å and on the densities to 0.01 g/cm³.
+
+The two models don't agree. The σ of the film goes from 7.41 Å to 0.10 Å, and the film thickness from 307.3 to 299.8 Å. The runs agree with each other, so the spread is small. The model sets the value. This is the lesson of <a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#the-runs-agree-the-models-dont`}>Chapter 20: The runs agree, the models don't</a>, now for σ. Report σ and ρ as undetermined, as §12.1 says. The film's σ of 0.10 Å also sits on its lower limit of 0, after the near-bound rule moved that limit down from 1 Å.
+
+**The thickness and the rate.** The film was deposited for 1000 s. So its rate is 299.8 / 1000 = 0.300 Å/s. The one-layer model would give 0.307 Å/s. The 2 % comes from the choice of model. The contamination layer belongs in the model you report.
+
+<Remember>The thickness of a film depends on what you put on top of it. Report the film with the model you used, and give the total as well: here 312.7 Å, which the fringe positions fix best (<a href={`${import.meta.env.BASE_URL}/ch5-one-film-kiessig-fringes#reading-a-thickness-from-the-fringes`}>Chapter 5: Reading a thickness from the fringes</a>).</Remember>
+
+## What the fit can't match
+
+No model of this film matched both its edge and its fringe contrast. The paper on the procedure says so for every attempt, by the author and by the test sessions: "No model of the single carbon film C1, by the expert or by any session, reproduced both its critical edge and its fringe contrast. The film yields its thickness, and nothing further." After nine failed attempts the author's words were: "I don't found good model for carbon."
+
+The procedure warns against two repairs: "Do not try to repair that with the resolution (section 8) or the substrate roughness (section 2); neither is the cause." (§12.2) Both move the fringe depth, so a fit can use them to hide the miss. Keep Δθ from the scan and the substrate as Chapter 12 sets it. Report the thickness, and say that the edge and the fringe contrast are not reproduced.
+
+## A metal film and the layers on top
+
+The procedure says that "The metal films fit with a one-layer model." (§12.2) The cobalt film of this chapter doesn't. It was deposited on glass for 800 s, measured in the same way, and fitted by the same rules. The range starts at θ_max. <a href="#table-21-3">Table 21-3</a> gives three models.
+
+<p id="table-21-3" class="table-caption"><strong>Table 21-3:</strong> The cobalt film P2-08 (deposited for 800 s): the run with the lowest χ², with the spread over five runs where it matters. Δθ by the scan: 0.015° for the first two models, 0.013° for the third. At 0.015° the first run of the third model gave χ² = 2.488. Fitted by X-Ray Calc 3.9.4.1270.</p>
+
+<DataTable
+  keepHeaderCase
+  headers={['Model', 'χ²', 'Co: H (Å), σ (Å), ρ (g/cm³)', 'Layers on top: H (Å), ρ (g/cm³)', 'Sum on top (Å)']}
+  rows={[
+    ['one Co layer', '6.331', '296.9, 13.79, 8.35', 'none', 'none'],
+    ['Co + contamination layer', '2.389', '291.0, 8.45, 8.42', 'C 22.2, 2.40 (on its limit)', '22.2'],
+    ['Co + CoO + contamination layer', '2.463 (runs to 2.527)', '289.5 ± 0.6, 6.5 ± 0.3, 8.52', 'CoO 15.8 ± 1.3, 4.46; C 9.8 ± 1.1, 1.69', '25.6 ± 0.6'],
+  ]}
+/>
+
+<a href="#fig-21-2">Figure 21-2</a> shows the measured curve with the three fits. Above 2θ = 2.5° the one-layer curve has almost no fringes left, while the measured fringes run on to the end of the range. The two models with layers on top follow them, and on this scale they can't be told apart.
+
+<Figure id="fig-21-2" number="21-2" src={`${import.meta.env.BASE_URL}/figures/fig-21-2-co-curve.svg`} alt="The reflectivity of a cobalt film on a logarithmic axis against 2θ from 0 to 5.6 degrees, drawn three times, each copy shifted down by two decades. Each copy of the measured points carries one fitted model. The measured fringes run from 2θ 0.9 degrees to the end of the fitting range at 5.4 degrees. The one-layer model follows the first fringes, then flattens above 2θ 2.5 degrees and loses its fringes. The two models with layers on top follow the fringes to the end of the range and look the same. Dotted lines mark the fitting range, from 0.49 to 5.4 degrees" caption="The cobalt film P2-08 and three models: one Co layer (orange), Co with a contamination layer (blue), and Co with a CoO layer and a contamination layer (green). Each model is drawn with its own copy of the measured points (grey), and the second and third pairs are shifted down by 10² and 10⁴. Dotted: the fitting range, from θ_max to θ = 2.7°. Best of five runs each. The data are at the anchored scale, and each model is divided by its solved scale ratio, as the chart draws them. Fitted by X-Ray Calc 3.9.4.1270. The measured curve is the author's." />
+
+**One Co layer** misses by far: χ² = 6.33. Its σ went past the film limit of 10 Å to 13.8 Å, after the near-bound rule widened it. A roughness that large stands in for something the model lacks (<a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#the-model-is-too-simple`}>Chapter 19: The model is too simple</a>).
+
+**A contamination layer on top** brings χ² to 2.39. But its density climbed through each widened limit and ended at 2.40 g/cm³, at 22 Å. That is the laboratory's ceiling for sputtered carbon (<a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#the-density-ceiling`}>Chapter 15: The density ceiling</a>). Carbon contamination from the air is light. A layer of 22 Å at the density of sputtered carbon is not contamination. It stands in for a denser layer.
+
+**Cobalt oxide under the contamination layer** is the model of the laboratory's fit of record for this film. It gives χ² = 2.46, about the same as the dense carbon layer. The curve doesn't choose between them. What it does fix is the sum of the layers above the metal: 25.6 ± 0.6 Å, while the oxide and the contamination layer spread by 1.3 and 1.1 Å on their own. Report the sum, with the split undetermined (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#two-layers-as-a-sum`}>Chapter 18: Two layers as a sum</a>). The X-Ray Calc Help shows the same kind of case: a TiZrNi coating fitted first with a TiO2 layer on top, then with further surface layers, which lowered its cost function from about 0.48 to 0.14 (*Examples* → *Single-Layer Coating*).
+
+<a href="#fig-21-3">Figure 21-3</a> shows the same through the residual. The one-layer residual swings through every fringe, because its total thickness is wrong. The other two lie on top of each other. All three share a stretch from 2θ = 2.0 to 3.3° where the model runs about +0.3 above the data. No model here removes it. X-Ray Calc draws this residual too, point by point, in the strip under the chart (**Result > Residual strip**; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-residual-by-band`}>Chapter 18: The residual by band</a>). The figure averages it over 61 points, so that the level of each stretch shows.
+
+<Figure id="fig-21-3" number="21-3" src={`${import.meta.env.BASE_URL}/figures/fig-21-3-co-residual.svg`} alt="The logarithm of calculated over measured intensity against 2θ from 0.5 to 5.4 degrees for three models of a cobalt film. The one-layer model oscillates by up to plus and minus 0.5 from 2θ 2 to 4.5 degrees. The two models with top layers lie on top of each other, near zero below 2θ 1.9 degrees, then about plus 0.2 to plus 0.45 between 2 and 3.3 degrees, and near zero again beyond 3.5 degrees, falling to minus 0.25 at the end" caption="The residual of three models of the cobalt film P2-08: log₁₀(calculated / measured), averaged over 61 points (0.18° in 2θ) so that the level of each stretch shows. Orange: one Co layer. Blue: Co with a contamination layer. Green: Co with a CoO layer and a contamination layer. Dotted: ±0.1, the band warning of Chapter 18. Best of five runs each. Fitted by X-Ray Calc 3.9.4.1270. The measured curve is the author's." />
+
+**The thickness and the rate.** The Co layer comes out at 289.5 Å with the oxide and 291.0 Å with the dense carbon layer. The one-layer model gives 296.9 Å. Divided by 800 s, the two models with a top layer give 0.362 and 0.364 Å/s. The laboratory's fit of record gave 288.65 ± 1.62 Å for the metal, 0.361 Å/s. So the rate is fixed to about 1 %, whatever sits on top, once something does.
+
+<Warning title="a metal film fitted as one layer">A one-layer fit of a metal film can end with a χ² that looks acceptable on its own and a σ of 10 Å or more. The metal then takes the thickness of the layers on top: here 7 Å more, a rate 2.5 % higher. The program gives no sign of it. Look at the σ, and try a layer on top.</Warning>
+
+## Reporting a film
+
+A film's report is short:
+
+- **the thickness** of the film, with its spread over the runs, and the model it was fitted with;
+- **the total** of the layers on the substrate, and the sum of the layers on top when their split is undetermined;
+- **the deposition rate:** the thickness divided by the deposition time from the deposition record;
+- **σ and ρ** of a film of the light material, reported as undetermined;
+- **the range start** and why, and any part of the curve the model doesn't reproduce, such as the edge or the fringe contrast of a carbon film.
+
+<a href={`${import.meta.env.BASE_URL}/ch23-reporting-a-fit#writing-the-numbers`}>Chapter 23: Writing the numbers</a> puts these items into the report.
+
+## What this means when you fit
+
+**Report a single film as a thickness and a rate.** σ and ρ of a light film are undetermined.
+
+**Start the range at θ = 0.3° for a light film,** past the edge its model can't match. Keep θ_max for a metal film.
+
+**Put the contamination layer on every film,** and a layer that can grow on a metal, such as its oxide. Report what the curve fixes: the metal, and the sum on top.
+
+**Don't repair a misfit with the resolution or the substrate σ.** Say which part of the curve the model misses.
+
+## Sources
+
+- **Fitting procedure** (Penkov, Peng & Fu 2026): §12.1, a single film of the light material gives its thickness and nothing else, quoted; §12.2, a one-layer model misses the edge and the fringe contrast, the two repairs not to try, quoted, and "The metal films fit with a one-layer model.", quoted; §12.3, the exceptions in the preset; §6.3, the range start for a single film of the light material and its reason; §6.4, the range end for a film; §7.2, the σ limits for a single film; §8.5–8.6, the weighting and the population for a single film; §9.2, no profile fit for a single film; §10.8, a sum reported when the split is undetermined.
+- **The procedure's preset** (`skill-v5\presets\csmic-empyrean.json`), one laboratory's values: `single_film.theta_min_deg` 0.3, `single_film.sigma_bounds_A` 1–10; `chi2.single_film` (θ weight 0, point weight on); `optimizer.population.single_film` 2000; the contamination layer (C, 15 Å, σ 3 Å, 0.9 g/cm³; 5–40 Å, 1–10 Å, 0.6–1.4 g/cm³); `materials.named` (C 1.5–2.4, Co 6.0–8.79); `materials.default_rule` (CoO at 0.7–1.0 of its table's 6.2 g/cm³).
+- **The expert's rulings** (Supplementary S3): ruling 34 and 35, the artifact at the edge of a single carbon film and the start moved to 2θ = 0.6°, quoted; ruling 36, a single carbon film needs something lighter on top, quoted; ruling 54, no good model for carbon, quoted.
+- **The methods paper on the procedure** (Penkov, Peng & Fu 2026, [arXiv:2609.28926](https://arxiv.org/abs/2609.28926)): §3–4, the procedure written down while the author fitted the carbon film in the program; §6, the baseline miss at the edge of that film (0.127 calculated, 0.073 measured, θ = 0.26°); Supplementary S4.6, the refit at 300.5 Å under 13 Å of contamination; S4.7, no model reproduced both the edge and the fringe contrast, quoted.
+- **The author's records** (the laboratory's electronic notebook): the carbon film P2-06, C(260917B), deposited for 1000 s; the cobalt film P2-08, Co(260921A), deposited for 800 s, measured on 2026-09-22; the fit of record of the cobalt film under procedure v5 (engine 3.9.2.970): Co 288.65 ± 1.62 Å, CoO 15.0 ± 3.8 Å, C 11.6 ± 4.4 Å, their sum 26.65 ± 0.80 Å, Co rate 0.361 Å/s for the metal alone. The first fit of that film found the contamination layer's density on its limit and a residual of +0.305 in one band without the oxide.
+- **X-Ray Calc Help,** *Charts* → *Residual Strip* (the residual drawn under the chart, point by point); *Examples* → *Single-Layer Coating* (a TiZrNi coating with a TiO2 layer, then surface layers, cost about 0.48 then 0.14; from Penkov et al. 2024, Figure 5).
+- **Calculated for this chapter (2026-09-25)** with the X-Ray Calc 3.9.4.1030 engine, and run again with the same seeds on 3.9.4.1270 (2026-09-25), which gave the same values: `scripts/figures/ch21_engine_data.py` fits the two films by the rules of Table 21-1, five runs each with the preset's seeds, 200 iterations, λ = 1.541874 Å, the scale solved within 0.2, **R min** at one count, the range ends of the laboratory's v5 refits (θ = 1.6775° for the carbon film, 2.7° for the cobalt film), Δθ from a one-run scan over 0.012–0.015°, and two rounds of the near-bound rule; the substrate is SiO2 at 2.50 g/cm³, σ 3.8 Å (Chapter 12). The results and the figures' curves are in `figures-src/ch21/` (`fits.json`, `curves.json`, `numbers.txt`); `scripts/figures/fig_21_figures.py` draws Figures 21-1 to 21-3. The rates are computed on the page from the fitted thicknesses and the deposition times.
+- **The measured curves:** the carbon film C1 from the fitting procedure's data deposit (CC BY 4.0); the cobalt film P2-08 from the author's measurement.
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/ch5-one-film-kiessig-fringes#reading-a-thickness-from-the-fringes`}>Chapter 5: Reading a thickness from the fringes</a>; <a href={`${import.meta.env.BASE_URL}/ch7-roughness-interlayers-dirty-surface#the-dirty-surface-a-contamination-layer`}>Chapter 7: The dirty surface</a>; <a href={`${import.meta.env.BASE_URL}/ch12-building-the-starting-model#the-top-of-the-stack-contamination-layer-and-cap`}>Chapter 12: The top of the stack</a>; <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#trimming-the-data-to-the-range`}>Chapter 14: Trimming the data to the range</a>; <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#several-runs-and-their-spread`}>Chapter 16: Several runs, and their spread</a>; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#two-layers-as-a-sum`}>Chapter 18: Two layers as a sum</a>; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#the-residual-by-band`}>Chapter 18: The residual by band</a>; <a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#the-model-is-too-simple`}>Chapter 19: The model is too simple</a>; <a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#the-runs-agree-the-models-dont`}>Chapter 20: The runs agree, the models don't</a>; <a href={`${import.meta.env.BASE_URL}/ch23-reporting-a-fit#writing-the-numbers`}>Chapter 23: Writing the numbers</a>; <a href={`${import.meta.env.BASE_URL}/ch24-ten-ways-a-fit-can-mislead-you#6-a-layer-that-stands-in-for-a-missing-one`}>Chapter 24: A layer that stands in for a missing one</a>; <a href={`${import.meta.env.BASE_URL}/ch25-ten-checks-before-you-trust-a-number#8-does-the-curve-fix-this-number-or-only-a-sum`}>Chapter 25: Does the curve fix this number, or only a sum?</a>; <a href={`${import.meta.env.BASE_URL}/ch26-ten-things-x-ray-calc-does-not-fit#9-the-layers-in-the-model`}>Chapter 26: The layers in the model</a>.

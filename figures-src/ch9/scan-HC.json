@@ -1,0 +1,1328 @@
+[
+ {
+  "H_C": 21.0,
+  "chi2": 139.295,
+  "chi2_plain": 125.592,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 21.1,
+  "chi2": 139.539,
+  "chi2_plain": 125.589,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 21.2,
+  "chi2": 139.768,
+  "chi2_plain": 125.538,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 21.3,
+  "chi2": 139.919,
+  "chi2_plain": 125.444,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 21.4,
+  "chi2": 139.915,
+  "chi2_plain": 125.304,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 21.5,
+  "chi2": 139.682,
+  "chi2_plain": 125.09,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 21.6,
+  "chi2": 139.216,
+  "chi2_plain": 124.796,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 21.7,
+  "chi2": 138.63,
+  "chi2_plain": 124.485,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 21.8,
+  "chi2": 138.029,
+  "chi2_plain": 124.193,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 21.9,
+  "chi2": 137.5,
+  "chi2_plain": 123.943,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 22.0,
+  "chi2": 137.077,
+  "chi2_plain": 123.742,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 22.1,
+  "chi2": 136.749,
+  "chi2_plain": 123.56,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 22.2,
+  "chi2": 136.517,
+  "chi2_plain": 123.393,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 22.3,
+  "chi2": 136.386,
+  "chi2_plain": 123.24,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 22.4,
+  "chi2": 136.336,
+  "chi2_plain": 123.092,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 22.5,
+  "chi2": 136.313,
+  "chi2_plain": 122.938,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 22.6,
+  "chi2": 136.263,
+  "chi2_plain": 122.773,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 22.7,
+  "chi2": 136.148,
+  "chi2_plain": 122.609,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 22.8,
+  "chi2": 135.899,
+  "chi2_plain": 122.415,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 22.9,
+  "chi2": 135.528,
+  "chi2_plain": 122.178,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 23.0,
+  "chi2": 135.072,
+  "chi2_plain": 121.882,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 23.1,
+  "chi2": 134.563,
+  "chi2_plain": 121.493,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 23.2,
+  "chi2": 134.013,
+  "chi2_plain": 120.976,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 23.3,
+  "chi2": 133.462,
+  "chi2_plain": 120.36,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 23.4,
+  "chi2": 132.972,
+  "chi2_plain": 119.714,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 23.5,
+  "chi2": 132.583,
+  "chi2_plain": 119.089,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 23.6,
+  "chi2": 132.332,
+  "chi2_plain": 118.552,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 23.7,
+  "chi2": 132.162,
+  "chi2_plain": 118.095,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 23.8,
+  "chi2": 131.964,
+  "chi2_plain": 117.686,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 23.9,
+  "chi2": 131.606,
+  "chi2_plain": 117.251,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 24.0,
+  "chi2": 131.016,
+  "chi2_plain": 116.739,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 24.1,
+  "chi2": 130.189,
+  "chi2_plain": 116.135,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 24.2,
+  "chi2": 129.164,
+  "chi2_plain": 115.434,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 24.3,
+  "chi2": 128.019,
+  "chi2_plain": 114.636,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 24.4,
+  "chi2": 126.882,
+  "chi2_plain": 113.805,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 24.5,
+  "chi2": 125.83,
+  "chi2_plain": 112.982,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 24.6,
+  "chi2": 124.893,
+  "chi2_plain": 112.186,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 24.7,
+  "chi2": 124.064,
+  "chi2_plain": 111.414,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 24.8,
+  "chi2": 123.322,
+  "chi2_plain": 110.637,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 24.9,
+  "chi2": 122.614,
+  "chi2_plain": 109.828,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 25.0,
+  "chi2": 121.86,
+  "chi2_plain": 108.963,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 25.1,
+  "chi2": 120.992,
+  "chi2_plain": 108.032,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 25.2,
+  "chi2": 120.009,
+  "chi2_plain": 107.065,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 25.3,
+  "chi2": 118.903,
+  "chi2_plain": 106.068,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 25.4,
+  "chi2": 117.713,
+  "chi2_plain": 105.048,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 25.5,
+  "chi2": 116.564,
+  "chi2_plain": 104.071,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 25.6,
+  "chi2": 115.561,
+  "chi2_plain": 103.173,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 25.7,
+  "chi2": 114.706,
+  "chi2_plain": 102.331,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 25.8,
+  "chi2": 114.003,
+  "chi2_plain": 101.54,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 25.9,
+  "chi2": 113.427,
+  "chi2_plain": 100.774,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 26.0,
+  "chi2": 112.91,
+  "chi2_plain": 99.9791,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 26.1,
+  "chi2": 112.377,
+  "chi2_plain": 99.1216,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 26.2,
+  "chi2": 111.695,
+  "chi2_plain": 98.1407,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 26.3,
+  "chi2": 110.74,
+  "chi2_plain": 96.9987,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 26.4,
+  "chi2": 109.47,
+  "chi2_plain": 95.7002,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 26.5,
+  "chi2": 107.836,
+  "chi2_plain": 94.2155,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 26.6,
+  "chi2": 105.868,
+  "chi2_plain": 92.5609,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 26.7,
+  "chi2": 103.726,
+  "chi2_plain": 90.8246,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 26.8,
+  "chi2": 101.553,
+  "chi2_plain": 89.0603,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 26.9,
+  "chi2": 99.4113,
+  "chi2_plain": 87.2751,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 27.0,
+  "chi2": 97.3549,
+  "chi2_plain": 85.4987,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 27.1,
+  "chi2": 95.4114,
+  "chi2_plain": 83.7403,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 27.2,
+  "chi2": 93.6377,
+  "chi2_plain": 82.0505,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 27.3,
+  "chi2": 92.0216,
+  "chi2_plain": 80.4254,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 27.4,
+  "chi2": 90.4958,
+  "chi2_plain": 78.8432,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 27.5,
+  "chi2": 88.9658,
+  "chi2_plain": 77.2683,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 27.6,
+  "chi2": 87.3379,
+  "chi2_plain": 75.6468,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 27.7,
+  "chi2": 85.5712,
+  "chi2_plain": 73.9692,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 27.8,
+  "chi2": 83.6677,
+  "chi2_plain": 72.2471,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 27.9,
+  "chi2": 81.6809,
+  "chi2_plain": 70.5047,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 28.0,
+  "chi2": 79.6835,
+  "chi2_plain": 68.7381,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 28.1,
+  "chi2": 77.7434,
+  "chi2_plain": 66.9575,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 28.2,
+  "chi2": 75.8843,
+  "chi2_plain": 65.1623,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 28.3,
+  "chi2": 74.1231,
+  "chi2_plain": 63.3355,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 28.4,
+  "chi2": 72.4814,
+  "chi2_plain": 61.4687,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 28.5,
+  "chi2": 70.9303,
+  "chi2_plain": 59.5629,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 28.6,
+  "chi2": 69.4137,
+  "chi2_plain": 57.6406,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 28.7,
+  "chi2": 67.8284,
+  "chi2_plain": 55.7286,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 28.8,
+  "chi2": 66.0315,
+  "chi2_plain": 53.798,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 28.9,
+  "chi2": 63.9453,
+  "chi2_plain": 51.8419,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 29.0,
+  "chi2": 61.5454,
+  "chi2_plain": 49.8475,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 29.1,
+  "chi2": 58.881,
+  "chi2_plain": 47.8043,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 29.2,
+  "chi2": 56.0628,
+  "chi2_plain": 45.7018,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 29.3,
+  "chi2": 53.2212,
+  "chi2_plain": 43.5262,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 29.4,
+  "chi2": 50.392,
+  "chi2_plain": 41.2733,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 29.5,
+  "chi2": 47.5626,
+  "chi2_plain": 38.9624,
+  "scale_ratio": 1.19865
+ },
+ {
+  "H_C": 29.6,
+  "chi2": 44.7473,
+  "chi2_plain": 36.7582,
+  "scale_ratio": 1.17314
+ },
+ {
+  "H_C": 29.7,
+  "chi2": 41.9259,
+  "chi2_plain": 34.537,
+  "scale_ratio": 1.14831
+ },
+ {
+  "H_C": 29.8,
+  "chi2": 39.1289,
+  "chi2_plain": 32.296,
+  "scale_ratio": 1.12465
+ },
+ {
+  "H_C": 29.9,
+  "chi2": 36.3873,
+  "chi2_plain": 30.0618,
+  "scale_ratio": 1.10204
+ },
+ {
+  "H_C": 30.0,
+  "chi2": 33.671,
+  "chi2_plain": 27.8591,
+  "scale_ratio": 1.08134
+ },
+ {
+  "H_C": 30.1,
+  "chi2": 30.9952,
+  "chi2_plain": 25.707,
+  "scale_ratio": 1.06298
+ },
+ {
+  "H_C": 30.2,
+  "chi2": 28.4262,
+  "chi2_plain": 23.6353,
+  "scale_ratio": 1.04719
+ },
+ {
+  "H_C": 30.3,
+  "chi2": 25.9419,
+  "chi2_plain": 21.6495,
+  "scale_ratio": 1.03458
+ },
+ {
+  "H_C": 30.4,
+  "chi2": 23.3852,
+  "chi2_plain": 19.7321,
+  "scale_ratio": 1.02466
+ },
+ {
+  "H_C": 30.5,
+  "chi2": 20.7009,
+  "chi2_plain": 17.8444,
+  "scale_ratio": 1.01734
+ },
+ {
+  "H_C": 30.6,
+  "chi2": 18.0137,
+  "chi2_plain": 15.9445,
+  "scale_ratio": 1.01164
+ },
+ {
+  "H_C": 30.7,
+  "chi2": 15.3825,
+  "chi2_plain": 13.9746,
+  "scale_ratio": 1.00696
+ },
+ {
+  "H_C": 30.8,
+  "chi2": 12.7837,
+  "chi2_plain": 11.8742,
+  "scale_ratio": 1.00267
+ },
+ {
+  "H_C": 30.9,
+  "chi2": 10.1958,
+  "chi2_plain": 9.64394,
+  "scale_ratio": 0.998759
+ },
+ {
+  "H_C": 31.0,
+  "chi2": 7.69065,
+  "chi2_plain": 7.36414,
+  "scale_ratio": 0.995383
+ },
+ {
+  "H_C": 31.1,
+  "chi2": 5.40657,
+  "chi2_plain": 5.21193,
+  "scale_ratio": 0.99308
+ },
+ {
+  "H_C": 31.2,
+  "chi2": 3.58874,
+  "chi2_plain": 3.45585,
+  "scale_ratio": 0.991988
+ },
+ {
+  "H_C": 31.3,
+  "chi2": 2.52842,
+  "chi2_plain": 2.41077,
+  "scale_ratio": 0.992353
+ },
+ {
+  "H_C": 31.4,
+  "chi2": 2.44619,
+  "chi2_plain": 2.32569,
+  "scale_ratio": 0.994657
+ },
+ {
+  "H_C": 31.5,
+  "chi2": 3.41566,
+  "chi2_plain": 3.2789,
+  "scale_ratio": 0.999107
+ },
+ {
+  "H_C": 31.6,
+  "chi2": 5.36383,
+  "chi2_plain": 5.17846,
+  "scale_ratio": 1.00555
+ },
+ {
+  "H_C": 31.7,
+  "chi2": 8.09356,
+  "chi2_plain": 7.78869,
+  "scale_ratio": 1.01347
+ },
+ {
+  "H_C": 31.8,
+  "chi2": 11.376,
+  "chi2_plain": 10.8418,
+  "scale_ratio": 1.02266
+ },
+ {
+  "H_C": 31.9,
+  "chi2": 14.9908,
+  "chi2_plain": 14.0799,
+  "scale_ratio": 1.03325
+ },
+ {
+  "H_C": 32.0,
+  "chi2": 18.7945,
+  "chi2_plain": 17.318,
+  "scale_ratio": 1.04519
+ },
+ {
+  "H_C": 32.1,
+  "chi2": 22.5438,
+  "chi2_plain": 20.4357,
+  "scale_ratio": 1.05859
+ },
+ {
+  "H_C": 32.2,
+  "chi2": 26.0493,
+  "chi2_plain": 23.3516,
+  "scale_ratio": 1.07326
+ },
+ {
+  "H_C": 32.3,
+  "chi2": 29.3285,
+  "chi2_plain": 26.0477,
+  "scale_ratio": 1.08943
+ },
+ {
+  "H_C": 32.4,
+  "chi2": 32.5307,
+  "chi2_plain": 28.5739,
+  "scale_ratio": 1.10724
+ },
+ {
+  "H_C": 32.5,
+  "chi2": 35.6859,
+  "chi2_plain": 31.0092,
+  "scale_ratio": 1.12665
+ },
+ {
+  "H_C": 32.6,
+  "chi2": 38.8111,
+  "chi2_plain": 33.4398,
+  "scale_ratio": 1.1477
+ },
+ {
+  "H_C": 32.7,
+  "chi2": 42.0136,
+  "chi2_plain": 35.9406,
+  "scale_ratio": 1.17104
+ },
+ {
+  "H_C": 32.8,
+  "chi2": 45.338,
+  "chi2_plain": 38.5769,
+  "scale_ratio": 1.19704
+ },
+ {
+  "H_C": 32.9,
+  "chi2": 48.7008,
+  "chi2_plain": 41.506,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 33.0,
+  "chi2": 52.03,
+  "chi2_plain": 44.5888,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 33.1,
+  "chi2": 55.331,
+  "chi2_plain": 47.7284,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 33.2,
+  "chi2": 58.6592,
+  "chi2_plain": 50.8412,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 33.3,
+  "chi2": 61.9533,
+  "chi2_plain": 53.822,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 33.4,
+  "chi2": 65.1871,
+  "chi2_plain": 56.5973,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 33.5,
+  "chi2": 68.3431,
+  "chi2_plain": 59.1152,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 33.6,
+  "chi2": 71.3881,
+  "chi2_plain": 61.3646,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 33.7,
+  "chi2": 74.2841,
+  "chi2_plain": 63.4,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 33.8,
+  "chi2": 76.9058,
+  "chi2_plain": 65.2893,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 33.9,
+  "chi2": 79.2468,
+  "chi2_plain": 67.1261,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 34.0,
+  "chi2": 81.3593,
+  "chi2_plain": 68.9886,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 34.1,
+  "chi2": 83.2772,
+  "chi2_plain": 70.8938,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 34.2,
+  "chi2": 85.051,
+  "chi2_plain": 72.8479,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 34.3,
+  "chi2": 86.762,
+  "chi2_plain": 74.8469,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 34.4,
+  "chi2": 88.5413,
+  "chi2_plain": 76.8882,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 34.5,
+  "chi2": 90.4361,
+  "chi2_plain": 78.9537,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 34.6,
+  "chi2": 92.4555,
+  "chi2_plain": 81.072,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 34.7,
+  "chi2": 94.6585,
+  "chi2_plain": 83.2977,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 34.8,
+  "chi2": 97.1154,
+  "chi2_plain": 85.6848,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 34.9,
+  "chi2": 99.8426,
+  "chi2_plain": 88.2463,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 35.0,
+  "chi2": 102.799,
+  "chi2_plain": 90.9671,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 35.1,
+  "chi2": 105.905,
+  "chi2_plain": 93.8597,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 35.2,
+  "chi2": 109.141,
+  "chi2_plain": 96.9235,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 35.3,
+  "chi2": 112.445,
+  "chi2_plain": 100.114,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 35.4,
+  "chi2": 115.761,
+  "chi2_plain": 103.399,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 35.5,
+  "chi2": 119.043,
+  "chi2_plain": 106.757,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 35.6,
+  "chi2": 122.329,
+  "chi2_plain": 110.188,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 35.7,
+  "chi2": 125.729,
+  "chi2_plain": 113.697,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 35.8,
+  "chi2": 129.283,
+  "chi2_plain": 117.248,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 35.9,
+  "chi2": 132.972,
+  "chi2_plain": 120.806,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 36.0,
+  "chi2": 136.718,
+  "chi2_plain": 124.296,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 36.1,
+  "chi2": 140.44,
+  "chi2_plain": 127.653,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 36.2,
+  "chi2": 144.032,
+  "chi2_plain": 130.797,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 36.3,
+  "chi2": 147.347,
+  "chi2_plain": 133.67,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 36.4,
+  "chi2": 150.217,
+  "chi2_plain": 136.218,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 36.5,
+  "chi2": 152.562,
+  "chi2_plain": 138.397,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 36.6,
+  "chi2": 154.386,
+  "chi2_plain": 140.214,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 36.7,
+  "chi2": 155.761,
+  "chi2_plain": 141.719,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 36.8,
+  "chi2": 156.739,
+  "chi2_plain": 142.941,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 36.9,
+  "chi2": 157.428,
+  "chi2_plain": 143.943,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 37.0,
+  "chi2": 157.968,
+  "chi2_plain": 144.771,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 37.1,
+  "chi2": 158.469,
+  "chi2_plain": 145.476,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 37.2,
+  "chi2": 158.993,
+  "chi2_plain": 146.106,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 37.3,
+  "chi2": 159.606,
+  "chi2_plain": 146.72,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 37.4,
+  "chi2": 160.364,
+  "chi2_plain": 147.379,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 37.5,
+  "chi2": 161.279,
+  "chi2_plain": 148.121,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 37.6,
+  "chi2": 162.343,
+  "chi2_plain": 149.004,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 37.7,
+  "chi2": 163.557,
+  "chi2_plain": 150.08,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 37.8,
+  "chi2": 164.937,
+  "chi2_plain": 151.383,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 37.9,
+  "chi2": 166.525,
+  "chi2_plain": 152.968,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 38.0,
+  "chi2": 168.363,
+  "chi2_plain": 154.872,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 38.1,
+  "chi2": 170.491,
+  "chi2_plain": 157.124,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 38.2,
+  "chi2": 172.932,
+  "chi2_plain": 159.693,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 38.3,
+  "chi2": 175.734,
+  "chi2_plain": 162.552,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 38.4,
+  "chi2": 178.884,
+  "chi2_plain": 165.667,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 38.5,
+  "chi2": 182.377,
+  "chi2_plain": 169.029,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 38.6,
+  "chi2": 186.165,
+  "chi2_plain": 172.6,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 38.7,
+  "chi2": 190.194,
+  "chi2_plain": 176.344,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 38.8,
+  "chi2": 194.368,
+  "chi2_plain": 180.229,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 38.9,
+  "chi2": 198.602,
+  "chi2_plain": 184.242,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 39.0,
+  "chi2": 202.83,
+  "chi2_plain": 188.343,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 39.1,
+  "chi2": 206.991,
+  "chi2_plain": 192.484,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 39.2,
+  "chi2": 211.034,
+  "chi2_plain": 196.61,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 39.3,
+  "chi2": 214.898,
+  "chi2_plain": 200.651,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 39.4,
+  "chi2": 218.53,
+  "chi2_plain": 204.521,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 39.5,
+  "chi2": 221.91,
+  "chi2_plain": 208.138,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 39.6,
+  "chi2": 225.068,
+  "chi2_plain": 211.475,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 39.7,
+  "chi2": 228.007,
+  "chi2_plain": 214.509,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 39.8,
+  "chi2": 230.686,
+  "chi2_plain": 217.195,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 39.9,
+  "chi2": 233.067,
+  "chi2_plain": 219.5,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 40.0,
+  "chi2": 235.121,
+  "chi2_plain": 221.424,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 40.1,
+  "chi2": 236.767,
+  "chi2_plain": 222.943,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 40.2,
+  "chi2": 237.948,
+  "chi2_plain": 224.035,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 40.3,
+  "chi2": 238.655,
+  "chi2_plain": 224.702,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 40.4,
+  "chi2": 238.897,
+  "chi2_plain": 224.958,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 40.5,
+  "chi2": 238.739,
+  "chi2_plain": 224.865,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 40.6,
+  "chi2": 238.295,
+  "chi2_plain": 224.519,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 40.7,
+  "chi2": 237.704,
+  "chi2_plain": 224.025,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 40.8,
+  "chi2": 237.131,
+  "chi2_plain": 223.497,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 40.9,
+  "chi2": 236.716,
+  "chi2_plain": 223.047,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 41.0,
+  "chi2": 236.569,
+  "chi2_plain": 222.79,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 41.1,
+  "chi2": 236.768,
+  "chi2_plain": 222.812,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 41.2,
+  "chi2": 237.336,
+  "chi2_plain": 223.168,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 41.3,
+  "chi2": 238.227,
+  "chi2_plain": 223.86,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 41.4,
+  "chi2": 239.389,
+  "chi2_plain": 224.875,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 41.5,
+  "chi2": 240.794,
+  "chi2_plain": 226.207,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 41.6,
+  "chi2": 242.453,
+  "chi2_plain": 227.871,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 41.7,
+  "chi2": 244.365,
+  "chi2_plain": 229.865,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 41.8,
+  "chi2": 246.555,
+  "chi2_plain": 232.204,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 41.9,
+  "chi2": 249.034,
+  "chi2_plain": 234.874,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 42.0,
+  "chi2": 251.811,
+  "chi2_plain": 237.837,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 42.1,
+  "chi2": 254.88,
+  "chi2_plain": 241.045,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 42.2,
+  "chi2": 258.25,
+  "chi2_plain": 244.485,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 42.3,
+  "chi2": 261.915,
+  "chi2_plain": 248.148,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 42.4,
+  "chi2": 265.828,
+  "chi2_plain": 251.999,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 42.5,
+  "chi2": 269.879,
+  "chi2_plain": 255.956,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 42.6,
+  "chi2": 273.962,
+  "chi2_plain": 259.948,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 42.7,
+  "chi2": 277.996,
+  "chi2_plain": 263.919,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 42.8,
+  "chi2": 281.973,
+  "chi2_plain": 267.872,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 42.9,
+  "chi2": 285.853,
+  "chi2_plain": 271.772,
+  "scale_ratio": 1.2
+ },
+ {
+  "H_C": 43.0,
+  "chi2": 289.577,
+  "chi2_plain": 275.555,
+  "scale_ratio": 1.2
+ }
+]

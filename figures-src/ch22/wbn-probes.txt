@@ -1,0 +1,14 @@
+W/BN probes, 2026-09-25, engine 3.9.4.1110 (XRC_MCP bef6e69 build), request of wbn_request(N) in
+scripts/figures/ch22_engine_data.py, population 5000, 200 iterations, SeedR on.
+
+1. Two uniform stacks (Periodic mode, each period free within ±10 % of its start; the lower stack started
+   at 1.08 or 1.04 × the upper), N_bottom + N_top, two seeds each:
+   24+36: χ² 6.341, 6.349 (D 41.26 / 39.62); 12+36: 5.888, 5.770 (41.21 / 39.60);
+   36+24: 6.514, 6.689 (41.32 / 39.60); 36+12: 5.753, 5.659 (39.32 / 40.06);
+   12+48: 7.762, 7.294 (41.18 / 39.63); 24+36 from ×1.04: 6.348, 6.502 (41.29 / 39.61).
+   All worse than one stack of 36 with an order-2 profile (χ² 3.10).
+2. Higher polynomial orders (H profiled, σ and ρ paired), three seeds each:
+   N 36 order 4: 3.192, 3.107, 75.580 (lost); order 5: 2.937, 3.154, 3.137; D 39.4 -> 42.1 Å.
+   N 60 order 4: 4.286, 4.278, 3.992; order 5: 3.937, 4.259, 4.187; D 39.3 -> 42.4 Å.
+   No better than order 2 (N 36: 3.10-3.72; N 60: 3.98-4.21).
+The low-angle shoulder of orders 2 and 4 (2θ 4.0-4.4° and 8.4-8.9°) is reproduced by none of them.

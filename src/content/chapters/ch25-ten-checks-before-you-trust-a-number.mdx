@@ -1,0 +1,84 @@
+---
+title: 'Ten Checks Before You Trust a Number'
+part: '5'
+number: '25'
+order: 250
+inThisChapter:
+  - Ten questions to ask of a fitted number before you use it
+  - Where you read each answer in X-Ray Calc
+  - What to do when the answer is no
+---
+
+{/* Chapter 25. Section outline approved 2026-09-25 (OUTLINE.md): choice 1 (a), a plain-text checklist to download; choice 2 (a), CoC4's answer to each check. */}
+
+A fit gives you a thickness, a period, a σ and a density for every layer. Before one of them goes into a paper or a rate calibration, ask it the ten questions of this chapter. They follow the order of the work. Each names where you read the answer in X-Ray Calc, what to do when the answer is no, and the chapter that deals with it. Each ends with the answer for CoC4, the Co/C multilayer that Chapters 10 to 23 fitted and reported. The same ten questions fit on one printed page in <span class="web-only"><a href={`${import.meta.env.BASE_URL}/data/ten-checks.txt`}>ten-checks.txt</a>.</span><span class="print-only">ten-checks.txt, which comes with the web edition.</span>
+
+## 1. Does the curve carry this number?
+
+A number needs a feature of the curve that moves when the number changes. The fringes fix the thickness of a film. The positions of the orders fix a period. Their relative heights carry the layer ratio. The high orders carry σ. The densities move the edge and the heights of all the orders. **Data > Assess XRR quality ...** tells you whether the orders and the plateau are there (<a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#is-this-curve-worth-fitting`}>Chapter 10: Is this curve worth fitting?</a>). The sensitivity map tells you which feature each parameter moves (<a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#the-variants-and-what-they-move`}>Chapter 13: The variants and what they move</a>). When no feature moves with a parameter, the fit can return any value for it.
+
+**CoC4:** yes for the period and the thicknesses. Eight orders are visible. The layer ratio moves the heights of orders 2 to 6. The σ of C and the σ of Co move the curve in nearly the same way, so the curve fixes them as a pair.
+
+## 2. Were the data and the settings set for this curve?
+
+Go through the conditioning once more. The angle was read in the right unit, 2θ or θ. The scale was set by **Data > Normalize (Auto)**. No smoothing pass was made. The fitting range starts at θ_max and covers at least the first seven orders that the period predicts. **R min** is the floor of this curve. Δθ was chosen by a scan of this curve. A setting copied from another project fails this check (<a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#four-settings-in-this-order`}>Chapter 14: Four settings, in this order</a>; <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#choosing-δθ-by-a-scan`}>Chapter 16: Choosing Δθ by a scan</a>). <a href={`${import.meta.env.BASE_URL}/ch24-ten-ways-a-fit-can-mislead-you#1-2θ-read-as-θ`}>Chapter 24</a>, items 1, 2 and 5, shows what each mistake does.
+
+**CoC4:** yes. The angles came from the `.xrdml` file. **Normalize (Auto)** divided the curve by 1.1877. No smoothing. The range runs from 2θ = 0.4165 to 13.37°, a quarter of the order spacing past order 8. Δθ = 0.014° came from its own scan.
+
+## 3. Is the scale inside its window?
+
+Read the **scale** box of the Chart Info bar after the fit. "solved x…" followed by a number means the fit found its scale. "at bound" after the number means the best factor lies outside the **Window**, and the fit used the edge of it. The scale error then goes into the densities and the edge. Look first at the end of the fitting range. A long tail on the floor pulls the scale. Then look at the model (<a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#letting-the-fit-solve-the-scale`}>Chapter 14: Letting the fit solve the scale</a>).
+
+**CoC4:** yes. The solved factor was 0.877, inside the window of 0.2.
+
+## 4. Does the fit pass its checks?
+
+Open **Result > Fit report ...** and read the checks in this order: every visible order, the edge, the eight bands, and χ² last (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#reading-the-checks-in-x-ray-calc`}>Chapter 18: Reading the checks in X-Ray Calc</a>). The residual strip under the chart shows the eight band means without the report (**Result > Residual strip**). A low χ² doesn't pass a fit by itself. A fit that fails a check is reported with the fail and its cause. When the cause is the measurement, the numbers that the passing checks fix can still be reported (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#writing-the-verdict`}>Chapter 18: Writing the verdict</a>).
+
+**CoC4:** no. χ² is 0.959, and orders 1 to 6, the edge and the bands pass. Orders 7 and 8 fail at 0.26 and 0.28 of their measured height. Each of those peaks holds 4 to 5 counts, too few to test (<a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#the-measurement-too-few-counts`}>Chapter 19: The measurement: too few counts</a>). The period and the thicknesses rest on the orders that pass.
+
+## 5. Is the model complete?
+
+A model that lacks a layer makes another parameter do its work. Look for a σ far larger than its neighbors, or a density on its limit. Either one can stand in for a layer the model doesn't have. A light contamination layer on top is the first one to add (<a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#the-model-is-too-simple`}>Chapter 19: The model is too simple</a>). For a multilayer, fit one period and the Polynomial profile both. Choose between them on the drift (<a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#decide-on-the-drift-not-on-χ`}>Chapter 17: Decide on the drift, not on χ²</a>).
+
+**CoC4:** yes. The model has a contamination layer on top. Without it, the σ of the C layers grew from 4.35 to 5.78 Å. Both modes were fitted. The Polynomial fit of order 1 was kept, because its drift of −0.39 Å is more than twice its spread of 0.06 Å.
+
+## 6. Is the number clear of its limits?
+
+Open the **Fitting Limits** dialog. A value on its **Min** or **Max**, or within 5 % of the range from one, is colored yellow. The limit set that value. Click **Widen** and fit again, until no run ends near a limit (<a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#the-near-bound-rule`}>Chapter 15: The near-bound rule</a>). A σ at 0 can't be widened. Report it at 0. A value that follows every widening is undetermined (<a href={`${import.meta.env.BASE_URL}/ch24-ten-ways-a-fit-can-mislead-you#8-a-value-decided-by-its-limit`}>Chapter 24: A value decided by its limit</a>).
+
+**CoC4:** yes for the period, the thicknesses and the densities. The limits of the contamination layer were widened once. Its σ still ends at 0 and is reported there.
+
+## 7. Do five runs agree on it?
+
+Run the fit five times, and compute the standard deviation of the number over the runs. When it is larger than the precision you would claim, the number is undetermined. Report the word, without the number. One laboratory's limits are 0.5 Å for a thickness and for σ, 0.2 g/cm³ for a density, and 0.1 Å for the period (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#what-the-runs-dont-agree-on`}>Chapter 18: What the runs don't agree on</a>). The number you report comes from the run with the lowest χ². A mean over runs is a structure that no run found (<a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#several-runs-and-their-spread`}>Chapter 16: Several runs, and their spread</a>).
+
+**CoC4:** yes for the period, 55.00 ± 0.05 Å at the surface, and for the thicknesses at the top period, C 31.66 ± 0.36 Å and Co 23.34 ± 0.32 Å. No for the σ of C and of Co, which are undetermined.
+
+## 8. Does the curve fix this number, or only a sum?
+
+Some numbers are fixed only together with another one. Two layers that trade thickness are reported as their sum. Their split is undetermined (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#two-layers-as-a-sum`}>Chapter 18: Two layers as a sum</a>). The two σ values of a period are reported as fitted. Don't claim which interface is rougher unless every run agrees (<a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#which-interface-is-rougher`}>Chapter 18: Which interface is rougher?</a>). A Polynomial fit is reported by the values of its periods. Its coefficients are no property of the specimen. A single film gives its thickness and nothing else (<a href={`${import.meta.env.BASE_URL}/ch21-single-films#what-one-film-tells-you`}>Chapter 21: What one film tells you</a>). A graded stack gives what its runs agree on (<a href={`${import.meta.env.BASE_URL}/ch22-graded-multilayers-and-supermirrors#what-the-fit-can-tell-you-about-each-layer`}>Chapter 22: What the fit can tell you about each layer</a>).
+
+**CoC4:** each thickness is fixed on its own, so no sum is needed. The period falls from 55.00 Å at the surface to 54.61 Å at the substrate. How that drift divides between C and Co is undetermined.
+
+## 9. Is it a density?
+
+Then it is a free parameter of the fit. Don't report it as the density of the material, and don't build a design or a deposition time on it (<a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#a-free-parameter-not-a-result`}>Chapter 20: A free parameter, not a result</a>). Its spread over the runs is small and misleads. It shows how well one model fixes the density. It doesn't show which model is right. A low density of a thin metal layer, after its limit was widened, points to intermixing. A density on its ceiling is reported at the ceiling.
+
+**CoC4:** the Co density of the kept fit is 7.59 g/cm³. Its runs agree to 0.03 g/cm³. The best runs of the other models of this book put it anywhere from 7.33 to 8.25 g/cm³. Report it as "free parameter, not a result".
+
+## 10. Is it written down with its settings?
+
+A number without its settings and its checks can't be tested by anyone else. Right after the fit, choose **Result > Export fit results...**, copy the text of **Result > Fit report ...**, and save the project under a new name. The project keeps the record of its last fit, with χ², the scale factor and the seed, and a new fit replaces it. So export it, and save the project under a new name, before you run again. Then fill the 22 items of the report, with the calibration of every limit you judged against (<a href={`${import.meta.env.BASE_URL}/ch23-reporting-a-fit#what-the-program-keeps-and-what-it-doesnt`}>Chapter 23: What the program keeps, and what it doesn't</a>).
+
+**CoC4:** yes. <a href={`${import.meta.env.BASE_URL}/ch23-reporting-a-fit#a-complete-report-for-coc4`}>Chapter 23: A complete report for CoC4</a> fills every item, the fail of orders 7 and 8 included.
+
+## Sources
+
+- **Fitting procedure** (Penkov, Peng & Fu 2026): §1 and §3, the curve read and the sensitivity map made before the first fit; §4.3, the scale solved in a window and a clamped scale; §5, no smoothing; §6, the floor and the fitting range; §7.5, a value on or near a limit extended and refitted; §8.2, Δθ chosen by a scan and kept to its curve; §8.4, five runs, the best run reported and not a mean; §9, both modes fitted and the choice made on the drift; §10.1–10.4, χ² one check among several, and the order table, the edge and the bands; §10.6–10.8, the spread over the runs, undetermined parameters and sums; §10.13, a parameter that stands in for a missing layer; §10.14, σ without a claim about the rougher interface; §11, density a free parameter; §12.1, a single film gives its thickness; §13, the report, with §10.5, every limit with its calibration.
+- **The procedure's preset** (`skill-v5\presets\csmic-empyrean.json`), one laboratory's values: `reporting.undetermined_precision` (H 0.5 Å, σ 0.5 Å, ρ 0.2 g/cm³, period 0.1 Å); `acceptance.thresholds.near_bound_fraction` 0.05.
+- **The CoC4 answers** are taken from the chapters linked in each item and from the report of <a href={`${import.meta.env.BASE_URL}/ch23-reporting-a-fit#table-23-2`}>Table 23-2</a>: the orders (Chapter 14), the sensitivity map (Table 13-1), the scale (item 5), the checks (Table 18-4, and the counts of Chapter 19), the contamination layer (Chapter 19), the drift test (Table 17-2), the widening (item 13), the structure and its spreads (item 16), and the Co densities (Table 20-1).
+- **The X-Ray Calc 3 program** (release 3.9.4.1250): **Data > Assess XRR quality ...**, the **scale** box of the Chart Info bar, **Result > Fit report ...**, **Result > Residual strip** and its band means, the **Fitting Limits** dialog and its 5 % marking, **Result > Export fit results...**, as described in the chapters linked.
+- **The checklist file** `ten-checks.txt` gives the ten questions of this chapter with where to look and the chapter to read. It carries no number of its own.
+
+Cross-references: <a href={`${import.meta.env.BASE_URL}/ch10-is-this-curve-worth-fitting#is-this-curve-worth-fitting`}>Chapter 10</a>; <a href={`${import.meta.env.BASE_URL}/ch13-the-sensitivity-check#the-variants-and-what-they-move`}>Chapter 13</a>; <a href={`${import.meta.env.BASE_URL}/ch14-preparing-the-data#letting-the-fit-solve-the-scale`}>Chapter 14</a>; <a href={`${import.meta.env.BASE_URL}/ch15-choosing-what-to-fit#the-near-bound-rule`}>Chapter 15</a>; <a href={`${import.meta.env.BASE_URL}/ch16-fit-settings#several-runs-and-their-spread`}>Chapter 16</a>; <a href={`${import.meta.env.BASE_URL}/ch17-periodic-or-polynomial#decide-on-the-drift-not-on-χ`}>Chapter 17</a>; <a href={`${import.meta.env.BASE_URL}/ch18-judging-a-fit#writing-the-verdict`}>Chapter 18</a>; <a href={`${import.meta.env.BASE_URL}/ch19-when-the-fit-will-not-converge#the-model-is-too-simple`}>Chapter 19</a>; <a href={`${import.meta.env.BASE_URL}/ch20-density-a-free-parameter#a-free-parameter-not-a-result`}>Chapter 20</a>; <a href={`${import.meta.env.BASE_URL}/ch21-single-films#what-one-film-tells-you`}>Chapter 21</a>; <a href={`${import.meta.env.BASE_URL}/ch22-graded-multilayers-and-supermirrors#what-the-fit-can-tell-you-about-each-layer`}>Chapter 22</a>; <a href={`${import.meta.env.BASE_URL}/ch23-reporting-a-fit#a-complete-report-for-coc4`}>Chapter 23</a>; <a href={`${import.meta.env.BASE_URL}/ch24-ten-ways-a-fit-can-mislead-you#1-2θ-read-as-θ`}>Chapter 24: Ten Ways a Fit Can Mislead You</a>; <a href={`${import.meta.env.BASE_URL}/ch26-ten-things-x-ray-calc-does-not-fit#1-the-wavelength`}>Chapter 26: Ten Things X-Ray Calc Does Not Fit for You</a>.
