@@ -1,6 +1,6 @@
 {
  "lambda_A": 1.5406,
- "engine": "D:\\DelphiProjects\\X-RayCalc\\X-RayCalc3_Working\\_Out\\BIN\\XRC_MCP.exe",
+ "engine": "XRC_MCP.exe",
  "materials": [
   {
    "material": "C",

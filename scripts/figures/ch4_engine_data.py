@@ -86,8 +86,9 @@ def main():
 
         OUT.mkdir(parents=True, exist_ok=True)
         constants = [replies[i] for i in range(1, len(TABLE_MATERIALS) + 1)]
+        # The file name only: the full path is a machine path, and this file is public.
         (OUT / "optical-constants.json").write_text(json.dumps(
-            {"lambda_A": LAMBDA, "engine": str(EXE), "materials": constants}, indent=1), encoding="utf-8")
+            {"lambda_A": LAMBDA, "engine": Path(EXE).name, "materials": constants}, indent=1), encoding="utf-8")
         for i, m in enumerate(CURVE_MATERIALS, start=100):
             r = replies[i]
             shutil.copyfile(work / r["file"], OUT / f"curve-{m}.dat")
