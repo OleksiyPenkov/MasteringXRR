@@ -39,7 +39,20 @@ const label = pageLabel(number);
     <div class="shell">
       <aside class="sidebar">
         <a href={`${base}/`} class="home">{BOOK_TITLE}</a>
-        <ChapterNav client:load items={items} current={slug} />
+        <details class="toc" id="toc" open>
+          <summary>Contents</summary>
+          <ChapterNav client:load items={items} current={slug} />
+        </details>
+        {/* Folded on phones, always open on wider screens (incl. rotation). */}
+        <script is:inline>
+          (() => {
+            const toc = document.getElementById('toc');
+            const mq = matchMedia('(max-width: 720px)');
+            const sync = () => { toc.open = !mq.matches; };
+            sync();
+            mq.addEventListener('change', sync);
+          })();
+        </script>
       </aside>
       <main class="chapter">
         <header>

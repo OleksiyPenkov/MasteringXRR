@@ -47,6 +47,20 @@ test('Sources is collapsed on the web, keeps its #sources id, and opens on click
   await expect(box.locator('ul').first()).toBeVisible();
 });
 
+test('the chapter TOC is folded on a phone and open on a desktop', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`${BASE}/introduction/`);
+  const toc = page.locator('details.toc');
+  await expect(toc).not.toHaveAttribute('open', '');
+  await expect(toc.locator('nav')).toBeHidden();
+  await toc.locator('summary').click();
+  await expect(toc.locator('nav')).toBeVisible();
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await page.goto(`${BASE}/introduction/`);
+  await expect(toc.locator('summary')).toBeHidden();
+  await expect(toc.locator('nav')).toBeVisible();
+});
+
 test('a figure opens full size on click and closes with Escape', async ({ page }) => {
   await page.goto(`${BASE}/ch9-how-x-ray-calc-finds-a-fit/`);
   const dialog = page.locator('dialog.figzoom');

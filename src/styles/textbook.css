@@ -48,6 +48,7 @@ a { color: var(--accent); }
   padding: 1.1rem 1.25rem; border-right: 1px solid var(--line); background: var(--bg-soft);
   position: sticky; top: 0; height: 100vh; overflow-y: auto;
 }
+.toc > summary { display: none; }
 .home { display: block; font-weight: 700; font-size: 1.05rem; color: var(--accent); text-decoration: none; margin-bottom: .75rem; }
 
 /* ---- Chapter content ---- */
@@ -212,5 +213,7 @@ sub { bottom: -.22em; }
 /* ---- Responsive ---- */
 @media (max-width: 720px) {
   .shell { grid-template-columns: 1fr; }
-  .sidebar { position: static; height: auto; }
+  .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--line); padding: .6rem 1.25rem; }
+  .sidebar .home { display: none; }
+  .toc > summary { display: list-item; cursor: pointer; font-weight: 700; color: var(--accent); }
 }
